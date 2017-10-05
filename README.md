@@ -12,6 +12,7 @@ More comments, tweaks and even programs such as
  - Finding similar repeating substring
  - It's also all very alpha-oriented atm. I'd like to add some extension supporting ciphers on spaces, etc.
  - Improve the `demo` md files
+ - Add more comments/documentation
  - and more
 
 still to come. Stay tuned.
