@@ -30,7 +30,9 @@ def tty_subs():
     return parse_subs(input("Enter substitutions > "))
 
 def pretty_subs(subs):
-    return "\n".join("{} -> {}".format(*kv) for kv in subs.items())
+    return "{}\n{}".format(
+                    " ".join("{}{}".format(*kv) for kv in subs.items()),
+                    "\n".join("{} -> {}".format(*kv) for kv in subs.items()))
 
 if __name__ == "__main__":
     if not sys.stdin.isatty():
