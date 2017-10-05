@@ -8,9 +8,10 @@ You can obtain the scripts by downloading them, pasting them in, or even cloning
 View the md files in the `demo` directory for guidance on each program so far.
 
 More comments, tweaks and even programs such as
- - A better interactive script featuring some commands to inspect/alter state
+ - Improve the general interface, and add more features
  - Finding similar repeating substring
  - It's also all very alpha-oriented atm. I'd like to add some extension supporting ciphers on spaces, etc.
+ - Improve the `demo` md files
  - and more
 
 still to come. Stay tuned.
