@@ -20,7 +20,7 @@ def _from_tty():
 
     while True:
         try:
-            lines.append(input(""))
+            lines.append(input())
         except KeyboardInterrupt:
             break
     return "\n".join(lines)
