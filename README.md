@@ -3,7 +3,7 @@ A collection of programs to aid in cipher-cracking. If you use this and you're n
 
 These are, as it stands, text-based interfaces. Hopefully it should be possible to paste in input. They rely on an installation of Python 3 (I recommend 3.6). They might be runnable by clicking the script from a file explorer?
 
-You can obtain the scripts by downloading them, pasting them in, or even cloning them if you're feeling really enthusiastic.
+You can obtain the scripts by downloading them, pasting them in, or even cloning them if you're feeling really enthusiastic. (NB the scripts are all in the `src` directory.)
 
 View the md files in the `demo` directory for guidance on each program so far.
 
