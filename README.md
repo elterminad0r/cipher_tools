@@ -11,5 +11,6 @@ More comments, tweaks and even programs such as
  - A better interactive script featuring some commands to inspect/alter state
  - Finding similar repeating substring
  - Finding adjacent reoccurring characters
+ - It's also all very alpha-oriented atm. I'd like to add some extension supporting ciphers on spaces, etc.
  - and more
 still to come. Stay tuned.
