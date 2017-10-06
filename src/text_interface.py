@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Hopefully a bit of a script to tie it all together. Should support various
-commands and track state, to allow the user to query and edit data.
+A textual interface between the common interface and command line
 """
 
 ################################################################################
@@ -18,7 +17,8 @@ from make_subs import parse_subs
 from interface_framework import (CipherState, UIError, restrict_args,
                                  show_freq, show_doubles, delete_sub,
                                  show_subbed, show_source, show_table,
-                                 general_info, reset_sub, show_runs)
+                                 general_info, reset_sub, show_runs,
+                                 show_words)
 
 from collections import namedtuple
 
@@ -62,6 +62,7 @@ def update_table(state, new):
 
 commands = [(("frequency", "freq", "f"), show_freq),
             (("doubles", "pairs", "d"), show_doubles),
+            (("word", "w"), show_words),
             (("runs", "r"), show_runs),
             (("delete", "remove", "x"), delete_sub),
             (("print", "p"), show_subbed),

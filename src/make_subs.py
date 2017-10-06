@@ -42,7 +42,7 @@ def _under_subs(source, subs):
     for ch in source:
         if ch in subs:
             yield subs[ch]
-         elif ch in alpha_set:
+        elif ch in alpha_set:
             yield "_"
         else:
             yield "({})".format(ch)

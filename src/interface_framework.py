@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Hopefully a bit of a script to tie it all together. Should support various
+Hopefully a bit of a framework to tie it all together. Should support various
 commands and track state, to allow the user to query and edit data.
 """
 
@@ -13,12 +13,15 @@ import textwrap
 
 from input_handling import read_file
 from find_doubles import get_doubles
+from find_word import find_matches
 from run_freq import run_chart
 from freq_analysis import bar_chart, pat_counter
 from make_subs import (make_subs, parse_subs, pretty_subs,
                                     _make_subs, _alt_subs, _under_subs)
 
 from collections import namedtuple
+
+sub_dishooks = [_make_subs, _alt_subs, _under_subs]
 
 CipherState = namedtuple("CipherState",
                         ["source",
@@ -90,6 +93,12 @@ def show_doubles(state):
     return ("Here are the occurring doubles:\n{}\n"
                                 .format(get_doubles(state.source)))
 
+@restrict_args([2])
+def show_words(state, pattern):
+    """Find words matching a prototype"""
+    return ("Here are the words matching {}:\n{}\n"
+                .format(pattern, find_matches(pattern)))
+
 def delete_sub(state, *args):
     """Remove letters from the subtable"""
     out_t = ["Removing the letters {} from subs".format(args)]
@@ -103,11 +112,8 @@ def delete_sub(state, *args):
 @restrict_args(pkw=["alt"])
 def show_subbed(state, alt=None):
     """Show the subbed source"""
-    alt = read_type(alt, "alt", bool, False)
-    if alt:
-        result = make_subs(state.source, state.subs, generator=_alt_subs)
-    else:
-        result = make_subs(state.source, state.subs)
+    alt = read_type(alt, "alt", int, False)
+    result = make_subs(state.source, state.subs, generator=sub_dishooks[alt])
     return "Here is the substituted source:\n{}\n".format(result)
 
 @restrict_args()
