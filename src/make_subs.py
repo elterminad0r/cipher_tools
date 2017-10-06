@@ -10,21 +10,32 @@ characters.
 
 import sys
 import re
+import shlex
 
 from input_handling import read_file
 
-sub_pattern = re.compile(r"\b[A-Z][a-z]\b")
-
 def parse_subs(subs):
-    print("extracted pairs: {}".format(sub_pattern.findall(subs)))
-    return dict(sub_pattern.findall(subs))
+    out = {}
+    for pair in shlex.split(subs):
+        if len(pair) != 2:
+            raise ValueError("Non-pair encountered: {}".format(pair))
+        k, v = pair
+        out[k] = v
+    return out
 
 def _make_subs(source, subs):
     for ch in source:
         yield subs.get(ch, ch)
 
-def make_subs(source, subs):
-    return "".join(_make_subs(source, subs))
+def _alt_subs(source, subs):
+    for ch in source:
+        if ch in subs:
+            yield "\\{}".format(ch)
+        else:
+            yield ch
+
+def make_subs(source, subs, generator=_make_subs):
+    return "".join(generator(source, subs))
 
 def tty_subs():
     return parse_subs(input("Enter substitutions > "))
