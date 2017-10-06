@@ -18,7 +18,7 @@ from interface_framework import (CipherState, UIError, restrict_args,
                                  show_freq, show_doubles, delete_sub,
                                  show_subbed, show_source, show_table,
                                  general_info, reset_sub, show_runs,
-                                 show_words)
+                                 show_words, table_missing)
 
 from collections import namedtuple
 
@@ -68,6 +68,7 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("print", "p"), show_subbed),
             (("source", "s"), show_source),
             (("table", "t"), show_table),
+            (("missing", "m"), table_missing),
             (("general", "g"), general_info),
             (("reset", "clear", "c"), reset_sub),
             (("help", "h"), show_help),

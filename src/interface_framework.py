@@ -10,6 +10,9 @@ commands and track state, to allow the user to query and edit data.
 import sys
 import re
 import textwrap
+import string
+
+from collections import namedtuple
 
 from input_handling import read_file
 from find_doubles import get_doubles
@@ -18,8 +21,6 @@ from run_freq import run_chart
 from freq_analysis import bar_chart, pat_counter
 from make_subs import (make_subs, parse_subs, pretty_subs,
                                     _make_subs, _alt_subs, _under_subs)
-
-from collections import namedtuple
 
 sub_dishooks = [_make_subs, _alt_subs, _under_subs]
 
@@ -126,6 +127,12 @@ def show_table(state):
     """Show the subtable"""
     return ("Here is the current substitution table:\n{}\n"
                 .format(pretty_subs(state.subs)))
+
+@restrict_args()
+def table_missing(state):
+    """Check for unused letters"""
+    return ("The following printable characters are not present:\n{}"
+                    .format(i for i in string.printable if i in state.subs))
 
 @restrict_args()
 def general_info(state):
