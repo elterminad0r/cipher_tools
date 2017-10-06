@@ -18,7 +18,7 @@ from make_subs import parse_subs
 from interface_framework import (CipherState, UIError, restrict_args,
                                  show_freq, show_doubles, delete_sub,
                                  show_subbed, show_source, show_table,
-                                 general_info, reset_sub)
+                                 general_info, reset_sub, show_runs)
 
 from collections import namedtuple
 
@@ -53,12 +53,17 @@ def update_table(state, new):
             out_t.append(
                 "warning - the value of {} is being changed to {} (it was {})"
                                 .format(k, v, state.subs[k]))
+        if k not in state.source:
+            out_t.append(
+                "warning - the letter {} does not appear anywhere in the source text"
+                                .format(k))
         state.subs[k] = v
     return "\n".join(out_t)
 
 commands = [(("frequency", "freq", "f"), show_freq),
             (("doubles", "pairs", "d"), show_doubles),
-            (("delete", "remove", "r"), delete_sub),
+            (("runs", "r"), show_runs),
+            (("delete", "remove", "x"), delete_sub),
             (("print", "p"), show_subbed),
             (("source", "s"), show_source),
             (("table", "t"), show_table),

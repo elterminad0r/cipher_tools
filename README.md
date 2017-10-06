@@ -7,6 +7,8 @@ You can obtain the scripts by downloading them, pasting them in, or even cloning
 
 View the md files in the `demo` directory for guidance on each program so far.
 
+At this point the main working space is `text_interface.py`, which interfaces with several of the other scripts to provide functionality such as frequency analysis, substitution and more.
+
 More comments, tweaks and even programs such as
  - Improve the general interface, and add more features
  - Finding similar repeating substring

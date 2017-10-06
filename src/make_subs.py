@@ -12,7 +12,11 @@ import sys
 import re
 import shlex
 
+import string
+
 from input_handling import read_file
+
+alpha_set = set(string.ascii_letters)
 
 def parse_subs(subs):
     out = {}
@@ -30,9 +34,18 @@ def _make_subs(source, subs):
 def _alt_subs(source, subs):
     for ch in source:
         if ch in subs:
-            yield "\\{}".format(ch)
+            yield "\\{}".format(subs[ch])
         else:
             yield ch
+
+def _under_subs(source, subs):
+    for ch in source:
+        if ch in subs:
+            yield subs[ch]
+         elif ch in alpha_set:
+            yield "_"
+        else:
+            yield "({})".format(ch)
 
 def make_subs(source, subs, generator=_make_subs):
     return "".join(generator(source, subs))
