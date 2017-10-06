@@ -132,7 +132,8 @@ def show_table(state):
 def table_missing(state):
     """Check for unused letters"""
     return ("The following printable characters are not present:\n{}"
-                    .format(i for i in string.printable if i in state.subs))
+                    .format(" ".join(repr(i)[1:-1]
+                        for i in string.printable if i not in state.subs)))
 
 @restrict_args()
 def general_info(state):
@@ -146,5 +147,5 @@ def general_info(state):
 @restrict_args()
 def reset_sub(state):
     """Reset (clear) the subtable"""
-    return "Resetting entire substitution table"
     state.subs.clear()
+    return "Resetting entire substitution table"

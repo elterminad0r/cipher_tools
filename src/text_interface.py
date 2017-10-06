@@ -114,10 +114,14 @@ def run():
                         print(fun(state, *args, **kwargs))
                         break
                 else:
-                    print("unrecognised command {!r}. see !help for usage"
-                                        .format(com))
+                    raise UIError(
+                        "unrecognised command {!r}. see !help for usage"
+                            .format(com))
             else:
-                insubs = parse_subs(pargs)
+                try:
+                    insubs = parse_subs(pargs)
+                except ValueError as ve:
+                    raise UIError(ve)
                 print(update_table(state, insubs))
                 print(show_table(state))
 
