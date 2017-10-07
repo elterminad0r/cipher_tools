@@ -96,7 +96,10 @@ com_pat = re.compile(r"^!([a-z]+)\b(.*)$")
 def parse_com(com):
     match = com_pat.match(com)
     if match:
-        return match.group(1), parse_options(shlex.split(match.group(2)))
+        try:
+            return match.group(1), parse_options(shlex.split(match.group(2)))
+        except ValueError as ve:
+            raise UIError(ve)
     else:
         return None, com
 

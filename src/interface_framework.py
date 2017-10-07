@@ -68,14 +68,20 @@ def read_type(option, name, typ, default):
     else:
         return default
 
+def pos_int(s):
+    pass
+
 @restrict_args(pkw=["width", "interval", "pat"])
 def show_freq(state, width=None, interval=None, pat=None):
     """Display frequencies"""
     width = read_type(width, "width", float, 50)
     interval = read_type(interval, "interval", int, 1)
     pat = read_type(pat, "pat", str, r"[a-zA-Z]")
-    result = bar_chart(state.source, width=width, interval=interval, pat=pat,
-                            subt_tab=state.subs)
+    try:
+        result = bar_chart(state.source, width=width,
+                            interval=interval, pat=pat, subt_tab=state.subs)
+    except re.error:
+        raise UIError("invalid regex: {!r}".format(pat))
     return "Here are the frequencies:\n{}\n".format(result)
 
 @restrict_args(pkw=["length", "width", "maxdisplay"])
@@ -83,7 +89,7 @@ def show_runs(state, length=None, maxdisplay=None, width=None):
     """Display frequently repeating runs"""
     length = read_type(length, "length", int, 3)
     maxdisplay = read_type(maxdisplay, "maxdisplay", int, 20)
-    width = read_type(width, "width", int, 50)
+    width = read_type(width, "width", float, 50)
     result = run_chart(state.source, length=length, maxdisplay=maxdisplay,
                         width=width, subs=state.subs)
     return "Here are the {} most frequent runs:\n{}\n".format(maxdisplay, result)
@@ -106,7 +112,7 @@ def delete_sub(state, *args):
     for k in args:
         try:
             del state.subs[k]
-        except IndexError:
+        except KeyError:
             out_t.append("could not find the key {}".format(k))
     return "{}\n{}".format("\n".join(out_t), show_table(state))
 

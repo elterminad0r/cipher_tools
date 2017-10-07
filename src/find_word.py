@@ -19,7 +19,7 @@ def build_match(pattern):
     ind = 0
     for ind, ch in enumerate(letter.findall(pattern)):
         if ch.startswith("\\"):
-            known[ind] = ch[1]
+            known[ind] = ch[1].lower()
         else:
             groups[ch].append(ind)
 

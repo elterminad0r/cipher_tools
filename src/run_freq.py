@@ -24,7 +24,7 @@ def run_chart(source, length, maxdisplay, width, subs={}):
                     .format(
                         run, make_subs(run, subs), freq, freq / total,
                         "-" * int(width * freq / most),
-                        l=longest_run - 1, il=longest_i)
+                        l=longest_run, il=longest_i)
                      for run, freq in count.most_common(maxdisplay))
 
 if __name__ == "__main__":

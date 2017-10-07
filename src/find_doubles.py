@@ -15,7 +15,6 @@ from input_handling import read_file
 double_pat = re.compile(r"([A-Z])\1", re.IGNORECASE)
 
 def get_doubles(source, subs={}):
-    print(subs)
     return "\n".join("{!r} (-> {!r:4}) occurs {:3} times".
                      format(letter, subs.get(letter[0], "") * 2, frequency)
                   for letter, frequency in
