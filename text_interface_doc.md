@@ -1,5 +1,7 @@
 # documentation for `text_interface.py`.
 
+See also [the documentation for each function](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md)
+
 The first thing you are likely to encounter is the file input. If you're not a command line user, this will work by pasting it in, entering another newline and pressing `ctrl-c`. For example, it might look like this:
 
     Manual file entry: paste in the file, or type it in line by line. When you're done, hit an extra newline to be safe and then hit ctrl-c 
@@ -93,5 +95,3 @@ Some functions also accept anonymous arguments - so far this is only used by `!d
 
     !x A B C
     !word "B\h\aV\e"
-
-Documentation for each specific action is still to come.

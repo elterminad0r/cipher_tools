@@ -1,5 +1,7 @@
 # Specific action documentation
 
+See also [the documentation for general syntax](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md)
+
 All examples in this page use my custom encrypted source text [`zop13.txt`](#source). ([alternatively, source file](https://github.com/elterminad0r/cipher_tools/blob/master/src/data/zop13.txt)). This is not a part of any challenge. Try cracking it (the clue's in the name)!
 
 # Table of contents
