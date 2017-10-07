@@ -5,7 +5,7 @@ These are, as it stands, text-based interfaces. Hopefully it should be possible 
 
 You can obtain the scripts by downloading them, pasting them in, or even cloning them if you're feeling really enthusiastic. (NB the scripts are all in the `src` directory.)
 
-Here is a quick guide to installation:
+Here is a quick guide to installation and execution (if you're a command line user, you can safely ignore and just clone and pull, and run `text_interface` from the CLI):
 
  - Install Python 3.6 and, by extension, Idle from https://www.python.org/downloads/. This should be pretty well documented across the web.
  - Download this repository (click Clone or download, and then "Download ZIP"). You will probably need to unzip it. Don't make any changes to the files.
