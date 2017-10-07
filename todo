@@ -3,3 +3,14 @@ bruteforce approach
 gui?
 
 documentation
+
+- Identify a simple transposition cipher because letter frequency (broadly) matches expected letter frequency 
+- Identify likely playfair because there are no double letter diagrams
+- Anagramming to deal with transposition ciphers
+- Calculation of index of coincidence for different groupings of the text to find likely key length for polyalphabetic ciphers
+- Split polyalphabetic text into groups based on key length to allow different frequency analysis/substitution for each
+- Polybius square fun for ADFGVX, nihilist, bifid....
+- Substitution of double letters and integers for single letters (ADFGVX, nihilist, bifid...)
+- Function to deal with playfair table and rules (?)
+- Autokey identification (?)
+- One-time pad using previous plaintext as a key (if they feel really sadistic)
