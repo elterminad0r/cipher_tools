@@ -478,7 +478,7 @@ Display a half auto generated help message, which pulls from various bits of fun
 
 It is also always displayed at the start of the program.
 
-# [exit](#table-of-contents)
+# [quit](#table-of-contents)
 
     !quit|exit|q       - Exit the program - (pos=[1], pkw=[])
 
