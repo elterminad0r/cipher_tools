@@ -13,4 +13,5 @@ Here is a quick guide to installation and execution (if you're a command line us
  - Run it (press F5 or navigate to "run" in the menus)
 
 For more on how `text_interface.py` works, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md) MD file.
+
 For documentation on each function, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md) MD file.
