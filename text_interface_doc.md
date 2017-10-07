@@ -1,4 +1,4 @@
-This is the documentation for `text_interface.py`.
+# documentation for `text_interface.py`.
 
 The first thing you are likely to encounter is the file input. If you're not a command line user, this will work by pasting it in, entering another newline and pressing `ctrl-c`. For example, it might look like this:
 
