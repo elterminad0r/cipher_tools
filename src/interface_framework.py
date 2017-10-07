@@ -26,8 +26,7 @@ sub_dishooks = [_make_subs, _alt_subs, _under_subs]
 
 CipherState = namedtuple("CipherState",
                         ["source",
-                         "subs",
-                         "alt_display"])
+                         "subs"])
 
 class UIError(Exception):
     pass
@@ -102,7 +101,7 @@ def show_words(state, pattern):
                 .format(pattern, find_matches(pattern)))
 
 def delete_sub(state, *args):
-    """Remove letters from the subtable"""
+    """Remove letters from the subtable - (pos=[any], pkw=[])"""
     out_t = ["Removing the letters {} from subs".format(args)]
     for k in args:
         try:

@@ -55,7 +55,7 @@ def tty_subs():
 
 def pretty_subs(subs):
     return "{}\n{}".format(
-                    " ".join("{}{}".format(*kv)
+                    " ".join(shlex.quote("{}{}".format(*kv))
                         for kv in sorted(subs.items())),
                     "\n".join("{} -> {}".format(*kv)
                         for kv in sorted(subs.items())))

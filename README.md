@@ -12,4 +12,4 @@ Here is a quick guide to installation and execution (if you're a command line us
  - Open the file `text_interface.py` in Idle.
  - Run it (press F5 or navigate to "run" in the menus)
 
-
+For more on how `text_interface.py` works, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md) MD file.

@@ -71,7 +71,7 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("missing", "m"), table_missing),
             (("general", "g"), general_info),
             (("info", "stats", "i"), show_stats),
-            (("reset", "clear", "c"), reset_sub),
+            (("clear", "reset", "c"), reset_sub),
             (("help", "h"), show_help),
             (("exit", "quit", "q"), exit_p)]
 
@@ -101,9 +101,10 @@ def parse_com(com):
         return None, com
 
 def run():
+    if not sys.stdin.isatty():
+        sys.exit("sys.stdin must be a tty as this is an interactive script")
     state = CipherState(source=read_file(),
-                        subs={},
-                        alt_display=False)
+                        subs={})
     print(show_help(state))
     while True:
         try:
