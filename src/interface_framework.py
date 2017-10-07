@@ -68,8 +68,14 @@ def read_type(option, name, typ, default):
     else:
         return default
 
-def pos_int(s):
-    pass
+def int_in_range(start, stop):
+    def ir(s):
+        v = int(s)
+        if not start <= v < stop:
+            raise ValueError("int {} not in range {}-{}"
+                                .format(s, start, stop))
+        return v
+    return ir
 
 @restrict_args(pkw=["width", "interval", "pat"])
 def show_freq(state, width=None, interval=None, pat=None):
@@ -119,7 +125,7 @@ def delete_sub(state, *args):
 @restrict_args(pkw=["alt"])
 def show_subbed(state, alt=None):
     """Show the subbed source"""
-    alt = read_type(alt, "alt", int, False)
+    alt = read_type(alt, "alt", int_in_range(0, 3), False)
     result = make_subs(state.source, state.subs, generator=sub_dishooks[alt])
     return "Here is the substituted source:\n{}\n".format(result)
 
@@ -136,7 +142,8 @@ def show_table(state):
 
 @restrict_args()
 def table_missing(state,
-      check= string.ascii_letters
+      check= string.ascii_uppercase
+           + string.ascii_lowercase
            + string.digits
            + string.punctuation):
     """Check for unused letters"""

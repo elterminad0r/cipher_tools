@@ -73,7 +73,7 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("info", "stats", "i"), show_stats),
             (("clear", "reset", "c"), reset_sub),
             (("help", "h"), show_help),
-            (("exit", "quit", "q"), exit_p)]
+            (("quit", "exit", "q"), exit_p)]
 
 def format_commands(commands):
     longest = (max(1 + len("|".join(coms)) for coms, _ in commands))
@@ -119,8 +119,9 @@ def run():
                         print(fun(state, *args, **kwargs))
                         break
                 else:
-                    raise UIError(
-                        "unrecognised command {!r}. see !help for usage"
+                    raise UIError((
+                        "unrecognised command {!r}. see !help, "
+                        "action_doc.md or text_interface_doc.md for usage")
                             .format(com))
             else:
                 try:
