@@ -32,10 +32,10 @@ CipherState = namedtuple("CipherState",
 class UIError(Exception):
     pass
 
-def restrict_args(possible=[1], pkw=[]):
+def restrict_args(pos=[1], pkw=[]):
     def strict_arg(f):
         def fun(*args, **kwargs):
-            if len(args) in possible:
+            if len(args) in pos:
                 if all(i in pkw for i in kwargs):
                     return f(*args, **kwargs)
                 else:
@@ -50,10 +50,10 @@ def restrict_args(possible=[1], pkw=[]):
                 raise UIError(" ".join("""\
                         This function was expecting any of the following number
                         of arguments: {}
-                        but received {}""".format(possible, len(args)).split()))
-        fun.__doc__ = f.__doc__
+                        but received {}""".format(pos, len(args)).split()))
+        fun.__doc__ = "{} - (pos={}, pkw={})".format(f.__doc__, pos, pkw)
         fun.pkw = pkw
-        fun.possible = possible
+        fun.pos = pos
         return fun
     return strict_arg
 
@@ -75,7 +75,8 @@ def show_freq(state, width=None, interval=None, pat=None):
     width = read_type(width, "width", float, 50)
     interval = read_type(interval, "interval", int, 1)
     pat = read_type(pat, "pat", str, r"[a-zA-Z]")
-    result = bar_chart(state.source, width=width, interval=interval, pat=pat)
+    result = bar_chart(state.source, width=width, interval=interval, pat=pat,
+                            subt_tab=state.subs)
     return "Here are the frequencies:\n{}\n".format(result)
 
 @restrict_args(pkw=["length", "width", "maxdisplay"])
@@ -85,14 +86,14 @@ def show_runs(state, length=None, maxdisplay=None, width=None):
     maxdisplay = read_type(maxdisplay, "maxdisplay", int, 20)
     width = read_type(width, "width", int, 50)
     result = run_chart(state.source, length=length, maxdisplay=maxdisplay,
-                        width=width)
+                        width=width, subs=state.subs)
     return "Here are the {} most frequent runs:\n{}\n".format(maxdisplay, result)
 
 @restrict_args()
 def show_doubles(state):
     """Show repeating adjacent identical pairs"""
     return ("Here are the occurring doubles:\n{}\n"
-                                .format(get_doubles(state.source)))
+                        .format(get_doubles(state.source, subs=state.subs)))
 
 @restrict_args([2])
 def show_words(state, pattern):
@@ -129,11 +130,22 @@ def show_table(state):
                 .format(pretty_subs(state.subs)))
 
 @restrict_args()
-def table_missing(state):
+def table_missing(state,
+      check= string.ascii_letters
+           + string.digits
+           + string.punctuation):
     """Check for unused letters"""
-    return ("The following printable characters are not present:\n{}"
-                    .format(" ".join(repr(i)[1:-1]
-                        for i in string.printable if i not in state.subs)))
+    return textwrap.dedent("""\
+         Referring to set
+         {}
+         The following printable characters are not mapped from:
+         {}
+         The following printable characters are not mapped to:
+         {}""").format(check,
+                       " ".join(repr(i)[1:-1]
+                           for i in check if i not in state.subs),
+                       " ".join(repr(i)[1:-1]
+                           for i in check if i not in state.subs.values()))
 
 @restrict_args()
 def general_info(state):
@@ -143,6 +155,12 @@ def general_info(state):
             show_source(state),
             show_table(state),
             show_subbed(state)])
+
+@restrict_args()
+def show_stats(state):
+    """Display common frequency statistics"""
+    with open("data/stats") as stats:
+        return stats.read()
 
 @restrict_args()
 def reset_sub(state):

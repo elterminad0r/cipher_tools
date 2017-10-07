@@ -5,16 +5,11 @@ These are, as it stands, text-based interfaces. Hopefully it should be possible 
 
 You can obtain the scripts by downloading them, pasting them in, or even cloning them if you're feeling really enthusiastic. (NB the scripts are all in the `src` directory.)
 
-View the md files in the `demo` directory for guidance on each program so far.
+Here is a quick guide to installation:
 
-At this point the main working space is `text_interface.py`, which interfaces with several of the other scripts to provide functionality such as frequency analysis, substitution and more.
+ - Install Python 3.6 and, by extension, Idle from https://www.python.org/downloads/. This should be pretty well documented across the web.
+ - Download this repository (click Clone or download, and then "Download ZIP"). You will probably need to unzip it. Don't make any changes to the files.
+ - Open the file `text_interface.py` in Idle.
+ - Run it (press F5 or navigate to "run" in the menus)
 
-More comments, tweaks and even programs such as
- - Improve the general interface, and add more features
- - Finding similar repeating substring
- - It's also all very alpha-oriented atm. I'd like to add some extension supporting ciphers on spaces, etc.
- - Improve the `demo` md files
- - Add more comments/documentation
- - and more
 
-still to come. Stay tuned.

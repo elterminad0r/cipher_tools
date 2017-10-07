@@ -7,22 +7,24 @@ Detecting frequently repeating runs in a source file
 ################################################################################
 
 from input_handling import read_file
+from make_subs import make_subs
 
 from collections import Counter
 
 def get_runs(source, length):
     return (source[i:i + length] for i in range(len(source) - length + 1))
 
-def run_chart(source, length, maxdisplay, width):
+def run_chart(source, length, maxdisplay, width, subs={}):
     count = Counter(get_runs(source, length))
     total = sum(count.values())
     (_, most), = count.most_common(1)
     longest_run = max(len("{!r}".format(run)) for run in count)
     longest_i = max(len("{}".format(freq)) for freq in count.values())
-    return "\n".join("run {!r:{l}} {:{il}} times ({:6.2%}) {}".format(
-                        run, freq, freq / total,
+    return "\n".join("run {!r:{l}} (-> {!r:{l}}) {:{il}} times ({:6.2%}) {}"
+                    .format(
+                        run, make_subs(run, subs), freq, freq / total,
                         "-" * int(width * freq / most),
-                        l=longest_run, il=longest_i)
+                        l=longest_run - 1, il=longest_i)
                      for run, freq in count.most_common(maxdisplay))
 
 if __name__ == "__main__":

@@ -55,8 +55,10 @@ def tty_subs():
 
 def pretty_subs(subs):
     return "{}\n{}".format(
-                    " ".join("{}{}".format(*kv) for kv in subs.items()),
-                    "\n".join("{} -> {}".format(*kv) for kv in subs.items()))
+                    " ".join("{}{}".format(*kv)
+                        for kv in sorted(subs.items())),
+                    "\n".join("{} -> {}".format(*kv)
+                        for kv in sorted(subs.items())))
 
 if __name__ == "__main__":
     if not sys.stdin.isatty():

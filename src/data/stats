@@ -1,0 +1,23 @@
+   Here are the percentages that the letters of the alphabet appear in
+   English:
+
+   A   B   C   D   E    F   G   H   I   J   K   L   M
+   8.2 1.5 2.8 4.3 12.7 2.2 2.0 6.1 7.0 0.2 0.8 4.0 2.4
+   N   O   P   Q   R    S   T   U   V   W   X   Y   Z
+   6.7 7.5 1.9 0.1 6.0  6.3 9.1 2.8 1.0 2.4 0.2 2.0 0.1
+
+   If we put them in order of most frequent letter, it is easy to see that
+   *e* is the most common letter, followed by the letter *t*:
+
+   E    T   A   O   I   N   S   H   R   D   L   U   C
+   12.7 9.1 8.2 7.5 7.0 6.7 6.3 6.1 6.0 4.3 4.0 2.8 2.8
+   M    W   F   Y   G   P   B   V   K   X   J   Q   Z
+   2.4  2.4 2.2 2.0 2.0 1.9 1.5 1.0 0.8 0.2 0.2 0.1 0.1
+
+   In addition to this, English also has a number of common letter patterns
+   that we can also use to help decrypt monoalphabetic ciphers:
+
+   Common pairs            TH, EA, OF, TO, IN, IT, IS, BE, AS, AT, SO, WE,
+                           HE, BY, OR, ON, DO, IF, ME, MY, UP
+   Common repeated letters SS, EE, TT, FF, LL, MM and OO
+   Common triplets         THE, EST, FOR, AND, HIS, ENT or THA

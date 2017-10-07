@@ -18,7 +18,7 @@ from interface_framework import (CipherState, UIError, restrict_args,
                                  show_freq, show_doubles, delete_sub,
                                  show_subbed, show_source, show_table,
                                  general_info, reset_sub, show_runs,
-                                 show_words, table_missing)
+                                 show_words, table_missing, show_stats)
 
 from collections import namedtuple
 
@@ -45,7 +45,7 @@ def exit_p(state):
     """Exit the program"""
     sys.exit()
 
-@restrict_args(possible=[2])
+@restrict_args(pos=[2])
 def update_table(state, new):
     out_t = []
     for k, v in new.items():
@@ -70,6 +70,7 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("table", "t"), show_table),
             (("missing", "m"), table_missing),
             (("general", "g"), general_info),
+            (("info", "stats", "i"), show_stats),
             (("reset", "clear", "c"), reset_sub),
             (("help", "h"), show_help),
             (("exit", "quit", "q"), exit_p)]
