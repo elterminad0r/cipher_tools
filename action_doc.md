@@ -1,10 +1,10 @@
-# Specific action documentation
+# [Specific action documentation](#table-of-contents)
 
 See also [the documentation for general syntax](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md)
 
 All examples in this page use my custom encrypted source text [`zop13.txt`](#source). ([alternatively, source file](https://github.com/elterminad0r/cipher_tools/blob/master/src/data/zop13.txt)). This is not a part of any challenge. Try cracking it (the clue's in the name)!
 
-# Table of contents
+# [Table of contents](#table-of-contents)
 
  - [frequency](#frequency)
  - [doubles](#doubles)
@@ -21,7 +21,7 @@ All examples in this page use my custom encrypted source text [`zop13.txt`](#sou
  - [help](#help)
  - [quit](#quit)
 
-# frequency
+# [frequency](#table-of-contents)
 
     !frequency|freq|f  - Display frequencies - (pos=[1], pkw=['width', 'interval', 'pat'])
 
@@ -105,7 +105,7 @@ name | function
 `interval` | Sets the "interval" to check. This is in case someone has interleaved two or more substitution ciphers - the letter distribution across the whole text may not make any sense, but across every second letter it might.
 `pat` | The regex to filter the text by. By default, it uses the regex `[a-zA-Z]`, ie performs analysis on letters only. To analyse everything, use `-pat=.`. I'm sure the regex fans among you will think of many great things you can achieve with this.
 
-# doubles
+# [doubles](#table-of-contents)
 
     !doubles|pairs|d   - Show repeating adjacent identical pairs - (pos=[1], pkw=[])
 
@@ -133,7 +133,7 @@ the result becomes:
     'EE' (-> ''  ) occurs   1 times
     'BB' (-> ''  ) occurs   1 times
 
-# word
+# [word](#table-of-contents)
 
     !word|w            - Find words matching a prototype - (pos=[2], pkw=[])
 
@@ -159,7 +159,7 @@ We can see that specification of the string greatly reduces the search space (al
 
 This function accepts a single argument, which is the word prototype.
 
-# runs
+# [runs](#table-of-contents)
 
     !runs|r            - Display frequently repeating runs - (pos=[1], pkw=['length', 'width', 'maxdisplay'])
 
@@ -199,7 +199,7 @@ name | function
 `maxdisplay` | Set how many of the most frequent runs to display
 
 
-# delete
+# [delete](#table-of-contents)
 
     !delete|remove|x   - Remove letters from the subtable - (pos=[any], pkw=[])
 
@@ -228,7 +228,7 @@ You could do
 
 If it is passed an unrecognised key it will fail softly and try to go on.
 
-# print
+# [print](#table-of-contents)
 
     !print|p           - Show the subbed source - (pos=[1], pkw=['alt'])
 
@@ -312,7 +312,7 @@ However there are also some alternative displayhooks:
 
 Accepts one optional parameter `alt`, which should be in the inclusive range `0-2`.
 
-# source
+# [source](#table-of-contents)
 
     !source|s          - Show the source - (pos=[1], pkw=[])
 
@@ -342,7 +342,7 @@ Print the source:
     VS GUR VZCYRZRAGNGVBA VF RNFL GB RKCYNVA, VG ZNL OR N TBBQ VQRN.
     ANZRFCNPRF NER BAR UBAXVAT TERNG VQRN -- YRG'F QB ZBER BS GUBFR!
 
-# table
+# [table](#table-of-contents)
 
     !table|t           - Show the subtable - (pos=[1], pkw=[])
 
@@ -361,7 +361,7 @@ Print the current substitution table, in both paste-able format and arrow format
 
 Note that this command is automatically called whenever a substitution is made (even if it's empty). Therefore, you can also view the table by just pressing enter.
 
-# missing
+# [missing](#table-of-contents)
 
     !missing|m         - Check for unused letters - (pos=[1], pkw=[])
 
@@ -385,17 +385,17 @@ It will produce:
     Referring to set
     ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
     The following printable characters are not mapped from:
-    C D E F H I J K L N O P Q T V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~
+    C D E F H I J K L N O P Q T V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 ! " # [$ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~](#table-of-contents)
     The following printable characters are not mapped to:
-    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d g i j k l m p q r s u v w x y 0 1 2 3 4 5 6 7 8 9 ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~
+    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d g i j k l m p q r s u v w x y 0 1 2 3 4 5 6 7 8 9 ! " # [$ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~](#table-of-contents)
 
-# general
+# [general](#table-of-contents)
 
     !general|g         - Show some general info (source, table, subbed source) - (pos=[1], pkw=[])
 
 A command I've not actually ever found myself using - consider it unstable. I'm likely to remove or change it. It just ties together [`!source`](#source), [`!table`](#table), and [`!print`](#print).
 
-# info
+# [info](#table-of-contents)
 
     !info|stats|i      - Display common frequency statistics - (pos=[1], pkw=[])
 
@@ -426,7 +426,7 @@ Display a possibly useful elinks dump of some statistics:
        Common repeated letters SS, EE, TT, FF, LL, MM and OO
        Common triplets         THE, EST, FOR, AND, HIS, ENT or THA
 
-# clear
+# [clear](#table-of-contents)
 
     !clear|reset|c     - Reset (clear) the subtable - (pos=[1], pkw=[])
 
@@ -451,7 +451,7 @@ you can do:
     Enter a command/substitutions > !t
     Here is the current substitution table:
 
-# help
+# [help](#table-of-contents)
 
     !help|h            - Show help message - (pos=[1], pkw=[])
 
@@ -478,7 +478,7 @@ Display a half auto generated help message, which pulls from various bits of fun
 
 It is also always displayed at the start of the program.
 
-# exit
+# [exit](#table-of-contents)
 
     !quit|exit|q       - Exit the program - (pos=[1], pkw=[])
 
