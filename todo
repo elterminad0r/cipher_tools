@@ -4,6 +4,8 @@ gui?
 
 documentation
 
+- update docs regarding !freq
+
 - more poly based arithmetic
 
 - Identify a simple transposition cipher because letter frequency (broadly) matches expected letter frequency 
