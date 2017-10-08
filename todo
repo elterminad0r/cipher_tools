@@ -4,6 +4,8 @@ gui?
 
 documentation
 
+- more poly based arithmetic
+
 - Identify a simple transposition cipher because letter frequency (broadly) matches expected letter frequency 
 - Identify likely playfair because there are no double letter diagrams
 - Anagramming to deal with transposition ciphers

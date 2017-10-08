@@ -77,15 +77,16 @@ def int_in_range(start, stop):
         return v
     return ir
 
-@restrict_args(pkw=["width", "interval", "pat"])
-def show_freq(state, width=None, interval=None, pat=None):
+@restrict_args(pkw=["width", "interval", "pat", "info"])
+def show_freq(state, width=None, interval=None, pat=None, info=None):
     """Display frequencies"""
     width = read_type(width, "width", float, 50)
     interval = read_type(interval, "interval", int, 1)
+    info = read_type(info, "info", bool, False)
     pat = read_type(pat, "pat", str, r"[a-zA-Z]")
     try:
-        result = bar_chart(state.source, width=width,
-                            interval=interval, pat=pat, subt_tab=state.subs)
+        result = bar_chart(state.source, width=width, interval=interval,
+                           pat=pat, subt_tab=state.subs, info=info)
     except re.error:
         raise UIError("invalid regex: {!r}".format(pat))
     return "Here are the frequencies:\n{}\n".format(result)
