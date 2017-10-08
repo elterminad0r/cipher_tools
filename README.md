@@ -16,4 +16,6 @@ For more on how `text_interface.py` works, see [this](https://github.com/eltermi
 
 For documentation on each function, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md) MD file.
 
+You can also try looking at the source files in `src` - they're now pretty well documented inline.
+
 At this point I would rate the whole affair as borderline operational. However, it's still woefully unprepared for anything but a simple substitution cipher. This is something I'm working on.

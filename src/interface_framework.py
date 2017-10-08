@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 """
-Hopefully a bit of a framework to tie it all together. Should support various
-commands and track state, to allow the user to query and edit data.
+A framework to provide interface functions to other scripts in directory. In
+theory this shouldn't be bound to any particular *user* interface, so a
+separate script exists to provide textual interface to the user. If I have time
+I might consider adding a GUI interface with tkinter.
 """
 
 ################################################################################
@@ -20,18 +22,29 @@ from find_word import find_matches
 from run_freq import run_chart
 from freq_analysis import bar_chart, pat_counter
 from make_subs import (make_subs, parse_subs, pretty_subs,
-                                    _make_subs, _alt_subs, _under_subs)
+                        _make_subs, _alt_subs, _under_subs)
 
 sub_dishooks = [_make_subs, _alt_subs, _under_subs]
 
+# small class representing a state of a session. This is passed to functions
+# rather than separate, specific arguments for each. This unifies call
+# signatures, letting functions just look for their own stuff.
 CipherState = namedtuple("CipherState",
                         ["source",
                          "subs"])
 
 class UIError(Exception):
+    """
+    Error occurs in interfacing. Generally, ValueErrors are promoted to a
+    UIError with a friendlier message, which can then be hooked to the user.
+    """
     pass
 
 def restrict_args(pos=[1], pkw=[]):
+    """
+    Decorator factory to perform soft (nonfatal) argument restriction. Works on
+    positional and keyword arguments
+    """
     def strict_arg(f):
         def fun(*args, **kwargs):
             if len(args) in pos:
@@ -56,19 +69,26 @@ def restrict_args(pos=[1], pkw=[]):
         return fun
     return strict_arg
 
-opt_pat = re.compile(r"^-(.*?)=(.*)$")
-
 def read_type(option, name, typ, default):
+    """
+    General helper function to perform EAFP type conversion on arguments with
+    soft failure on ValueError
+    """
     if option is not None:
         try:
             return typ(option)
-        except ValueError:
-            raise UIError("{} should be of type {}, but got {}"
-                                .format(name, typ, option))
+        except ValueError as ve:
+            raise UIError("{} should be of type {}, but got {} ({})"
+                                .format(name, typ, option, ve))
     else:
         return default
 
 def int_in_range(start, stop):
+    """
+    Surrogate integer typefactory (thanks to first-class functions) asserting
+    integer is in range. Uses the superior strict-on-end convention, as from
+    Python's range() function.
+    """
     def ir(s):
         v = int(s)
         if not start <= v < stop:
@@ -76,6 +96,14 @@ def int_in_range(start, stop):
                                 .format(s, start, stop))
         return v
     return ir
+
+# Here follow a series of utility functions designed to interface between a
+# cipher state and the data analysis functions in other scripts. Their
+# docstrings are picked up as a help message, so aren't very detailed -
+# generally they aren't too complicated, just having to do lots of boilerplate
+# argumenst checking and passing. These functions strictly do not print
+# anything, instead returning anything they wish the user to see (printing
+# would be text-interface presumptive)
 
 @restrict_args(pkw=["width", "interval", "pat", "info"])
 def show_freq(state, width=None, interval=None, pat=None, info=None):
@@ -126,7 +154,7 @@ def delete_sub(state, *args):
 @restrict_args(pkw=["alt"])
 def show_subbed(state, alt=None):
     """Show the subbed source"""
-    alt = read_type(alt, "alt", int_in_range(0, 3), False)
+    alt = read_type(alt, "alt", int_in_range(0, len(sub_dishooks)), False)
     result = make_subs(state.source, state.subs, generator=sub_dishooks[alt])
     return "Here is the substituted source:\n{}\n".format(result)
 
