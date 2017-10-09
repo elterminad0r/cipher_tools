@@ -116,6 +116,7 @@ A command can be given arguments, as space-separated words after the command.
 
 # pattern that matches a command (anything starting in an exclamation mark
 # followed by letters and a word boundary
+# TODO find pipe and add a
 com_pat = re.compile(r"^([0-9]*)!([a-z]+)\b(.*)$")
 
 def parse_com(com):
@@ -127,11 +128,11 @@ def parse_com(com):
     if match:
         try:
             print("targeting group {}".format(match.group(1)))
-            return match.group(2), parse_options(shlex.split(match.group(3)))
+            return match.group(2), parse_options(shlex.split(match.group(3))), match.group(1)
         except ValueError as ve:
             raise UIError(ve)
     else:
-        return None, com
+        return None, com, None
 
 def run():
     """
@@ -143,13 +144,13 @@ def run():
     # initialise the state
     state = CipherState(source=read_file(),
                         subs={},
-                        intersperse=1,
+                        intersperse=[1],
                         substack=[{}])
     print(show_help(state))
     while True:
         try:
             # parse command
-            com, pargs = parse_com(input("Enter a command/substitutions > "))
+            com, pargs, interv = parse_com(input("prompt {}$ ".format(state.intersperse[0])))
             # if it's a command
             if com:
                 # look for the corresponding action
@@ -157,9 +158,23 @@ def run():
                     if com in coms:
                         # execute
                         kwargs, args = pargs
-                        print(fun(state, *args, **kwargs))
+
+                        # handling functions that operate on intervals
+                        if interv == "a":
+                            for it in range(state.intersperse[0]):
+                                print(fun(state, *args, interv=it, **kwargs))
+                        elif interv:
+                            try:
+                                it = int(interv)
+                            except ValueError:
+                                raise UIError("Invalid interval {!r}".format(interv))
+                            print(fun(state, *args, interv=it, **kwargs))
+
+                        else:
+                            print(fun(state, *args, **kwargs))
+
                         break
-                # if the ccommand is unrecognised
+                # if the command is unrecognised
                 else:
                     raise UIError((
                         "unrecognised command {!r}. see !help, "

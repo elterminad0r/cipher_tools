@@ -84,7 +84,7 @@ def _bar_chart(source, width, start, interval, pat, subs):
                                   l=longest)
                      for letter, frequency in cnt.most_common()))
 
-def bar_chart(source, subt_tab={}, width=50, interval=1,
+def bar_chart(source, subt_tab={}, width=50, interv=1, start=0,
       pat=r"[a-zA-Z]", info=False):
     """
     Generate a series of bar charts based on just an interval. Can also show
@@ -97,10 +97,9 @@ def bar_chart(source, subt_tab={}, width=50, interval=1,
                             0, 1, ".", {})))
 
     # otherwise, for each start in the interval, show bar chart
-    return "\n\n".join("Interval [{}::{}]:\n{}".format(
-                        i, interval,
-                        _bar_chart(source, width, i, interval, pat, subt_tab))
-                            for i in range(interval))
+    return "Interval [{}::{}]:\n{}".format(
+                    start, interv,
+                    _bar_chart(source, width, start, interv, pat, subt_tab))
 
 # if called directly, do some analysis on source
 if __name__ == "__main__":

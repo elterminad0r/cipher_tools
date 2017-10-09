@@ -108,16 +108,17 @@ def int_in_range(start, stop):
 # anything, instead returning anything they wish the user to see (printing
 # would be text-interface presumptive)
 
-@restrict_args(pkw=["width", "interval", "pat", "info"])
-def show_freq(state, width=None, interval=None, pat=None, info=None):
+@restrict_args(pkw=["width", "interv", "pat", "info"])
+def show_freq(state, width=None, interv=None, pat=None, info=None):
     """Display frequencies"""
     width = read_type(width, "width", float, 50)
-    interval = read_type(interval, "interval", int, 1)
+    interv = read_type(interv, "interv", int, 0)
     info = read_type(info, "info", bool, False)
     pat = read_type(pat, "pat", str, r"[a-zA-Z]")
     try:
-        result = bar_chart(state.source, width=width, interval=interval,
-                           pat=pat, subt_tab=state.subs, info=info)
+        result = bar_chart(state.source, width=width, start=interv,
+                           pat=pat, subt_tab=state.subs, info=info,
+                           interv=state.intersperse[0])
     except re.error:
         raise UIError("invalid regex: {!r}".format(pat))
     return "Here are the frequencies:\n{}\n".format(result)
@@ -217,9 +218,10 @@ def caesar(state, sub):
         raise UIError("Caesar only works for upper to lower")
     k, v = map(ord, sub.lower())
     delta = v - k
-    return " ".join(shlex.quote("{}{}".format(c.upper(),
+    return "delta {}: {}".format(delta, 
+                 " ".join(shlex.quote("{}{}".format(c.upper(),
                         chr((ord(c) + delta - ord("a")) % 26 + ord("a"))))
-                     for c in string.ascii_lowercase)
+                     for c in string.ascii_lowercase))
 
 @restrict_args()
 def undo(state):
