@@ -207,6 +207,20 @@ def show_stack(state):
                         for kv in sorted(sub.items()))
                      for sub in state.substack)
 
+@restrict_args(pos=[2])
+def caesar(state, sub):
+    """Generate suggestions for a caesar cipher based on a substitution"""
+    if len(sub) != 2:
+        raise UIError("Invalid substitution {!r}".format(sub))
+    k, v = sub
+    if not (k.isupper() and v.islower()):
+        raise UIError("Caesar only works for upper to lower")
+    k, v = map(ord, sub.lower())
+    delta = v - k
+    return " ".join(shlex.quote("{}{}".format(c.upper(),
+                        chr((ord(c) + delta - ord("a")) % 26 + ord("a"))))
+                     for c in string.ascii_lowercase)
+
 @restrict_args()
 def undo(state):
     """Undo the last substitution"""

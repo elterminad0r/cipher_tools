@@ -21,7 +21,7 @@ from interface_framework import (CipherState, UIError, restrict_args,
                                  show_subbed, show_source, show_table,
                                  general_info, reset_sub, show_runs,
                                  show_words, table_missing, show_stats,
-                                 undo, show_stack)
+                                 undo, show_stack, caesar)
 
 # regex matching an option. assumes option has been shlexed
 opt_pat = re.compile(r"^-(.*?)=(.*)$")
@@ -87,8 +87,9 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("general", "g"), general_info),
             (("info", "stats", "i"), show_stats),
             (("clear", "reset", "c"), reset_sub),
+            (("caesar", "z"), caesar),
             (("help", "h"), show_help),
-            (("undo", "z"), undo),
+            (("undo", "u"), undo),
             (("history", "stack"), show_stack),
             (("quit", "exit", "q"), exit_p)]
 
