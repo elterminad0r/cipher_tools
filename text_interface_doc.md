@@ -37,7 +37,9 @@ The next thing the script will do is display the following help message (or a sl
 
 This gives a quick, pretty terse summary of command syntax. To expand on it a little bit:
 
-The "default" way the script tries to interpret anything you do is as a series of substitutions. This follows the convention of pairs of letters representing a substitution from the first to the second (ie `Ab` means `A` becomes `b`). You can give many at once, generally separated by whitespace. It is case sensitive and accepts any character (not just alphabetical ones).
+The "default" way the script tries to interpret anything you do is as a series of substitutions. This follows the convention of pairs of letters representing a substitution from the first to the second (ie `Ab` means `A` becomes `b`).
+
+You can give many at once, generally separated by whitespace. It is case sensitive and accepts any character (not just alphabetical ones).
 
 Technically how the parsing works is by a `sh`-like argument parser (`shlex.split`), so if you want to use quotes you should escape them (either by in turn quoting them or using a backslash `\\`) or substitute whitespace, you can use `sh` syntax, eg `" ,"`.
 
