@@ -21,7 +21,7 @@ from interface_framework import (CipherState, UIError, restrict_args,
                                  show_subbed, show_source, show_table,
                                  general_info, reset_sub, show_runs,
                                  show_words, table_missing, show_stats,
-                                 undo, show_stack, caesar)
+                                 undo, show_stack, caesar, set_interval)
 
 # regex matching an option. assumes option has been shlexed
 opt_pat = re.compile(r"^-(.*?)=(.*)$")
@@ -81,7 +81,7 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("runs", "r"), show_runs),
             (("delete", "remove", "x"), delete_sub),
             (("print", "p"), show_subbed),
-            (("source", "s"), show_source),
+            (("orig", "source", "o"), show_source),
             (("table", "t"), show_table),
             (("missing", "m"), table_missing),
             (("general", "g"), general_info),
@@ -90,6 +90,7 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("caesar", "z"), caesar),
             (("help", "h"), show_help),
             (("undo", "u"), undo),
+            (("skip", "interval", "s"), undo),
             (("history", "stack"), show_stack),
             (("quit", "exit", "q"), exit_p)]
 
@@ -117,7 +118,7 @@ A command can be given arguments, as space-separated words after the command.
 # pattern that matches a command (anything starting in an exclamation mark
 # followed by letters and a word boundary
 # TODO find pipe and add a
-com_pat = re.compile(r"^([0-9]*)!([a-z]+)\b(.*)$")
+com_pat = re.compile(r"^([0-9]*|a)!([a-z]+)\b(.*)$")
 
 def parse_com(com):
     """
@@ -143,9 +144,9 @@ def run():
         sys.exit("sys.stdin must be a tty as this is an interactive script")
     # initialise the state
     state = CipherState(source=read_file(),
-                        subs={},
+                        subs=[{}],
                         intersperse=[1],
-                        substack=[{}])
+                        substack=[[{}]])
     print(show_help(state))
     while True:
         try:

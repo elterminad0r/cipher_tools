@@ -209,6 +209,14 @@ def show_stack(state):
                      for sub in state.substack)
 
 @restrict_args(pos=[2])
+def set_interval(state, interval):
+    interval = read_type(interval, "interval", int, 1)
+    if interval < 1:
+        raise UIError("Nonsensical interval {!r}".format(interval))
+    state.intersperse[:] = [interval]
+    return "successfully set interval to {}".format(inteval)
+
+@restrict_args(pos=[2])
 def caesar(state, sub):
     """Generate suggestions for a caesar cipher based on a substitution"""
     if len(sub) != 2:

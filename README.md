@@ -14,10 +14,12 @@ Here is a quick guide to installation and execution:
 
 If you're a command line user, you can safely ignore and just clone and pull, and run `text_interface` from the CLI.
 
+(NB the following two MD files are currently out of date)
+
 For more on how `text_interface.py` works, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md) MD file.
 
 For documentation on each function, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md) MD file.
 
-You can also try looking at the source files in `src` - they're now pretty well documented inline.
+You can also try looking at the source files in `src` - they're now pretty well documented inline. This will be more technical, terse, and may require some knowledge of Python but is guaranteed to be up to date.
 
 At this point I would rate the whole affair as borderline operational. However, it's still woefully unprepared for anything but a simple substitution cipher. This is something I'm working on.
