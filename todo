@@ -4,11 +4,9 @@ gui?
 
 documentation
 
-debug undo substitutions
-
 - update docs regarding !freq
 
-- more poly based arithmetic
+- more poly based arithmetic (polyalphabetic support)
 
 - caesar cipher recommendations
 

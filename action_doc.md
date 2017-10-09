@@ -137,6 +137,8 @@ the result becomes:
 
     !word|w            - Find words matching a prototype - (pos=[2], pkw=[])
 
+This command will find a word matching a certain pattern. More strictly:
+
 Greps through a dictionary of words to find words matching a given "prototype". The prototype spec is designed so that you can just paste in a word from the source, eg "GRZCGNGVBA". This will be interpreted as that all letters in the same location as a `G` must be the same, all letters in the same location as an `R`, etc. The characters used are in this case arbitrary - they could just as well be `1`, `2`.. etc. The last feature the has is that you can specify an "absolute" letter. This is when you know (or suspect) what a letter could be (for example by frequency analysis). To do this, you should pass in a string where this letter is escaped by a backslash. Because of the nature of `sh`-argument syntax, you then also have to escape it with quotes, otherwise `shlex` will eat the backslash. Here are two examples:
 
     Enter a command/substitutions > !w GRZCGNGVBA

@@ -115,7 +115,7 @@ A command can be given arguments, as space-separated words after the command.
 
 # pattern that matches a command (anything starting in an exclamation mark
 # followed by letters and a word boundary
-com_pat = re.compile(r"^!([a-z]+)\b(.*)$")
+com_pat = re.compile(r"^([0-9]*)!([a-z]+)\b(.*)$")
 
 def parse_com(com):
     """
@@ -125,7 +125,8 @@ def parse_com(com):
     match = com_pat.match(com)
     if match:
         try:
-            return match.group(1), parse_options(shlex.split(match.group(2)))
+            print("targeting group {}".format(match.group(1)))
+            return match.group(2), parse_options(shlex.split(match.group(3)))
         except ValueError as ve:
             raise UIError(ve)
     else:
