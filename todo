@@ -4,6 +4,8 @@ gui?
 
 documentation
 
+debug undo substitutions
+
 - update docs regarding !freq
 
 - more poly based arithmetic

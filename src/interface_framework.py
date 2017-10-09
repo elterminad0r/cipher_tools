@@ -13,6 +13,7 @@ import sys
 import re
 import textwrap
 import string
+import shlex
 
 from collections import namedtuple
 
@@ -31,7 +32,9 @@ sub_dishooks = [_make_subs, _alt_subs, _under_subs]
 # signatures, letting functions just look for their own stuff.
 CipherState = namedtuple("CipherState",
                         ["source",
-                         "subs"])
+                         "subs",
+                         "intersperse",
+                         "substack"])
 
 class UIError(Exception):
     """
@@ -196,6 +199,24 @@ def general_info(state):
             show_source(state),
             show_table(state),
             show_subbed(state)])
+
+@restrict_args()
+def show_stack(state):
+    return "\n".join(
+                " ".join(shlex.quote("{}{}".format(*kv))
+                        for kv in sorted(sub.items()))
+                     for sub in state.substack)
+
+@restrict_args()
+def undo(state):
+    """Undo the last substitution"""
+    if len(state.substack) > 1:
+        state.substack.pop()
+        state.subs.clear()
+        state.subs.update(state.substack[-1])
+        return show_table(state)
+    else:
+        return "Nothing to undo"
 
 @restrict_args()
 def show_stats(state):

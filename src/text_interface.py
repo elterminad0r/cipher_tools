@@ -20,7 +20,8 @@ from interface_framework import (CipherState, UIError, restrict_args,
                                  show_freq, show_doubles, delete_sub,
                                  show_subbed, show_source, show_table,
                                  general_info, reset_sub, show_runs,
-                                 show_words, table_missing, show_stats)
+                                 show_words, table_missing, show_stats,
+                                 undo, show_stack)
 
 # regex matching an option. assumes option has been shlexed
 opt_pat = re.compile(r"^-(.*?)=(.*)$")
@@ -70,6 +71,7 @@ def update_table(state, new):
                 "warning - the letter {} does not appear anywhere in the source text"
                                 .format(k))
         state.subs[k] = v
+    state.substack.append(state.subs.copy())
     return "\n".join(out_t)
 
 # The list of commands, their aliases, and their resulting functions.
@@ -86,6 +88,8 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("info", "stats", "i"), show_stats),
             (("clear", "reset", "c"), reset_sub),
             (("help", "h"), show_help),
+            (("undo", "z"), undo),
+            (("history", "stack"), show_stack),
             (("quit", "exit", "q"), exit_p)]
 
 def format_commands(commands):
@@ -136,7 +140,9 @@ def run():
         sys.exit("sys.stdin must be a tty as this is an interactive script")
     # initialise the state
     state = CipherState(source=read_file(),
-                        subs={})
+                        subs={},
+                        intersperse=1,
+                        substack=[{}])
     print(show_help(state))
     while True:
         try:
