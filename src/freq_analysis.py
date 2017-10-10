@@ -40,8 +40,11 @@ def IOC(cnt, total):
     computed (even inline), but I know the calling function has done this
     computation so will reuse that.
     """
-    return (sum(freq ** 2 - freq for freq in cnt.values())
-         / (total ** 2 - total))
+    if total:
+        return (sum(freq ** 2 - freq for freq in cnt.values())
+             / (total ** 2 - total))
+    else:
+        return -1
 
 def _bar_chart(source, width, start, interval, pat, subs):
     """

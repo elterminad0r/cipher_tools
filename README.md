@@ -14,7 +14,7 @@ Here is a quick guide to installation and execution:
 
 If you're a command line user, you can safely ignore and just clone and pull, and run `text_interface` from the CLI.
 
-(NB the following two MD files are currently way out of date. However, as updates *should* generally act as a superset over previous versions, you can refer to them both. Especially the syntax described of `text_interface` still works, but beware there exists some more syntax now to support polyalphabetism (currently best reference point is `com_pat` and `parse_com` in [source](https://github.com/elterminad0r/cipher_tools/blob/e449797809dacf1f3c5d6380673cb087d8825a6b/src/text_interface.py#L106). Also, know that some function names have changed - the help message will always be exactly correct as it is generated from the actual commands in memory)
+NB the following two MD files are currently way out of date. However, as updates *should* generally act as a superset over previous versions, you can refer to them both. Especially the syntax described of `text_interface` still works, but beware there exists some more syntax now to support polyalphabetism (currently best reference point is `com_pat` and `parse_com` in [source](https://github.com/elterminad0r/cipher_tools/blob/e449797809dacf1f3c5d6380673cb087d8825a6b/src/text_interface.py#L106). Also, know that some function names have changed - the help message will always be exactly correct as it is generated from the actual commands in memory).
 
 For more on how `text_interface.py` works, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md) MD file.
 

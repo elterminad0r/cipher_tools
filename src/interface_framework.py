@@ -232,11 +232,10 @@ def show_stack(state, interv=None):
 def set_interval(state, interval):
     """Set the current interval"""
     interval = read_type(interval, "interval", pos_int, 1)
-    if interval < 1:
-        raise UIError("Nonsensical interval {!r}".format(interval))
     state.intersperse[:] = [interval]
+    state.substack[:] = [[{}] for _ in range(interval)]
     state.subs[:] = [{} for _ in range(interval)]
-    return ("successfully set interval to {},\nand reset subtables"
+    return ("successfully set interval to {},\nand reset subtables and history"
                 .format(interval))
 
 @restrict_args(pos=[2])
@@ -273,11 +272,11 @@ def show_stats(state):
         return stats.read()
 
 @restrict_args(pkw=["interv"])
-def reset_sub(state):
+def reset_sub(state, interv=None):
     """Reset (clear) the subtable"""
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
     state.subs[interv].clear()
-    return "Resetting entire substitution table"
+    return "Resetting entire substitution table in itv {}".format(interv)
 
 # Here are a couple more utility functions interfacing with commands
 
@@ -305,4 +304,5 @@ def update_table(state, *new, interv=None):
                                 .format(k))
         state.subs[interv][k] = v
     state.substack[interv].append(state.subs[interv].copy())
+    out_t.append("updated subtable:\n{}".format(show_table(state, interv=interv)))
     return "\n".join(out_t)

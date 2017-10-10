@@ -60,7 +60,7 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("runs", "r"), show_runs),
             (("delete", "remove", "x"), delete_sub),
             (("print", "p"), show_subbed),
-            (("orig", "source", "o"), show_source),
+            (("original", "orig", "source", "o"), show_source),
             (("table", "t"), show_table),
             (("missing",), table_missing),
             (("info", "stats", "i"), show_stats),
@@ -69,8 +69,8 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("caesar", "z"), caesar),
             (("help", "h"), show_help),
             (("undo", "u"), undo),
-            (("skip", "interval", "s"), set_interval),
-            (("history", "stack"), show_stack),
+            (("skip", "interval", "interv", "s"), set_interval),
+            (("history", "hist", "stack"), show_stack),
             (("quit", "exit", "q"), exit_p)]
 
 # assert there are no duplicate commands
@@ -148,6 +148,7 @@ def run():
                         # handling functions that operate on intervals
                         if interv == "a":
                             for it in range(state.intersperse[0]):
+                                print("Executing for interv={}".format(it))
                                 print(fun(state, *args, interv=it, **kwargs))
                         elif interv:
                             try:
@@ -175,7 +176,6 @@ def run():
                 except ValueError as ve:
                     raise UIError(ve)
                 print(update_table(state, *insubs, interv=0))
-                print(show_table(state, interv=0))
 
         # friendly interfacing for a UIError
         except UIError as uie:
