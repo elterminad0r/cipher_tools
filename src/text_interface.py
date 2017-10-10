@@ -13,15 +13,17 @@ import sys
 import re
 import textwrap
 
+from collections import Counter
+
 from input_handling import read_file
 from make_subs import parse_subs
 
-from interface_framework import (CipherState, UIError, restrict_args,
-                                 show_freq, show_doubles, delete_sub,
-                                 show_subbed, show_source, show_table,
-                                 reset_sub, show_runs, show_words,
+from interface_framework import (CipherState, UIError, DummyCount,
+                                 restrict_args, show_freq, show_doubles,
+                                 delete_sub, show_subbed, show_source,
+                                 show_table, reset_sub, show_runs, show_words,
                                  table_missing, show_stats, undo, show_stack,
-                                 caesar, set_interval)
+                                 caesar, set_interval, exit_p, update_table)
 
 # regex matching an option. assumes option has been shlexed
 opt_pat = re.compile(r"^-(.*?)=(.*)$")
@@ -44,35 +46,12 @@ def parse_options(opts):
             arg_acc.append(opt)
     return opt_acc, arg_acc
 
-# Here are a couple more utility functions interfacing with commands, but that
-# are so specific to the textual interface they're better defined here. They
-# follow the same docstring convention as in interface_framework
+# A command more closely tied to the text interface - still follows the same conventions
 
 @restrict_args()
 def show_help(state):
     """Show help message"""
     return usage
-
-@restrict_args()
-def exit_p(state):
-    """Exit the program"""
-    sys.exit()
-
-@restrict_args(pos=[2])
-def update_table(state, new):
-    out_t = []
-    for k, v in new.items():
-        if k in state.subs:
-            out_t.append(
-                "warning - the value of {} is being changed to {} (it was {})"
-                                .format(k, v, state.subs[k]))
-        if k not in state.source:
-            out_t.append(
-                "warning - the letter {} does not appear anywhere in the source text"
-                                .format(k))
-        state.subs[k] = v
-    state.substack.append(state.subs.copy())
-    return "\n".join(out_t)
 
 # The list of commands, their aliases, and their resulting functions.
 commands = [(("frequency", "freq", "f"), show_freq),
@@ -83,9 +62,10 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("print", "p"), show_subbed),
             (("orig", "source", "o"), show_source),
             (("table", "t"), show_table),
-            (("missing", "m"), table_missing),
+            (("missing",), table_missing),
             (("info", "stats", "i"), show_stats),
             (("clear", "reset", "c"), reset_sub),
+            (("make", "sub", "m"), update_table),
             (("caesar", "z"), caesar),
             (("help", "h"), show_help),
             (("undo", "u"), undo),
@@ -96,7 +76,8 @@ commands = [(("frequency", "freq", "f"), show_freq),
 # assert there are no duplicate commands
 if __debug__:
     uniq_commands = [i for l in commands for i in l[0]]
-    assert len(uniq_commands) == len(set(uniq_commands))
+    if uniq_commands:
+        assert len(uniq_commands) == len(set(uniq_commands))
     print("successfully initialised")
 
 def format_commands(commands):
@@ -187,12 +168,14 @@ def run():
                             .format(com))
             # if it's to be treated as substitutions
             else:
+                if state.intersperse[0] != 1:
+                    raise UIError("In polyalphabetic mode use !m")
                 try:
-                    insubs = parse_subs(pargs)
+                    insubs = shlex.split(pargs)
                 except ValueError as ve:
                     raise UIError(ve)
-                print(update_table(state, insubs))
-                print(show_table(state))
+                print(update_table(state, *insubs, interv=0))
+                print(show_table(state, interv=0))
 
         # friendly interfacing for a UIError
         except UIError as uie:

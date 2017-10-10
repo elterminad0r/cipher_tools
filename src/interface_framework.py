@@ -276,3 +276,33 @@ def reset_sub(state):
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
     state.subs[interv].clear()
     return "Resetting entire substitution table"
+
+# Here are a couple more utility functions interfacing with commands
+
+@restrict_args()
+def exit_p(state):
+    """Exit the program"""
+    sys.exit()
+
+@restrict_args(pos=DummyCount(), pkw=["interv"])
+def update_table(state, *new, interv=None):
+    """Update subtable with given arguments"""
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    out_t = []
+    for kv in new:
+        if len(kv) != 2:
+            raise UIError("Non-pair encountered - {!r}".format(kv))
+        k, v = kv
+        if k in state.subs[interv]:
+            out_t.append(
+                "warning - the value of {} is being changed to {} (it was {})"
+                                .format(k, v, state.subs[interv][k]))
+        if k not in state.source:
+            out_t.append(
+                "warning - the letter {} does not appear anywhere in the source text"
+                                .format(k))
+        state.subs[interv][k] = v
+    state.substack[interv].append(state.subs.copy())
+    return "\n".join(out_t)
+
+

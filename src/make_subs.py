@@ -25,7 +25,9 @@ def parse_subs(subs):
     Parse shlex-like subs into dictionary
     """
     out = {}
-    for pair in shlex.split(subs):
+    args = shlex.split(subs)
+
+    for pair in args:
         if len(pair) != 2:
             raise ValueError("Non-pair encountered: {}".format(pair))
         k, v = pair
