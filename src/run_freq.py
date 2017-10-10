@@ -8,7 +8,6 @@ or triplets of letters are well known to occur frequently in English.
 ################################################################################
 
 from input_handling import read_file
-from make_subs import make_subs
 
 from collections import Counter
 
@@ -18,7 +17,7 @@ def get_runs(source, length):
     """
     return (source[i:i + length] for i in range(len(source) - length + 1))
 
-def run_chart(source, length, maxdisplay, width, subs={}):
+def run_chart(source, length, maxdisplay, width):
     """
     Generate a more visual chart of runs.
     """
@@ -30,9 +29,9 @@ def run_chart(source, length, maxdisplay, width, subs={}):
     longest_run = max(len("{!r}".format(run)) for run in count)
     longest_i = max(len("{}".format(freq)) for freq in count.values())
     # various padding referred to
-    return "\n".join("run {!r:{l}} (-> {!r:{l}}) {:{il}} times ({:6.2%}) {}"
+    return "\n".join("run {!r:{l}} {:{il}} times ({:6.2%}) {}"
                     .format(
-                        run, make_subs(run, subs), freq, freq / total,
+                        run, freq, freq / total,
                         "-" * int(width * freq / most),
                         # provide padding values
                         l=longest_run, il=longest_i)

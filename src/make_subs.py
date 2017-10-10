@@ -12,7 +12,7 @@ doubles of characters.
 import sys
 import re
 import shlex
-
+import itertools
 import string
 
 from input_handling import read_file
@@ -37,17 +37,17 @@ def _make_subs(source, subs):
     Default display hook for subs - if a ciphertext key is not found in the
     table, just leave it as is
     """
-    for ch in source:
-        yield subs.get(ch, ch)
+    for ch, subtable in zip(source, itertools.cycle(subs)):
+        yield subtable.get(ch, ch)
 
 def _alt_subs(source, subs):
     """
     Alternative display hook where substitutions are made explicit by a
     backslash. Can be useful if there's ambiguity.
     """
-    for ch in source:
-        if ch in subs:
-            yield "\\{}".format(subs[ch])
+    for ch, subtable in zip(source, itertools.cycle(subs)):
+        if ch in subtable:
+            yield "\\{}".format(subtable[ch])
         else:
             yield ch
 
@@ -57,9 +57,9 @@ def _under_subs(source, subs):
     parenthesised special characters). Can be useful to try and get a better
     look at words without the distraction of stray ciphertext
     """
-    for ch in source:
-        if ch in subs:
-            yield subs[ch]
+    for ch, subtable in zip(source, itertools.cycle(subs)):
+        if ch in subtable:
+            yield subtable[ch]
         elif ch in alpha_set:
             yield "_"
         else:

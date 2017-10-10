@@ -19,9 +19,9 @@ from make_subs import parse_subs
 from interface_framework import (CipherState, UIError, restrict_args,
                                  show_freq, show_doubles, delete_sub,
                                  show_subbed, show_source, show_table,
-                                 general_info, reset_sub, show_runs,
-                                 show_words, table_missing, show_stats,
-                                 undo, show_stack, caesar, set_interval)
+                                 reset_sub, show_runs, show_words,
+                                 table_missing, show_stats, undo, show_stack,
+                                 caesar, set_interval)
 
 # regex matching an option. assumes option has been shlexed
 opt_pat = re.compile(r"^-(.*?)=(.*)$")
@@ -84,15 +84,20 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("orig", "source", "o"), show_source),
             (("table", "t"), show_table),
             (("missing", "m"), table_missing),
-            (("general", "g"), general_info),
             (("info", "stats", "i"), show_stats),
             (("clear", "reset", "c"), reset_sub),
             (("caesar", "z"), caesar),
             (("help", "h"), show_help),
             (("undo", "u"), undo),
-            (("skip", "interval", "s"), undo),
+            (("skip", "interval", "s"), set_interval),
             (("history", "stack"), show_stack),
             (("quit", "exit", "q"), exit_p)]
+
+# assert there are no duplicate commands
+if __debug__:
+    uniq_commands = [i for l in commands for i in l[0]]
+    assert len(uniq_commands) == len(set(uniq_commands))
+    print("successfully initialised")
 
 def format_commands(commands):
     """
@@ -117,7 +122,6 @@ A command can be given arguments, as space-separated words after the command.
 
 # pattern that matches a command (anything starting in an exclamation mark
 # followed by letters and a word boundary
-# TODO find pipe and add a
 com_pat = re.compile(r"^([0-9]*|a)!([a-z]+)\b(.*)$")
 
 def parse_com(com):

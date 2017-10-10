@@ -41,7 +41,7 @@ The "default" way the script tries to interpret anything you do is as a series o
 
 You can give many at once, generally separated by whitespace. It is case sensitive and accepts any character (not just alphabetical ones).
 
-Technically how the parsing works is by a `sh`-like argument parser (`shlex.split`), so if you want to use quotes you should escape them (either by in turn quoting them or using a backslash `\\`) or substitute whitespace, you can use `sh` syntax, eg `" ,"`.
+Technically how the parsing works is by a `sh`-like argument parser (`shlex.split`), so if you want to use quotes you should escape them (either by in turn quoting them or using a backslash `\\`) or substitute whitespace, you can use `sh` syntax, eg `" ,"`. This is entirely unimportant unless you want to substitute a special character (ie a space, quote or backlash).
 
 Here is how you might add some substitutions:
 
