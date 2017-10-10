@@ -221,6 +221,7 @@ def table_missing(state, interv=None,
 
 @restrict_args(pkw=["interv"])
 def show_stack(state, interv=None):
+    """Show current command history"""
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
     return "\n".join(
                 " ".join(shlex.quote("{}{}".format(*kv))
@@ -229,6 +230,7 @@ def show_stack(state, interv=None):
 
 @restrict_args(pos=[2])
 def set_interval(state, interval):
+    """Set the current interval"""
     interval = read_type(interval, "interval", pos_int, 1)
     if interval < 1:
         raise UIError("Nonsensical interval {!r}".format(interval))
@@ -302,7 +304,5 @@ def update_table(state, *new, interv=None):
                 "warning - the letter {} does not appear anywhere in the source text"
                                 .format(k))
         state.subs[interv][k] = v
-    state.substack[interv].append(state.subs.copy())
+    state.substack[interv].append(state.subs[interv].copy())
     return "\n".join(out_t)
-
-

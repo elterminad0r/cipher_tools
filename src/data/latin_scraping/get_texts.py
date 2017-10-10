@@ -16,6 +16,7 @@ def show_author_links(auth, d=0):
 
     try:
         pref = Counter(i.split("/")[0] for i in pages).most_common(1)[0][0]
+
     except IndexError as e:
         if d < 3:
             sys.stderr.write("err on {}, waiting\n".format(auth))

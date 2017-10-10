@@ -8,6 +8,8 @@ documentation - regarding new commands
 
 - more poly based arithmetic (polyalphabetic support)
 
+major testing for polyalphabetism
+
 - caesar cipher recommendations
 
 - Identify a simple transposition cipher because letter frequency (broadly) matches expected letter frequency 
@@ -20,3 +22,5 @@ documentation - regarding new commands
 - Function to deal with playfair table and rules (?)
 - Autokey identification (?)
 - One-time pad using previous plaintext as a key (if they feel really sadistic)
+
+"stijn encryption"
