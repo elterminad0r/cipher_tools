@@ -4,7 +4,10 @@
 A framework to provide interface functions to other scripts in directory. In
 theory this shouldn't be bound to any particular *user* interface, so a
 separate script exists to provide textual interface to the user. If I have time
-I might consider adding a GUI interface with tkinter.
+I might consider adding a GUI interface with tkinter. This program uses the
+model of a "CipherState" object to represent the state of a cryptanalyst's
+session. This inclused the source text, the current substitution tables, the
+polyalphabetic interval and substitution histories.
 """
 
 ################################################################################

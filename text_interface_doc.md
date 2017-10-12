@@ -97,3 +97,16 @@ Some functions also accept anonymous arguments - so far this is only used by `!d
 
     !x A B C
     !word "B\h\aV\e"
+
+
+# Now with new and improved polyalphabetic support!
+
+Some functions also support polyalphabetic mode. These functions can accept the keyword arg `interv`:
+
+    !f -interv=1
+
+Or you can use the following special shorthand:
+
+    1!f
+
+The command `!s` can be used to set the polyalphabetic interval. In polyalphabetic mode, multiple substitution tables must be tracked. Because of this, you can't just enter substitutions directly anymore. They must be fed to the `!m` command (this has been here all along, but in single mode direct entry acts a shortcut to `!m`). The `!m` command requires an `interv` (which can be done with the `{num}!m` syntax), and then the familiar old substitution arguments.
