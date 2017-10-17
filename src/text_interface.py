@@ -13,6 +13,11 @@ import sys
 import re
 import textwrap
 
+try:
+    import readline
+except ImportError:
+    print("FAILED TO IMPORT READLINE (nonfatal)")
+
 from collections import Counter
 
 from input_handling import read_file
