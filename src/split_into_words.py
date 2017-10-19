@@ -1,5 +1,18 @@
+"""
+Utility/convenience script to perform heuristic splitting on dense text
+"""
+
 import sys
+import argparse
+import textwrap
+
 from collections import defaultdict
+
+def parse_args():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("-d", "--dump", action="store_true",
+                            help="pprint a tree dump")
+    return parser.parse_args()
 
 class PrefixTree:
     """
@@ -23,9 +36,17 @@ class PrefixTree:
             # if the word is empty, this is the end node
             self.is_end = True
 
-    # easy repr of tree (TODO build proper string representation)
+    # easy repr of tree
     def __repr__(self):
         return "PrefixTree(end={!r}, children={!r})".format(self.is_end, self.children)
+
+    # a slightly more tree-like representation of the tree
+    def __str__(self):
+        return textwrap.indent(
+                        "\n".join(
+                            "└{}─{}".format(k, str(v).lstrip())
+                                    for k, v in self.children.items()),
+                        " ")
 
     # get the longest word you can find from a point in a collection of
     # characters. returns length of next word.
@@ -65,7 +86,13 @@ def split_words(preftree, dense_str):
         pos += nxt
 
 if __name__ == "__main__":
+    args = parse_args()
+    print("initialising..")
     preftree = build_pt()
-    for word in split_words(preftree, sys.stdin.read()):
-        print("{} ".format(word), end="")
-    print()
+    print("initialised")
+    if not args.dump:
+        for word in split_words(preftree, sys.stdin.read()):
+            print("{} ".format(word), end="")
+        print()
+    else:
+        print(preftree)
