@@ -1,3 +1,12 @@
+# file of auxiliary whitelisted and blacklisted words for usage in split...py
+# uses a little pseudo-syntax - anything starting with a caret ^ is blacklisted
+# anything starting with a # is a comment
+# anything else is whitelisted
+# _ is used in place of space for space whitelist hinting
+# the space hints are used especially to capitalise on the greedy nature of the
+# algorithm, by providing it with a longer option
+
+# general words for it to learn
 maryam
 boudicca
 londinium
@@ -21,6 +30,27 @@ hypatia
 eboracum
 camulodonum
 camulodunum
+bosphorus
+consulship
+manius
+acilius
+aviola
+corellius
+neratius
+pansa
+publius
+uncorrected
+tesserae
+sigint
+legio
+hispana
+
+de
+et
+
+moribus
+lulii
+Agricolae
 
 el
 khalili
@@ -38,7 +68,12 @@ ixth
 ii
 iith
 
+# massive number of space hints, categorised first by common first word and
+# then a big old pile
+
 to_the
+to_preserve
+to_protect
 to_you
 to_wonder
 to_work
@@ -55,6 +90,10 @@ to_meet
 to_gaius
 
 a_secret
+a_weight
+a_particularly
+a_very
+a_terror
 a_scytale
 a_thriving
 a_number
@@ -67,9 +106,11 @@ a_story
 a_similar
 a_time
 a_disaster
+a_deal
 a_tail
 
 for_the
+for_those
 for_centuries
 for_their
 for_more
@@ -79,6 +120,8 @@ will_see
 will_among
 
 of_the
+of_those
+of_truth
 of_troops
 of_fools
 of_that
@@ -87,12 +130,17 @@ of_this
 of_their
 
 the_ninth
+the_mosaic
+the_missing
+the_secret
+the_senate
+the_year
+the_network
 the_second
 the_most
 the_mountain
 the_majority
 the_reserve
-the_taverns
 the_rebellion
 the_region
 
@@ -113,6 +161,7 @@ over_the
 over_twenty
 
 no_doubt
+no_secret
 no_writing
 
 as_he
@@ -132,13 +181,23 @@ it_said
 it_seems
 
 i_found
+i_it
+i_plan
+i_must
+i_spread
+i_feel
+i_near
+i_sincerely
 i_suggest
 i_suppose
 i_think
 i_thought
 i_too
+i_took
 i_decided
 i_tried
+
+who_served
 
 my_suspicions
 
@@ -153,8 +212,13 @@ go_they
 and_yet
 
 be_guarded
+be_a
+be_stolen
 be_good
 be_told
+
+was_hinted
+was_picking
 
 bea_truth
 
@@ -175,7 +239,6 @@ his_suffering
 ten_to
 enemy_spy
 what_suetonius
-was_hinted
 final_stand
 pickup_some
 so_we
@@ -198,6 +261,14 @@ send_someone
 caesar_shift
 found_so
 are_several
+too_long
+hope_so
+large_stolen
+de_vita
+true_story
+cairo_seems
+
+# the blacklist of nonsense or unlikely words
 
 ^ac
 ^thee
@@ -264,3 +335,24 @@ are_several
 ^wed
 ^ams
 ^thebes
+^manys
+^hasp
+^mys
+^haves
+^clearinghouse
+^therewith
+^ah
+^tote
+^mosts
+^surprisings
+^asp
+^id
+^fromm
+^theta
+^mel
+^imus
+^ares
+^myst
+^sames
+^js
+^goa

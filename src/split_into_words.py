@@ -94,15 +94,18 @@ def build_pt():
     Build a prefix tree from data/words (local copy of /usr/share/dict/words
     """
     preftree = PrefixTree()
+    # build tree from words
     with open("data/words") as wordfile:
         for word in map(strip_punc, wordfile):
             preftree.add_word(word)
+    # special cased words, includes extra, deletions and space overloading
     with open("data/extra_words") as extrafile:
         for word in filter(None, map(str.lower, map(str.strip, extrafile))):
-            if word.startswith("^"):
-                preftree.remove_word(word, 1)
-            else:
-                preftree.add_word(word, 0)
+            if not word.startswith("#"):
+                if word.startswith("^"):
+                    preftree.remove_word(word, 1)
+                else:
+                    preftree.add_word(word, 0)
     return preftree
 
 def split_words(preftree, dense_str):
@@ -117,6 +120,8 @@ def split_words(preftree, dense_str):
         pos += len(strip_punc(nxt))
 
 if __name__ == "__main__":
+    if sys.stdin.isatty():
+        sys.exit("This is a command line script that requires STDIN")
     args = parse_args()
     start = time.time()
     print("initialising..")
