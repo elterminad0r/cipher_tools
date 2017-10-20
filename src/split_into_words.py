@@ -76,7 +76,7 @@ class PrefixTree:
             # check if any space-overloaded words are known
             space_res = ""
             if self.is_end:
-                space_res = " {}".format(self.children["_"].longest_word_from(chars, pos) or "")
+                space_res = " {}".format(self.children["_"].longest_word_from(chars, pos) or "").rstrip()
             # try to obtain a result from children (the longest possible word)
             if currchar in self.children:
                 child_result = self.children[currchar].longest_word_from(chars, pos + 1)
@@ -84,6 +84,8 @@ class PrefixTree:
                     return max("{}{}".format(currchar, child_result),
                                space_res,
                                key=len)
+                if space_res != "":
+                    return space_res
             if self.is_end:
                 return ""
 
