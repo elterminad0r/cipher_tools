@@ -5,8 +5,18 @@ Utility/convenience script to perform heuristic splitting on dense text
 import sys
 import argparse
 import textwrap
+import string
+import time
 
 from collections import defaultdict
+
+letter_set = set(string.ascii_lowercase + "_")
+
+def strip_punc(word):
+    """
+    Strip punctuation from word
+    """
+    return "".join(ch for ch in word.lower() if ch in letter_set)
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -63,14 +73,19 @@ class PrefixTree:
         if pos < len(chars):
             # get the character to inspect
             currchar = chars[pos]
+            # check if any space-overloaded words are known
+            space_res = ""
+            if self.is_end:
+                space_res = " {}".format(self.children["_"].longest_word_from(chars, pos) or "")
             # try to obtain a result from children (the longest possible word)
             if currchar in self.children:
                 child_result = self.children[currchar].longest_word_from(chars, pos + 1)
                 if child_result is not None:
-                    return 1 + child_result
-            # otherwise, if this itself is a valid word, return 0
+                    return max("{}{}".format(currchar, child_result),
+                               space_res,
+                               key=len)
             if self.is_end:
-                return 0
+                return ""
 
 def build_pt():
     """
@@ -78,8 +93,8 @@ def build_pt():
     """
     preftree = PrefixTree()
     with open("data/words") as wordfile:
-        for word in wordfile:
-            preftree.add_word(word.strip().lower())
+        for word in map(strip_punc, wordfile):
+            preftree.add_word(word)
     with open("data/extra_words") as extrafile:
         for word in filter(None, map(str.lower, map(str.strip, extrafile))):
             if word.startswith("^"):
@@ -96,14 +111,15 @@ def split_words(preftree, dense_str):
     pos = 0
     while pos < len(dense_str) - 1:
         nxt = preftree.longest_word_from(made_lower, pos)
-        yield "".join(made_lower[pos:pos + nxt])
-        pos += nxt
+        yield nxt
+        pos += len(strip_punc(nxt))
 
 if __name__ == "__main__":
     args = parse_args()
+    start = time.time()
     print("initialising..")
     preftree = build_pt()
-    print("initialised")
+    print("initialised (took {:.3f} secs)".format(time.time() - start))
     if not args.dump:
         for word in split_words(preftree, sys.stdin.read()):
             print("{} ".format(word), end="")
