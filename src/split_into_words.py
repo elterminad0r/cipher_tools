@@ -27,14 +27,22 @@ class PrefixTree:
         self.is_end = False
 
     # add a word to the tree, using recursive haskell-esque style
-    def add_word(self, word):
-        if word:
+    def add_word(self, word, pos=0):
+        if pos < len(word):
             # get first character and remainder, add to child
-            start, *word = word
-            self.children[start].add_word(word)
+            self.children[word[pos]].add_word(word, pos + 1)
         else:
             # if the word is empty, this is the end node
             self.is_end = True
+
+    # remove word from tree, by unsetting flag
+    def remove_word(self, word, pos=0):
+        # if this is the end node of this word
+        if pos == len(word):
+            self.is_end = False
+        # delegate to child nodes
+        else:
+            self.children[word[pos]].remove_word(word, pos + 1)
 
     # easy repr of tree
     def __repr__(self):
@@ -46,7 +54,7 @@ class PrefixTree:
                         "\n".join(
                             "└{}─{}".format(k, str(v).lstrip())
                                     for k, v in self.children.items()),
-                        " ")
+                        "  ")
 
     # get the longest word you can find from a point in a collection of
     # characters. returns length of next word.
@@ -72,6 +80,12 @@ def build_pt():
     with open("data/words") as wordfile:
         for word in wordfile:
             preftree.add_word(word.strip().lower())
+    with open("data/extra_words") as extrafile:
+        for word in filter(None, map(str.lower, map(str.strip, extrafile))):
+            if word.startswith("^"):
+                preftree.remove_word(word, 1)
+            else:
+                preftree.add_word(word, 0)
     return preftree
 
 def split_words(preftree, dense_str):
