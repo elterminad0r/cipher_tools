@@ -1,5 +1,15 @@
 # cipher\_tools
-A collection of programs to aid in cipher-cracking/cryptanalysis. If you use this and you're not a GW appreciator you're a disappointment and need to re-evaluate your life (beware as `eval` is unsafe).
+A collection of programs to aid in cipher-cracking/cryptanalysis. If you use this and you're not a GW appreciator you're a disappointment and need to re-evaluate your life (beware as `eval` is unsafe). Currently features, among other things:
+
+ - Pretty fully fledged textual interface, with exception handling and a functional model for commands/functions
+ - Frequency analysis (including IOC calculation)
+ - Substitution
+ - Some facilities for polyalphabetic analysis
+ - Analysis of frequently occurring runs of letters
+ - Hints for unsubstituted letters
+ - Display of expected frequency analysis
+ - Substitution table histories
+ - Utility to split an unpunctuated text into words, featuring blacklisting, whitelisting and space hinting
 
 These are, as it stands, text-based interfaces. Hopefully it should be possible to paste in input. They rely on an installation of Python 3 (I recommend 3.6). They might be runnable by clicking the script from a file explorer?
 
