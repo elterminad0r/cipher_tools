@@ -32,7 +32,7 @@ def pat_counter(source, pat, interval, start):
     Construct a histogram of a source text given interval to check and regex to
     match characters with.
     """
-    return Counter(re.findall(pat, source[start::interval]))
+    return Counter(re.findall(pat, source)[start::interval])
 
 def IOC(cnt, total):
     """

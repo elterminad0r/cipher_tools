@@ -37,10 +37,15 @@ def parse_subs(subs):
 def _make_subs(source, subs):
     """
     Default display hook for subs - if a ciphertext key is not found in the
-    table, just leave it as is
+    table, just leave it as is. It does make the assumption that keys are
+    alphabetical, which means it can cycle on punctuation.
     """
-    for ch, subtable in zip(source, itertools.cycle(subs)):
-        yield subtable.get(ch, ch)
+    inf_subs = itertools.cycle(subs)
+    for ch in source:
+        if ch in alpha_set:
+            yield next(inf_subs).get(ch, ch)
+        else:
+            yield ch
 
 def _alt_subs(source, subs):
     """

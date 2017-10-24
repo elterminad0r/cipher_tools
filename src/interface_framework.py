@@ -57,7 +57,7 @@ class UIError(Exception):
     """
     pass
 
-def restrict_args(pos=[1], pkw=[]):
+def restrict_args(pos=[1], pkw=[], doc_addendum=""):
     """
     Decorator factory to perform soft (nonfatal) argument restriction. Works on
     positional and keyword arguments
@@ -80,7 +80,8 @@ def restrict_args(pos=[1], pkw=[]):
                         This function was expecting any of the following number
                         of arguments: {}
                         but received {}""".format(pos, len(args)).split()))
-        fun.__doc__ = "{} - (pos={}, pkw={})".format(f.__doc__, pos, pkw)
+        fun.__doc__ = ("{}{} - (pos={}, pkw={})"
+                                    .format(f.__doc__, doc_addendum, pos, pkw))
         fun.pkw = pkw
         fun.pos = pos
         return fun
@@ -183,7 +184,10 @@ def delete_sub(state, *args, interv=None):
             out_t.append("could not find the key {}".format(k))
     return "{}\n{}".format("\n".join(out_t), show_table(state, interv=interv))
 
-@restrict_args(pkw=["alt", "interv"])
+@restrict_args(pkw=["alt", "interv"],
+    doc_addendum=(" - possible displayhooks {}"
+                        .format(" ".join("{}-{}".format(ind, i.__name__)
+                                for ind, i in enumerate(sub_dishooks)))))
 def show_subbed(state, alt=None):
     """Show the subbed source"""
     alt = read_type(alt, "alt", int_in_range(0, len(sub_dishooks)), False)

@@ -30,6 +30,16 @@ from interface_framework import (CipherState, UIError, DummyCount,
                                  table_missing, show_stats, undo, show_stack,
                                  caesar, set_interval, exit_p, update_table)
 
+def verify_exit():
+    """
+    Verify if a user really wants to exit
+    """
+    try:
+        do_ex = input("\nare you sure you want to exit? ").lower()
+        return not do_ex or do_ex[0] == "y"
+    except (KeyboardInterrupt, EOFError):
+        return True
+
 # regex matching an option. assumes option has been shlexed
 opt_pat = re.compile(r"^-(.*?)=(.*)$")
 
@@ -83,7 +93,8 @@ if __debug__:
     uniq_commands = [i for l in commands for i in l[0]]
     if uniq_commands:
         assert len(uniq_commands) == len(set(uniq_commands))
-    print("successfully initialised")
+
+print("successfully initialised")
 
 def format_commands(commands):
     """
@@ -141,7 +152,7 @@ def run():
     while True:
         try:
             # parse command
-            com, pargs, interv = parse_com(input("prompt {}$ ".format(state.intersperse[0])))
+            com, pargs, interv = parse_com(input("cipher_tools {}$ ".format(state.intersperse[0])))
             # if it's a command
             if com:
                 # look for the corresponding action
@@ -182,6 +193,11 @@ def run():
                     raise UIError(ve)
                 print(update_table(state, *insubs, interv=0))
 
+        except (KeyboardInterrupt, EOFError):
+            if verify_exit():
+                print("bye")
+                break
+
         # friendly interfacing for a UIError
         except UIError as uie:
             print("The following error occurred: {}".format(uie))
@@ -193,4 +209,5 @@ def run():
 
 # if called directly, run
 if __name__ == "__main__":
+    print("running {}".format(sys.version))
     run()

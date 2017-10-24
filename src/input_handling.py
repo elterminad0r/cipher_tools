@@ -10,6 +10,11 @@ accessibility
 
 import sys
 
+try:
+    import readline
+except ImportError:
+    print("FAILURE (noncritical) - readline import failed")
+
 # long usage message for _from_tty
 tty_msg = " ".join("""\
 Manual file entry: paste in the file, or type it in line by line. When you're
