@@ -22,6 +22,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-d", "--dump", action="store_true",
                             help="pprint a tree dump")
+    parser.add_argument("--nltk", action="store_true",
+                            help="use nltk word corpus")
     return parser.parse_args()
 
 class PrefixTree:
@@ -89,15 +91,29 @@ class PrefixTree:
             if self.is_end:
                 return ""
 
-def build_pt():
+def build_pt(args):
     """
     Build a prefix tree from data/words (local copy of /usr/share/dict/words
     """
     preftree = PrefixTree()
+
     # build tree from words
-    with open("data/words") as wordfile:
-        for word in map(strip_punc, wordfile):
+    try:
+        if not args.nltk:
+            print("not using nltk")
+            raise ImportError
+        print("trying to use nltk")
+        import nltk
+    except ImportError:
+        print("final not using")
+        with open("data/words") as wordfile:
+            for word in map(strip_punc, wordfile):
+                preftree.add_word(word)
+    else:
+        print("using nltk")
+        for word in nltk.corpus.words.words():
             preftree.add_word(word)
+
     # special cased words, includes extra, deletions and space overloading
     with open("data/extra_words") as extrafile:
         for word in filter(None, map(str.lower, map(str.strip, extrafile))):
@@ -125,7 +141,7 @@ if __name__ == "__main__":
     args = parse_args()
     start = time.time()
     print("initialising..")
-    preftree = build_pt()
+    preftree = build_pt(args)
     print("initialised (took {:.3f} secs)".format(time.time() - start))
     if not args.dump:
         for word in split_words(preftree, sys.stdin.read()):
