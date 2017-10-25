@@ -14,3 +14,5 @@ betting on this
 - One-time pad using previous plaintext as a key (if they feel really sadistic)
 
 "stijn encryption"
+
+add mutable class for use with namedtuple
