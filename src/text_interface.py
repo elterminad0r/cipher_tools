@@ -28,7 +28,8 @@ from interface_framework import (CipherState, UIError, DummyCount,
                                  delete_sub, show_subbed, show_source,
                                  show_table, reset_sub, show_runs, show_words,
                                  table_missing, show_stats, undo, show_stack,
-                                 caesar, set_interval, exit_p, update_table)
+                                 caesar, set_interval, exit_p, update_table,
+                                 Mutable)
 
 def verify_exit():
     """
@@ -146,13 +147,13 @@ def run():
     # initialise the state
     state = CipherState(source=read_file(),
                         subs=[{}],
-                        intersperse=[1],
+                        intersperse=Mutable(1),
                         substack=[[{}]])
     print(show_help(state))
     while True:
         try:
             # parse command
-            com, pargs, interv = parse_com(input("cipher_tools {}$ ".format(state.intersperse[0])))
+            com, pargs, interv = parse_com(input("cipher_tools {}$ ".format(state.intersperse.val)))
             # if it's a command
             if com:
                 # look for the corresponding action
@@ -163,7 +164,7 @@ def run():
 
                         # handling functions that operate on intervals
                         if interv == "a":
-                            for it in range(state.intersperse[0]):
+                            for it in range(state.intersperse.val):
                                 print("Executing for interv={}".format(it))
                                 print(fun(state, *args, interv=it, **kwargs))
                         elif interv:
@@ -185,7 +186,7 @@ def run():
                             .format(com))
             # if it's to be treated as substitutions
             else:
-                if state.intersperse[0] != 1:
+                if state.intersperse.val != 1:
                     raise UIError("In polyalphabetic mode use !m")
                 try:
                     insubs = shlex.split(pargs)

@@ -39,6 +39,14 @@ CipherState = namedtuple("CipherState",
                          "intersperse",
                          "substack"])
 
+class Mutable:
+    """
+    Tiny dummy class that wraps a single, mutable variable. Used to store a
+    mutable integer in a namedtuple.
+    """
+    def __init__(self, val):
+        self.val = val
+
 class DummyCount:
     """
     Dummy class to act as an infinite range (contains all integers). Could have
@@ -139,13 +147,13 @@ def int_in_range(start, stop):
 def show_freq(state, width=None, interv=None, pat=None, info=None):
     """Display frequencies"""
     width = read_type(width, "width", float, 50)
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     info = read_type(info, "info", bool, False)
     pat = read_type(pat, "pat", str, r"[a-zA-Z]")
     try:
         result = bar_chart(state.source, width=width, start=interv,
                            pat=pat, subt_tab=state.subs[interv], info=info,
-                           interv=state.intersperse[0])
+                           interv=state.intersperse.val)
     except re.error:
         raise UIError("invalid regex: {!r}".format(pat))
     return "Here are the frequencies:\n{}\n".format(result)
@@ -163,7 +171,7 @@ def show_runs(state, length=None, maxdisplay=None, width=None):
 @restrict_args()
 def show_doubles(state):
     """Show repeating adjacent identical pairs"""
-    if state.intersperse[0] != 1:
+    if state.intersperse.val != 1:
         raise UIError("This function only works in single intersperse mode")
     return ("Here are the occurring doubles:\n{}\n"
                         .format(get_doubles(state.source, subs=state.subs[0])))
@@ -178,7 +186,7 @@ def show_words(state, pattern):
 def delete_sub(state, *args, interv=None):
     """Remove letters from the subtable"""
     out_t = ["Removing the letters {} from subs".format(args)]
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     for k in args:
         try:
             del state.subs[interv][k]
@@ -204,7 +212,7 @@ def show_source(state):
 @restrict_args(pkw=["interv"])
 def show_table(state, interv=None):
     """Show the subtable"""
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     return ("Here is the current substitution table:\n{}\n"
                 .format(pretty_subs(state.subs[interv])))
 
@@ -215,7 +223,7 @@ def table_missing(state, interv=None,
           + string.digits
           + string.punctuation):
     """Check for unused letters"""
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     return textwrap.dedent("""\
          Referring to set
          {!r}
@@ -231,7 +239,7 @@ def table_missing(state, interv=None,
 @restrict_args(pkw=["interv"])
 def show_stack(state, interv=None):
     """Show current command history"""
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     return "\n".join(
                 " ".join(shlex.quote("{}{}".format(*kv))
                         for kv in sorted(sub.items()))
@@ -241,7 +249,7 @@ def show_stack(state, interv=None):
 def set_interval(state, interval):
     """Set the current interval"""
     interval = read_type(interval, "interval", pos_int, 1)
-    state.intersperse[:] = [interval]
+    state.intersperse.val = interval
     state.substack[:] = [[{}] for _ in range(interval)]
     state.subs[:] = [{} for _ in range(interval)]
     return ("successfully set interval to {},\nand reset subtables and history"
@@ -265,7 +273,7 @@ def caesar(state, sub):
 @restrict_args(pkw=["interv"])
 def undo(state, interv=None):
     """Undo the last substitution"""
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     if len(state.substack[interv]) > 1:
         state.substack[interv].pop()
         state.subs[interv].clear()
@@ -283,7 +291,7 @@ def show_stats(state):
 @restrict_args(pkw=["interv"])
 def reset_sub(state, interv=None):
     """Reset (clear) the subtable"""
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     state.subs[interv].clear()
     return "Resetting entire substitution table in itv {}".format(interv)
 
@@ -297,7 +305,7 @@ def exit_p(state):
 @restrict_args(pos=DummyCount(), pkw=["interv"])
 def update_table(state, *new, interv=None):
     """Update subtable with given arguments"""
-    interv = read_type(interv, "interv", int_in_range(0, state.intersperse[0]), 0)
+    interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     out_t = []
     for kv in new:
         if len(kv) != 2:
