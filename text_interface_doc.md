@@ -67,6 +67,8 @@ Here is how you might add some substitutions:
 
 You can see that it also prints a line which in theory you should be able to paste straight back in.
 
+Technically, substitutions are also a *command*, which I'll get into more later. This is only important if you're interested in polyalphabetic ciphers. If this is the case, once you've specified the keyword length using `!s`, you can no longer make substitutions in this way - this is because there is no way to tell which of the subciphers you wish to target. To make a substitution in a certain interval, use "n!m" for some valid interval n, followed by the substitutions you wish to make. See documentation on `!m` for a little more detail.
+
 Now, back to commands - this program supports more actions than just substitutions (for one you have to be able to see what the substitutions do to the text). These actions take the form of "commands". A command will always start with an exclamation mark `!` character.
 
 The notation I use here and in the program help message is
@@ -93,15 +95,24 @@ It also only displays 20 by default. If you want to see the 30 most frequent 4-l
 
 In the help message, you can see the possible arguments under `pkw` - for `!runs`, this is `pkw=['length', 'width', 'maxdisplay']`. This indicates that `!runs` will accept the arguments "`length`", "`width`", and "`maxdisplay`". `pkw` stands for "possible keyword arguments" - that's because these are strictly speaking "keyword arguments", as they're given by a keyword (which is their name).
 
-Some functions also accept anonymous arguments - so far this is only used by `!delete` and `!word`. Here the argument is just given (again, `sh`-style) after the function call, eg:
+Some functions also accept anonymous arguments. Here the argument is just given (again, `sh`-style) after the function call, eg:
 
     !x A B C
     !word "B\h\aV\e"
 
+The possible number of "positional" arguments can be seen by the `pos` value in the help message - eg
+
+    !word|w            - Find words matching a prototype - (pos=[2], pkw=[])
+
+Indicating that `word` accepts two arguments. What this actually means is that you supply it a single argument... I shall consider this a feature. Namely, this makes explicit that fact that all functions also receive an "implicit" argument. This argument is the "state". This allows functions like `!f` to work without you having to pass the whole source file as an argument. This is because the source file is stored in the "state" of the program, and this *is* passed to `!f`, but implicitly, by the text interface rather than by you.
+
+Some functions also accept potentially infinite arguments, eg `!x`. It has the rather self-explanatory signature:
+
+    !delete|remove|x        - Remove letters from the subtable - (pos=[any], pkw=['interv'])
 
 # Now with new and improved polyalphabetic support!
 
-Some functions also support polyalphabetic mode. These functions can accept the keyword arg `interv`:
+Some functions also support polyalphabetic mode. These functions can accept the keyword arg `interv` (Note that intervals are numbered starting from 0):
 
     !f -interv=1
 
@@ -110,3 +121,9 @@ Or you can use the following special shorthand:
     1!f
 
 The command `!s` can be used to set the polyalphabetic interval. In polyalphabetic mode, multiple substitution tables must be tracked. Because of this, you can't just enter substitutions directly anymore. They must be fed to the `!m` command (this has been here all along, but in single mode direct entry acts a shortcut to `!m`). The `!m` command requires an `interv` (which can be done with the `{num}!m` syntax), and then the familiar old substitution arguments.
+
+This means you can tell which functions support this by looking if `'interv'` is one of the pkw.
+
+Note also that when you supply *no* number, it assumes you mean `0`. This means that in monoalphabetic mode, you use exactly the same syntax as originally, but the program preprocesses this into polyalphabetic syntax for you.
+
+There is also a special available argument `a` (eg `a!f`). This systematically performs the given command for *all* possible values of n.

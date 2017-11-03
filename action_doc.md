@@ -15,17 +15,21 @@ All examples in this page use my custom encrypted source text [`zop13.txt`](#sou
  - [source](#source)
  - [table](#table)
  - [missing](#missing)
- - [general](#general)
  - [info](#info)
  - [clear](#clear)
  - [help](#help)
  - [quit](#quit)
+ - [make](#make)
+ - [caesar](#caesar)
+ - [undo](#undo)
+ - [skip](#skip)
+ - [history](#history)
 
 ### [frequency](#table-of-contents)
 
     !frequency|freq|f  - Display frequencies - (pos=[1], pkw=['width', 'interval', 'pat'])
 
-This is a command that displays letter frequencies in the text. It produces direct frequencies, percentages and a bar chart.
+This is a command that displays letter frequencies in the text. It produces direct frequencies, percentages and a bar chart. This command does work in polyalphabetic mode.
 
     Enter a command/substitutions > !f
     Here are the frequencies:
@@ -157,7 +161,7 @@ Greps through a dictionary of words to find words matching a given "prototype". 
     Here are the words matching G\eZCGNGVBA:
     temptation
 
-We can see that specification of the string greatly reduces the search space (although it was already pretty small). Generally `!word` is a good idea to try if you're working on a substitution cipher and see either a word where you know many of the letters, or a long word with a couple of repeated letters.
+We can see that specification of the string greatly reduces the search space (although it was already pretty small). Generally `!word` is a good idea to try if you're working on a substitution cipher and see either a word where you know many of the letters, or a long word with a couple of repeated letters. If you make a good choice, this tool will make attacking simple subtitutions ciphers almost trivial.
 
 This function accepts a single argument, which is the word prototype.
 
@@ -316,11 +320,11 @@ Accepts one optional parameter `alt`, which should be in the inclusive range `0-
 
 ### [source](#table-of-contents)
 
-    !source|s          - Show the source - (pos=[1], pkw=[])
+    !original|orig|source|o - Show the source - (pos=[1], pkw=[])
 
 Print the source:
 
-    Enter a command/substitutions > !s
+    Enter a command/substitutions > !o
     Here is the source:
     GUR MRA BS CLGUBA, OL GVZ CRGREF
 
@@ -391,12 +395,6 @@ It will produce:
     The following printable characters are not mapped to:
     A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d g i j k l m p q r s u v w x y 0 1 2 3 4 5 6 7 8 9 ! " # [$ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~](#table-of-contents)
 
-### [general](#table-of-contents)
-
-    !general|g         - Show some general info (source, table, subbed source) - (pos=[1], pkw=[])
-
-A command I've not actually ever found myself using - consider it unstable. I'm likely to remove or change it. It just ties together [`!source`](#source), [`!table`](#table), and [`!print`](#print).
-
 ### [info](#table-of-contents)
 
     !info|stats|i      - Display common frequency statistics - (pos=[1], pkw=[])
@@ -457,7 +455,7 @@ you can do:
 
     !help|h            - Show help message - (pos=[1], pkw=[])
 
-Display a half auto generated help message, which pulls from various bits of function docstrings and decorators. Currently it's:
+Display a half auto generated help message, which pulls from various bits of function docstrings and decorators. At one point it was something like:
 
     Anything prefixed with a ! will be considered a command. Anything else will be
     interpreted as a series of substitutions to make. The available commands are as
@@ -478,12 +476,151 @@ Display a half auto generated help message, which pulls from various bits of fun
     !exit|quit|q       - Exit the program - (pos=[1], pkw=[])
     A command can be given arguments, as space-separated words after the command.
 
-It is also always displayed at the start of the program.
+It is also always displayed at the start of the program. Really this is the best place to find it, so I'm not updating the copy here - it's just as an example.
 
 ### [quit](#table-of-contents)
 
     !quit|exit|q       - Exit the program - (pos=[1], pkw=[])
 
-Exit the program (also achievable by ctrl-c, ctrl-d and all manner of other things).
+Exit the program. I'm not sure if anyone will find themselves using this - you can achieve much of the same thing by pressing ctrl-c, I'm pretty sure, and possibly also ctrl-d (both work on linux in a console, but I've not tested for any other environments). Regardless, !q is there as a backup:
 
     Enter a command/substitutions > !q
+
+### [make](#table-of-contents)
+
+    !make|sub|m             - Update subtable with given arguments - (pos=[any], pkw=['interv'])
+
+This command is the "longhand" for substitution. Really, you can think of it as that when you're in monoalphabetic mode, when you don't supply a commend, `0!m` is prepended to what you type, and all the subtitution pairs you enter are arguments to `!m`. In polyalphabetic mode, use eg `1!m` to make substitutions in the second interval.
+
+    cipher_tools 2$ 0!m Re
+    targeting group 0
+    updated subtable:
+    Here is the current substitution table:
+    Re
+    R -> e
+
+    cipher_tools 2$ !p
+    targeting group 
+    Here is the substituted source:
+    GUe MeA BS CLGUBA, OL GVZ CeGeEF
+
+    OeNHGVSHY VF ORGGeE GUNA HTYL.
+    eKCYVPVG VF ORGGeE GUNA VZCYVPVG.
+    FVZCYR VF ORGGeE GUNA PBZCYRK.
+    PBZCYeK VF ORGGeE GUNA PBZCYVPNGRQ.
+    SYNG VF OeGGRE GUNA AeFGRQ.
+    FCNEFe VF OeGGRE GUNA QeAFR.
+    ERNQNOVYVGL PBHAGF.
+    FCRPVNY PNFRF NERA'G FCePVNY RABHTU GB OERNX GUe EHYeF.
+    NYGUBHTU CENPGVPNYVGL ORNGF CHEVGL.
+    REEBEF FUBHYQ AeIeE CNFF FVYRAGYL.
+    HAYRFF eKCYVPVGYL FVYRAPeQ.
+    VA GUe SNPe BS NZOVTHVGL, ERSHFR GUe GeZCGNGVBA GB THRFF.
+    GUeEe FUBHYQ Oe BAR-- NAQ CERSRENOYL BAYL BAR --BOIVBHF JNL GB QB VG.
+    NYGUBHTU GUNG JNL ZNL ABG Oe BOIVBHF NG SVEFG HAYeFF LBH'ER QHGPU.
+    ABJ VF ORGGeE GUNA ARIRE.
+    NYGUBHTU AeIeE VF BSGRA OeGGRE GUNA *EVTUG* ABJ.
+    VS GUR VZCYeZeAGNGVBA VF UNEQ GB eKCYNVA, VG'F N ONQ VQeN.
+    VS GUe VZCYRZRAGNGVBA VF RNFL GB RKCYNVA, VG ZNL Oe N TBBQ VQeN.
+    ANZRFCNPeF NEe BAR UBAXVAT TERNG VQeN -- YRG'F QB ZBER BS GUBFe!
+
+As you can see, only Rs in the first interval are substituted.
+
+### [caesar](#table-of-contents)
+
+    !caesar|z               - Generate suggestions for a caesar cipher based on a substitution - (pos=[2], pkw=[])
+
+This command is a simple function that "autocompletes" a subtitution table if you suspect it's a caesar cipher. It takes one argument, which is a substitution pair, (eg "Ge"), and then returns 26 pairs of letters that would align with that caesar cipher. It doesn't actually change state - you still have to paste these into `!m` or directly paste into the prompt. This is because it might catastrophically overwrite your table, so I prefer having the user explicitly do this themselves. You might use it like this:
+
+    cipher_tools 1$ !z Re
+    targeting group 
+    delta -13: An Bo Cp Dq Er Fs Gt Hu Iv Jw Kx Ly Mz Na Ob Pc Qd Re Sf Tg Uh Vi Wj Xk Yl Zm
+    cipher_tools 1$ An Bo Cp Dq Er Fs Gt Hu Iv Jw Kx Ly Mz Na Ob Pc Qd Re Sf Tg Uh Vi Wj Xk Yl Zm
+
+This is after performing frequency analysis using `!f`, and determining that `R` is the most common letter. Assuming this is a caesar cipher, we then assume `Re`, and generate the rest of the alphabet based on that.
+
+This tool is very powerful if you're just decoding a caesar cipher, as it requires maybe three steps to crack the whole thing. Of course, caesar ciphers don't really constitute much opposition. However, this is also of use against more advanced, possibly french ciphers, using pretty much the method above with interval frequency analysis.
+
+### [undo](table-of-contents)
+
+    !undo|u                 - Undo the last substitution - (pos=[1], pkw=['interv'])
+
+This is a function that undoes a substitution. I don't find myself using it much, but you might. It works like this:
+
+    cipher_tools 1$ Ab Cd
+    updated subtable:
+    Here is the current substitution table:
+    Ab Cd
+    A -> b
+    C -> d
+
+    cipher_tools 1$ Ef
+    updated subtable:
+    Here is the current substitution table:
+    Ab Cd Ef
+    A -> b
+    C -> d
+    E -> f
+
+    cipher_tools 1$ !u
+    targeting group 
+    Here is the current substitution table:
+    Ab Cd
+    A -> b
+    C -> d
+
+It also works in polyalphabetic mode.
+
+### [skip](#skip)
+
+    !skip|interval|interv|s - Set the current interval - (pos=[2], pkw=[])
+
+This is a command already outlined in other documentation. It accepts a single argument which is the integer "interval" length. This is equivalent ot the length of the keyword used to encrypt the text. The current passphrase length value is displayed in the prompt, before the `$` sign:
+
+    cipher_tools 1$ !s 400
+    targeting group 
+    successfully set interval to 400,
+    and reset subtables and history
+    cipher_tools 400$ 
+
+As you can see, when you change this value you also reset any substitution tables you have - advice is to change this a lot when you're checking out possibly keyword lengths, and then settle on one and try to solve it.
+
+### [history](#table-of-contents)
+
+    !history|hist|stack     - Show current command history - (pos=[1], pkw=['interv'])
+
+This command displays the history of a substitution table. You might use it like this:
+
+    cipher_tools 1$ Ab Cd
+    updated subtable:
+    Here is the current substitution table:
+    Ab Cd
+    A -> b
+    C -> d
+
+    cipher_tools 1$ Ef
+    updated subtable:
+    Here is the current substitution table:
+    Ab Cd Ef
+    A -> b
+    C -> d
+    E -> f
+
+    cipher_tools 1$ Gh Ij
+    updated subtable:
+    Here is the current substitution table:
+    Ab Cd Ef Gh Ij
+    A -> b
+    C -> d
+    E -> f
+    G -> h
+    I -> j
+
+    cipher_tools 1$ !hist
+    targeting group 
+
+    Ab Cd
+    Ab Cd Ef
+    Ab Cd Ef Gh Ij
+
+Could be useful in conjunction with the clear command to "revert" to a previous table. This command works in polyalphabetic mode.

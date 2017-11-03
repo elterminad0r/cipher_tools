@@ -13,6 +13,8 @@ A collection of programs to aid in cipher-cracking/cryptanalysis. If you use thi
 
 These are, as it stands, text-based interfaces. Hopefully it should be possible to paste in input. They rely on an installation of Python 3 (I recommend 3.6). They might be runnable by clicking the script from a file explorer?
 
+Notice: sometimes I find catastrophic bugs, fix them and don't tell anyone. This is absolutely my fault and I'll try to stop doing this but in the meantime please make sure your version is up to date.
+
 You can obtain the scripts by downloading them, pasting them in, or even cloning them if you're feeling really enthusiastic. (NB the scripts are all in the `src` directory.)
 
 Here is a quick guide to installation and execution:
@@ -24,12 +26,8 @@ Here is a quick guide to installation and execution:
 
 If you're a command line user, you can safely ignore and just clone and pull, and run `text_interface` from the CLI.
 
-NB the following two MD files are currently way out of date. However, as updates *should* generally act as a superset over previous versions, you can refer to them both. Especially the syntax described of `text_interface` still works, but beware there exists some more syntax now to support polyalphabetism (currently best reference point is `com_pat` and `parse_com` in [source](https://github.com/elterminad0r/cipher_tools/blob/e449797809dacf1f3c5d6380673cb087d8825a6b/src/text_interface.py#L106). Also, know that some function names have changed - the help message will always be exactly correct as it is generated from the actual commands in memory).
-
 For more on how `text_interface.py` works, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md) MD file.
 
 For documentation on each function, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md) MD file.
 
 You can also try looking at the source files in `src` - they're now pretty well documented inline. This will be more technical, terse, and may require some knowledge of Python but is guaranteed to be up to date.
-
-At this point I would rate the whole affair as borderline operational. It's still marginally woefully unprepared for anything but a simple substitution cipher. This is something I'm working on.
