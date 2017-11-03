@@ -40,10 +40,12 @@ CipherState = namedtuple("CipherState",
                          "substack"])
 
 class DummyCount:
-    """Dummy class to act as an infinite range (contains all integers). Could
-    have used itertools.count, but membership testing on an itertools count
+    """
+    Dummy class to act as an infinite range (contains all integers). Could have
+    used itertools.count, but membership testing on an itertools count
     apparently works by exhaustive checking, opening the line of attack of
-    supplying far too many arguments"""
+    supplying far too many arguments
+    """
     def __contains__(self, _):
         return True
 
@@ -172,7 +174,7 @@ def show_words(state, pattern):
     return ("Here are the words matching {}:\n{}\n"
                 .format(pattern, find_matches(pattern)))
 
-@restrict_args(pos=DummyCount(), pkw="interv")
+@restrict_args(pos=DummyCount(), pkw=["interv"])
 def delete_sub(state, *args, interv=None):
     """Remove letters from the subtable"""
     out_t = ["Removing the letters {} from subs".format(args)]
