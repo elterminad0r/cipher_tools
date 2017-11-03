@@ -1,4 +1,4 @@
-# file of auxiliary whitelisted and blacklisted words for usage in split...py
+#/ file of auxiliary whitelisted and blacklisted words for usage in split...py
 # uses a little pseudo-syntax - anything starting with a caret ^ is blacklisted
 # anything starting with a # is a comment
 # anything else is whitelisted
@@ -14,6 +14,7 @@ verulamium
 viroconium
 ninth
 iceni
+icenian
 trinovantes
 watling
 perilousness
@@ -26,6 +27,7 @@ verulanium
 seitus
 occultorum
 caledonii
+caledonian
 hypatia
 eboracum
 camulodonum
@@ -44,6 +46,15 @@ tesserae
 sigint
 legio
 hispana
+bodrum
+selcuk
+vespasians
+fidelius
+calgacus
+enflame
+aquilae
+
+graupius
 
 de
 et
@@ -72,9 +83,16 @@ iith
 # then a big old pile
 
 to_the
+to_new
+to_our
+to_yield
+to_emperor
+to_my
+to_expect
 to_preserve
 to_protect
 to_you
+to_your
 to_wonder
 to_work
 to_write
@@ -90,6 +108,17 @@ to_meet
 to_gaius
 
 a_secret
+a_month
+a_safer
+a_deadline
+a_reply
+a_letter
+a_second
+a_tribesman
+a_tree
+a_reconnaissance
+a_message
+a_ticket
 a_weight
 a_particularly
 a_very
@@ -120,6 +149,7 @@ will_see
 will_among
 
 of_the
+of_tacituss
 of_those
 of_truth
 of_troops
@@ -130,6 +160,11 @@ of_this
 of_their
 
 the_ninth
+the_rebel
+the_northern
+the_remaining
+the_new
+the_rest
 the_mosaic
 the_missing
 the_secret
@@ -145,6 +180,7 @@ the_rebellion
 the_region
 
 he_might
+he_set
 he_met
 
 she_died
@@ -152,6 +188,7 @@ she_disappeared
 she_spent
 
 her_own
+her_sources
 her_background
 her_situation
 her_being
@@ -168,6 +205,7 @@ as_he
 as_known
 
 we_did
+we_thought
 we_block
 we_tighten
 we_tracked
@@ -180,7 +218,13 @@ that_someone
 it_said
 it_seems
 
+at_eboracum
+
 i_found
+i_shall
+i_finally
+i_travelled
+i_finished
 i_it
 i_plan
 i_must
@@ -198,6 +242,7 @@ i_decided
 i_tried
 
 who_served
+who_read
 
 my_suspicions
 
@@ -210,26 +255,41 @@ go_on
 go_they
 
 and_yet
+and_resolve
 
 be_guarded
+be_the
 be_a
 be_stolen
 be_good
 be_told
 
+large_stolen
+large_stone
+
+they_repeatedly
+
 was_hinted
+was_however
 was_picking
+
+come_the
+come_then
 
 bea_truth
 
+in_touch
+in_chains
+
 by_every
+by_emperor
+
 faithful_slave
 cipher_school
 set_up
 function_securely
 nor_the
 new_systems
-come_the
 empire_studying
 have_successfully
 great_sadness
@@ -263,10 +323,19 @@ found_so
 are_several
 too_long
 hope_so
-large_stolen
 de_vita
 true_story
 cairo_seems
+can_scare
+how_long
+sun_god
+need_you
+later_all
+one_such
+ninth_seemed
+free_since
+do_not
+letter_set
 
 # the blacklist of nonsense or unlikely words
 
@@ -356,3 +425,18 @@ cairo_seems
 ^sames
 ^js
 ^goa
+^wen
+^usher
+^ushers
+^dow
+^alar
+^ala
+^amp
+^bethe
+^prettys
+^wills
+^hew
+^bloods
+^noh
+^utmosts
+^musts
