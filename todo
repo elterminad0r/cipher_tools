@@ -2,10 +2,12 @@ bruteforce approach
 
 gui?
 
-- Identify a simple transposition cipher because letter frequency (broadly) matches expected letter frequency 
 - Identify likely playfair because there are no double letter diagrams
 - Anagramming to deal with transposition ciphers
 - Polybius square fun for ADFGVX, nihilist, bifid....
+
+polybius utility?
+
 - Substitution of double letters and integers for single letters (ADFGVX, nihilist, bifid...)
 - Function to deal with playfair table and rules (?)
 - Autokey identification (?)
@@ -15,4 +17,6 @@ betting on this
 
 "stijn encryption"
 
-add mutable class for use with namedtuple
+**TODO: add mutable class for use with namedtuple
+
+possibly look at RSA encyrption
