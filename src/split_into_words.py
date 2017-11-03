@@ -1,5 +1,7 @@
 """
-Utility/convenience script to perform heuristic splitting on dense text
+Utility/convenience script to perform heuristic splitting on dense text. Uses a
+prefix tree for *very* fast lookups. Using PyPy, you can cut the initialisation
+stage from around 0.736s to 0.487s (around 51.13%).
 """
 
 import sys

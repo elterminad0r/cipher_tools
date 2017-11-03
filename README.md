@@ -30,4 +30,6 @@ For more on how `text_interface.py` works, see [this](https://github.com/eltermi
 
 For documentation on each function, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md) MD file.
 
+For fledgling documentation on `splitting_words`, see [this](https://github.com/elterminad0r/cipher_tools/blob/master/splitting_words.md) MD file. This is probably not useful to anyone because (1) it's illegible (2) it only works from a terminal prompt.
+
 You can also try looking at the source files in `src` - they're now pretty well documented inline. This will be more technical, terse, and may require some knowledge of Python but is guaranteed to be up to date.
