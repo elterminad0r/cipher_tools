@@ -53,6 +53,11 @@ fidelius
 calgacus
 enflame
 aquilae
+steganography
+noone
+polyalphabetic
+
+olympia_see
 
 graupius
 
@@ -83,6 +88,7 @@ iith
 # then a big old pile
 
 to_the
+to_test
 to_new
 to_our
 to_yield
@@ -108,6 +114,8 @@ to_meet
 to_gaius
 
 a_secret
+a_single
+a_stone
 a_month
 a_safer
 a_deadline
@@ -139,6 +147,7 @@ a_deal
 a_tail
 
 for_the
+for_decades
 for_those
 for_centuries
 for_their
@@ -149,6 +158,7 @@ will_see
 will_among
 
 of_the
+of_them
 of_tacituss
 of_those
 of_truth
@@ -160,6 +170,9 @@ of_this
 of_their
 
 the_ninth
+the_museum
+the_nineteenth
+the_rendezvous
 the_rebel
 the_northern
 the_remaining
@@ -180,10 +193,12 @@ the_rebellion
 the_region
 
 he_might
+he_may
 he_set
 he_met
 
 she_died
+she_didnt
 she_disappeared
 she_spent
 
@@ -198,6 +213,7 @@ over_the
 over_twenty
 
 no_doubt
+no_ransom
 no_secret
 no_writing
 
@@ -221,6 +237,7 @@ it_seems
 at_eboracum
 
 i_found
+i_shouldnt
 i_shall
 i_finally
 i_travelled
@@ -247,11 +264,13 @@ who_read
 my_suspicions
 
 me_that
+me_she
 me_to
 
 you_there
 
 go_on
+go_next
 go_they
 
 and_yet
@@ -268,8 +287,11 @@ large_stolen
 large_stone
 
 they_repeatedly
+they_read
+they_developed
 
 was_hinted
+was_hidden
 was_however
 was_picking
 
@@ -280,6 +302,10 @@ bea_truth
 
 in_touch
 in_chains
+
+can_scare
+can_tell
+can_see
 
 by_every
 by_emperor
@@ -326,7 +352,6 @@ hope_so
 de_vita
 true_story
 cairo_seems
-can_scare
 how_long
 sun_god
 need_you
@@ -336,6 +361,7 @@ ninth_seemed
 free_since
 do_not
 letter_set
+them_is
 
 # the blacklist of nonsense or unlikely words
 
@@ -440,3 +466,9 @@ letter_set
 ^noh
 ^utmosts
 ^musts
+^haven
+^whereon
+^nome
+^inas
+^aston
+^mew
