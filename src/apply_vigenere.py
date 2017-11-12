@@ -22,4 +22,6 @@ def shift(plain, passphrase):
     return "".join(out)
 
 if __name__ == "__main__":
+    if sys.stdin.isatty():
+        sys.exit("this is a command line script")
     sys.stdout.write(shift(iter(lambda: sys.stdin.read(1), ""), sys.argv[1]))
