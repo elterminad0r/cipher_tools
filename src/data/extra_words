@@ -56,6 +56,17 @@ aquilae
 steganography
 noone
 polyalphabetic
+caecelius
+tullius
+capito
+pomponianus
+plotius
+firmus
+and
+gaius
+cornelius
+gallicanus
+consulships
 
 olympia_see
 
@@ -88,6 +99,8 @@ iith
 # then a big old pile
 
 to_the
+to_play
+to_execute
 to_test
 to_new
 to_our
@@ -120,6 +133,7 @@ a_month
 a_safer
 a_deadline
 a_reply
+a_roman
 a_letter
 a_second
 a_tribesman
@@ -138,6 +152,7 @@ a_latin
 a_document
 a_standard
 a_lead
+a_leader
 a_new
 a_story
 a_similar
@@ -147,6 +162,7 @@ a_deal
 a_tail
 
 for_the
+for_too
 for_decades
 for_those
 for_centuries
@@ -170,6 +186,7 @@ of_this
 of_their
 
 the_ninth
+the_mystery
 the_museum
 the_nineteenth
 the_rendezvous
@@ -193,6 +210,7 @@ the_rebellion
 the_region
 
 he_might
+he_made
 he_may
 he_set
 he_met
@@ -235,6 +253,7 @@ it_said
 it_seems
 
 at_eboracum
+at_last
 
 i_found
 i_shouldnt
@@ -304,6 +323,7 @@ in_touch
 in_chains
 
 can_scare
+can_also
 can_tell
 can_see
 
@@ -362,6 +382,8 @@ free_since
 do_not
 letter_set
 them_is
+our_search
+tribesman_set
 
 # the blacklist of nonsense or unlikely words
 
@@ -472,3 +494,4 @@ them_is
 ^inas
 ^aston
 ^mew
+^toke
