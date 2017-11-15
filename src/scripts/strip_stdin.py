@@ -11,4 +11,4 @@ def strip(plain):
 if __name__ == "__main__":
     if sys.stdin.isatty():
         sys.exit("This is a command line script requiring stdin")
-    print(strip(stdin.read()))
+    print(strip(sys.stdin.read()))
