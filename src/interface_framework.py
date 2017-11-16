@@ -339,3 +339,4 @@ def update_table(state, *new, interv=None):
 def update_source(state):
     """Change source text (by pasting)"""
     state.source.val = _from_tty()
+    return "updated source"
