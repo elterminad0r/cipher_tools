@@ -17,6 +17,13 @@ betting on this
 
 "stijn encryption"
 
-**TODO: add mutable class for use with namedtuple
-
 possibly look at RSA encyrption
+
+various transposition ciphers
+- rail fence cipher
+- spiral or something / route ciphers
+- autokey
+
+calling scripts from text_interface
+
+for loops from text_interface??
