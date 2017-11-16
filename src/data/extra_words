@@ -67,6 +67,8 @@ gaius
 cornelius
 gallicanus
 consulships
+dynamix
+citadelle
 
 olympia_see
 
@@ -127,6 +129,7 @@ to_meet
 to_gaius
 
 a_secret
+a_noisy
 a_single
 a_stone
 a_month
@@ -162,6 +165,8 @@ a_deal
 a_tail
 
 for_the
+for_dynamix
+for_most
 for_too
 for_decades
 for_those
@@ -384,6 +389,7 @@ letter_set
 them_is
 our_search
 tribesman_set
+syndicate_dynamix
 
 # the blacklist of nonsense or unlikely words
 
