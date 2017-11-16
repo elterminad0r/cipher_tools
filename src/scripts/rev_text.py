@@ -27,7 +27,7 @@ if __name__ == "__main__":
     if sys.stdin.isatty():
         sys.exit("This is a command line script requiring stdin")
     args = parse_args()
-    plain = sys.stdin.read()
+    plain = sys.stdin.read().strip()
     if args.strip_punc:
         print(strip(plain)[::-1])
     elif args.rev_retain:

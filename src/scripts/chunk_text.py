@@ -18,7 +18,7 @@ def parse_args():
     return parser.parse_args()
 
 def chunk(it, n):
-    return zip(*[iter(it)] * n)
+    return itertools.zip_longest(*[iter(it)] * n, fillvalue=" ")
 
 def accumulate_chars(plain, chunk_length):
     combs = {}

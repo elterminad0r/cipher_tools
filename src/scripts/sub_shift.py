@@ -19,7 +19,7 @@ def parse_args():
     keytypes = parser.add_mutually_exclusive_group(required=True)
     keytypes.add_argument("-v", "--vigenere", type=str,
                                     help="vigenere key")
-    keytypes.add_argument("-c", "--caesar", type=string_length(2),
+    keytypes.add_argument("-c", "--caesar", type=string_length(2), nargs="+",
                                     help="Caesar pairing")
     return parser.parse_args()
 
@@ -45,6 +45,6 @@ if __name__ == "__main__":
     if args.vigenere:
         sys.stdout.write(shift(sys.stdin.read(), args.vigenere))
     else:
-        frm, to = args.caesar.upper()
-        shift_char = string.ascii_uppercase[ord(frm) - ord(to)]
-        sys.stdout.write(shift(sys.stdin.read(), shift_char))
+        shift_chars = "".join(string.ascii_uppercase[ord(pair[0]) - ord(pair[1])] for pair in map(str.upper, args.caesar))
+        print("key was {}".format(shift_chars))
+        sys.stdout.write(shift(sys.stdin.read(), shift_chars))

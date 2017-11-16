@@ -4,6 +4,7 @@ Apply a columnar permutation transposition to a text
 
 import sys
 import argparse
+import itertools
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -12,7 +13,7 @@ def parse_args():
     return parser.parse_args()
 
 def chunk(it, n):
-    return zip(*[iter(it)] * n)
+    return itertools.zip_longest(*[iter(it)] * n, fillvalue=" ")
 
 def clean(plain):
     return plain.strip().replace(" ", "")
