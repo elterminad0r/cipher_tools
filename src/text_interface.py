@@ -29,7 +29,9 @@ from interface_framework import (CipherState, UIError, DummyCount,
                                  show_table, reset_sub, show_runs, show_words,
                                  table_missing, show_stats, undo, show_stack,
                                  caesar, set_interval, exit_p, update_table,
-                                 Mutable)
+                                 Mutable, update_source)
+
+from call_scripts import call_script
 
 def verify_exit():
     """
@@ -87,7 +89,9 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("undo", "u"), undo),
             (("skip", "interval", "interv", "s"), set_interval),
             (("history", "hist", "stack"), show_stack),
-            (("quit", "exit", "q"), exit_p)]
+            (("quit", "exit", "q"), exit_p),
+            (("call", "script"), call_script),
+            (("update", "new"), update_source)]
 
 # assert there are no duplicate commands
 if __debug__:
@@ -145,7 +149,7 @@ def run():
     if not sys.stdin.isatty():
         sys.exit("sys.stdin must be a tty as this is an interactive script")
     # initialise the state
-    state = CipherState(source=read_file(),
+    state = CipherState(source=Mutable(read_file()),
                         subs=[{}],
                         intersperse=Mutable(1),
                         substack=[[{}]])

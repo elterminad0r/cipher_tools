@@ -20,7 +20,7 @@ import shlex
 
 from collections import namedtuple
 
-from input_handling import read_file
+from input_handling import _from_tty
 from find_doubles import get_doubles
 from find_word import find_matches
 from run_freq import run_chart
@@ -54,7 +54,18 @@ class DummyCount:
     apparently works by exhaustive checking, opening the line of attack of
     supplying far too many arguments
     """
-    def __contains__(self, _):
+
+    def __init__(self, min_=None, max_=None):
+        self.min_ = min_
+        self.max_ = max_
+
+    def __contains__(self, x):
+        if self.min_ and self.max_:
+            return self.min_ <= x <= self.max_
+        if self.max_ and not self.min_:
+            return x <= self.max_
+        if self.min_ and not self.max_:
+            return self.min_ <= x
         return True
 
     def __repr__(self):
@@ -151,7 +162,7 @@ def show_freq(state, width=None, interv=None, pat=None, info=None):
     info = read_type(info, "info", bool, False)
     pat = read_type(pat, "pat", str, r"[a-zA-Z]")
     try:
-        result = bar_chart(state.source, width=width, start=interv,
+        result = bar_chart(state.source.val, width=width, start=interv,
                            pat=pat, subt_tab=state.subs[interv], info=info,
                            interv=state.intersperse.val)
     except re.error:
@@ -164,7 +175,7 @@ def show_runs(state, length=None, maxdisplay=None, width=None):
     length = read_type(length, "length", int, 3)
     maxdisplay = read_type(maxdisplay, "maxdisplay", int, 20)
     width = read_type(width, "width", float, 50)
-    result = run_chart(state.source, length=length, maxdisplay=maxdisplay,
+    result = run_chart(state.source.val, length=length, maxdisplay=maxdisplay,
                         width=width)
     return "Here are the {} most frequent runs:\n{}\n".format(maxdisplay, result)
 
@@ -174,7 +185,7 @@ def show_doubles(state):
     if state.intersperse.val != 1:
         raise UIError("This function only works in single intersperse mode")
     return ("Here are the occurring doubles:\n{}\n"
-                        .format(get_doubles(state.source, subs=state.subs[0])))
+                        .format(get_doubles(state.source.val, subs=state.subs[0])))
 
 @restrict_args([2])
 def show_words(state, pattern):
@@ -201,13 +212,13 @@ def delete_sub(state, *args, interv=None):
 def show_subbed(state, alt=None):
     """Show the subbed source"""
     alt = read_type(alt, "alt", int_in_range(0, len(sub_dishooks)), False)
-    result = make_subs(state.source, state.subs, generator=sub_dishooks[alt])
+    result = make_subs(state.source.val, state.subs, generator=sub_dishooks[alt])
     return "Here is the substituted source:\n{}\n".format(result)
 
 @restrict_args()
 def show_source(state):
     """Show the source"""
-    return "Here is the source:\n{}\n".format(state.source)
+    return "Here is the source:\n{}\n".format(state.source.val)
 
 @restrict_args(pkw=["interv"])
 def show_table(state, interv=None):
@@ -315,7 +326,7 @@ def update_table(state, *new, interv=None):
             out_t.append(
                 "warning - the value of {} is being changed to {} (it was {})"
                                 .format(k, v, state.subs[interv][k]))
-        if k not in state.source:
+        if k not in state.source.val:
             out_t.append(
                 "warning - the letter {} does not appear anywhere in the source text"
                                 .format(k))
@@ -323,3 +334,8 @@ def update_table(state, *new, interv=None):
     state.substack[interv].append(state.subs[interv].copy())
     out_t.append("updated subtable:\n{}".format(show_table(state, interv=interv)))
     return "\n".join(out_t)
+
+@restrict_args()
+def update_source(state):
+    """Change source text (by pasting)"""
+    state.source.val = _from_tty()
