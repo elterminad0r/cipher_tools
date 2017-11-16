@@ -9,6 +9,7 @@ subsets of the source, bar charts, index of coincidence calculation and more.
 ################################################################################
 
 import re
+import os
 
 from collections import Counter
 from input_handling import read_file
@@ -21,7 +22,7 @@ fpat = re.compile(r"^\s*([a-z])\s*([0-9.]*)%.*$")
 # the bar chart
 standard_freqs = []
 #read from file of frequencies
-with open("data/wiki_freq", "r") as freqfile:
+with open(os.path.join(os.path.dirname(__file__), "data/wiki_freq"), "r") as freqfile:
     for line in freqfile:
         match = fpat.match(line)
         # generate a number of letters proportional to percentage

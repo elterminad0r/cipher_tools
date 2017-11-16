@@ -340,3 +340,10 @@ def update_source(state):
     """Change source text (by pasting)"""
     state.source.val = _from_tty()
     return "updated source"
+
+@restrict_args(pos=[2])
+def highlight_missing(state, missing):
+    """Highlight a case sensitive missing letter or substring in the text"""
+    alt = False
+    result = make_subs(state.source.val, state.subs, generator=sub_dishooks[alt])
+    return result.replace(missing, "**{}**".format(missing))
