@@ -29,3 +29,8 @@ for loops from text_interface?
 give !w an option to ignore used letters
 
 use textwrap to format the menu properly
+
+infer vigenere key from crib/ct
+infer vigenere key from subs
+
+infer subs key
