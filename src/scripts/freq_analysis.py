@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Perform frequency analysis on text
 """

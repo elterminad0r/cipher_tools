@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Modify the casing of text
 """

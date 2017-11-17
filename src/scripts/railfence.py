@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Utility script to undo a rail fence cipher
 """

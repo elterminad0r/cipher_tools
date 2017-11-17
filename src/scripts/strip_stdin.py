@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Strip all non-alpha characters from a text
 """

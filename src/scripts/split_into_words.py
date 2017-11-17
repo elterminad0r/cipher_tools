@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Utility/convenience script to perform heuristic splitting on dense text. Uses a
 prefix tree for *very* fast lookups. Using PyPy, you can cut the initialisation

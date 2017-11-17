@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Splitting text into chunks (a la polybius)
 """

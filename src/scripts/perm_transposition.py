@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Apply a columnar permutation transposition to a text
 """

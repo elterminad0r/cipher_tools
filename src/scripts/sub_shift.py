@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Utility script rather than interface to apply substitutions
 """

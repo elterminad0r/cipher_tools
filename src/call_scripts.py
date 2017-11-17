@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Call primarily command-line scripts from scripts directory
 """
@@ -15,7 +17,10 @@ scripts = {"chunk": "chunk_text.py",
            "railfence": "railfence.py",
            "words": "split_into_words.py",
            "strip": "strip_stdin.py",
-           "matrix": "transpose_mat.py"}
+           "matrix": "transpose_mat.py",
+           "printcols": "form_columns.py",
+           "invert": "invert_text.py",
+           "keyphrase": "find_key.py"}
 
 @restrict_args(pos=DummyCount(min_=2), pkw=[], doc_addendum=str(scripts.keys()))
 def call_script(state, script, *args):

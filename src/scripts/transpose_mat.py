@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+"""
+Transpose a text like a matrix. Supports transposing by newlines, or explicitly
+given a block length
+"""
+
 import sys
 import argparse
 import itertools
