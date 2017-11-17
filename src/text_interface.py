@@ -29,7 +29,8 @@ from interface_framework import (CipherState, UIError, DummyCount,
                                  show_table, reset_sub, show_runs, show_words,
                                  table_missing, show_stats, undo, show_stack,
                                  caesar, set_interval, exit_p, update_table,
-                                 Mutable, update_source, highlight_missing)
+                                 Mutable, update_source, highlight_missing,
+                                 format_tabula)
 
 from call_scripts import call_script
 
@@ -92,7 +93,8 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("quit", "exit", "q"), exit_p),
             (("call", "script"), call_script),
             (("update", "new"), update_source),
-            (("highlight", "showmissing"), highlight_missing)]
+            (("highlight", "showmissing"), highlight_missing),
+            (("tabrecta",), format_tabula)]
 
 # assert there are no duplicate commands
 if __debug__:

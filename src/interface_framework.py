@@ -347,3 +347,9 @@ def highlight_missing(state, missing):
     alt = False
     result = make_subs(state.source.val, state.subs, generator=sub_dishooks[alt])
     return result.replace(missing, "**{}**".format(missing))
+
+@restrict_args(pos=[1])
+def format_tabula(state):
+    """Generate tabula recta from current substitutions"""
+    inverse_maps = [{b.upper(): a.upper() for a, b in dct.items()} for dct in state.subs]
+    return "\n".join("{}: {}".format(ltr, " ".join(dct.get(ltr, " ") for dct in inverse_maps)) for ltr in string.ascii_uppercase)
