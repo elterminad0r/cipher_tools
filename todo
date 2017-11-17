@@ -27,3 +27,5 @@ various transposition ciphers
 for loops from text_interface?
 
 give !w an option to ignore used letters
+
+use textwrap to format the menu properly
