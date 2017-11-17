@@ -20,7 +20,8 @@ scripts = {"chunk": "chunk_text.py",
            "matrix": "transpose_mat.py",
            "printcols": "form_columns.py",
            "invert": "invert_text.py",
-           "keyphrase": "find_key.py"}
+           "keyphrase": "find_key.py",
+           "markcols": "mark_cols.py"}
 
 @restrict_args(pos=DummyCount(min_=2), pkw=[], doc_addendum=str(scripts.keys()))
 def call_script(state, script, *args):
