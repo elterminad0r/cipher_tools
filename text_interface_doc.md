@@ -2,7 +2,9 @@
 
 See also [the documentation for each function](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md)
 
-The first thing you are likely to encounter is the file input. If you're not a command line user, this will work by pasting it in, entering another newline and pressing `ctrl-c`. For example, it might look like this:
+The first thing you are likely to encounter is the file input. If you're not a
+command line user, this will work by pasting it in, entering another newline
+and pressing `ctrl-c`. For example, it might look like this:
 
     Manual file entry: paste in the file, or type it in line by line. When you're done, hit an extra newline to be safe and then hit ctrl-c 
     HVMTVH,
@@ -12,9 +14,13 @@ The first thing you are likely to encounter is the file input. If you're not a c
 
     ^CAnything prefixed with...
 
-The reasoning for this is that a script can only read a line of input. `ctrl-c` sends an "interrupt signal" to the script, telling it to stop, but this will also "corrupt" the line the script is currently trying to read, so this is made blank for safety.
+The reasoning for this is that a script can only read a line of input. `ctrl-c`
+sends an "interrupt signal" to the script, telling it to stop, but this will
+also "corrupt" the line the script is currently trying to read, so this is made
+blank for safety.
 
-The next thing the script will do is display the following help message (or a slightly expanded version of it if I've continued development):
+The next thing the script will do is display the following help message (or a
+slightly expanded version of it if I've continued development):
 
     Anything prefixed with a ! will be considered a command. Anything else will be
     interpreted as a series of substitutions to make. The available commands are as
@@ -35,13 +41,21 @@ The next thing the script will do is display the following help message (or a sl
     !exit|quit|q       - Exit the program - (pos=[1], pkw=[])
     A command can be given arguments, as space-separated words after the command.
 
-This gives a quick, pretty terse summary of command syntax. To expand on it a little bit:
+This gives a quick, pretty terse summary of command syntax. To expand on it a
+little bit:
 
-The "default" way the script tries to interpret anything you do is as a series of substitutions. This follows the convention of pairs of letters representing a substitution from the first to the second (ie `Ab` means `A` becomes `b`).
+The "default" way the script tries to interpret anything you do is as a series
+of substitutions. This follows the convention of pairs of letters representing
+a substitution from the first to the second (ie `Ab` means `A` becomes `b`).
 
-You can give many at once, generally separated by whitespace. It is case sensitive and accepts any character (not just alphabetical ones).
+You can give many at once, generally separated by whitespace. It is case
+sensitive and accepts any character (not just alphabetical ones).
 
-Technically how the parsing works is by a `sh`-like argument parser (`shlex.split`), so if you want to use quotes you should escape them (either by in turn quoting them or using a backslash `\\`) or substitute whitespace, you can use `sh` syntax, eg `" ,"`. This is entirely unimportant unless you want to substitute a special character (ie a space, quote or backlash).
+Technically how the parsing works is by a `sh`-like argument parser
+(`shlex.split`), so if you want to use quotes you should escape them (either by
+in turn quoting them or using a backslash `\\`) or substitute whitespace, you
+can use `sh` syntax, eg `" ,"`. This is entirely unimportant unless you want to
+substitute a special character (ie a space, quote or backlash).
 
 Here is how you might add some substitutions:
 
@@ -65,54 +79,91 @@ Here is how you might add some substitutions:
     T -> y
     V -> a
 
-You can see that it also prints a line which in theory you should be able to paste straight back in.
+You can see that it also prints a line which in theory you should be able to
+paste straight back in.
 
-Technically, substitutions are also a *command*, which I'll get into more later. This is only important if you're interested in polyalphabetic ciphers. If this is the case, once you've specified the keyword length using `!s`, you can no longer make substitutions in this way - this is because there is no way to tell which of the subciphers you wish to target. To make a substitution in a certain interval, use "n!m" for some valid interval n, followed by the substitutions you wish to make. See documentation on `!m` for a little more detail.
+Technically, substitutions are also a *command*, which I'll get into more
+later. This is only important if you're interested in polyalphabetic ciphers.
+If this is the case, once you've specified the keyword length using `!s`, you
+can no longer make substitutions in this way - this is because there is no way
+to tell which of the subciphers you wish to target. To make a substitution in a
+certain interval, use "n!m" for some valid interval n, followed by the
+substitutions you wish to make. See documentation on `!m` for a little more
+detail.
 
-Now, back to commands - this program supports more actions than just substitutions (for one you have to be able to see what the substitutions do to the text). These actions take the form of "commands". A command will always start with an exclamation mark `!` character.
+Now, back to commands - this program supports more actions than just
+substitutions (for one you have to be able to see what the substitutions do to
+the text). These actions take the form of "commands". A command will always
+start with an exclamation mark `!` character.
 
 The notation I use here and in the program help message is
 
     !<command>|<alt_command>|...
 
-This means you can call the same command as either `!command` or `!alt_command`, etc. An example of a command you might use is:
+This means you can call the same command as either `!command` or
+`!alt_command`, etc. An example of a command you might use is:
 
     !print
 
-This will print the source to the screen, making substitutions. So far all of the commands have a shorter alias, which more often than not is the first letter of the fully qualified command. (Notable exception is `!delete|remove|x`, which collides with `!runs` and `!doubles`).
+This will print the source to the screen, making substitutions. So far all of
+the commands have a shorter alias, which more often than not is the first
+letter of the fully qualified command. (Notable exception is
+`!delete|remove|x`, which collides with `!runs` and `!doubles`).
 
-Some commands also accept arguments. Most often you probably don't need to bother with these, but they can be useful (the most useful one I've found is `!r -length`). An argument has the following syntax:
+Some commands also accept arguments. Most often you probably don't need to
+bother with these, but they can be useful (the most useful one I've found is
+`!r -length`). An argument has the following syntax:
 
     !com -arg=val
 
-This means call the command "`com`" and give the argument of name "`arg`" the value "`val`". An example is `!runs`. This is a tool to analyse the frequency of adjacent "runs" of characters. However, when you call it as just "`!runs`" (or `!r`), it default to runs of length 3. You can specify the length of the runs to be, for example, 2 by doing the following:
+This means call the command "`com`" and give the argument of name "`arg`" the
+value "`val`". An example is `!runs`. This is a tool to analyse the frequency
+of adjacent "runs" of characters. However, when you call it as just "`!runs`"
+(or `!r`), it default to runs of length 3. You can specify the length of the
+runs to be, for example, 2 by doing the following:
 
     !runs -length=2
 
-It also only displays 20 by default. If you want to see the 30 most frequent 4-length runs, you can do
+It also only displays 20 by default. If you want to see the 30 most frequent
+4-length runs, you can do
 
     !runs -length=4 -maxdisplay=30
 
-In the help message, you can see the possible arguments under `pkw` - for `!runs`, this is `pkw=['length', 'width', 'maxdisplay']`. This indicates that `!runs` will accept the arguments "`length`", "`width`", and "`maxdisplay`". `pkw` stands for "possible keyword arguments" - that's because these are strictly speaking "keyword arguments", as they're given by a keyword (which is their name).
+In the help message, you can see the possible arguments under `pkw` - for
+`!runs`, this is `pkw=['length', 'width', 'maxdisplay']`. This indicates that
+`!runs` will accept the arguments "`length`", "`width`", and "`maxdisplay`".
+`pkw` stands for "possible keyword arguments" - that's because these are
+strictly speaking "keyword arguments", as they're given by a keyword (which is
+their name).
 
-Some functions also accept anonymous arguments. Here the argument is just given (again, `sh`-style) after the function call, eg:
+Some functions also accept anonymous arguments. Here the argument is just given
+(again, `sh`-style) after the function call, eg:
 
     !x A B C
     !word "B\h\aV\e"
 
-The possible number of "positional" arguments can be seen by the `pos` value in the help message - eg
+The possible number of "positional" arguments can be seen by the `pos` value in
+the help message - eg
 
     !word|w            - Find words matching a prototype - (pos=[2], pkw=[])
 
-Indicating that `word` accepts two arguments. What this actually means is that you supply it a single argument... I shall consider this a feature. Namely, this makes explicit that fact that all functions also receive an "implicit" argument. This argument is the "state". This allows functions like `!f` to work without you having to pass the whole source file as an argument. This is because the source file is stored in the "state" of the program, and this *is* passed to `!f`, but implicitly, by the text interface rather than by you.
+Indicating that `word` accepts two arguments. What this actually means is that
+you supply it a single argument... I shall consider this a feature. Namely,
+this makes explicit that fact that all functions also receive an "implicit"
+argument. This argument is the "state". This allows functions like `!f` to work
+without you having to pass the whole source file as an argument. This is
+because the source file is stored in the "state" of the program, and this *is*
+passed to `!f`, but implicitly, by the text interface rather than by you.
 
-Some functions also accept potentially infinite arguments, eg `!x`. It has the rather self-explanatory signature:
+Some functions also accept potentially infinite arguments, eg `!x`. It has the
+rather self-explanatory signature:
 
     !delete|remove|x        - Remove letters from the subtable - (pos=[any], pkw=['interv'])
 
 # Now with new and improved polyalphabetic support!
 
-Some functions also support polyalphabetic mode. These functions can accept the keyword arg `interv` (Note that intervals are numbered starting from 0):
+Some functions also support polyalphabetic mode. These functions can accept the
+keyword arg `interv` (Note that intervals are numbered starting from 0):
 
     !f -interv=1
 
@@ -120,10 +171,20 @@ Or you can use the following special shorthand:
 
     1!f
 
-The command `!s` can be used to set the polyalphabetic interval. In polyalphabetic mode, multiple substitution tables must be tracked. Because of this, you can't just enter substitutions directly anymore. They must be fed to the `!m` command (this has been here all along, but in single mode direct entry acts a shortcut to `!m`). The `!m` command requires an `interv` (which can be done with the `{num}!m` syntax), and then the familiar old substitution arguments.
+The command `!s` can be used to set the polyalphabetic interval. In
+polyalphabetic mode, multiple substitution tables must be tracked. Because of
+this, you can't just enter substitutions directly anymore. They must be fed to
+the `!m` command (this has been here all along, but in single mode direct entry
+acts a shortcut to `!m`). The `!m` command requires an `interv` (which can be
+done with the `{num}!m` syntax), and then the familiar old substitution
+arguments.
 
-This means you can tell which functions support this by looking if `'interv'` is one of the pkw.
+This means you can tell which functions support this by looking if `'interv'`
+is one of the pkw.
 
-Note also that when you supply *no* number, it assumes you mean `0`. This means that in monoalphabetic mode, you use exactly the same syntax as originally, but the program preprocesses this into polyalphabetic syntax for you.
+Note also that when you supply *no* number, it assumes you mean `0`. This means
+that in monoalphabetic mode, you use exactly the same syntax as originally, but
+the program preprocesses this into polyalphabetic syntax for you.
 
-There is also a special available argument `a` (eg `a!f`). This systematically performs the given command for *all* possible values of n.
+There is also a special available argument `a` (eg `a!f`). This systematically
+performs the given command for *all* possible values of n.
