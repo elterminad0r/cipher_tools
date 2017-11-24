@@ -14,11 +14,11 @@ polyalphabetic interval and substitution histories.
 
 import sys
 import re
-import textwrap
 import string
 import shlex
 
 from collections import namedtuple
+from textwrap import dedent
 
 from input_handling import _from_tty
 from find_doubles import get_doubles
@@ -26,9 +26,18 @@ from find_word import find_matches
 from run_freq import run_chart
 from freq_analysis import bar_chart, pat_counter
 from make_subs import (make_subs, parse_subs, pretty_subs,
-                        _make_subs, _alt_subs, _under_subs)
+                       _make_subs, _alt_subs, _under_subs)
 
 sub_dishooks = [_make_subs, _alt_subs, _under_subs]
+
+def set_get_width(f):
+    """
+    Allows calling modules to introduce a width retriever into the namespace
+    """
+    global get_width
+    get_width = f
+
+get_width = lambda: 80
 
 # small class representing a state of a session. This is passed to functions
 # rather than separate, specific arguments for each. This unifies call
@@ -60,15 +69,21 @@ class DummyCount:
         self.max_ = max_
 
     def __contains__(self, x):
-        if self.min_ and self.max_:
+        if self.min_ is not None and self.max_ is not None:
             return self.min_ <= x <= self.max_
-        if self.max_ and not self.min_:
+        if self.max_ is not None and self.min_ is None:
             return x <= self.max_
-        if self.min_ and not self.max_:
+        if self.min_ is not None and self.max_ is None:
             return self.min_ <= x
         return True
 
     def __repr__(self):
+        if self.min_ is not None and self.max_ is not None:
+            return "[{} <= x <= {}]".format(self.min_, self.max_)
+        if self.max_ is not None and self.min_ is None:
+            return "[x <= {}]".format(self.max_)
+        if self.min_ is not None and self.max_ is None:
+            return "[{} <= x]".format(self.min_)
         return "[any]"
 
 class UIError(Exception):
@@ -102,7 +117,7 @@ def restrict_args(pos=[1], pkw=[], doc_addendum=""):
                         of arguments: {}
                         but received {}""".format(pos, len(args)).split()))
         fun.__doc__ = ("{}{} - (pos={}, pkw={})"
-                                    .format(f.__doc__, doc_addendum, pos, pkw))
+                    .format(dedent(f.__doc__).strip(), doc_addendum, pos, pkw))
         fun.pkw = pkw
         fun.pos = pos
         return fun
@@ -156,10 +171,12 @@ def int_in_range(start, stop):
 
 @restrict_args(pkw=["width", "interv", "pat", "info"])
 def show_freq(state, width=None, interv=None, pat=None, info=None):
-    """Display frequencies"""
-    width = read_type(width, "width", float, 50)
+    """
+    Display frequencies
+    """
+    width = read_type(width, "width", float, get_width())
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
-    info = read_type(info, "info", bool, False)
+    info = read_type(info, "info", int, 0)
     pat = read_type(pat, "pat", str, r"[a-zA-Z]")
     try:
         result = bar_chart(state.source.val, width=width, start=interv,
@@ -171,7 +188,9 @@ def show_freq(state, width=None, interv=None, pat=None, info=None):
 
 @restrict_args(pkw=["length", "width", "maxdisplay"])
 def show_runs(state, length=None, maxdisplay=None, width=None):
-    """Display frequently repeating runs"""
+    """
+    Display frequently repeating runs
+    """
     length = read_type(length, "length", int, 3)
     maxdisplay = read_type(maxdisplay, "maxdisplay", int, 20)
     width = read_type(width, "width", float, 50)
@@ -181,7 +200,9 @@ def show_runs(state, length=None, maxdisplay=None, width=None):
 
 @restrict_args()
 def show_doubles(state):
-    """Show repeating adjacent identical pairs"""
+    """
+    Show repeating adjacent identical pairs
+    """
     if state.intersperse.val != 1:
         raise UIError("This function only works in single intersperse mode")
     return ("Here are the occurring doubles:\n{}\n"
@@ -189,13 +210,17 @@ def show_doubles(state):
 
 @restrict_args([2])
 def show_words(state, pattern):
-    """Find words matching a prototype"""
+    """
+    Find words matching a prototype
+    """
     return ("Here are the words matching {}:\n{}\n"
                 .format(pattern, find_matches(pattern)))
 
 @restrict_args(pos=DummyCount(), pkw=["interv"])
 def delete_sub(state, *args, interv=None):
-    """Remove letters from the subtable"""
+    """
+    Remove letters from the subtable
+    """
     out_t = ["Removing the letters {} from subs".format(args)]
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     for k in args:
@@ -210,19 +235,25 @@ def delete_sub(state, *args, interv=None):
                         .format(" ".join("{}-{}".format(ind, i.__name__)
                                 for ind, i in enumerate(sub_dishooks)))))
 def show_subbed(state, alt=None):
-    """Show the subbed source"""
+    """
+    Show the subbed source
+    """
     alt = read_type(alt, "alt", int_in_range(0, len(sub_dishooks)), False)
     result = make_subs(state.source.val, state.subs, generator=sub_dishooks[alt])
     return "Here is the substituted source:\n{}\n".format(result)
 
 @restrict_args()
 def show_source(state):
-    """Show the source"""
+    """
+    Show the source
+    """
     return "Here is the source:\n{}\n".format(state.source.val)
 
 @restrict_args(pkw=["interv"])
 def show_table(state, interv=None):
-    """Show the subtable"""
+    """
+    Show the subtable
+    """
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     return ("Here is the current substitution table:\n{}\n"
                 .format(pretty_subs(state.subs[interv])))
@@ -233,9 +264,11 @@ def table_missing(state, interv=None,
           + string.ascii_lowercase
           + string.digits
           + string.punctuation):
-    """Check for unused letters"""
+    """
+    Check for unused letters
+    """
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
-    return textwrap.dedent("""\
+    return dedent("""\
          Referring to set
          {!r}
          The following printable characters are not mapped from:
@@ -249,7 +282,9 @@ def table_missing(state, interv=None,
 
 @restrict_args(pkw=["interv"])
 def show_stack(state, interv=None):
-    """Show current command history"""
+    """
+    Show current command history
+    """
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     return "\n".join(
                 " ".join(shlex.quote("{}{}".format(*kv))
@@ -258,7 +293,9 @@ def show_stack(state, interv=None):
 
 @restrict_args(pos=[2])
 def set_interval(state, interval):
-    """Set the current interval"""
+    """
+    Set the current interval
+    """
     interval = read_type(interval, "interval", pos_int, 1)
     state.intersperse.val = interval
     state.substack[:] = [[{}] for _ in range(interval)]
@@ -268,7 +305,9 @@ def set_interval(state, interval):
 
 @restrict_args(pos=[2])
 def caesar(state, sub):
-    """Generate suggestions for a caesar cipher based on a substitution"""
+    """
+    Generate suggestions for a caesar cipher based on a substitution
+    """
     if len(sub) != 2:
         raise UIError("Invalid substitution {!r}".format(sub))
     k, v = sub
@@ -283,7 +322,9 @@ def caesar(state, sub):
 
 @restrict_args(pkw=["interv"])
 def undo(state, interv=None):
-    """Undo the last substitution"""
+    """
+    Undo the last substitution
+    """
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     if len(state.substack[interv]) > 1:
         state.substack[interv].pop()
@@ -295,13 +336,17 @@ def undo(state, interv=None):
 
 @restrict_args()
 def show_stats(state):
-    """Display common frequency statistics"""
+    """
+    Display common frequency statistics
+    """
     with open("data/stats") as stats:
         return stats.read()
 
 @restrict_args(pkw=["interv"])
 def reset_sub(state, interv=None):
-    """Reset (clear) the subtable"""
+    """
+    Reset (clear) the subtable
+    """
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     state.subs[interv].clear()
     return "Resetting entire substitution table in itv {}".format(interv)
@@ -310,12 +355,16 @@ def reset_sub(state, interv=None):
 
 @restrict_args()
 def exit_p(state):
-    """Exit the program"""
+    """
+    Exit the program
+    """
     sys.exit()
 
 @restrict_args(pos=DummyCount(), pkw=["interv"])
 def update_table(state, *new, interv=None):
-    """Update subtable with given arguments"""
+    """
+    Update subtable with given arguments
+    """
     interv = read_type(interv, "interv", int_in_range(0, state.intersperse.val), 0)
     out_t = []
     for kv in new:
@@ -332,28 +381,50 @@ def update_table(state, *new, interv=None):
                                 .format(k))
         state.subs[interv][k] = v
     state.substack[interv].append(state.subs[interv].copy())
-    out_t.append("updated subtable:\n{}".format(show_table(state, interv=interv)))
+    out_t.append("made substitutions {}".format(" ".join(shlex.quote(i)
+                            for i in new)))
     return "\n".join(out_t)
 
 @restrict_args()
 def update_source(state):
-    """Change source text (by pasting)"""
+    """
+    Change source text (by pasting)
+    """
     state.source.val = _from_tty()
     return "updated source"
 
-@restrict_args(pos=[2])
-def highlight_missing(state, missing):
-    """Highlight a case sensitive missing letter or substring in the text"""
-    alt = False
-    result = make_subs(state.source.val, state.subs, generator=sub_dishooks[alt])
-    return result.replace(missing, "**{}**".format(missing))
-
-@restrict_args(pos=[1])
-def format_tabula(state):
-    """Generate tabula recta from current substitutions"""
+@restrict_args(pkw=["use_tabs"])
+def format_tabula(state, use_tabs=None):
+    """
+    Generate tabula recta from current substitutions
+    """
+    use_tabs = read_type(use_tabs, "use_tabs", int, 0)
+    sepchar = "\t" if use_tabs else " "
     inverse_maps = [{b.upper(): a.upper()
                         for a, b in dct.items()} for dct in state.subs]
-    return "\n".join("{}: {}"
-                    .format(ltr, " ".join(dct.get(ltr, " ")
+    return "\n".join("{}:{}{}"
+                    .format(ltr, sepchar, sepchar.join(dct.get(ltr, " ")
                             for dct in inverse_maps))
                                     for ltr in string.ascii_uppercase)
+
+@restrict_args(pos=[2], pkw=["long", "sub"])
+def regex_search(state, regex, long=None, sub=None):
+    """
+    Search for a regex in text. Can both highlight in place and produce a
+    long-form list. Word of warning: the regex is wrapped in parens.
+    """
+    long = read_type(long, "long", int, 0)
+    sub = read_type(sub, "sub", int, 1)
+    plain = state.source.val
+    if sub:
+        plain = show_subbed(state)
+    if long:
+        return ("Matches of {} in text:\n{}"
+                    .format(regex,
+                        "\n".join(
+                            re.findall(regex, plain))))
+    else:
+        try:
+            return re.sub("({})".format(regex), r"**\1**", plain)
+        except ValueError:
+            return "Invalid regex: {}".format(regex)

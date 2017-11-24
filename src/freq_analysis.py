@@ -67,6 +67,11 @@ def _bar_chart(source, width, start, interval, pat, subs):
         (_, most), = cnt.most_common(1)
         longest = max(len("{!r}".format(letter)) for letter in cnt)
         longest_i = max(len("{}".format(freq)) for freq in cnt.values())
+
+        total_length = len(
+                    "{!r:{l}} (-> {!r:{sl}}) appears {:{il}} times ({:6.2%}) "
+                        .format("A", "", 0, 0,
+                                il=longest_i, sl=longest_sub, l=longest))
     # calculate total length of observed source
     total = sum(cnt.values())
     return "IOC: {:.5f}\n{}".format(IOC(cnt, total),
@@ -81,7 +86,9 @@ def _bar_chart(source, width, start, interval, pat, subs):
                                   # use % formatting
                                   frequency / total,
                                   # bar on the chart
-                                  "-" * int(frequency * width / most),
+                                  "-" * int(frequency *
+                                           (width - total_length)
+                                          / most),
                                   # padding information
                                   il=longest_i,
                                   sl=longest_sub,

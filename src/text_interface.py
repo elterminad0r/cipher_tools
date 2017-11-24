@@ -11,14 +11,21 @@ simple substitution ciphers.
 import shlex
 import sys
 import re
-import textwrap
+import shutil
 
 try:
     import readline
 except ImportError:
     print("FAILED TO IMPORT READLINE (nonfatal)")
 
-from collections import Counter
+# litmus test for python 3.6 - near counter anyways
+if False:
+    raise 1 from 2 # YOU SHOULD INSTALL PYTHON3.6
+
+from collections import Counter # YOU SHOULD INSTALL PYTHON3.6
+from textwrap import TextWrapper, dedent, fill
+
+from levenshtein import closest_n_matches
 
 from input_handling import read_file
 from make_subs import parse_subs
@@ -29,10 +36,15 @@ from interface_framework import (CipherState, UIError, DummyCount,
                                  show_table, reset_sub, show_runs, show_words,
                                  table_missing, show_stats, undo, show_stack,
                                  caesar, set_interval, exit_p, update_table,
-                                 Mutable, update_source, highlight_missing,
-                                 format_tabula)
+                                 Mutable, update_source, format_tabula,
+                                 set_get_width, set_get_width, regex_search)
 
-from call_scripts import call_script
+set_get_width(lambda: shutil.get_terminal_size()[0])
+
+try:
+    from call_scripts import call_script
+except SyntaxError:
+    sys.exit("YOU SHOULD INSTALL PYTHON 3.6")
 
 def verify_exit():
     """
@@ -65,12 +77,26 @@ def parse_options(opts):
             arg_acc.append(opt)
     return opt_acc, arg_acc
 
-# A command more closely tied to the text interface - still follows the same conventions
+# commands more closely tied to the text interface - still follows the same
+# conventions
 
 @restrict_args()
 def show_help(state):
-    """Show help message"""
-    return usage
+    """
+    Show help message
+    """
+    return get_usage() 
+
+@restrict_args()
+def get_pasteable(state):
+    """
+    Get pasteable series of commands for easy communication/"saving"
+    """
+    return "!s {}\n{}".format(state.intersperse.val,
+                        "\n".join("{}!m {}".format(ind, 
+                            " ".join(shlex.quote("{}{}".format(*kv))
+                                for kv in sorted(subs.items())))
+                                    for ind, subs in enumerate(state.subs)))
 
 # The list of commands, their aliases, and their resulting functions.
 commands = [(("frequency", "freq", "f"), show_freq),
@@ -93,14 +119,15 @@ commands = [(("frequency", "freq", "f"), show_freq),
             (("quit", "exit", "q"), exit_p),
             (("call", "script"), call_script),
             (("update", "new"), update_source),
-            (("highlight", "showmissing"), highlight_missing),
-            (("tabrecta",), format_tabula)]
+            (("tabrecta",), format_tabula),
+            (("state", "paste"), get_pasteable),
+            (("search", "regex"), regex_search)]
+
+com_names = [i for l in commands for i in l[0]]
 
 # assert there are no duplicate commands
 if __debug__:
-    uniq_commands = [i for l in commands for i in l[0]]
-    if uniq_commands:
-        assert len(uniq_commands) == len(set(uniq_commands))
+    assert len(com_names) == len(set(com_names))
 
 print("successfully initialised")
 
@@ -110,24 +137,32 @@ def format_commands(commands):
     length, and drawing from their docstring as a short description.
     """
     longest = (max(len("|".join(coms)) for coms, _ in commands))
-    return "\n".join("!{coms:{length}} - {desc}"
+    return "\n".join(TextWrapper(
+                        initial_indent="",
+                        subsequent_indent=" " * (longest + 4),
+                        drop_whitespace=True,
+                        width=shutil.get_terminal_size()[0]
+                        ).fill("!{coms:{length}} - {desc}"
                         .format(coms="|".join(coms), 
-                                desc=fun.__doc__,
-                                length=longest)
+                                desc=dedent(fun.__doc__).strip(),
+                                length=longest))
                       for coms, fun in commands)
 
-# general usage string
-usage = """\
-Anything prefixed with a ! will be considered a command. Anything else will be
-interpreted as a series of substitutions to make. The available commands are as
-follows:
-{}
-A command can be given arguments, as space-separated words after the command.
-""".format(format_commands(commands))
+def get_usage():
+    """
+    Generate the "help menu"
+    """
+    return dedent("""\
+    Anything prefixed with a ! will be considered a command. Anything else will be
+    interpreted as a series of substitutions to make. The available commands are as
+    follows:
+    {}
+    A command can be given arguments, as space-separated words after the command.
+    """).format(format_commands(commands))
 
 # pattern that matches a command (anything starting in an exclamation mark
 # followed by letters and a word boundary
-com_pat = re.compile(r"^([0-9]*|a)!([a-z]+)\b(.*)$")
+com_pat = re.compile(r"^([0-9]*|a)!([a-zA-Z]+)\b(.*)$")
 
 def parse_com(com):
     """
@@ -151,6 +186,8 @@ def run():
     # assert stdin is a tty for interactive use
     if not sys.stdin.isatty():
         sys.exit("sys.stdin must be a tty as this is an interactive script")
+
+
     # initialise the state
     state = CipherState(source=Mutable(read_file()),
                         subs=[{}],
@@ -187,10 +224,12 @@ def run():
                         break
                 # if the command is unrecognised
                 else:
-                    raise UIError((
-                        "unrecognised command {!r}. see !help, "
-                        "action_doc.md or text_interface_doc.md for usage")
-                            .format(com))
+                    raise UIError(" ".join("""\
+                      unrecognised command {!r}. Did you mean any of {}? see
+                      !help, action_doc.md or text_interface_doc.md for usage
+                      """.split())
+                        .format(com,
+                             closest_n_matches(com.lower(), com_names, 3)))
             # if it's to be treated as substitutions
             else:
                 if state.intersperse.val != 1:
