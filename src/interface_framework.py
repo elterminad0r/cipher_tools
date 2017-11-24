@@ -421,10 +421,10 @@ def regex_search(state, regex, long=None, sub=None):
     if long:
         return ("Matches of {} in text:\n{}"
                     .format(regex,
-                        "\n".join(
-                            re.findall(regex, plain))))
+                        "\n".join(i.group(0) for i in 
+                            re.finditer(regex, plain))))
     else:
         try:
-            return re.sub("({})".format(regex), r"**\1**", plain)
+            return re.sub(regex, lambda s: "**{}**".format(s.group(0)), plain)
         except ValueError:
             return "Invalid regex: {}".format(regex)
