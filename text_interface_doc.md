@@ -1,6 +1,7 @@
 # documentation for `text_interface.py`.
 
 See also [the documentation for each function](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md)
+and [the documentation for `!call`](https://github.com/elterminad0r/cipher_tools/blob/master/call_doc.md)
 
 The first thing you are likely to encounter is the file input. If you're not a
 command line user, this will work by pasting it in, entering another newline
@@ -21,9 +22,9 @@ blank for safety.
 
 This will probably have been prefixed with something like this:
 
-	successfully initialised
-	running 3.6.3 (default, Oct  8 2017, 20:13:06) 
-	[GCC 5.4.0 20160609]
+    successfully initialised
+    running 3.6.3 (default, Oct  8 2017, 20:13:06) 
+    [GCC 5.4.0 20160609]
 
 This is just some diagnostic information (3.6.3 is the version of Python I'm
 running, and I built it on 8th October, using GCC 5.4.0). If it says something
@@ -34,52 +35,52 @@ example. Apart from telling you that, I'm not sure what to do about it.
 The next thing the script will do is display the following help message (or a
 slightly expanded version of it if I've continued development):
 
-	Anything prefixed with a ! will be considered a command. Anything else will be
-	interpreted as a series of substitutions to make. The available commands are as
-	follows:
-	!frequency|freq|f       - Display frequencies - (pos=[1], pkw=['width',
-							  'interv', 'pat', 'info'])
-	!doubles|pairs|d        - Show repeating adjacent identical pairs - (pos=[1],
-							  pkw=[])
-	!word|w                 - Find words matching a prototype - (pos=[2], pkw=[])
-	!runs|r                 - Display frequently repeating runs - (pos=[1],
-							  pkw=['length', 'width', 'maxdisplay'])
-	!delete|remove|x        - Remove letters from the subtable - (pos=[any],
-							  pkw=['interv'])
-	!print|p                - Show the subbed source - possible displayhooks
-							  0-_make_subs 1-_alt_subs 2-_under_subs - (pos=[1],
-							  pkw=['alt', 'interv'])
-	!original|orig|source|o - Show the source - (pos=[1], pkw=[])
-	!table|t                - Show the subtable - (pos=[1], pkw=['interv'])
-	!missing                - Check for unused letters - (pos=[1], pkw=['interv',
-							  'check'])
-	!info|stats|i           - Display common frequency statistics - (pos=[1],
-							  pkw=[])
-	!clear|reset|c          - Reset (clear) the subtable - (pos=[1], pkw=['interv'])
-	!make|sub|m             - Update subtable with given arguments - (pos=[any],
-							  pkw=['interv'])
-	!caesar|z               - Generate suggestions for a caesar cipher based on a
-							  substitution - (pos=[2], pkw=[])
-	!help|h                 - Show help message - (pos=[1], pkw=[])
-	!undo|u                 - Undo the last substitution - (pos=[1], pkw=['interv'])
-	!skip|interval|interv|s - Set the current interval - (pos=[2], pkw=[])
-	!history|hist|stack     - Show current command history - (pos=[1],
-							  pkw=['interv'])
-	!quit|exit|q            - Exit the program - (pos=[1], pkw=[])
-	!call|script            - Call a script from scripts/ directory. Use `!call
-							  <com> -h` to get the specific help menu for a command.
-							  Use `!call list` for an extended list of scripts. -
-							  (pos=[2 <= x], pkw=[])
-	!update|new             - Change source text (by pasting) - (pos=[1], pkw=[])
-	!tabrecta               - Generate tabula recta from current substitutions -
-							  (pos=[1], pkw=['use_tabs'])
-	!state|paste            - Get pasteable series of commands for easy
-							  communication/"saving" - (pos=[1], pkw=[])
-	!search|regex           - Search for a regex in text. Can both highlight in
-							  place and produce a long-form list. Word of warning:
-							  the regex is wrapped in parens. - (pos=[2],
-							  pkw=['long', 'sub'])
-	A command can be given arguments, as space-separated words after the command.
+    Anything prefixed with a ! will be considered a command. Anything else will be
+    interpreted as a series of substitutions to make. The available commands are as
+    follows:
+    !frequency|freq|f       - Display frequencies - (pos=[1], pkw=['width',
+                              'interv', 'pat', 'info'])
+    !doubles|pairs|d        - Show repeating adjacent identical pairs - (pos=[1],
+                              pkw=[])
+    !word|w                 - Find words matching a prototype - (pos=[2], pkw=[])
+    !runs|r                 - Display frequently repeating runs - (pos=[1],
+                              pkw=['length', 'width', 'maxdisplay'])
+    !delete|remove|x        - Remove letters from the subtable - (pos=[any],
+                              pkw=['interv'])
+    !print|p                - Show the subbed source - possible displayhooks
+                              0-_make_subs 1-_alt_subs 2-_under_subs - (pos=[1],
+                              pkw=['alt', 'interv'])
+    !original|orig|source|o - Show the source - (pos=[1], pkw=[])
+    !table|t                - Show the subtable - (pos=[1], pkw=['interv'])
+    !missing                - Check for unused letters - (pos=[1], pkw=['interv',
+                              'check'])
+    !info|stats|i           - Display common frequency statistics - (pos=[1],
+                              pkw=[])
+    !clear|reset|c          - Reset (clear) the subtable - (pos=[1], pkw=['interv'])
+    !make|sub|m             - Update subtable with given arguments - (pos=[any],
+                              pkw=['interv'])
+    !caesar|z               - Generate suggestions for a caesar cipher based on a
+                              substitution - (pos=[2], pkw=[])
+    !help|h                 - Show help message - (pos=[1], pkw=[])
+    !undo|u                 - Undo the last substitution - (pos=[1], pkw=['interv'])
+    !skip|interval|interv|s - Set the current interval - (pos=[2], pkw=[])
+    !history|hist|stack     - Show current command history - (pos=[1],
+                              pkw=['interv'])
+    !quit|exit|q            - Exit the program - (pos=[1], pkw=[])
+    !call|script            - Call a script from scripts/ directory. Use `!call
+                              <com> -h` to get the specific help menu for a command.
+                              Use `!call list` for an extended list of scripts. -
+                              (pos=[2 <= x], pkw=[])
+    !update|new             - Change source text (by pasting) - (pos=[1], pkw=[])
+    !tabrecta               - Generate tabula recta from current substitutions -
+                              (pos=[1], pkw=['use_tabs'])
+    !state|paste            - Get pasteable series of commands for easy
+                              communication/"saving" - (pos=[1], pkw=[])
+    !search|regex           - Search for a regex in text. Can both highlight in
+                              place and produce a long-form list. Word of warning:
+                              the regex is wrapped in parens. - (pos=[2],
+                              pkw=['long', 'sub'])
+    A command can be given arguments, as space-separated words after the command.
 
 Note that this menu automatically formats itself to the width of your screen.
 However, this is only possible if your screen is a proper terminal, which as
