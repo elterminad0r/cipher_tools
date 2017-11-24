@@ -1,8 +1,12 @@
 # Specific action documentation
 
-See also [the documentation for general syntax](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md)
+See also [the documentation for general
+syntax](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md)
 
-All examples in this page use my custom encrypted source text [`zop13.txt`](#source). ([alternatively, source file](https://github.com/elterminad0r/cipher_tools/blob/master/src/data/zop13.txt)). This is not a part of any challenge. Try cracking it (the clue's in the name)!
+All examples in this page use my custom encrypted source text
+[`zop13.txt`](#source).
+([alternatively, source file](https://github.com/elterminad0r/cipher_tools/blob/master/src/data/zop13.txt)).
+This is not a part of any challenge. Try cracking it (the clue's in the name)!
 
 ## [Table of contents](#table-of-contents)
 
@@ -29,7 +33,9 @@ All examples in this page use my custom encrypted source text [`zop13.txt`](#sou
 
     !frequency|freq|f  - Display frequencies - (pos=[1], pkw=['width', 'interval', 'pat'])
 
-This is a command that displays letter frequencies in the text. It produces direct frequencies, percentages and a bar chart. This command does work in polyalphabetic mode.
+This is a command that displays letter frequencies in the text. It produces
+direct frequencies, percentages and a bar chart. This command does work in
+polyalphabetic mode.
 
     Enter a command/substitutions > !f
     Here are the frequencies:
@@ -59,7 +65,9 @@ This is a command that displays letter frequencies in the text. It produces dire
     'X' (-> '') appears  2 times ( 0.30%) -
     'M' (-> '') appears  1 times ( 0.15%) 
 
-It also has a lot of arrows pointing to two single quotes around an empty void. When you've entered substitutions, these will display what substitutions are currently implemented for each letter, eg with table
+It also has a lot of arrows pointing to two single quotes around an empty void.
+When you've entered substitutions, these will display what substitutions are
+currently implemented for each letter, eg with table
 
     An Bo Fs Gt Mz Re Uh Yl
     A -> n
@@ -143,7 +151,17 @@ the result becomes:
 
 This command will find a word matching a certain pattern. More strictly:
 
-Greps through a dictionary of words to find words matching a given "prototype". The prototype spec is designed so that you can just paste in a word from the source, eg "GRZCGNGVBA". This will be interpreted as that all letters in the same location as a `G` must be the same, all letters in the same location as an `R`, etc. The characters used are in this case arbitrary - they could just as well be `1`, `2`.. etc. The last feature the has is that you can specify an "absolute" letter. This is when you know (or suspect) what a letter could be (for example by frequency analysis). To do this, you should pass in a string where this letter is escaped by a backslash. Because of the nature of `sh`-argument syntax, you then also have to escape it with quotes, otherwise `shlex` will eat the backslash. Here are two examples:
+Greps through a dictionary of words to find words matching a given "prototype".
+The prototype spec is designed so that you can just paste in a word from the
+source, eg "GRZCGNGVBA". This will be interpreted as that all letters in the
+same location as a `G` must be the same, all letters in the same location as an
+`R`, etc. The characters used are in this case arbitrary - they could just as
+well be `1`, `2`.. etc. The last feature the has is that you can specify an
+"absolute" letter. This is when you know (or suspect) what a letter could be
+(for example by frequency analysis). To do this, you should pass in a string
+where this letter is escaped by a backslash. Because of the nature of
+`sh`-argument syntax, you then also have to escape it with quotes, otherwise
+`shlex` will eat the backslash. Here are two examples:
 
     Enter a command/substitutions > !w GRZCGNGVBA
     Here are the words matching GRZCGNGVBA:
@@ -161,7 +179,12 @@ Greps through a dictionary of words to find words matching a given "prototype". 
     Here are the words matching G\eZCGNGVBA:
     temptation
 
-We can see that specification of the string greatly reduces the search space (although it was already pretty small). Generally `!word` is a good idea to try if you're working on a substitution cipher and see either a word where you know many of the letters, or a long word with a couple of repeated letters. If you make a good choice, this tool will make attacking simple subtitutions ciphers almost trivial.
+We can see that specification of the string greatly reduces the search space
+(although it was already pretty small). Generally `!word` is a good idea to try
+if you're working on a substitution cipher and see either a word where you know
+many of the letters, or a long word with a couple of repeated letters. If you
+make a good choice, this tool will make attacking simple subtitutions ciphers
+almost trivial.
 
 This function accepts a single argument, which is the word prototype.
 
@@ -169,7 +192,9 @@ This function accepts a single argument, which is the word prototype.
 
     !runs|r            - Display frequently repeating runs - (pos=[1], pkw=['length', 'width', 'maxdisplay'])
 
-This function does frequency analysis on occurring "runs" of characters in the source text. This can be useful as we might know that certain pairings occur more often in English (see [`!info`](#info)). The simple usage example is:
+This function does frequency analysis on occurring "runs" of characters in the
+source text. This can be useful as we might know that certain pairings occur
+more often in English (see [`!info`](#info)). The simple usage example is:
 
     Enter a command/substitutions > !r
     Here are the 20 most frequent runs:
@@ -194,7 +219,8 @@ This function does frequency analysis on occurring "runs" of characters in the s
     run 'CYR'  (-> 'CYR' )  5 times ( 0.58%) ----------------
     run ' GB'  (-> ' GB' )  5 times ( 0.58%) ----------------
 
-It has similar substitution functionality to [`!doubles`](#doubles), and plots a very similar bar chart to [`!frequency`](#frequency).
+It has similar substitution functionality to [`!doubles`](#doubles), and plots
+a very similar bar chart to [`!frequency`](#frequency).
 
 It accepts the following parameters:
 
@@ -209,7 +235,8 @@ name | function
 
     !delete|remove|x   - Remove letters from the subtable - (pos=[any], pkw=[])
 
-Removes chosen substitutions from the table. Supply substitutions as whitespace-separated characters. For example, starting with
+Removes chosen substitutions from the table. Supply substitutions as
+whitespace-separated characters. For example, starting with
 
     Here is the current substitution table:
     An Bo Gt Mz Re Sf Uh
@@ -238,7 +265,8 @@ If it is passed an unrecognised key it will fail softly and try to go on.
 
     !print|p           - Show the subbed source - (pos=[1], pkw=['alt'])
 
-Will print the source, applying substitutions in the current substitution table. By default it makes direct substitutions:
+Will print the source, applying substitutions in the current substitution
+table. By default it makes direct substitutions:
 
     Enter a command/substitutions > !p
     Here is the substituted source:
@@ -365,13 +393,18 @@ Print the current substitution table, in both paste-able format and arrow format
     S -> f
     U -> h
 
-Note that this command is automatically called whenever a substitution is made (even if it's empty). Therefore, you can also view the table by just pressing enter.
+Note that this command is automatically called whenever a substitution is made
+(even if it's empty). Therefore, you can also view the table by just pressing
+enter.
 
 ### [missing](#table-of-contents)
 
     !missing|m         - Check for unused letters - (pos=[1], pkw=[])
 
-Display currently unused characters, in both sides of the table. By default it operates on the set of all alphanumeric characters. Uppercase characters are always at the start, so if that's all you're interested in you can just look at the start.
+Display currently unused characters, in both sides of the table. By default it
+operates on the set of all alphanumeric characters. Uppercase characters are
+always at the start, so if that's all you're interested in you can just look at
+the start.
 
 Using
 
@@ -455,7 +488,8 @@ you can do:
 
     !help|h            - Show help message - (pos=[1], pkw=[])
 
-Display a half auto generated help message, which pulls from various bits of function docstrings and decorators. At one point it was something like:
+Display a half auto generated help message, which pulls from various bits of
+function docstrings and decorators. At one point it was something like:
 
     Anything prefixed with a ! will be considered a command. Anything else will be
     interpreted as a series of substitutions to make. The available commands are as
@@ -476,13 +510,18 @@ Display a half auto generated help message, which pulls from various bits of fun
     !exit|quit|q       - Exit the program - (pos=[1], pkw=[])
     A command can be given arguments, as space-separated words after the command.
 
-It is also always displayed at the start of the program. Really this is the best place to find it, so I'm not updating the copy here - it's just as an example.
+It is also always displayed at the start of the program. Really this is the
+best place to find it, so I'm not updating the copy here - it's just as an
+example.
 
 ### [quit](#table-of-contents)
 
     !quit|exit|q       - Exit the program - (pos=[1], pkw=[])
 
-Exit the program. I'm not sure if anyone will find themselves using this - you can achieve much of the same thing by pressing ctrl-c, I'm pretty sure, and possibly also ctrl-d (both work on linux in a console, but I've not tested for any other environments). Regardless, !q is there as a backup:
+Exit the program. I'm not sure if anyone will find themselves using this - you
+can achieve much of the same thing by pressing ctrl-c, I'm pretty sure, and
+possibly also ctrl-d (both work on linux in a console, but I've not tested for
+any other environments). Regardless, !q is there as a backup:
 
     Enter a command/substitutions > !q
 
@@ -490,7 +529,11 @@ Exit the program. I'm not sure if anyone will find themselves using this - you c
 
     !make|sub|m             - Update subtable with given arguments - (pos=[any], pkw=['interv'])
 
-This command is the "longhand" for substitution. Really, you can think of it as that when you're in monoalphabetic mode, when you don't supply a commend, `0!m` is prepended to what you type, and all the subtitution pairs you enter are arguments to `!m`. In polyalphabetic mode, use eg `1!m` to make substitutions in the second interval.
+This command is the "longhand" for substitution. Really, you can think of it as
+that when you're in monoalphabetic mode, when you don't supply a commend, `0!m`
+is prepended to what you type, and all the subtitution pairs you enter are
+arguments to `!m`. In polyalphabetic mode, use eg `1!m` to make substitutions
+in the second interval.
 
     cipher_tools 2$ 0!m Re
     targeting group 0
@@ -530,22 +573,36 @@ As you can see, only Rs in the first interval are substituted.
 
     !caesar|z               - Generate suggestions for a caesar cipher based on a substitution - (pos=[2], pkw=[])
 
-This command is a simple function that "autocompletes" a subtitution table if you suspect it's a caesar cipher. It takes one argument, which is a substitution pair, (eg "Ge"), and then returns 26 pairs of letters that would align with that caesar cipher. It doesn't actually change state - you still have to paste these into `!m` or directly paste into the prompt. This is because it might catastrophically overwrite your table, so I prefer having the user explicitly do this themselves. You might use it like this:
+This command is a simple function that "autocompletes" a subtitution table if
+you suspect it's a caesar cipher. It takes one argument, which is a
+substitution pair, (eg "Ge"), and then returns 26 pairs of letters that would
+align with that caesar cipher. It doesn't actually change state - you still
+have to paste these into `!m` or directly paste into the prompt. This is
+because it might catastrophically overwrite your table, so I prefer having the
+user explicitly do this themselves. You might use it like this:
 
     cipher_tools 1$ !z Re
     targeting group 
     delta -13: An Bo Cp Dq Er Fs Gt Hu Iv Jw Kx Ly Mz Na Ob Pc Qd Re Sf Tg Uh Vi Wj Xk Yl Zm
     cipher_tools 1$ An Bo Cp Dq Er Fs Gt Hu Iv Jw Kx Ly Mz Na Ob Pc Qd Re Sf Tg Uh Vi Wj Xk Yl Zm
 
-This is after performing frequency analysis using `!f`, and determining that `R` is the most common letter. Assuming this is a caesar cipher, we then assume `Re`, and generate the rest of the alphabet based on that.
+This is after performing frequency analysis using `!f`, and determining that
+`R` is the most common letter. Assuming this is a caesar cipher, we then assume
+`Re`, and generate the rest of the alphabet based on that.
 
-This tool is very powerful if you're just decoding a caesar cipher, as it requires maybe three steps to crack the whole thing. Of course, caesar ciphers don't really constitute much opposition. However, this is also of use against more advanced, possibly french ciphers, using pretty much the method above with interval frequency analysis.
+This tool is very powerful if you're just decoding a caesar cipher, as it
+requires maybe three steps to crack the whole thing. Of course, caesar ciphers
+don't really constitute much opposition. However, this is also of use against
+more advanced, possibly french ciphers, using pretty much the method above with
+interval frequency analysis.
 
 ### [undo](table-of-contents)
 
     !undo|u                 - Undo the last substitution - (pos=[1], pkw=['interv'])
 
-This is a function that undoes a substitution. I don't find myself using it much, but you might. It works like this:
+This is a function that undoes a substitution. I don't find myself using it
+much, but you might (I generally end up working faster by using !m and !x put
+together). It works like this:
 
     cipher_tools 1$ Ab Cd
     updated subtable:
@@ -575,7 +632,10 @@ It also works in polyalphabetic mode.
 
     !skip|interval|interv|s - Set the current interval - (pos=[2], pkw=[])
 
-This is a command already outlined in other documentation. It accepts a single argument which is the integer "interval" length. This is equivalent ot the length of the keyword used to encrypt the text. The current passphrase length value is displayed in the prompt, before the `$` sign:
+This is a command already outlined in other documentation. It accepts a single
+argument which is the integer "interval" length. This is equivalent ot the
+length of the keyword used to encrypt the text. The current passphrase length
+value is displayed in the prompt, before the `$` sign:
 
     cipher_tools 1$ !s 400
     targeting group 
@@ -583,13 +643,16 @@ This is a command already outlined in other documentation. It accepts a single a
     and reset subtables and history
     cipher_tools 400$ 
 
-As you can see, when you change this value you also reset any substitution tables you have - advice is to change this a lot when you're checking out possibly keyword lengths, and then settle on one and try to solve it.
+As you can see, when you change this value you also reset any substitution
+tables you have - advice is to change this a lot when you're checking out
+possibly keyword lengths, and then settle on one and try to solve it.
 
 ### [history](#table-of-contents)
 
     !history|hist|stack     - Show current command history - (pos=[1], pkw=['interv'])
 
-This command displays the history of a substitution table. You might use it like this:
+This command displays the history of a substitution table. You might use it
+like this:
 
     cipher_tools 1$ Ab Cd
     updated subtable:
@@ -623,4 +686,5 @@ This command displays the history of a substitution table. You might use it like
     Ab Cd Ef
     Ab Cd Ef Gh Ij
 
-Could be useful in conjunction with the clear command to "revert" to a previous table. This command works in polyalphabetic mode.
+Could be useful in conjunction with the clear command to "revert" to a previous
+table. This command works in polyalphabetic mode.
