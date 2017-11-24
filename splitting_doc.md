@@ -1,6 +1,11 @@
 # Documentation for `split_into_words.py`
 
-This is a command-line script to perform splitting operations on dense text. It uses a fine-tuned prefix tree for word lookups. The algorithm is entirely greedy but this can in fact be compensated for with whitelisting - eg in "forthe", the algorithm sees "forth e". However, by whitelisting "for\_the", the greedy algorithm sees a longer alternative and chooses it. You might use it like so, from a terminal prompt:
+This is a command-line script to perform splitting operations on dense text. It
+uses a fine-tuned prefix tree for word lookups. The algorithm is entirely
+greedy but this can in fact be compensated for with whitelisting - eg in
+"forthe", the algorithm sees "forth e". However, by whitelisting "for\_the",
+the greedy algorithm sees a longer alternative and chooses it. You might use it
+like so, from a terminal prompt:
 
     $ cat solutions/dense/0adense.txt 
     dearestharryithasbeentoolongsincewelastworkedtogetherandmanyshipshavepassedthroughthebosphorussincebutitispossiblethatmycurrentcasemaygiveusanopportunitytoworktogetheragainisincerelyhopesothenetworkhaspickedupalotofchatterrecentlyconcerningtheshadowantiquitiesmarketandmysuperiorsareworriedthatthismightbepartofadealsupportingaterrornetworkwearenotsurewhatthetargetisbuttheamountsbeingdiscussedarebeyondanythingihaveseenbeforesosomeoneiseitherarrangingtosellaverylargestolencollectionortheyhavefoundaparticularlyunusualitemalotofthetrafficiscomingoutofegyptandlandinginturkeywhichiswhyiwasbroughtintoinvestigatehaveyouheardanythinglondonisusuallytheclearinghouseforthesethingsandsomeonetherewiththeinitialjhasbeenmentionedreadingbetweenthelinesjseemstobeconnectedwithoneofthemajorlondoninstitutionsandiwonderedifyournetworkwaspickingupthesamesignalsonthebasisofsigintanalysiscairoseemstobethebestplaceformetostartlookingletmeknowifyouareinterestedinjoiningmethereeitherwayifyouhearanythingcouldyoupassitonbestwishesmaryam
@@ -17,4 +22,8 @@ This is a command-line script to perform splitting operations on dense text. It 
     initialised (took 0.477 secs)
     ...
 
-Here I've illustrated the file being used and the result of splitting it. This is arguably misleading - it has been fine-tuned by testing on this file. It reads blacklists and whitelists from an auxiliary dictionary file `extra_words`, after building a prefix tree from all words in `words`. However, the more it's fine tuned in this way the better it gets.
+Here I've illustrated the file being used and the result of splitting it. This
+is arguably misleading - it has been fine-tuned by testing on this file. It
+reads blacklists and whitelists from an auxiliary dictionary file
+`extra_words`, after building a prefix tree from all words in `words`. However,
+the more it's fine tuned in this way the better it gets.
