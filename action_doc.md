@@ -29,6 +29,10 @@ This is not a part of any challenge. Try cracking it (the clue's in the name)!
  - [skip](#skip)
  - [history](#history)
  - [call](#call)
+ - [update](#update)
+ - [tabrecta](#tabrecta)
+ - [state](#state)
+ - [search](#search)
 
 ### [frequency](#table-of-contents)
 
