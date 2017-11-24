@@ -28,6 +28,7 @@ This is not a part of any challenge. Try cracking it (the clue's in the name)!
  - [undo](#undo)
  - [skip](#skip)
  - [history](#history)
+ - [call](#call)
 
 ### [frequency](#table-of-contents)
 
@@ -688,3 +689,192 @@ like this:
 
 Could be useful in conjunction with the clear command to "revert" to a previous
 table. This command works in polyalphabetic mode.
+
+### [call](#table-of-contents)
+
+    !call|script            - Call a script from scripts/ directory. Use `!call
+                              <com> -h` to get the specific help menu for a command.
+                              Use `!call list` for an extended list of scripts. -
+                              (pos=[2 <= x], pkw=[])
+
+This command is itself not too complicated, but the amount of functionality is
+so large that it warrants its own documentation. This can be found
+[here](https://github.com/elterminad0r/cipher_tools/blob/master/call_doc.md).
+
+### [update](#table-of-contents)
+
+    !update|new             - Change source text (by pasting) - (pos=[1], pkw=[])
+
+This command lets you "renew" the source text, as if restarting the program.
+You might use it like this:
+
+    cipher_tools 1$ !update
+    targeting group 
+    Manual file entry: paste in the file, or type it in line by line. When you're done, hit an extra newline to be safe and then hit ctrl-c
+    the quick brown dog
+    updated source
+    cipher_tools 1$ !p
+    targeting group 
+    Here is the substituted source:
+    the quick brown dog
+
+### [tabrecta](#table-of-contents)
+
+    !tabrecta               - Generate tabula recta from current substitutions -
+                              (pos=[1], pkw=['use_tabs'])
+
+Generate a tabula recta from all substitution tables. This may be used to try
+and spot patterns in tables or ciphers. The default table layout from `!t` maps
+from ciphertext to plain text, and skips gaps, but nearly all coding schemes
+are formulated in terms of plaintext to ciphertext. This is exposed by this
+function. For example, if you'd made some progress with challenge 2a, you might
+be at this point:
+
+    cipher_tools 1$ !t
+    targeting group 
+    Here is the current substitution table:
+    Ab Bn Ca Do Gr Hs Oe Py Rd Tg Uh Vi Xk Zm
+    A -> b
+    B -> n
+    C -> a
+    D -> o
+    G -> r
+    H -> s
+    O -> e
+    P -> y
+    R -> d
+    T -> g
+    U -> h
+    V -> i
+    X -> k
+    Z -> m
+
+You could then examine the "tabula recta" for this arrangement:
+
+    cipher_tools 1$ !tabrecta
+    targeting group 
+    A: C
+    B: A
+    C:  
+    D: R
+    E: O
+    F:  
+    G: T
+    H: U
+    I: V
+    J:  
+    K: X
+    L:  
+    M: Z
+    N: B
+    O: D
+    P:  
+    Q:  
+    R: G
+    S: H
+    T:  
+    U:  
+    V:  
+    W:  
+    X:  
+    Y: P
+    Z:  
+
+Looking at this, and being slightly omnipotent you might discover that "TUV\_X"
+*probably* coincides with the alphabet and the key was "cairo".
+
+This function also works in polyalphabetic mode but I won't say too much about
+that.
+
+### [state](#table-of-contents)
+
+    !state|paste            - Get pasteable series of commands for easy
+                              communication/"saving" - (pos=[1], pkw=[])
+
+One of my great frustrations in solving 6b was the difficult of obtaining
+"state" from team members. `a!t` did technically provide all I needed, but was
+for speedy intents and purposes useless. Therefore, I'm proud to present
+`!state`:
+
+    cipher_tools 1$ !s 5
+    targeting group 
+    successfully set interval to 5,
+    and reset subtables and history
+    cipher_tools 5$ 0!m Ab Cd Ef Gh
+    targeting group 0
+    made substitutions Ab Cd Ef Gh
+    cipher_tools 5$ 2!m Zx Ym Po 
+    targeting group 2
+    made substitutions Zx Ym Po
+    cipher_tools 5$ 1!m Il Ov Et He St At Ec Om Ma Nd
+    targeting group 1
+    warning - the value of E is being changed to c (it was t)
+    warning - the value of O is being changed to m (it was v)
+    made substitutions Il Ov Et He St At Ec Om Ma Nd
+    cipher_tools 5$ !state
+    targeting group 
+    !s 5
+    0!m Ab Cd Ef Gh
+    1!m At Ec He Il Ma Nd Om St
+    2!m Po Ym Zx
+    3!m 
+    4!m 
+
+As you can see, it has provided a series of commands that can be pasted into
+another session to immediately recreate the state.
+
+### [search](#table-of-contents)
+
+    !search|regex           - Search for a regex in text. Can both highlight in
+                              place and produce a long-form list. Word of warning:
+                              the regex is wrapped in parens. - (pos=[2],
+                              pkw=['long', 'sub'])
+
+This function allows for searching within the text. You can search in either
+the ciphertext or the current state of the plaintext. It is a [regular
+expression](https://en.wikipedia.org/wiki/Regular_expression) (specifically,
+[Python-flavoured](https://docs.python.org/3/library/re.html)) search, meaning
+that it can perform more advanced pattern matching like finding all the
+candidates for "8 letter proper noun", but also when you just enter letters,
+numbers, spaces and underscores it acts as a search function. It can highlight
+matches in place or produce a long listing. This function has two boolean
+keyword arguments `long` and `sub`. However, the arguments are given as
+integers, where `0` is considered to be `False` and anything else is `True`.
+`long` tells it to produce a long listing (False by default).
+`sub` tells it to act on the substituted text (True by default).
+
+Currently, the search is always case sensitive and single-line (the Python
+defaults). In future, I may add a flag argument but that's pretty advanced. For
+now, character classes can be used to this end.
+
+If you want to use the more sophisticated features I suggest you find a regex
+tutorial somewhere, as that has been thoroughly covered and is way outside the
+scope of this documentation.
+
+Putting all of this together, you can do the following:
+
+    cipher_tools 1$ !search "\b(\w)(\w)(\w)\3(\w)\b"
+    targeting group 
+    Here is the substituted source:
+    **UCGGP**,
+    V CZ LOGP TGCJOSKY SDG JUO SVYO DB WDRVO. SDYYDMVBT PDKG JVEDSS CADKJ UOG
+    ...
+    CBR WDRVO **JOYYH** ZO JUCJ JUO HJPYO MCH GOIDTBVHCAYP JCIVJKH, CBR HDZO DS
+    ...
+
+    cipher_tools 1$ !search Q
+    targeting group 
+    Here is the substituted source:
+    ...
+    YOR WDRVO JD HKHEOIJ JUCJ JUO EPGCZVRH CJ TV**Q**C MOGO C TDDR EYCIO JD
+    ...
+
+    cipher_tools 1$ !search "\b(\w)(\w)(\w)\3(\w)\b" -long=1
+    targeting group 
+    Matches of \b(\w)(\w)(\w)\3(\w)\b in text:
+    UCGGP
+    JOYYH
+
+This feature has a kind of auxiliary use aside from finding text/text matching
+patterns as it can highlight perhaps rare letters that you've missed while
+attacking a substitution cipher by searching for those letters.
