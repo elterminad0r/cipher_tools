@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
 """
-Splitting text into chunks (a la polybius)
+Splitting text into chunks (a la polybius). Use the value of the -c parameter
+to set how long blocks to accumulate are. To assign a letter to each block in
+order to allow cryptanalysis with other tools, use -a.
 """
 
 import re
 import sys
 import string
 import argparse
+import itertools
 
 acc_codex = string.ascii_uppercase + string.digits
 
@@ -27,13 +30,15 @@ def accumulate_chars(plain, chunk_length):
     for a in map("".join, chunk(plain, chunk_length)):
         if a not in combs:
             combs[a] = len(combs)
+            if len(combs) > len(acc_codex):
+                raise IndexError("Ran out of symbols")
         sys.stdout.write(acc_codex[combs[a]])
 
 if __name__ == "__main__":
     if sys.stdin.isatty():
         sys.exit("This is a command-line script requiring stdin")
     args = parse_args()
-    plain = sys.stdin.read()
+    plain = re.findall("[a-zA-Z]", sys.stdin.read())
     if args.accumulate:
         accumulate_chars(plain, args.chunk)
     else:

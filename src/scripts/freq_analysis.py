@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Perform frequency analysis on text
+Perform frequency analysis on text. This is already provided by !f, this script
+exists for other reasons.
 """
 
 import sys

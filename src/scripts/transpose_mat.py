@@ -25,6 +25,6 @@ if __name__ == "__main__":
         sys.exit("This is a command-line script requiring stdin")
     args = parse_args()
     if not args.length:
-        print("".join(map("".join, zip(*map(str.split, sys.stdin)))))
+        print("\n".join(map("".join, zip(*map(str.split, sys.stdin)))))
     else:
         print("\n".join(map("".join, zip(*chunk(strip(sys.stdin.read()), args.length)))))

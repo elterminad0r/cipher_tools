@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Find all phrases with a certain length
+Find all runs of words ("phrases") occurring in stdin with a certain length.
+(might be used to search for a keyword or name)
 """
 
 import sys

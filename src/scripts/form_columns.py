@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 """
-Form columns from text, preserving puncutation
+Form columns from text, preserving puncutation. If you suspect you're dealing
+with a polyalphabetic cipher, you might use this to gain some insight. Takes
+one argument, which is number of columns.
 """
 
 import sys

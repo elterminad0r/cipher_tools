@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Utility script rather than interface to apply substitutions
+Script to try substitution ciphers given a keyword (useful only if you actually
+know the keyword. Currently supports caesar (-c) and vigenere (-v)
 """
 
 import sys
@@ -28,7 +29,12 @@ def parse_args():
 alpha_set = set(string.ascii_letters)
 
 def shiftch(char, shift):
-    return chr((ord(char.upper()) - ord('A') + shift) % 26 + ord('A'))
+    return match_case(
+                chr((ord(char.upper()) - ord('A') + shift) % 26 + ord('A')),
+                char)
+
+def match_case(new, old):
+    return new.upper() if old.isupper() else new.lower()
 
 def shift(plain, passphrase):
     out = []

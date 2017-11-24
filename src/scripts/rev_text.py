@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Reverse text. Can retain or strip punctuation, and also not reverse punctuation.
+Reverse text. Can retain or strip punctuation, and also not reverse
+punctuation, with -s and -r respectively.
 """
 
 import sys

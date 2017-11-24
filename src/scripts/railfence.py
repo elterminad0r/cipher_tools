@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Utility script to undo a rail fence cipher
+Utility script to undo a rail fence cipher. Takes an optional argument -r which
+is number of rails.
 """
 
 import itertools

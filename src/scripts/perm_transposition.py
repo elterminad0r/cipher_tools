@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 """
-Apply a columnar permutation transposition to a text
+Apply a columnar permutation transposition to a text. Takes one argument, which
+is not a keyword but a permutation. The permutation is formed by sotring by
+ascii values and assigning autoinc integers.
 """
 
 import sys

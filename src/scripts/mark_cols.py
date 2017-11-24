@@ -1,5 +1,9 @@
+#!/usr/bin/env python3
+
 """
-Mark polyalphabetic columns in text
+Mark polyalphabetic columns in text. This does not actually show the columns as
+columns, but provides inline markers (can be used to find interval to make
+substitutions)
 """
 
 import argparse
