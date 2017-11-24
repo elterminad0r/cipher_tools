@@ -12,7 +12,7 @@ import re
 from collections import Counter
 
 def parse_args():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-l", "--length", type=int, default=1,
                                     help="Vigenere-style key length")
     return parser.parse_args()

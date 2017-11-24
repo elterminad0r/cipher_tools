@@ -15,7 +15,7 @@ import itertools
 acc_codex = string.ascii_uppercase + string.digits
 
 def parse_args():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-c", "--chunk", default=2, type=int,
                                     help="chunk length")
     parser.add_argument("-a", "--accumulate", action="store_true",
