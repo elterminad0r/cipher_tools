@@ -11,10 +11,14 @@ import argparse
 import textwrap
 import string
 import time
+import re
 
 from collections import defaultdict
 
 letter_set = set(string.ascii_lowercase + "_")
+
+def strip_stream(plain):
+    return "".join(re.findall("[a-z]", plain.read().lower()))
 
 def strip_punc(word):
     """
@@ -24,6 +28,7 @@ def strip_punc(word):
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("-d", "--dump", action="store_true",
                             help="pprint a tree dump")
     parser.add_argument("--nltk", action="store_true",
@@ -140,15 +145,13 @@ def split_words(preftree, dense_str):
         pos += len(strip_punc(nxt))
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command line script that requires STDIN")
     args = parse_args()
     start = time.time()
     print("initialising..")
     preftree = build_pt(args)
     print("initialised (took {:.3f} secs)".format(time.time() - start))
     if not args.dump:
-        for word in split_words(preftree, sys.stdin.read()):
+        for word in split_words(preftree, strip_stream(args.input)):
             print("{} ".format(word), end="")
         print()
     else:
