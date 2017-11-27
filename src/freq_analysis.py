@@ -86,11 +86,7 @@ def _bar_chart(source, width, start, interval, pat, subs):
                                   # use % formatting
                                   frequency / total,
                                   # bar on the chart
-<<<<<<< HEAD
                                   "\u2796" * int(frequency *
-=======
-                                  "\u2588" * int(frequency *
->>>>>>> e63092d84a3513f658c5419f04b2f40b56dd401d
                                            (width - total_length)
                                           / most),
                                   # padding information
