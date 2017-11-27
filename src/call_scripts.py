@@ -8,12 +8,13 @@ import subprocess
 import os
 import re
 import shutil
+import time
 
 from textwrap import TextWrapper
 
 from levenshtein import closest_n_matches
 
-from interface_framework import restrict_args, DummyCount, UIError
+from interface_framework import restrict_args, DummyCount, UIError, read_type
 
 scripts = {"chunk": "chunk_text.py",
            "reverse": "rev_text.py",
@@ -60,13 +61,15 @@ def aggregate_docs(filedict):
                                     l=longest))
                                 for name, doc in zip(filedict, docs))
 
-@restrict_args(pos=DummyCount(min_=2), pkw=[])
-def call_script(state, script, *args):
+@restrict_args(pos=DummyCount(min_=2), pkw=["interpreter"])
+def call_script(state, script, *args, interpreter=None):
     """
     Call a script from scripts/ directory. Use `!call <com> -h` to get the
     specific help menu for a command. Use `!call list` for an extended list of
-    scripts.
+    scripts. Accepts an interpreter argument - this is only for use if you have
+    alternative installations like the PyPy JIT.
     """
+    interpreter = read_type(interpreter, "interpreter", str, "python")
     write_output = False
     if script == "store":
         write_output = True
@@ -80,15 +83,17 @@ def call_script(state, script, *args):
                         Unrecognised script {!r}. Did you mean one of: {}?  See
                         `!call list` for more.""".split())
                     .format(script, closest_n_matches(script, com_names, 3)))
-    process = subprocess.Popen(["python",
+    process = subprocess.Popen([interpreter,
                         os.path.join(os.path.dirname(__file__),
                                      "scripts", scripts[script]), "-", *args],
                         stdout=subprocess.PIPE,
                         stdin=subprocess.PIPE,
                         stderr=subprocess.PIPE,
                         universal_newlines=True)
+    start = time.time()
     out, err = process.communicate(input=state.source.val)
-    out_lst = ["stdout:\n{}".format(out)]
+    dur = time.time() - start
+    out_lst = ["stdout:\n{}\ntook {:.3f}s".format(out, dur)]
     if write_output:
         state.source.val = out
         out_lst.append("written to source")
