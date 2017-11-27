@@ -9,6 +9,7 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.parse_args()
 
 if __name__ == "__main__":

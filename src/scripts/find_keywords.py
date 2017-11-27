@@ -13,7 +13,9 @@ from collections import deque
 
 def get_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("length", type=int, help="phrase length")
+    return parser.parse_args()
 
 def stream_into_words(wd_file):
     return re.findall("[a-z]+", re.sub("[^a-zA-Z ]", " ", wd_file.read()), re.I)
@@ -34,8 +36,6 @@ def find_keys(length, _words):
         pass
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command-line script requiring stdin")
     args = get_args()
-    for k in find_keys(args.length, stream_into_words(sys.stdin)):
+    for k in find_keys(args.length, stream_into_words(args.input)):
         print(" ".join(k))

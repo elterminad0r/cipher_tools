@@ -19,6 +19,7 @@ def string_length(n):
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     keytypes = parser.add_mutually_exclusive_group(required=True)
     keytypes.add_argument("-v", "--vigenere", type=str,
                                     help="vigenere key")
@@ -47,12 +48,10 @@ def shift(plain, passphrase):
     return "".join(out)
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("this is a command line script")
     args = parse_args()
     if args.vigenere:
-        sys.stdout.write(shift(sys.stdin.read(), args.vigenere))
+        sys.stdout.write(shift(args.input.read(), args.vigenere))
     else:
         shift_chars = "".join(string.ascii_uppercase[ord(pair[0]) - ord(pair[1])] for pair in map(str.upper, args.caesar))
         print("key was {}".format(shift_chars))
-        sys.stdout.write(shift(sys.stdin.read(), shift_chars))
+        sys.stdout.write(shift(args.input.read(), shift_chars))

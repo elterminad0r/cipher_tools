@@ -14,8 +14,9 @@ import itertools
 
 acc_codex = string.ascii_uppercase + string.digits
 
-def parse_args():
+def get_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("-c", "--chunk", default=2, type=int,
                                     help="chunk length")
     parser.add_argument("-a", "--accumulate", action="store_true",
@@ -35,10 +36,8 @@ def accumulate_chars(plain, chunk_length):
         sys.stdout.write(acc_codex[combs[a]])
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command-line script requiring stdin")
-    args = parse_args()
-    plain = re.findall("[a-zA-Z]", sys.stdin.read())
+    args = get_args()
+    plain = re.findall("[a-zA-Z]", args.input.read())
     if args.accumulate:
         accumulate_chars(plain, args.chunk)
     else:

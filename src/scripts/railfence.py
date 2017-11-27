@@ -11,6 +11,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("-r", "--rail", type=int, default=3,
                                 help="number of rails")
     return parser.parse_args()
@@ -31,8 +32,6 @@ def railfence(plain, rails):
     return "".join("{}{}".format(*map("".join, [a, b])) for a, b in itertools.zip_longest(cycle_starts, cycle_ends, fillvalue=[" "]))
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command-line script requiring stdin")
     args = parse_args()
-    plain = sys.stdin.read().strip()
+    plain = args.input.read().strip()
     print(railfence(plain, args.rail))

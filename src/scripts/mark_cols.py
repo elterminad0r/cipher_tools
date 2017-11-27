@@ -11,6 +11,7 @@ import sys
 
 def get_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("length", type=int,
                             help="total column length")
     parser.add_argument("interval", type=int,
@@ -34,7 +35,5 @@ def display_intervals(text, length, interval):
         sys.stdout.write(c)
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command line script requiring stdin")
     args = get_args()
-    display_intervals(sys.stdin.read(), args.length, args.interval)
+    display_intervals(args.input.read(), args.length, args.interval)

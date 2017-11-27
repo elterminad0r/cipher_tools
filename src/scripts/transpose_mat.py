@@ -16,15 +16,14 @@ def chunk(it, n):
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("-l", "--length", type=int,
                                     help="explicit block length")
     return parser.parse_args()
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command-line script requiring stdin")
     args = parse_args()
     if not args.length:
-        print("\n".join(map("".join, zip(*map(str.split, sys.stdin)))))
+        print("\n".join(map("".join, zip(*map(str.split, args.input)))))
     else:
-        print("\n".join(map("".join, zip(*chunk(strip(sys.stdin.read()), args.length)))))
+        print("\n".join(map("".join, zip(*chunk(strip(args.input.read()), args.length)))))

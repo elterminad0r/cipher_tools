@@ -29,7 +29,9 @@ scripts = {"chunk": "chunk_text.py",
            "keyphrase": "find_keywords.py",
            "markcols": "mark_cols.py",
            "stagger": "stagger.py",
-           "wrap": "wrap_text.py"}
+           "wrap": "wrap_text.py",
+           "ioc": "iocattack.py",
+           "attack": "attacker.py"}
 
 com_names = ["store", "list", *scripts]
 
@@ -79,12 +81,12 @@ def call_script(state, script, *args):
                         `!call list` for more.""".split())
                     .format(script, closest_n_matches(script, com_names, 3)))
     process = subprocess.Popen(["python",
-                            os.path.join(os.path.dirname(__file__),
-                                         "scripts", scripts[script]), *args],
-                            stdout=subprocess.PIPE,
-                            stdin=subprocess.PIPE,
-                            stderr=subprocess.PIPE,
-                            universal_newlines=True)
+                        os.path.join(os.path.dirname(__file__),
+                                     "scripts", scripts[script]), "-", *args],
+                        stdout=subprocess.PIPE,
+                        stdin=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
+                        universal_newlines=True)
     out, err = process.communicate(input=state.source.val)
     out_lst = ["stdout:\n{}".format(out)]
     if write_output:

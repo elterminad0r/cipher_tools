@@ -16,6 +16,7 @@ def chunk(it, n):
 
 def get_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("cols", type=int,
                             help="number of columns")
     return parser.parse_args()
@@ -38,7 +39,5 @@ def format_cols(text, cols):
     return "".join(out)
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command-line script requiring stdin")
     args = get_args()
-    print(format_cols(sys.stdin.read(), args.cols))
+    print(format_cols(args.input.read(), args.cols))

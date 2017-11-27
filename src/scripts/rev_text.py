@@ -13,6 +13,7 @@ from strip_stdin import strip
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     actions = parser.add_mutually_exclusive_group()
     actions.add_argument("-s", "--strip-punc", action="store_true",
                                 help="strip punctuation in process")
@@ -27,10 +28,8 @@ def rev_text(text):
     return build_template(text).format(*reversed(re.findall("[a-zA-Z]", text)))
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command line script requiring stdin")
     args = parse_args()
-    plain = sys.stdin.read().strip()
+    plain = args.input.read().strip()
     if args.strip_punc:
         print(strip(plain)[::-1])
     elif args.rev_retain:

@@ -12,6 +12,7 @@ import itertools
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("permutation", type=str,
                             help="keyword for permutation - can use digits")
     return parser.parse_args()
@@ -32,10 +33,8 @@ def perm_transp(plain, perm):
     return "".join("".join(row[i] for i in perm) for row in chunk(strpd, len(perm)))
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("this is a command line script requiring stdin")
     args = parse_args()
-    strpd = clean(sys.stdin.read())
+    strpd = clean(args.read())
     perm = build_perm(args.permutation)
     print("using permutation {}".format(perm))
     print(perm_transp(strpd, perm))

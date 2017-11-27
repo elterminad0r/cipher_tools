@@ -13,6 +13,7 @@ from collections import Counter
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("-l", "--length", type=int, default=1,
                                     help="Vigenere-style key length")
     return parser.parse_args()
@@ -40,9 +41,7 @@ def histogram(text, start, interval):
     return Counter(re.findall("[a-zA-Z]", text)[start::interval])
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command line script requiring stdin")
     args = parse_args()
-    plain = sys.stdin.read()
+    plain = args.input.read()
     for i in range(args.length):
         print(printchart(histogram(plain, i, args.length), i, args.length))

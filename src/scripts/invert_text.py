@@ -12,6 +12,7 @@ from sub_shift import shift
 
 def get_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("-o", "--offset", type=int, default=0,
                                 help="extra offset")
     return parser.parse_args()
@@ -24,9 +25,7 @@ translate_dict.update({ord(a): ord(b)
                                         reversed(string.ascii_lowercase))})
 
 if __name__ == "__main__":
-    if sys.stdin.isatty():
-        sys.exit("This is a command line script requiring stdin")
     args = get_args()
-    plain = sys.stdin.read()
+    plain = args.input.read()
     sys.stdout.write(shift(plain.translate(translate_dict),
                 string.ascii_lowercase[-args.offset]))
