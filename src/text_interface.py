@@ -152,13 +152,18 @@ def get_usage():
     """
     Generate the "help menu"
     """
-    return dedent("""\
-    Anything prefixed with a ! will be considered a command. Anything else will be
-    interpreted as a series of substitutions to make. The available commands are as
-    follows:
+    return "\n".join(TextWrapper(
+                width=shutil.get_terminal_size()[0]
+                ).fill(para) for para in dedent("""\
+    Anything prefixed with a ! will be considered a command. Anything else will
+    be interpreted as a series of substitutions to make. The available commands
+    are as follows:
+
     {}
-    A command can be given arguments, as space-separated words after the command.
-    """).format(format_commands(commands))
+
+    A command can be given arguments, as space-separated words after the
+    command.
+    """).split("\n\n")).format(format_commands(commands))
 
 # pattern that matches a command (anything starting in an exclamation mark
 # followed by letters and a word boundary
@@ -173,7 +178,9 @@ def parse_com(com):
     if match:
         try:
             print("targeting group {}".format(match.group(1)))
-            return match.group(2), parse_options(shlex.split(match.group(3))), match.group(1)
+            return (match.group(2),
+                    parse_options(shlex.split(match.group(3))),
+                    match.group(1))
         except ValueError as ve:
             raise UIError(ve)
     else:
@@ -197,7 +204,8 @@ def run():
     while True:
         try:
             # parse command
-            com, pargs, interv = parse_com(input("cipher_tools {}$ ".format(state.intersperse.val)))
+            com, pargs, interv = parse_com(input("cipher_tools {}$ "
+                                            .format( state.intersperse.val)))
             # if it's a command
             if com:
                 # look for the corresponding action
@@ -215,7 +223,8 @@ def run():
                             try:
                                 it = int(interv)
                             except ValueError:
-                                raise UIError("Invalid interval {!r}".format(interv))
+                                raise UIError("Invalid interval {!r}"
+                                                        .format(interv))
                             print(fun(state, *args, interv=it, **kwargs))
 
                         else:
