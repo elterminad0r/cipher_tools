@@ -17,7 +17,7 @@ def get_args():
 def charshift(ch, kch):
     if ch.isupper():
         return string.ascii_uppercase[(ord(ch) + ord(kch.upper()) - 130) % 26]
-    return string.ascii_uppercase[(ord(ch) + ord(kch.lower()) - 97 * 2) % 26]
+    return string.ascii_lowercase[(ord(ch) + ord(kch.lower()) - 97 * 2) % 26]
 
 def auto_encipher(plaintext, key):
     key = itertools.chain(key, filter(str.isalpha, plaintext))
