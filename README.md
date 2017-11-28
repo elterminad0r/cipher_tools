@@ -1,8 +1,12 @@
 # cipher\_tools
 A collection of programs to aid in cipher-cracking/cryptanalysis. If you use
 this and you're not a GW appreciator you're a disappointment and need to
-re-evaluate your life (beware as `eval` is unsafe). Currently features, among
-other things:
+re-evaluate your life (beware as `eval` is unsafe). Please note:
+
+“In submitting an entry solo entrants vouch that it is solely their own work
+and teams warrant that it is solely their own collective work.”
+
+Currently features, among other things:
 
  - Pretty fully fledged textual interface, with exception handling and a
    functional model for commands/functions
