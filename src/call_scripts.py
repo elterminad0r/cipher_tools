@@ -16,23 +16,26 @@ from levenshtein import closest_n_matches
 
 from interface_framework import restrict_args, DummyCount, UIError, read_type
 
-scripts = {"chunk": "chunk_text.py",
-           "reverse": "rev_text.py",
-           "cipher": "sub_shift.py",
-           "uppercase": "upper_stdin.py",
-           "columnar": "perm_transposition.py",
-           "railfence": "railfence.py",
-           "words": "split_into_words.py",
-           "strip": "strip_stdin.py",
-           "matrix": "transpose_mat.py",
-           "printcols": "form_columns.py",
-           "invert": "invert_text.py",
-           "keyphrase": "find_keywords.py",
-           "markcols": "mark_cols.py",
-           "stagger": "stagger.py",
-           "wrap": "wrap_text.py",
-           "ioc": "iocattack.py",
-           "attack": "attacker.py"}
+scripts = {"chunk": "scripts/chunk_text.py",
+           "reverse": "scripts/rev_text.py",
+           "cipher": "scripts/sub_shift.py",
+           "uppercase": "scripts/upper_stdin.py",
+           "columnar": "scripts/perm_transposition.py",
+           "railfence": "scripts/railfence.py",
+           "words": "scripts/split_into_words.py",
+           "strip": "scripts/strip_stdin.py",
+           "matrix": "scripts/transpose_mat.py",
+           "printcols": "scripts/form_columns.py",
+           "invert": "scripts/invert_text.py",
+           "keyphrase": "scripts/find_keywords.py",
+           "markcols": "scripts/mark_cols.py",
+           "stagger": "scripts/stagger.py",
+           "wrap": "scripts/wrap_text.py",
+           "ioc": "scripts/iocattack.py",
+           "attack": "scripts/attacker.py",
+           "autoioc": "autokey/analyse.py",
+           "autoattack": "autokey/autoattack.py",
+           "autocipher": "autokey/encipher.py"}
 
 com_names = ["store", "list", *scripts]
 
@@ -42,7 +45,7 @@ def read_docs(filedict):
     docs = []
     for name, filename in filedict.items():
         with open(os.path.join(os.path.dirname(__file__),
-                  "scripts", filename)) as scriptfile:
+                  filename)) as scriptfile:
             doc, *_ = main_docstr_pat.findall(scriptfile.read())
             docs.append(doc)
     return docs
@@ -85,7 +88,7 @@ def call_script(state, script, *args, interpreter=None):
                     .format(script, closest_n_matches(script, com_names, 3)))
     process = subprocess.Popen([interpreter,
                         os.path.join(os.path.dirname(__file__),
-                                     "scripts", scripts[script]), "-", *args],
+                                     scripts[script]), "-", *args],
                         stdout=subprocess.PIPE,
                         stdin=subprocess.PIPE,
                         stderr=subprocess.PIPE,
