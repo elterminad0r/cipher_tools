@@ -14,6 +14,7 @@ having the moral integrity to use linux)
 ################################################################################
 
 import re
+import os
 import sys
 
 from collections import defaultdict
@@ -68,7 +69,9 @@ def find_matches(pattern):
     match, known = build_match(pattern)
     l = len(known)
     # open local copy of /usr/share/dict/words
-    with open("data/words", "r") as word_file:
+    with open(os.path.join(os.path.dirname(__file__),
+              "data/words"),
+             "r") as word_file:
         return "\n".join(word for word in map(str.strip, word_file)
                                 if matches(match, known, word.lower(), l))
 
