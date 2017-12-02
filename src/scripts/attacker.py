@@ -43,6 +43,34 @@ def attack_interval(plain, start, step):
     rearrs = [(rate_similarity(hist_to_dist(Counter(i[0])), standard_dist), i) for i in rearrs]
     return min(rearrs)[1][1:]
 
+def mod_inverse(a, n):
+    """
+    Find the modular multiplicative inverse
+    https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
+    """
+    t, nt, r, nr = 0, 1, n, a
+    while nr:
+        quot = r // nr
+        t, nt = nt, t - quot * nt
+        r, nr = nr, r - quot * nr
+    if r > 1:
+        raise ValueError("not invertible")
+    if t < 0:
+        t = t + n
+    return t
+
+def invert_linear(ab):
+    a, b = ab
+    a = mod_inverse(a, 26)
+    b = (-b * a) % 26
+    return a, b
+
+def keyword(keys):
+    if any(i[0] != 1 for i in keys):
+        return ", ".join("({}/{!r}, {!r})".format(a, string.ascii_uppercase[a], string.ascii_uppercase[b]) for a, b in map(invert_linear, keys))
+    else:
+        return "".join(string.ascii_uppercase[-i[1]] for i in keys)
+
 def cased_shift(ch, a, b):
     if ch.isupper():
         return chr((a * (ord(ch) - ord('A')) + b) % 26 + ord('A'))
@@ -57,7 +85,7 @@ def attack_text(plain, interval):
             out.append(cased_shift(ch, *next(vals)))
         else:
             out.append(ch)
-    return "".join(out), str(guessed_keys)
+    return "".join(out), "{} - ({})\n".format(guessed_keys, keyword(guessed_keys))
 
 if __name__ == "__main__":
     args = get_args()
