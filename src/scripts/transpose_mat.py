@@ -6,6 +6,7 @@ given a block length
 """
 
 import sys
+import re
 import argparse
 import itertools
 
@@ -21,9 +22,15 @@ def parse_args():
                                     help="explicit block length")
     return parser.parse_args()
 
+def scyt(mat):
+    return "\n".join(map("".join, itertools.zip_longest(*mat, fillvalue=" ")))
+
+def letters(st):
+    return re.findall("[a-zA-Z]", st)
+
 if __name__ == "__main__":
     args = parse_args()
     if not args.length:
-        print("\n".join(map("".join, zip(*map(str.split, args.input)))))
+        print(scyt(map(letters, args.input)))
     else:
-        print("\n".join(map("".join, zip(*chunk(strip(args.input.read()), args.length)))))
+        print(scyt(chunk(strip(args.input.read()), args.length)))
