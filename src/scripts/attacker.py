@@ -61,7 +61,11 @@ def mod_inverse(a, n):
 
 def invert_linear(ab):
     a, b = ab
-    a = mod_inverse(a, 26)
+    try:
+        a = mod_inverse(a, 26)
+    except ValueError:
+        sys.stderr.write("inversion failed")
+        return 0, 0
     b = (-b * a) % 26
     return a, b
 
