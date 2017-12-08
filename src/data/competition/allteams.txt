@@ -1,0 +1,1315 @@
+     * 1 Whitgift school
+     * 1= Wilson's School
+     * 1= Wilson's School
+     * 1= [57]` ^=w=^` Woodbridge School
+     * 1= [58]“αμγινε“ King Edward School
+     * 1= [59]`~#AAGSCRACKERS Acklam Grange School
+     * 1= [60]`segmentation fault (core dumped)` Lancing College
+     * 1= [61]_‘AVAR’_ Downe House School
+     * 1= [62]– . .- — / — — . King Edwards Handsworth school for girls
+     * 1= [63]– Integreat – Etonbury Academy
+     * 1= [64]–select a team– Holy Trinity
+     * 1= [65];DROP TABLE teams;– Aylesbury Grammar School
+     * 1= [66]:(){ :|:& };: The Sixth Form College Farnborough
+     * 1= [67]!Ecce Romani! Lancaster Royal Grammar School
+     * 1= [68]‘Noodle Squad’ Hinchley Wood Secondary School
+     * 1= [69]‘ FluffyPaws ‘ Upton Court Grammar School
+     * 1= [70]‘(?)’ Whitgift School, Haling Park, South Croydon, London
+     * 1= [71]‘Team anagram’ George Watsons College
+     * 1= [72]“ Lutterworth College
+     * 1= [73]( ͡° ͜ʖ ͡°) Bootham School
+     * 1= [74]{$(“#team_name”).html()} Alderman White School, Bramcote,
+     * 1= [75]@BoswellsComp
+     * 1= [76]#CipherSquad The Queens School
+     * 1= [77]#MATHS The Appleton School
+     * 1= [78]÷ and conquer Bristol Cathedral Choir School
+     * 1= [79]| Ipswich school
+     * 1= [80]~Timos Pride~ Budehaven School
+     * 1= [81]■■  Monks Walk
+     * 1= [82]☁️ | There Are Clouds In The Sky | �enrietta Barnett School
+     * 1= [83]☃S*M*A*$*H☃ Queen Marys College
+     * 1= [84]£>!$!%(“^%£%*(&(£” Cedars Upper School
+     * 1= [85]01010000 01101100 01100001 01100011 0110 Lutterworth College
+     * 1= [86]1+2+3+4..+ ∞ = -1/12 Bournemouth School
+     * 1= [87]12.21pm Keymer Road, Burgess Hill, United Kingdom
+     * 1= [88]12345 Tudor Grange Academy Solihull
+     * 1= [89]141
+     * 1= [90]2 + 2 = 4 – (sin2 + cos2) = 3, quick m Spalding Grammar School
+     * 1= [91]5 years, no trophies Beechen Cliff
+     * 1= [92]67105112104101114 King Edward School
+     * 1= [93]8 minutes per hour Robertsbridge Community College
+     * 1= [94]A CODE-BROKEN Beechen Cliff School
+     * 1= [95]A Mug, A Thug and A Bug Aldro
+     * 1= [96]a random person beechencliff
+     * 1= [97]According to all known laws of aviation Comberton
+     * 1= [98]Ace Closed Simon Langton Girls' Grammar School
+     * 1= [99]Ace661
+     * 1= [100]Aftermath King Edward VI College Stourbridge
+     * 1= [101]AKS Cryptography Club AKS Lytham
+     * 1= [102]Alex Gardner Haybridge High School
+     * 1= [103]AlgoRhythm Kingz Ninestiles School
+     * 1= [104]Amgine Cedars Upper School
+     * 1= [105]Ancient muffins Hills Road Sixth Form College
+     * 1= [106]Angels of Finch King Edward VI College
+     * 1= [107]Animals Bude
+     * 1= [108]Anything They Will Complain About not being eligable
+     * 1= [109]APearInUnderwear Holmes Chapel
+     * 1= [110]apple pi Christs Hospital
+     * 1= [111]Artemis Badminton School
+     * 1= [112]ASL Haberdashers' Aske's Boys' School
+     * 1= [113]Atlantis Kitchens and Bathrooms Cults Academy
+     * 1= [114]Augusta Taurinorum MMXVII
+     * 1= [115]Baconizers Glebelands
+     * 1= [116]badmathspun Nonsuch High School for Girls
+     * 1= [117]BagOfCows Bedford Modern School
+     * 1= [118]Balla Bridson magdalen college school
+     * 1= [119]BanDev Erasmus Darwin Academy
+     * 1= [120]Banjamas John Cabot Academy
+     * 1= [121]Beat Boxing Grass Grazers IV The Perse
+     * 1= [122]Beds Bedales School
+     * 1= [123]Beethoven Abingdon
+     * 1= [124]Belper School Belper School
+     * 1= [125]Ben_Squad The Liverpool Blue Coat School
+     * 1= [126]BenSquared Taunton School
+     * 1= [127]BigNarsties St Mary's College
+     * 1= [128]BingBongDingDongPingPongKingKong Millais
+     * 1= [129]BLC Bridge Learning Campus
+     * 1= [130]Blitz waingels college
+     * 1= [131]Blobfish Exeter Maths School
+     * 1= [132]Bluecode Bluecoat Academy
+     * 1= [133]BOAN Westminster School, London
+     * 1= [134]BOBSON UNITED The Perse School
+     * 1= [135]Bode Custers Whitgift Avenue, South Croydon, United Kingdom
+     * 1= [136]Book Dragons Fulford School
+     * 1= [137]bookworm Barnwood Park Arts College
+     * 1= [138]Bop It EXTREME Queen Elizabeth School
+     * 1= [139]BrainyBeavers Burford School
+     * 1= [140]Break Codes Not Keyboards Abingdon
+     * 1= [141]Bridgewater B-TECS Priestnall School
+     * 1= [142]Bridgewater Battalion Priestnall School
+     * 1= [143]Brogrammers William Farr C of E Comprehensive School
+     * 1= [144]Brutal Force Decryption Westminster
+     * 1= [145]Bubble Sort Queen Elizabeth's School
+     * 1= [146]Bullen’s Boys
+     * 1= [147]Byte my dust! New College School
+     * 1= [148]Byzantine imperatorum Fettes College
+     * 1= [149]C squared Badminton School
+     * 1= [150]Caesar Cipher Christ's Hospital
+     * 1= [151]Caesar Salad Loreto College
+     * 1= [152]Caesar’s Legion Exeter Mathematics School
+     * 1= [153]Cair Paravel The Henry Box school
+     * 1= [154]Camp Hill Girls King Edward VI Camp Hill School for Girls
+     * 1= [155]CANYCSF City Of London School for Girls
+     * 1= [156]Carbonism Westminster School
+     * 1= [157]CCRyptography Casterton College Rutland
+     * 1= [158]ces
+     * 1= [159]CH Nigerians Christs Hospital, United Kingdom
+     * 1= [160]Championship Clubs Meadowhead
+     * 1= [161]Charlotte Raddon Wycombe High School
+     * 1= [162]Checkles314 St Bernard’s catholic grammar school
+     * 1= [163]cheese and crackers kings school, Grantham
+     * 1= [164]Chocologic Oxford High School
+     * 1= [165]Chorlton – Crackers Chorlton High School
+     * 1= [166]ChorltonCiphers Chorlton High School
+     * 1= [167]CHS Y13 Girls Congleton High School
+     * 1= [168]CHSY11Girls+John congleton high school
+     * 1= [169]CHSY8boys Congleton High School
+     * 1= [170]Chubby Doughnuts Vyners School
+     * 1= [171]CillBipher Wilson's School
+     * 1= [172]Cipher Crackers Bennett Memorial Diocesan School, Culverden
+     * 1= [173]Cipher Sharks St Augustines Priory
+     * 1= [174]Cipher Squad Alleyn's School
+     * 1= [175]Cipher Team Dame Allan's School
+     * 1= [176]Cipher Team Dame Allan's Schools
+     * 1= [177]CipherBreakerSMC St. Mary's School, Calne
+     * 1= [178]CipherCrack Loughborough Grammar School
+     * 1= [179]CLEVER CLOGS
+     * 1= [180]ClicheTitle Whitgift
+     * 1= [181]Clifton High SChool Clifton High School, College Road,
+     * 1= [182]Cloud 4 Brentwood School
+     * 1= [183]Clueless Bournemouth School for Girls
+     * 1= [184]Code Crackers 2017 The Appleton School
+     * 1= [185]Code Name Verity Kingsdale Foundation School
+     * 1= [186]Code_Centurion Perse Upper
+     * 1= [187]Code_Cracker Ivybridge Community College
+     * 1= [188]Code-ano Gordano School
+     * 1= [189]codeBusters Rainhill High School
+     * 1= [190]codebusters Roding Valley High Scool
+     * 1= [191]Codus Brownus Oundle School
+     * 1= [192]Colossus coombe boys' school
+     * 1= [193]Coloured Vegetable Liverpool Blue Coat School
+     * 1= [194]con|strue Verulam School
+     * 1= [195]Confederacy Overtly Disassembling Encryp King Edward's School,
+     * 1= [196]Cool Codez 2K17 Sir Bernard Lovell Academy
+     * 1= [197]Coombssyy Teignmouth
+     * 1= [198]Cotham’s Dark Knights Cotham School
+     * 1= [199]Cracking Kimberley college
+     * 1= [200]Cracking fiends Peter Symonds
+     * 1= [201]Creepy Clown Tiffin School
+     * 1= [202]Cryptagonal Collingwood College
+     * 1= [203]Crypto Commandos Comberton Sixth Form
+     * 1= [204]Crystal Math Rochdale Sixth Form College
+     * 1= [205]CSL Llandaff
+     * 1= [206]Curious123 Godolphin School
+     * 1= [207]curry Dauntsey, United Kingdom
+     * 1= [208]Cuz eat work’s Lycée Français Charles de Gaulle
+     * 1= [209]Cyanidesnacks Queen Elizabeth Grammar School Penrith
+     * 1= [210]Cybersauri Nelson Thomlinson
+     * 1= [211]CYCLOPS The Portsmouth Grammar School
+     * 1= [212]cyphercrafters Robertsbridge Community College
+     * 1= [213]Dad and Co. Northgate Sixth Form
+     * 1= [214]Dane Court Teachers Dane Court Grammar School
+     * 1= [215]Dark Side Wycombe Abbey
+     * 1= [216]DCruz Princess Helena College
+     * 1= [217]Deciphernators Greenbank High School
+     * 1= [218]Decoders
+     * 1= [219]Decoding Ninja Wycliffe College
+     * 1= [220]Delta Lima Exeter Mathematics School
+     * 1= [221]DenverCoder9 Stewart's Melville College
+     * 1= [222]DeusVult
+     * 1= [223]DevilsOfFinch are not as good as AngelsO King Edward Road
+     * 1= [224]DHS Danes Hill School
+     * 1= [225]DHSCipherSquad Durrington High School
+     * 1= [226]Die Antwoord Dane Court Grammar School
+     * 1= [227]Dim TeamName As String = Console.Readlin The Nelson Thomlinson
+     * 1= [228]Dingor
+     * 1= [229]Discipili Orvissi Glenalmond College
+     * 1= [230]dividebyzero Francis Holland School, Regents Park
+     * 1= [231]domestos Spalding Grammar School
+     * 1= [232]Double A Seven City of London School for Girls
+     * 1= [233]Downe Downe House, Cheltenham Ladies
+     * 1= [234]draco_dormiens_nunquam_titilandus South Wilts Grammar School
+     * 1= [235]Dura Squaaad Park Lane International School
+     * 1= [236]e^iπ+1 St Thomas More
+     * 1= [237]EA_Hughes Dunblane
+     * 1= [238]Earlston High School Earlston High School
+     * 1= [239]East Korea Abingdon School
+     * 1= [240]Ebwf uif dbouffo nbo Devonport High School For Girls
+     * 1= [241]Egg Millais School
+     * 1= [242]Eggars Eggar's school
+     * 1= [243]Encryption Magician Aylesbury Grammar School
+     * 1= [244]Enig-matt-ic St Laurence School
+     * 1= [245]Enigma Bryanston School
+     * 1= [246]Enigmatic Queen's Senior School
+     * 1= [247]Ermysted’s Sixth Form Ermysted's Grammar School
+     * 1= [248]Et regnabit disposito Manshead Cofe Upper School
+     * 1= [249]Ethan and the Bodmen Lytchett Minster School
+     * 1= [250]Euthanasians Westminster
+     * 1= [251]Everyday I’m Calculatin’ Penryn College
+     * 1= [252]EZPZ LEMON SQZI Whitgift School
+     * 1= [253]Fermat’s 7th Prime Queen Elizabeth's School for Boys
+     * 1= [254]Ferrata fidelis constans Collyers Sixth Form
+     * 1= [255]Feynman Socks Yateley Sixth Form
+     * 1= [256]filii Turingis sumus Bournemouth School
+     * 1= [257]fishfingers Sixth Form College Farnborough
+     * 1= [258]Flamma de Sanguine Devonport High School for Girls
+     * 1= [259]flash
+     * 1= [260]FLOJ Fullhurst Community College
+     * 1= [261]floreat sapientia Wymondham college
+     * 1= [262]FLSKHU Rochdale Sixth Form College
+     * 1= [263]Flying Lunatics Dane Court Grammar School
+     * 1= [264]Freckled Moth
+     * 1= [265]Frog Fractions The Grange School
+     * 1= [266]Gallifrey Girls Altrincham Grammar School For Girls
+     * 1= [267]Geek Clique Wolverhampton Grammar School
+     * 1= [268]Gemcrackers
+     * 1= [269]Ginger Turks United Fettes College
+     * 1= [270]Gloriosus illuminator Park Lane International School
+     * 1= [271]Go Lambs Go!
+     * 1= [272]Going Solo Ashford School
+     * 1= [273]Goofy noofy bear KTPS
+     * 1= [274]Griffink and the Glodfish Beechen Cliff School
+     * 1= [275]Grizzly Armadillo
+     * 1= [276]GW Appreciators Hills Road Sixth Form College
+     * 1= [277][email protected] home educated
+     * 1= [278]Hail Caesar St Mary's Calne
+     * 1= [279]HardBreakers
+     * 1= [280]Harrow School Harrow School
+     * 1= [281]Harry’s Disciples Newcastle Sixth Form College
+     * 1= [282]Havelost Havelock Academy
+     * 1= [283]Heck, that was a cipher Hills Road Sixth Form College
+     * 1= [284]HerbieZiggyteam Burford, United Kingdom
+     * 1= [285]Hill Climbing Abingdon, United Kingdom
+     * 1= [286]Hispana IX South Island School HK
+     * 1= [287]Horsf-6rth huey Horsforth
+     * 1= [288]Horsforth Lovelaces Horsforth school
+     * 1= [289]Hugill’s Hackers Priestnall School
+     * 1= [290]Hypotenusers Spalding High School
+     * 1= [291]I Barnardia Victrix Barnard Castle School
+     * 1= [292]i^2 Clayesmore School
+     * 1= [293]I, for one, like Roman numerals Bishop Vesey's Grammar School
+     * 1= [294]I’m gonna sneeze South Wilts Grammar School
+     * 1= [295]Illumination Abbey College Cambridge
+     * 1= [296]Imaginative Guildford High School
+     * 1= [297]Imitation City of London Freemen's School
+     * 1= [298]int.MaxValue Christleton High School
+     * 1= [299]Isolde The Nelson Thomlinson School
+     * 1= [300]Ivan’s Disciples Itchen sixth form college
+     * 1= [301]Jack the RIPper Southam college
+     * 1= [302]Jakub001
+     * 1= [303]JAMMing TREATS Mearns Castle High School
+     * 1= [304]Jane
+     * 1= [305]JCA_2017 John Cabot Academy
+     * 1= [306]Jeff Nomen Meum Newcastle Sixth Form College
+     * 1= [307]Jennas Maths Squad Fulford School
+     * 1= [308]Jimbles Notronbo Oaks Park High School
+     * 1= [309]JOT+D St Albans School
+     * 1= [310]JRo
+     * 1= [311]Julianne Griffin Wycombe High School
+     * 1= [312]Kalicali Sir Roger Manwood's School
+     * 1= [313]Kangela’s Legacy Urmston
+     * 1= [314]KGB St Albans School
+     * 1= [315]KGGS1 Kesteven & Grantham School
+     * 1= [316]King Cogidubnus’ Code Cracking Cre Peter Symonds
+     * 1= [317]Kingsmeadow CC Kingsmeadow Community School
+     * 1= [318]KMJD Taunton School
+     * 1= [319]Latin Cheesecake Liverpool Blue Coat School
+     * 1= [320]Lawson Lord Lawson of Beamish Academy
+     * 1= [321]Leasowes Codebrakers (year 7) Leasowes high school
+     * 1= [322]leat spúnóga St Thomas More RC Academy
+     * 1= [323]Legio X Equestris Nelson Thomlinson School
+     * 1= [324]Legion Error_CDIV The King's School
+     * 1= [325]LegoLegionnaire Hendrefoilan
+     * 1= [326]Leonardo da Vinci St Albans, United Kingdom
+     * 1= [327]Lexy Northampton High School
+     * 1= [328]Lineage Noir
+     * 1= [329]Lorenz Westminster School
+     * 1= [330]Lumen Westminster
+     * 1= [331]M&K Hills road sixth form college
+     * 1= [332]Maccies Priestnall
+     * 1= [333]Mansieva Derby High School
+     * 1= [334]Many Tree Wizards Stephen Perse Foundation
+     * 1= [335]Marauders Varndean College
+     * 1= [336]Mardenwinners Marden High
+     * 1= [337]Marshall’s squad
+     * 1= [338]Mathmagicians Tonbridge Grammar School
+     * 1= [339]Mathsboys Queen Elizabeth Boy's School
+     * 1= [340]MathsClubTeam CT102RT
+     * 1= [341]Matrix The King's School Chester
+     * 1= [342]Maximus minimus St Philips Primary
+     * 1= [343]Me South Wilts Grammar School, United Kingdom
+     * 1= [344]MeanGreen
+     * 1= [345]Mediocre Mathmagicians Queen Elizabeth’s High School
+     * 1= [346]memes Yarm
+     * 1= [347]Memoirs of Aidan Fell’s Low Quality Ba Richard Taunton
+     * 1= [348]Mens4s The Manchester Grammar School
+     * 1= [349]MickR Yarm School
+     * 1= [350]Midnight Not applicable
+     * 1= [351]Militant Stars John Beddoes School
+     * 1= [352]Milsons Mafia Brentwood
+     * 1= [353]Mirzakhani Loreto Grammar School
+     * 1= [354]Miss Harrison
+     * 1= [355]Mmm π Ladies' College Guernsey
+     * 1= [356]MMXVII
+     * 1= [357]MNM Devonport High School for Girls
+     * 1= [358]Monmouth CompSci Monmouth School
+     * 1= [359]moose coder saint benedicts
+     * 1= [360]Mostly Harmless Whitgift School
+     * 1= [361]Mr Lear
+     * 1= [362]Mr Pitt
+     * 1= [363]Ms B
+     * 1= [364]My Mind Palace Kesteven and Sleaford High School
+     * 1= [365]My team Vyners
+     * 1= [366]N/A2 Francis Holland School Clarence Gate
+     * 1= [367]Netcraft please invite us St Birinus School
+     * 1= [368]Nima’s team The King's School Canterbury
+     * 1= [369]NLS500 Holmes Chapel
+     * 1= [370]Nobir’s Knights Bedford Modern School
+     * 1= [371]Not as good as Amgine Cedars upper school
+     * 1= [372]Not Dryden’s Westminster School
+     * 1= [373]Notre Dame Sheffield Fran Notre Dame High School
+     * 1= [374]NoverMaC Upton Court Grammar School
+     * 1= [375]Nth Legion Hills Road Sixth Form College
+     * 1= [376]null Mildenhall College Academy
+     * 1= [377]Observer
+     * 1= [378]OGA Teachers
+     * 1= [379]Oldfield Girls School Oldfield School
+     * 1= [380]Olivia O’C City of London School for Girls
+     * 1= [381]Ombre Edgbarrow School
+     * 1= [382]oweener and the crew five islands school
+     * 1= [383]Panda Express Gordano School
+     * 1= [384]Pandemonium British School in Tokyo
+     * 1= [385]Parkstone Prefects Parkstone Grammar School
+     * 1= [386]Pepsi’s Cedars Upper School
+     * 1= [387]Perse – here to empty your purse The Perse
+     * 1= [388]PGS Supernova Poole Grammar School
+     * 1= [389]PHSDecrypts Poole High School
+     * 1= [390]Pipay South Wilts Grammar School
+     * 1= [391]Plunderer’s Instinct Caerleon Comprehensive School
+     * 1= [392]Po Lady Eleanor Holles
+     * 1= [393]Popey Burford School
+     * 1= [394]Pravinija Orpington
+     * 1= [395]Primes New Roman Torquay Boys' Grammar School
+     * 1= [396]Priory Decoders St. Augustine's Priory
+     * 1= [397]Propreantepenultimate The Nelson Thomlinson School
+     * 1= [398]ProtonOrangeLand Chatham & Clarendon Grammar School
+     * 1= [399]Pt.2 Triptych Ipswich School
+     * 1= [400]Putin on the Witz Ed. W Clark High School
+     * 1= [401]Pyswagorus the great city of london school for girls
+     * 1= [402]Pythag ‘Я’ Back Stockport Grammar School
+     * 1= [403]Python* Rules Judd School
+     * 1= [404]QBit The Queen's School Chester
+     * 1= [405]QEC Queen Ethelburgas Collegiate
+     * 1= [406]Quantum Encryptors Newquay Tretherras
+     * 1= [407]Qwerty Waingels
+     * 1= [408]Qwerty Keyboard Bournemouth School For Boys
+     * 1= [409]Qzhfx Bmt Portsmouth Grammar School
+     * 1= [410]Reece’s pieces Horncastle Grammar School
+     * 1= [411]Regular Bacon Dudes The Henry Box School
+     * 1= [412]reSILLIENCE Reigate Grammar School
+     * 1= [413]rhinos Leehurst Swan School
+     * 1= [414]Rhombicuboctahedron Cookies Prendergast Ladywell School
+     * 1= [415]RMS Fermat The Royal Masonic School for Girls
+     * 1= [416]Romani ite domum St David's Catholic Sixth Form College
+     * 1= [417]Rome Against The Machine Wallington County Grammar School
+     * 1= [418]roots of unity
+     * 1= [419]Rossall Rossall School
+     * 1= [420]Rowbots Lytchett Minster School
+     * 1= [421]RSA UWCSEA East Singapore
+     * 1= [422]Rubber duckies Dane Court Grammar School
+     * 1= [423]Rudolph Sleighs Dane Court Grammar School
+     * 1= [424]Rufus3
+     * 1= [425]Russell’s Teapots The Perse School
+     * 1= [426]SaintsFcFTW Noadswood
+     * 1= [427]Salt and Vignere Home School
+     * 1= [428]Sandy St Gregory's Catholic College
+     * 1= [429]SawtryVA Sawtry Village Academy
+     * 1= [430]Scipher Girls Rochester grammar school
+     * 1= [431]SCRI The Perse School
+     * 1= [432]SCS – Carpet company High School
+     * 1= [433]Scytale Merchant Taylors' School
+     * 1= [434]Seahammathsstars
+     * 1= [435]Sextus Pinus Erectus Oundle School
+     * 1= [436]SGC U6FM St George's College Weybridge
+     * 1= [437]Shinatus Populusque Rōmānus Joseph Swan School
+     * 1= [438]Sicilian Branch Tanbridge House School, Horsham, United
+     * 1= [439]Simi, Callum et al. Bournemouth School
+     * 1= [440]Sinfxl Saint Bernards Catholic Grammar School
+     * 1= [441]Sizzling Baconians St John's Colllege
+     * 1= [442]SJB Mathletes st john the baptist woking
+     * 1= [443]Skiddy Pip Pap Pap + C Wood Green School
+     * 1= [444]skwod St Thomas More RC Academy
+     * 1= [445]Slaying Queens Upton Court Grammar School
+     * 1= [446]Sleeman’s Angles Barton Peveril College
+     * 1= [447]smarties
+     * 1= [448]Smartinis Poole Grammar School
+     * 1= [449]SoIssIssNor Derby High School
+     * 1= [450]something gay Priestnall school
+     * 1= [451]Sophia and Beth St Bartholomews
+     * 1= [452]South Island School HK South Island School
+     * 1= [453]Space-Time Cowboys High Storrs School
+     * 1= [454]Spartans
+     * 1= [455]Spirits Inivcta Grammar School
+     * 1= [456]SPQR The Liverpool Blue Coat School
+     * 1= [457]Squadrilateral Wycombe Abbey School
+     * 1= [458]St Ignatius College Catholic Cipher Crew St Ignatius College
+     * 1= [459]St. Anthony – Oundle School Oundle School
+     * 1= [460]StanboroughFgnaobebhtu Stanborough School
+     * 1= [461]Star Tech RR6
+     * 1= [462]STMMaths St Thomas More RC Academy
+     * 1= [463]string ǝuolɐɯ‾ʇsod = “uoᴉɔɐ�Blue Coat School, Terry Road,
+     * 1= [464]Stroke of Luck Writhlington
+     * 1= [465]Suffolk ‘n’ Smart! Northgate Sixth Form
+     * 1= [466]Super Salad Squad Northgate High School, Sidegate Lane,
+     * 1= [467]Supreme Leader Parin and His Merry Men Ashton Sixth Form
+     * 1= [468]S̯̠̟̜̭͙̦̍ͮͤͮ͐̓̊̎ͣͣ͆̈́�Peter Symonds
+     * 1= [469]SWCHSPexlw4 Saffron Walden
+     * 1= [470]Synergy Greenacre School, Barnsley
+     * 1= [471]tacet umbre Exeter Mathematics School
+     * 1= [472]Taunton School 1 Taunton School
+     * 1= [473]Taunton School Y12 Team Taunton School
+     * 1= [474]TB + HB Fulford School
+     * 1= [475]TBMITW Lancing College
+     * 1= [476]TBO 4 life
+     * 1= [477]Team 3/6 William Farr School
+     * 1= [478]team awesome cathedral school llandaff
+     * 1= [479]Team Ben Saint Peter's Grove
+     * 1= [480]Team Better Than Joe The Kibworth School
+     * 1= [481]Team Brady Sir John Deane's College
+     * 1= [482]Team Cipher Cracker Oxford High School
+     * 1= [483]Team Ewell Castle Ewell Castle School
+     * 1= [484]Team Gummybears Blessed Edward Oldcorne Catholic Collage
+     * 1= [485]Team Kipper Roding Valley High School
+     * 1= [486]team lynx99 Ipswich School
+     * 1= [487]Team Psychic City of London School for Girls, St Giles
+     * 1= [488]Team R-R Henrietta Barnett School, Queen Elizabeth's School
+     * 1= [489]Team R&E&T Leventhorpe
+     * 1= [490]TEAM RAMSEY CODERS BISHOP RAMSEY CofE SECONDARY SCHOOL
+     * 1= [491]Team Trymell! The Westgate School
+     * 1= [492]Team Wally Wallingford School
+     * 1= [493]team_barney
+     * 1= [494]TEN O FOUR Writhlington School
+     * 1= [495]Tenbury Swimming Pool Saint Michaels College
+     * 1= [496]Terra Nova Hills Road
+     * 1= [497]The 4th Dimension Yarm School
+     * 1= [498]The anhialators hodgson academy
+     * 1= [499]The Avocado Constant Wycombe High School
+     * 1= [500]The Backseat Ciphers St Brendan's Sixth Form College
+     * 1= [501]The Baron Franklinstein Abingdon
+     * 1= [502]The Bombe Westminster School
+     * 1= [503]The Brutus Ciphers Jordanhill School
+     * 1= [504]The Centurions Wolsingham
+     * 1= [505]The chalk the ape and the Monkey and Ed Budehaven School
+     * 1= [506]The Charismatic Fish
+     * 1= [507]the Cipher Crackers ermysteds
+     * 1= [508]The Cipher Minions King Edward VII School
+     * 1= [509]The Code Breakers Hinchley Wood Secondary School
+     * 1= [510]The Code meisters The Queen's School
+     * 1= [511]The Code Mode Stowupland High School
+     * 1= [512]The Crack Squad Fortismere School
+     * 1= [513]The Cracking Fiend Peter Symonds
+     * 1= [514]The Crazy Mathemagician The Littlehampton Academy
+     * 1= [515]The Denominators St Peters
+     * 1= [516]The DIMPLE DOTS Budehaven School
+     * 1= [517]the flax is twisted but the logic aint Weydon School, Farnham,
+     * 1= [518]The Fox Pack Bristol Cathedral Choir School
+     * 1= [519]The Greenbank Ends St Nicholas Catholic High School
+     * 1= [520]The Imitators Queensmead School
+     * 1= [521]The Indecisives Queen Elizabeth's High School
+     * 1= [522]The Local Shop Derby High School
+     * 1= [523]The Matrices Woldgate School
+     * 1= [524]The Maultesers Blundell's School
+     * 1= [525]The Mighty Year 8s Nelson Thomlinson School
+     * 1= [526]The Mosslings The Abbey School
+     * 1= [527]The Motherwell Mathemagician Brannock High School
+     * 1= [528]The Mu’tazilites The Cotswold School
+     * 1= [529]The Nerd Herd Headington School
+     * 1= [530]The Night’s Watch
+     * 1= [531]The Not Winners Crowd The Sixth Form College - Birkenhead
+     * 1= [532]The Pro Surfacers Hills Road Sixth Form College
+     * 1= [533]The Pygmy Goats Budehaven School
+     * 1= [534]The Real GCHQ Matthew Arnold
+     * 1= [535]The Real Y10 (LSST) The Priory Academy LSST
+     * 1= [536]The Runaway Trolley 2.0 Barnwood Park Arts College
+     * 1= [537]The Senate Exeter Mathematics School
+     * 1= [538]The Shenfield Senate Shenfield High School
+     * 1= [539]The Shifty Caesars Magdalen College School, Oxford
+     * 1= [540]The Sloths John Beddoes School
+     * 1= [541]The Spice Girls High Storrs School
+     * 1= [542]The team that can solve any cipher Lenzie Academy
+     * 1= [543]The Three Musketeers The Folkestone School For Girls
+     * 1= [544]The Tortoise farnborough hill school
+     * 1= [545]The Unbeatable Undeciremes Beechen Cliff School
+     * 1= [546]The Uppy Counters County Upper
+     * 1= [547]The Walrus Diet Ullapool high school
+     * 1= [548]The Weasleys Bishop Milner
+     * 1= [549]The Woad Ode Code Maltings Academy
+     * 1= [550]The Young Modulus Wycombe High School
+     * 1= [551]the_crushers nottingham girls' academy
+     * 1= [552]TheMarvels Formby High School
+     * 1= [553]TheMathBusters Bourne Grammar School
+     * 1= [554]TheSupercoders
+     * 1= [555]This Is My Team Name Perse School, United Kingdom
+     * 1= [556]ThompsonJ King Edward VI Camp Hill School for Boys
+     * 1= [557]Three’s a Crowd The Sixth Form College
+     * 1= [558]T̸̡̛͕̍̚͠͠͠h̴̒̑̿̍̄͛̄̊͝ Perse Upper School
+     * 1= [559]Times New Roman Oaklands Catholic Sixth Form College
+     * 1= [560]tknjae None
+     * 1= [561]Tom
+     * 1= [562]TPA TROJANS The Portsmouth Academy
+     * 1= [563]TransdimensionalTeaspoons Horndean Technology College
+     * 1= [564]Trigtwig The Liverpool Blue Coat School
+     * 1= [565]Triumvirate Exeter Mathematics School
+     * 1= [566]Tronge
+     * 1= [567]TryingMyBest Spalding High School
+     * 1= [568]Tungsten (I) Oxide Williamwood High School
+     * 1= [569]Turing Complete Shenley Brook End School
+     * 1= [570]UGS’s Legacy
+     * 1= [571]Ujlosovn Ajhldc Spalding Grammar School
+     * 1= [572]Undefined Behaviour Magdalen College School, Oxford
+     * 1= [573]Unitatoes Five Islands School
+     * 1= [574]Unmausoleumers The Kibworth School
+     * 1= [575]Use Code ‘QuakeZ’ @RadiantEs Leventhorpe School
+     * 1= [576]uwcsea1
+     * 1= [577]Veni Vidi Vici The Kibworth
+     * 1= [578]Veni,vidi,vici francis holland school
+     * 1= [579]VigenereBreaker Camp Hill School for Boys
+     * 1= [580]ViolentVortex Sawston Village College
+     * 1= [581]We are not expecting to win a game of ch The Queen Elizabeth's
+     * 1= [582]we dont have a team name The Kibworth School
+     * 1= [583]West Knights of Baytown
+     * 1= [584]West Korea Abingdon School
+     * 1= [585]WESTON NEURAL WAVEFORM Reigate Grammar School
+     * 1= [586]Westwoodz Ipswich School
+     * 1= [587]Where’s Southampton Thurston community college
+     * 1= [588]Wilson’s A Team Wilson's School
+     * 1= [589]Wilson’s A* team Wilson's School
+     * 1= [590]Winning Combination London
+     * 1= [591]WoodlandsCC Woodlands Community College
+     * 1= [592]WWR Dunblane High School
+     * 1= [593]X_X King Edward VI Handsworth School for Girls
+     * 1= [594]Year 9 Watford Boys Watford Boys Grammar School
+     * 1= [595]Z🐠 City of London School for Girls
+     * 1= [596]匚口口𠄌 长丨口乙 Cirencester College
+     * 1= [597]🔓Decryptonite🔓 Halcyon London International school
+     * 2 [598]BHASVICtory Brighton Hove and Sussex Sixth Form College
+     * 2= [599]Legionnaire Code Crackers Park Lane International School
+     * 2= [600]The Blue’s Clues The Ladies' College Guernsey
+     * 2= [601]The Centurians High Storrs School
+     * 2= [602]TRM
+     * 3 [603]ice unicorns nottingham girls academy
+     * 3= [604]lavalamp Truro College
+     * 3= [605]The Code Breakers Liverpool Bluecoat School
+     * 3= [606]Unbeatable Nerds Waingels College, Waingels Road, Woodley,
+     * 4 [607]>_< Release the Kracken Ashford, United Kingdom
+     * 4= [608]# Koala team Truro College
+     * 4= [609]Eginma Gordano School
+     * 4= [610]HelesSchoolCryptoClub Heles School Plymouth
+     * 4= [611]Squiffy_Squad Ratton School
+     * 5 [612]Ephie Wallington County Grammar School
+     * 6 [613]Kool Kidz Klub Broadlands Academy
+     * 7 [614]Indigo Christ's Hospital
+     * 8 [615]Hombie Dane Court School
+     * 8= [616]Jolter W Robertsbridge community college
+     * 9 [617]aardvark princess Budehaven School
+     * 9= [618]DCCompSci Dulwich College
+     * 9= [619]HNC Maths Huddersfield New College
+     * 10 [620]Cipher Ship Reddam House Berkshire School
+     * 11 [621]Goqeqen Guilsborough academy
+     * 12 [622]` ` ` ` ` `THE SEASIDE CODEBREAKERS` ` ` Budehaven School
+     * 13 [623]The Outwood Enigmas Outwood Grange Sch, Wakefield, United
+     * 14 [624]the james young the James Young High school
+     * 15 [625]We can’t code Lancing College
+     * 16 [626]BMET Birmingham Metropolitan College
+     * 17 [627]Underfam South Wilts Grammar School
+     * 18 [628]umpalumpas Budehaven School
+     * 19 [629]Starcrackers Chester
+     * 20 [630]Lemons and Proud Etonbury
+     * 21 [631]act_winz Thorpe Hall School
+     * 22 [632]Orley Farm School Orley Farm
+     * 22= [633]Veni, vidi, vici Galileo School
+     * 23 [634]Lux_Aeterna Abingdon School
+     * 24 [635]Gladiators St Mary's School, Colchester
+     * 25 [636]MrJacksonrulez
+     * 26 [637]Java Cakes St Brendan's Sixth Form College
+     * 27 [638]Dave’s Dudes Waingels College
+     * 28 [639]The Northern Service to Skipton will be Ermysteds
+     * 29 [640]teamIBJHEHDMARBR Nova hreod
+     * 30 [641]Coding_Ciphers Invicta Grammar School
+     * 30= [642]Pascomen The Henrietta Barnett School
+     * 30= [643]Pentaflops Bishop Luffa School
+     * 31 [644]´Αρποκρατης King Edwards VI School
+     * 31= [645]Arctic Owls Notre Dame
+     * 31= [646]Cos(Y) not Wallington High School for Girls
+     * 31= [647]Dream Team Invicta Grammar School for Girls
+     * 31= [648]Flaming Marshmallows sewell park academy
+     * 31= [649]In antiquis Pantheon st nicholas catholic high school
+     * 31= [650]Keeping Up With The Cartesians 2.0 Walton Girls School
+     * 31= [651]LHB UF Christ's Hospital
+     * 31= [652]Pluto Kesteven and Grantham Girls' school
+     * 31= [653]SCYTALE Fettes Avenue, Edinburgh, United Kingdom
+     * 31= [654]The Locked Cupboard Meadowhead Secondary School
+     * 31= [655]Tobeo Obeth Beechen Cliff
+     * 31= [656]UNSR Southend High School for Boys
+     * 31= [657]yan champions
+     * 32 [658]besties St. Peter's School, York
+     * 33 [659]password1234 Comberton Sixth Form
+     * 34 [660]Divya-Ananya The Holt School
+     * 35 [661]Scholar Squad Beachborough School
+     * 36 [662]las chicas Etonbury Academy school
+     * 37 [663]The Elements The John Fisher School
+     * 38 [664]karimi donuts cockburn schoool
+     * 39 [665]Beltanmai :) putney high school
+     * 40 [666]RAJG Hinchley Wood Secondary School
+     * 41 [667]ArthurTerry2017 Arthur Terry
+     * 42 [668]Yellow bricks Cardiff West Community High School
+     * 43 [669]The Crypto Legion Wallington County Grammar School
+     * 44 [670]‘AdamRook Edgbarrow
+     * 45 [671]Boolean Birkenhead High School Academy for girls
+     * 46 [672]Squadratic Formulae Bristol Cathedral Choir School
+     * 47 [673]The Tens Outwood Academy Danum
+     * 48 [674]ShellR Abbelrey Hall School
+     * 49 [675]E = mc^2 Abingdon School
+     * 50 [676]Chess master St Richard Reynolds catholic high school
+     * 51 [677]Pikachu33
+     * 52 [678].The Wolf and the Raccoon Brighouse Sixth Form
+     * 52= [679]§III§ Barton Peveril College
+     * 52= [680]>>>>>>>space<< st george
+     * 52= [681]01000111010000110100100001010001 Finham Park School
+     * 52= [682]2 ∞ & Beyond! Gordano School
+     * 52= [683]3.14159265358979323846264338327950288419 Thurston Community
+     * 52= [684]9M1 teacher Budehaven Community School
+     * 52= [685]A Champs Beechen Cliff
+     * 52= [686]A Team Name Burgess Hill Girls
+     * 52= [687]adam collyers
+     * 52= [688]Apple π King Edward VI College Stourbridge
+     * 52= [689]ARHN The Grange School
+     * 52= [690]ASHc1
+     * 52= [691]BlueChampagne The Ashcombe School
+     * 52= [692]Buzz Haybridge High School
+     * 52= [693]Caludon Castle Caludon castle
+     * 52= [694]chsyear9bois42 congleton high school
+     * 52= [695]cipher_as Exeter mathematics school
+     * 52= [696]Clifton College Clifton College
+     * 52= [697]clsgciphersolvers City of London School for Girls
+     * 52= [698]cod3br3ak3rz King Edward VI Camp Hill School For Boys
+     * 52= [699]Code Red Spalding
+     * 52= [700]CodeBreakerz Alderman White School and Language College
+     * 52= [701]CRCComputing Cambridge Regional College
+     * 52= [702]Crowthorne Codebreakers Edgbarrow School
+     * 52= [703]D’syfrz Exeter Mathematics School
+     * 52= [704]Diamonds
+     * 52= [705]Die Coders Wilson's School
+     * 52= [706]Dilling&Co. Hinchley Wood School
+     * 52= [707]EllieElla Gordano School
+     * 52= [708]ElonMusketeers The Trafalgar School at Downton
+     * 52= [709]find x The Ladies' College Guernsey
+     * 52= [710]Flamingos Dereham Neatherd High School
+     * 52= [711]four Rochdale, United Kingdom
+     * 52= [712]fuggedaboutit Cheltenham Ladies' College
+     * 52= [713]FullhurstMIB Fullhurst Community College
+     * 52= [714]Gogotron
+     * 52= [715]GOONS Invicta
+     * 52= [716]Grey but Colourful The Grey Coat Hospital
+     * 52= [717]HACKTIVISTS Newstead Wood School for Girls
+     * 52= [718]Harry’s Team Mathematical Sciences
+     * 52= [719]Haygrove School Haygrove School
+     * 52= [720]httphacks John Beddoes School
+     * 52= [721]Impetus B The King's School
+     * 52= [722]Ipswich Cipher Ipswich
+     * 52= [723]Jupiter Cockburn high school
+     * 52= [724]Just Some Pure Genius Parmiter's
+     * 52= [725]Just2OfUs Devonport High School for Girls
+     * 52= [726]Kazoo Kids Hills Road
+     * 52= [727]KC Codebreakers Kent College Canterbury
+     * 52= [728]Komarovi Christs Hospital
+     * 52= [729]Legion 8865 Devonport High School for Girls
+     * 52= [730]Lemanciphers Sir John Leman High School
+     * 52= [731]Leonis ferro Hinchley Wood, Esher, United Kingdom
+     * 52= [732]MagnaHeroes Magna Academy
+     * 52= [733]Math Geniuses Cv3 6ea
+     * 52= [734]Mathemagicians Bourne Grammar School
+     * 52= [735]Maths For The Win Bishopbriggs Academy
+     * 52= [736]Maths Geniuses Wycombe High Grammar School
+     * 52= [737]Menlo Abbeyfield School
+     * 52= [738]Mig2323 South Wilts Grammar School
+     * 52= [739]MitcheyC
+     * 52= [740]Mr. Scott Rivermont Collegiate
+     * 52= [741]MrPenguin Kesgrave High School
+     * 52= [742]Mrs B St Augustine's Priory
+     * 52= [743]MsGrevett
+     * 52= [744]My G My G My G Priestnall School
+     * 52= [745]Naomi and Georgia Spalding High School
+     * 52= [746]Nyrk, Wbr, naq Vmnnx Notre Dame Sixth Form College
+     * 52= [747]onethingido
+     * 52= [748]Outlaws Home Educated
+     * 52= [749]PETER Poisson Bristol Cathedral Choir School
+     * 52= [750]Priestnall code breakers priestnall school
+     * 52= [751]Quadratic Crackers Oldfield School
+     * 52= [752]Quick Maths Bishopbriggs Academy
+     * 52= [753]R Priestley College
+     * 52= [754]RAA Romans City of London School for Girls
+     * 52= [755]Ravenclaw! Edgbarrow School
+     * 52= [756]RH7 STEM Radnor House Sevenoaks
+     * 52= [757]Romulus Exeter Mathematics School
+     * 52= [758]Saint Legion Saint Pius x Catholic High School
+     * 52= [759]Savages St Mark's West Essex Catholic School
+     * 52= [760]Shubham’s Team
+     * 52= [761]SJLHS Teachers
+     * 52= [762]SPQR-BAK Fettes College
+     * 52= [763]St Peter’s Decipherers St Peter's Catholic School, Guildford
+     * 52= [764]Tarski West Island School
+     * 52= [765]TASA Weydon
+     * 52= [766]TGS Denominators Tonbridge Grammar School
+     * 52= [767]The Clever Cryptanalyst Royal Grammar School
+     * 52= [768]The Code Crackers The Perse
+     * 52= [769]The Duo Guilsborough
+     * 52= [770]The Fighting Fifth
+     * 52= [771]The KGB St Nicholas catholic high school
+     * 52= [772]the lone crusader king edward vi school southampton
+     * 52= [773]The Muppets Northgate Sixth Form
+     * 52= [774]THE NAUGHTY EINSTEINS!!! Green Lane / Finham Park School
+     * 52= [775]The Queens SChool Code Crackers The Queen's School
+     * 52= [776]The Ranger Gorseinon College
+     * 52= [777]The Real Lords of Sludge Weydon School, Farnham, United
+     * 52= [778]The Special Integrals Balfron High School
+     * 52= [779]The Spell Breakers Bishopbriggs Academy
+     * 52= [780]The Three Ciphers Invicta Grammar School
+     * 52= [781]The Wonderful Winners The Queens School
+     * 52= [782]TheSourWatermelonFamily Beechen Cliff
+     * 52= [783]Tower Block Avengers Wirral Grammar School for Girls
+     * 52= [784]Undercover spies
+     * 52= [785]Warwick Warwick School
+     * 52= [786]Wenger Out Whitgift School
+     * 52= [787]woodychops Stowupland High school
+     * 52= [788]wymondham decoders Wymondham High Academy
+     * 52= [789]y8 chipher spartians Nelson Tomlinson School
+     * 52= [790]Year Patty1234 Nelson Thomlinson School
+     * 52= [791]българ Lancing college
+     * 53 [792]Error_404_ Wallington County Grammar School
+     * 53= [793]Mega Bytes The Queen's Senior School
+     * 54 [794]Brainee Blessed Edward Oldcorne Catholic College
+     * 55 [795]Just trying
+     * 55= [796]Polynom-nom-nominals Beyton
+     * 55= [797]Spaghetto Lady Eleanor Holles School
+     * 56 [798]HSS Harrow School
+     * 57 [799]Team ME South Wilts Grammar School
+     * 58 [800]salty Haileybury College
+     * 59 [801]‘Et Grandes Fluctus Cipher’ Etonbury Academy
+     * 59= [802]Team Evo Abingdon School
+     * 60 [803]The Furcifers Budehaven School
+     * 61 [804]Clava Arte Mathematica Stuart Bathurst Catholic High School
+     * 61= [805]γνῶθι σεαυτόν Newstead Wood
+     * 62 [806]cipher dyas Witney
+     * 63 [807]the mythical creatures of burford Burford school
+     * 64 [808]THE WASEEM TEAM Kelvinside Academy
+     * 65 [809]CHS Y7 GIRLS congleton high school
+     * 66 [810]Coding R Us Sherfield School
+     * 67 [811]Big Shaq Quick Maths The Priory Academy LSST
+     * 68 [812]Team_Leonardo Da Vinci Academy
+     * 69 [813]Spoodermen Fullhurst Community College
+     * 70 [814]Crypto
+     * 71 [815]The earlscliffe enigmas Earlscliffe
+     * 72 [816]Caesar Salad Lady Eleanor Holles School
+     * 73 [817]OAGOOJ Guilsborough
+     * 74 [818]Insight CIty of london freemen
+     * 74= [819]Occultus Hills Road Sixth Form College, Hills Road,
+     * 75 [820]Hydra Zone Christ's Hospital
+     * 75= [821]K. Aylesbury Grammar School
+     * 75= [822]Newstead Wood Newstead Wood
+     * 75= [823]Old Collyerians Richard Collyer's Sixth Form
+     * 75= [824]scyther challenge
+     * 75= [825]Solo Spalding Academy
+     * 75= [826]Team Partle
+     * 75= [827]Thistle Aboyne Academy
+     * 76 [828]Mavis
+     * 77 [829]Cici barbican
+     * 78 [830]Potterheads Wirral grammar school for girls
+     * 79 [831]Unicorn12 Cockburn school
+     * 80 [832]Pi Eaters St Cuthbert's Catholic High School
+     * 81 [833]Cipher warriors Nova Hreod Swindon, United Kingdom
+     * 82 [834]‘Bishopbriggs Academy Bishopbriggs Academy
+     * 83 [835]Darth Moyle
+     * 84 [836]Sparky17 Penryn College
+     * 85 [837]Woodland Wonders Woodlands
+     * 86 [838]BPAC year 9 barnwood Park arts college
+     * 87 [839]William85 Ralph Allen School
+     * 88 [840]The Flickers
+     * 89 [841]Beany bob Tormead School
+     * 90 [842]Okudqwtpg The Misbourne
+     * 91 [843]The Magical Unicorns of Mathematics Highfield middle School
+     * 92 [844]sample text cirencester college
+     * 93 [845]-###_1 8s Spalding High School
+     * 94 [846]Bus 414 writhlington school
+     * 94= [847]Chaos4ce The Henry Box School
+     * 95 [848]AZ Harrow School
+     * 96 [849]` `skrrt skrrt delphi` ` Exeter School
+     * 96= [850]–¦ Milky Way ¦– Hills Road Sixth Form College
+     * 96= [851]‘Ace’ Aylesbury Grammar School
+     * 96= [852]#Lemon Unipugs Halstead Prep School
+     * 96= [853]#wttb Westgate
+     * 96= [854]2Kool4Skool Melbourn Village College
+     * 96= [855]3301 huxlow science college
+     * 96= [856]3Brainiacteers Abberley Hall School
+     * 96= [857]42 Badminton School
+     * 96= [858]4Mathkerteers Ormiston Ilkeston Enterprise Academy
+     * 96= [859]61y02 Colyton Grammar School
+     * 96= [860]Abberley AbberleyHall School
+     * 96= [861]Access Denied Newstead Wood School for Girls
+     * 96= [862]According to all known laws of aviation, Bishopbriggs Academy
+     * 96= [863]ADM
+     * 96= [864]AGS Allerton Grange School
+     * 96= [865]allalone South Wilts Grammar School
+     * 96= [866]Amnah Spalding High School
+     * 96= [867]Annabeth The Holt School
+     * 96= [868]ax2+bx+c=0 kings school grantham
+     * 96= [869]BEW Bryanston School
+     * 96= [870]BGS1 Bourne Grammar School
+     * 96= [871]Binary is as easy as 01, 10, 11 Worthing College
+     * 96= [872]Bluebells Spalding High School
+     * 96= [873]bombe boy
+     * 96= [874]Breakfast British School in Tokyo
+     * 96= [875]Bus Wankers Cheadle Hulme School
+     * 96= [876]Cabbage and Cucumber Sandwiches Brannock High School
+     * 96= [877]Caesar Salad’s Brannock High School
+     * 96= [878]Camou City of London School for Girls
+     * 96= [879]Cat in the Hat St Ives High School, Sydney Australia
+     * 96= [880]Chweched Lleng Maes Garmon Ysgol Maes Garmon
+     * 96= [881]clrchslads Cardinal Langley RC high school
+     * 96= [882]Code Masters D S Haberdashers School for Boys
+     * 96= [883]Code??? Queen Elizabeth High School
+     * 96= [884]codebreakers cardiff
+     * 96= [885]Codeword
+     * 96= [886]Completing the Akmal spalding grammar school
+     * 96= [887]CryptoNat Notre Dame
+     * 96= [888]ctkofficial Christ The King Catholic High School
+     * 96= [889]ctrlaltdelete kesteven sleaford high school
+     * 96= [890]CWZ Master Seaham High
+     * 96= [891]DanRSFC Rochdale
+     * 96= [892]David+Ewan Weydon
+     * 96= [893]DC-CS Dulwich College
+     * 96= [894]Divided Woldingham School
+     * 96= [895]DJDT
+     * 96= [896]Dork Squad
+     * 96= [897]Downlands hopper + Alfie Downlands Community School
+     * 96= [898]Dragon Kirkwall Grammar School, United Kingdom
+     * 96= [899]Elaine
+     * 96= [900]EXETER LEGENDS! Exeter School
+     * 96= [901]Finbow Stowupland
+     * 96= [902]Flammas in infinitum Devonport High School For Girls
+     * 96= [903]Flavour Town Seaham High School
+     * 96= [904]ForTheAlliance Tonbridge, United Kingdom
+     * 96= [905]Fractions speak louder than nerds Dr Challoner's High School
+     * 96= [906]Fram Gang Framlingham
+     * 96= [907]Furniture Mearns Castle High School
+     * 96= [908]Gedney Beans Spalding High School
+     * 96= [909]Gucci Stromness academy
+     * 96= [910]HCCS Teachers
+     * 96= [911]Huntcliff Huntcliff School
+     * 96= [912]ITMR Haileybury College
+     * 96= [913]Jasmine Derby High School
+     * 96= [914]Jeff’s Friendly Team X
+     * 96= [915]jimjamjom St Mary's College
+     * 96= [916]JMonet Nottingham Girls' Academy
+     * 96= [917]Just for Fun!
+     * 96= [918]KCA 10N1 Kempston Challenger Academy
+     * 96= [919]keek1234 Sir John Leman Road
+     * 96= [920]KKSOLVER
+     * 96= [921]krusty krab crew Ormiston ILkeston Enterprise Academy
+     * 96= [922]KRYHpto CodeBreaker Haberdashers' Aske's Boys' School
+     * 96= [923]KSC_
+     * 96= [924]KZIHGKWLMKZIKSMZA Barton Peveril College
+     * 96= [925]LegoMasters The Boswells School
+     * 96= [926]LIB112 Spalding High School
+     * 96= [927]LongLostKnights Guilsborough Road
+     * 96= [928]LZI Ashford School
+     * 96= [929]MaesGarmon10 Ysgol Maes Garmon
+     * 96= [930]Majestic Dinosaurs 🦎🦎🐊🦎🦎 York Millthorpe School
+     * 96= [931]Mayflower Originals
+     * 96= [932]Mini Rolls Parkstone Grammar School
+     * 96= [933]Mini-a-Turings Holyrood Academy
+     * 96= [934]Miss Ashley Spalding High School
+     * 96= [935]Miss West HBS The Henry Box School
+     * 96= [936]Mr Bowler’s Dream Team Queen Elizabeth's High School
+     * 96= [937]MuffinMan Haberdashers' Aske's Boys' School
+     * 96= [938]MZA Devonport High School for Girls
+     * 96= [939]n+1 dukes alridge academy
+     * 96= [940]Nalice Millais School
+     * 96= [941]nandos0415 South Wilts Grammar School
+     * 96= [942]New Mills School New Mills School & Sixth Form
+     * 96= [943]NEXT LEVEL OVERPOWERNESS!!!!!!!!YAAAA YE The Romsey School
+     * 96= [944]Not So Swift V2 Invicta Grammar School
+     * 96= [945]OIEA Maths Staff Ormiston Ilkeston Enterprise Academy
+     * 96= [946]Oliver abberleyhall school
+     * 96= [947]Oooright Bobby WILSONS SCHOOL
+     * 96= [948]Ottos High School for Girls
+     * 96= [949]PACA
+     * 96= [950]Pete the Croc Caerleon Comprehensive School
+     * 96= [951]Pluto’s Gladiator’s bradfield school
+     * 96= [952]PossiblyTheWinners Walton High
+     * 96= [953]Quantum Cranleigh School
+     * 96= [954]Quick maths! Cirencester college
+     * 96= [955]RattMaths Ratton School
+     * 96= [956]Remnants of the Ninth Legion Holmes Chapel
+     * 96= [957]Robin and Wolf Halstead Prep
+     * 96= [958]Robster Lytchett Minster
+     * 96= [959]Rolo Brainstorm Chase Grammar, Cannock
+     * 96= [960]Rougemont School Rougemont School
+     * 96= [961]Ruby Spalding High School
+     * 96= [962]Rule the world with an Iron Fist
+     * 96= [963]School of Unicorns Halstead Prep School
+     * 96= [964]Shaileen loves maths City of London School for Girls
+     * 96= [965]Shinobi Hethersett
+     * 96= [966]Sienna City of London School for Girls
+     * 96= [967]Sisterhood of Mathematicians Spalding Grammar School
+     * 96= [968]Solegion
+     * 96= [969]SOPHPENGUIN The Romsey School
+     * 96= [970]Squadratics City of London School for Girls
+     * 96= [971]St. Gregory’s Primary Cipher team St. Gregory's Catholic
+     * 96= [972]Sweet Codebreakers Blythe Bridge High School and Sixth Form
+     * 96= [973]Sweyne Park Sweyne Park School
+     * 96= [974]SWGS7N South Wilts Grammar School
+     * 96= [975]Tabi Liverpool Blue Coat
+     * 96= [976]Tabula Rasa Saint Michael's School
+     * 96= [977]Takahasimimi City of London school for girls
+     * 96= [978]Team 001 King Edward Camp Hill Boys
+     * 96= [979]Team 10 Cedars Upper School
+     * 96= [980]Team Holt
+     * 96= [981]Team Owl Aboyne Academy
+     * 96= [982]Team Sheep Aboyne Academy
+     * 96= [983]teamiguana2.0 Princess Helena College
+     * 96= [984]TeamOrdinary Giggleswick
+     * 96= [985]Tennekaze Paddington Academy
+     * 96= [986]The Chocolate Raisin Team Comberton village college
+     * 96= [987]The Cipher Detectives Village College the Moor
+     * 96= [988]The Codebreakers Brighton Hill Community School
+     * 96= [989]The Diminished 4th
+     * 96= [990]the emperor’s drunken guard st thomas more RC academy
+     * 96= [991]The Know-Names St Ives High School Sydney Australia
+     * 96= [992]The Lamb Legends The Romsey School
+     * 96= [993]The Lost Girls Cleethorpes Academy
+     * 96= [994]The Mathia Thorpe St Andrew, Norwich, United Kingdom
+     * 96= [995]The Notorious Burnley College
+     * 96= [996]The Octopodes Leventhorpe School
+     * 96= [997]The Riddlesdown Cryptologists Riddlesdown Collegiate
+     * 96= [998]The Roman Legion Upper Shirley high school
+     * 96= [999]The Square Zebras Greenbank High School
+     * 96= [1000]The Ting Go Skkrr (‘..) Yarm
+     * 96= [1001]TheCipherulersrule Manchester High School for Girls
+     * 96= [1002]This is Hard home schooled
+     * 96= [1003]UCC Coders Uppingham - Community College
+     * 96= [1004]UTSQ The Queen’s School
+     * 96= [1005]Veni-Vidi-Vici Devonport Highschool For Girls
+     * 96= [1006]Victorious Sponges
+     * 96= [1007]WeAreNumberOne Royal Grammar School
+     * 96= [1008]WHAM Queen Elizabeths High School
+     * 96= [1009]When there’s a Will, there’s Queen Marys College,
+     * 96= [1010]WHERE’S MY SUPERSUIT?! Willink School
+     * 96= [1011]YoungStevensonMayerGreene hinchley wood
+     * 96= [1012]πr2 sounds like area to me The Sixth Form College
+     * 96= [1013]Ω Abberley Hall School
+     * 97 [1014]Girl_Chald_Ciphers Haydon Bridge High School
+     * 97= [1015]unicorns Hethersett junior school
+     * 98 [1016]gopriella derby high school
+     * 98= [1017]hackers.exe Queen Elizabeth High School
+     * 99 [1018]Rekattih2 Eton College
+     * 100 [1019]Apollinaris Victrix Mullion School
+     * 101 [1020]Boy_Chald_Ciphers Haydon Bridge High School
+     * 101= [1021]PogChamp ( ͡° ͜ʖ ͡°) Etonbury Academy, United Kingdom
+     * 102 [1022]Latinus
+     * 102= [1023]The Enigma Solvers William Farr C of E
+     * 103 [1024]CodeBreaker21 Robertsbridge Community College
+     * 104 [1025]VigenereWarrior Prendergast Ladywell School
+     * 105 [1026]HHS Maths Club Holmfirth High School
+     * 106 [1027]Speedbird Etonbury Academy
+     * 107 [1028]The Pythagorats Saint George Catholic College
+     * 108 [1029]`->The Forgotten<-` Cothill House
+     * 109 [1030]Reddam Pineapples Reddam House Berkshire
+     * 110 [1031]Coders 203 St Teresas Effingham
+     * 111 [1032]Mental Asylum Escapees Ricards Lodge High School
+     * 112 [1033]Saints2017 Guilsborough
+     * 113 [1034]Fight Club St Gilgen International School
+     * 114 [1035]Nais Maths Knights
+     * 115 [1036]Elites Greenbank High School
+     * 116 [1037]C!pH3R UWCSEA East
+     * 117 [1038]2∞andbeyond! St Bernadette Catholic Secondary School
+     * 118 [1039]shotekk 110
+     * 119 [1040]Gordano School Admin Gordano School
+     * 120 [1041]Cipherr. Emmanuel College
+     * 121 [1042]Cryptonite St Augustine's Roman Catholic School
+     * 121= [1043]Flame Crest Burford
+     * 122 [1044]Derby High! derbyshire
+     * 122= [1045]HAMWARRIORS Harris Academy Merton
+     * 123 [1046]FAKER
+     * 123= [1047]Me and co St Johns College Cardiff
+     * 124 [1048]Foxy bingo sandhill view academy
+     * 125 [1049]Cipher Guild St Augustine's Priory
+     * 126 [1050]SydSpecial Sydenham high school
+     * 127 [1051]SIS Team South Island School
+     * 128 [1052]Illuminated pugs sewellpark
+     * 129 [1053]Cipher Ninjas The Lady Eleanor Holles School
+     * 130 [1054]Bananas in pyjamas Holmes Chapel
+     * 131 [1055]San-J PrendergastLadywellSchool
+     * 132 [1056]The Turing
+     * 133 [1057]`Karamel Koala Klub St Ives High School, Sydney, Australia
+     * 133= [1058]´ ´ ´ ´ ´ ´ ´ ´ ´ ´ ´ ´ ´ Abbeywood Community School
+     * 133= [1059]´ ´ ´ ´ ´ ´ ´ ´ ´ ´ ´ ´ ´ �dgbarrow School
+     * 133= [1060]!”£$%&*()_+
+     * 133= [1061](un)Sociable People King Edwards School
+     * 133= [1062]#NerdSquad Stpeters coe aided school exeter
+     * 133= [1063]#Unipups101 Halstead Prep
+     * 133= [1064]100 characters
+     * 133= [1065]1729 Birkenhead
+     * 133= [1066]7oaks t1 Sevenoaks School
+     * 133= [1067]8B Squad Bourne Grammar School
+     * 133= [1068]A pinter of procrastination York, Fulford School
+     * 133= [1069]AA-Breakdown Manchester High School for Girls
+     * 133= [1070]Alicod Wallington County Grammar School
+     * 133= [1071]Alleyns
+     * 133= [1072]alt3rnat1v3
+     * 133= [1073]AM Bury Grammar School for Girls
+     * 133= [1074]Anonymous! St Ives High School Sydney Australia
+     * 133= [1075]ARGSS
+     * 133= [1076]Artemis City of London School for Girls
+     * 133= [1077]Avocato United World College of South East Asia, East
+     * 133= [1078]Bacrini Decryptors Bishop Thomas Grant School
+     * 133= [1079]baddoweagles Great Baddow High School
+     * 133= [1080]Badminton Badminton School
+     * 133= [1081]Bardot Haileybury College
+     * 133= [1082]Barrons of the Land Aylesbury Grammar School
+     * 133= [1083]Be Flawless It Really Annoys People Christ the King
+     * 133= [1084]beollaya brighton hill
+     * 133= [1085]best team ever nidderdale high school
+     * 133= [1086]BESTIES Hinchley Wood School
+     * 133= [1087]Bill Cipher Spalding High School
+     * 133= [1088]Binary Babes Lady Eleanor Holles School
+     * 133= [1089]Bishop Luffa Legion Bishop Luffa School
+     * 133= [1090]Blue2017 City of London School for Girls
+     * 133= [1091]BOIs Seaham
+     * 133= [1092]brainiacs of doom Ashford School District, Ashford, CT,
+     * 133= [1093]breakwheel
+     * 133= [1094]BROOOMBROOMHAAA Riddlesdown
+     * 133= [1095]BVS cypher Bishop Vaughan Catholic School
+     * 133= [1096]Callous Coders Papplewick school
+     * 133= [1097]Capybara Codebreakers Matthew Arnold School
+     * 133= [1098]Catalyst123 City of London school for girls
+     * 133= [1099]ChessMinds Pool Academy
+     * 133= [1100]Chocolate and Chess Queen Elizabeth Grammar School,
+     * 133= [1101]CHS_Teachers
+     * 133= [1102]cipher chameleons dame allans
+     * 133= [1103]CipherBoiiss Barton Peveril College
+     * 133= [1104]Ciphering75 Cockburn John Charles Academy
+     * 133= [1105]ciphermarvelavengers Ermysteds
+     * 133= [1106]CipherQueen Rochdale Islamic Academy
+     * 133= [1107]cockburn Cockburn School
+     * 133= [1108]Codebreaker
+     * 133= [1109]CodeCracker Blue Coat Liverpool
+     * 133= [1110]CodeMistress Burgess Hill Girls
+     * 133= [1111]Codes4life Ermysted Street
+     * 133= [1112]Computing Teacher
+     * 133= [1113]Coolmathsgames.com Caerleon Comprehensive School
+     * 133= [1114]Crackerjacks The Cedars Academy
+     * 133= [1115]Cryptographers British School in Tokyo
+     * 133= [1116]Cyphter Bishop Wordsworths School
+     * 133= [1117]da boss Chelmsford
+     * 133= [1118]daniolugbile Farnborough Hill, United Kingdom
+     * 133= [1119]DeadlossPizza John Beddoes School
+     * 133= [1120]Decipher Trinity School
+     * 133= [1121]Deciphering Reigate Grammar School
+     * 133= [1122]Demetra Romsey
+     * 133= [1123]Did you ever hear the tragedy of Darth P Burnley College
+     * 133= [1124]Dowbleth Cirencester College
+     * 133= [1125]Earth C137 christ's hospital
+     * 133= [1126]Eburonia Google University
+     * 133= [1127]EKR.101 Queen's School
+     * 133= [1128]Emoji Team The Boswells School, Burnham Rd, Chelmsford
+     * 133= [1129]Et Partitus Motherwell
+     * 133= [1130]Eugena Jeong City of London School for Girls
+     * 133= [1131]Fahlah Lanarkshire
+     * 133= [1132]FDSDFSDFSDFSD
+     * 133= [1133]FireBreathingDragonsFly? Aylesbury Grammar School
+     * 133= [1134]Flight of the Concords! CARRES GRAMMAR SCHOOL
+     * 133= [1135]FM LADS Slough Grammar School
+     * 133= [1136]Formby Teacher
+     * 133= [1137]Formula 8 🏎 Eh4 3EZ
+     * 133= [1138]Game of Pros City of London School For Girls
+     * 133= [1139]GeekyGirls College, Penryn, United Kingdom
+     * 133= [1140]George Watson’s College George Watsons College, Edinburgh,
+     * 133= [1141]GigaBite Alleyns School
+     * 133= [1142]Gilberd School Gilberd School
+     * 133= [1143]girl to the power 3 Dame Allan's School
+     * 133= [1144]Glittery Code Warriors Riddlesdown Colliagte
+     * 133= [1145]GUHS Glen Urquhart High School
+     * 133= [1146]Halloumi Tonbridge Grammar School
+     * 133= [1147]HamTitans Harris Academy Merton
+     * 133= [1148]Higgs Boson Abingdon, United Kingdom
+     * 133= [1149]Holly and Jess Pool Academy
+     * 133= [1150]Hut 8 Sherborne School
+     * 133= [1151]iMaths group Downe House School
+     * 133= [1152]Individual
+     * 133= [1153]Infinite Loop Aylesbury Grammar School
+     * 133= [1154]IPv4.CAT St Brendan's Sixth Form College
+     * 133= [1155]Jamison Home School
+     * 133= [1156]Jammy Dodgers The queen's school
+     * 133= [1157]jefftr Beechen Cliff Road
+     * 133= [1158]JR26
+     * 133= [1159]JTLightning04 Edgbarrow School
+     * 133= [1160]Kernow Magpies Richard Lander
+     * 133= [1161]Key Lime π* The Abbey School Reading
+     * 133= [1162]KT
+     * 133= [1163]Kuba Surg Park Lane International School, czech republic
+     * 133= [1164]kusala9
+     * 133= [1165]LAMAS the cedars academy
+     * 133= [1166]LastPlaceTeam Exeter Mathematics School
+     * 133= [1167]Lauren Kauw High School
+     * 133= [1168]Legalising Lanyards Hills Road Sixth Form College
+     * 133= [1169]Legio I Lauretum Loreto College
+     * 133= [1170]LennySquad Duke of Kent School
+     * 133= [1171]Lewis’s Team Bishopbriggs Academy
+     * 133= [1172]Light.008 Riddlesdown
+     * 133= [1173]Lily&Grace Pool Academy
+     * 133= [1174]Londoner Math Gals City of London School for Girls
+     * 133= [1175]Loquaciousllama Ralph Allen School
+     * 133= [1176]loserrrr
+     * 133= [1177]LSS Cipherers Ermysted's Grammar School
+     * 133= [1178]M&M Emmanuel College
+     * 133= [1179]Mark Bell Haybridge High School
+     * 133= [1180]marmalade jars Guilsborough, United Kingdom
+     * 133= [1181]Master G.O.A.B. Upton Court Grammar School
+     * 133= [1182]MathHysteria Harrow School
+     * 133= [1183]Maths Masters Byrchall High School
+     * 133= [1184]Maths Wizard Upton Hall
+     * 133= [1185]Maximus Titans St Bernard's Catholic High School
+     * 133= [1186]MCHSTeachers! Mearns Castle High School
+     * 133= [1187]MDMAths Tiffin school
+     * 133= [1188]Me Bishop Milner
+     * 133= [1189]mighty year 8s made of pork nelson thomlinson
+     * 133= [1190]Mildly Intelligent Children Five Islands Academy
+     * 133= [1191]Mons City of London School for Girls
+     * 133= [1192]Moreland Invicta Girls Grammar School
+     * 133= [1193]Mr C
+     * 133= [1194]Mr D’s Team Guilsborough
+     * 133= [1195]Mr Fox – FPS
+     * 133= [1196]Mr. D. The King's School, Chester
+     * 133= [1197]My Pi is Bigger than Yours
+     * 133= [1198]NELLY Haileybury
+     * 133= [1199]Never Drink and Derive The Friary School
+     * 133= [1200]Nic-name
+     * 133= [1201]One man legion of KEK Oldfield School
+     * 133= [1202]OneSparrowhawk
+     * 133= [1203]pasta clan Richard Taunton College
+     * 133= [1204]Peter Cirencester College
+     * 133= [1205]Plane Burrito Wirral Grammar School for Girls
+     * 133= [1206]polygamousFiler Gordano School
+     * 133= [1207]PoolAcademy Pool Academy
+     * 133= [1208]Pr Aylesbury
+     * 133= [1209]Project sparticus Fettes College
+     * 133= [1210]Pumped Up Kicks St. Cuthbert's Catholic High School
+     * 133= [1211]Pythagoreans hate Heinz Gumley House Convent School, Saint
+     * 133= [1212]Quad Squad IES Breckland
+     * 133= [1213]Rainbow Unicorns Blythe Bridge High School
+     * 133= [1214]Ravenclaw22 Sir John Leman Road
+     * 133= [1215]Ravenclaw222 Sir John Leman Road
+     * 133= [1216]red team Haileybury College
+     * 133= [1217]Rhiannon Lawson Wycombe High School For Girls
+     * 133= [1218]Robeilb Fulford School
+     * 133= [1219]Rogerthedodger
+     * 133= [1220]rogue one
+     * 133= [1221]Room 40 Cryptanalysis Formby High School
+     * 133= [1222]Saoirse Purkess Wycliffe
+     * 133= [1223]SEA RM St Edmund Arrowsmith RC High School
+     * 133= [1224]SIARK The Cedars Academy
+     * 133= [1225]Sirius Cybernetics Corporation The College of Richard
+     * 133= [1226]SixCylinder
+     * 133= [1227]SLC Computers St Lawrence College
+     * 133= [1228]SMF Kempston Challenger Academy
+     * 133= [1229]Solo
+     * 133= [1230]SOUTHMOOR Southmoor
+     * 133= [1231]Spectrum City of London School for Girls
+     * 133= [1232]Squadron Elite Greenbank High School
+     * 133= [1233]St-breakers2 St Matthias, Wolverhampton
+     * 133= [1234]StefanTrawicki St Nicholas 6th Form
+     * 133= [1235]Stella.s team Oasis Academy Mayfield
+     * 133= [1236]Stroodemone City of London School for Girls
+     * 133= [1237]Tan90 for the win Kelvinside Academy 33 Kirklee road
+     * 133= [1238]Team BVS Bishop Vaughan Catholic School Swansea
+     * 133= [1239]Team Jeff Beechen Cliff School
+     * 133= [1240]TeamGigg Giggleswick, United Kingdom
+     * 133= [1241]TeamHby Haileybury
+     * 133= [1242]Teamyagoubi City of London school for girls
+     * 133= [1243]Teenage Mutant Ninja Skrtel’s TR15 3PZ
+     * 133= [1244]Tesco Value Team Pool Academy
+     * 133= [1245]TGA1 The Glasgow Academy
+     * 133= [1246]THE BEST TEAM EVER pool academy
+     * 133= [1247]The Bill Ciphers St Ives High school, Sydney, NSW,
+     * 133= [1248]The boys Guilsborough, United Kingdom
+     * 133= [1249]The City Of London Academy Shoreditch Pa The City Of London
+     * 133= [1250]The Code Crackers Spalding High School
+     * 133= [1251]The Code Mode Stowupland High School
+     * 133= [1252]The DeCiphers William Farr School
+     * 133= [1253]The Delphi Destroyers Exeter School
+     * 133= [1254]The Denominators Woldingham School
+     * 133= [1255]The E-lemonators Hills Road Sixth Form College
+     * 133= [1256]The Flaming Mongeese Seaham High School
+     * 133= [1257]The four Caesar salads !!!! Etonbury Academy
+     * 133= [1258]The Josephs Saint George Catholic College
+     * 133= [1259]The Juddi Knights St Anne's Catholic School
+     * 133= [1260]The Langley Legionnaires Langley School
+     * 133= [1261]The Lost Luncheonnaire
+     * 133= [1262]The Maple Tree Manchester High School for Girls
+     * 133= [1263]The Mindbenders John Beddoes School
+     * 133= [1264]The Night Court Nonsuch High School for Girls
+     * 133= [1265]The originals Pool Academy
+     * 133= [1266]The Real Enigma Rochdale Sixth Form College
+     * 133= [1267]The Smart Idiots St Ives High School, Sydney, NSW,
+     * 133= [1268]The Spanish Inquisition Leighton Buzzard
+     * 133= [1269]The supreme problem solvers Pool Academy
+     * 133= [1270]The Techy T’S Haileybury
+     * 133= [1271]The Vindicators Haileybury College
+     * 133= [1272]The 🅱opes Millthorpe
+     * 133= [1273]THEPOKÉMANZ Fullhurst community college
+     * 133= [1274]TheRiverTems St Anne's Catholic School
+     * 133= [1275]TheyCallMeCrypto Loreto College
+     * 133= [1276]THIS IS SPARTA Lycée Français Charles De Gaulle
+     * 133= [1277]Thomas Mills High School Thomas Mills
+     * 133= [1278]Triumphant Trio Burford
+     * 133= [1279]Troublesome Trio TTS
+     * 133= [1280]type2 Mayfield Grammer School Gravesend
+     * 133= [1281]Universally Challenged Devonport High School for Girls
+     * 133= [1282]US Wirral Grammar School for Girls
+     * 133= [1283]VInnilathunder west island school
+     * 133= [1284]VirusJarva St john's college
+     * 133= [1285]VN Squad Bosworth Independent College
+     * 133= [1286]Wii not fit Pool Academy
+     * 133= [1287]Winners
+     * 133= [1288]WWIEN Conkers Swansea university / WCG
+     * 133= [1289]πathmagitions Liskeard School and Community College
+     * 133= [1290]🎅Team Christmas🎅 Spalding High School
+     * 134 [1291](-_-)SKRRRRRRRRA John F Kennedy Roman Catholic School
+     * 134= [1292]AbsMillyMais Etonbury Acadmey
+     * 134= [1293]BGS Maths Dept. Bourne Grammar School
+     * 134= [1294]ccg265
+     * 134= [1295]M3n 1n B1ack The Boswells School
+     * 134= [1296]ONI Southend high for boys
+     * 134= [1297]Peng (Compu)ting Millthorpe School
+     * 134= [1298]SMBCoders St. Margaret's Bushey
+     * 134= [1299]Team -i squared Rochdale Sixth Form
+     * 134= [1300]The Goat Hackers Devonport High School For Girls
+     * 134= [1301]The Legions of Lunar Leopards The Henry Box School
+     * 135 [1302]007EMPIRE Alleyn's school
+     * 135= [1303]atom Tormead School, Guildford, United Kingdom
+     * 135= [1304]Badger Stratford-upon-Avon, United Kingdom
+     * 135= [1305]bitbytes The Boswells School, Burnham Road, Chelmsford,
+     * 135= [1306]DHS Cipheristas Dumfries High School
+     * 135= [1307]KFC Rejects Guilsborough
+     * 135= [1308]Me > Panda Express Gordano School
+     * 135= [1309]plus 4 Guilsborough
+     * 135= [1310]The Brogrammers King Edward VI Handsworth School for girls
+     * 136 [1311]Kale Pool Academy
+     * 136= [1312]The Ainigmata Merchant Taylors' School, Northwood
+     * 137 [1313]Pray for Jeff’s Knee Truro School
+     * 137= [1314]Th3 Cod3 Br3ak3rs St Johns College Cardiff
+     * 138 [1315]CRMKCT
+     * 138= [1316]Eye of Horus Oasis Academy Immingham
+     * 138= [1317]N&M Mathematics The Cedars Academy
+     * 139 [1318]novaschool Novaschool
+     * 140 [1319]Tristan’s Team Westgate Westgate School Winchester
+     * 141 [1320]Dumbledore’s Army IES Breckland School
+     * 142 [1321]Matrix Downehouse school
+     * 143 [1322]Sammy1 Samuel Whitbread School
+     * 144 [1323]Eat Some Pi Dame Allan's School, Newcastle upon Tyne, United
+     * 144= [1324]SuperSizedOreo Byrchall High School
+     * 145 [1325]hellobonjour Hinchley Wood Secondary school
+     * 145= [1326]Mathematical Addy Soham Village College
+     * 145= [1327]weareciphering John F Kennedy
+     * 146 [1328]Leasowes Code Breakers Leasowes High School
+     * 147 [1329]OXAZATE St Cuthbert Catholic High School
+     * 148 [1330]The Kool Cids Liverpool Bluecoat School
+     * 149 [1331]uwotm8 prendergast ladywell school
+     * 150 [1332]The Code Runners St John's College Cardiff
+     * 151 [1333]Hot Tamales Rivermont Collegiate
+     * 152 [1334]Labbi Byrchall High School
+     * 153 [1335]ThemHumans Bristol Cathedral Choir School
+     * 154 [1336]Barton Prodigies Barton Peveril Sixth Form College
+     * 155 [1337]foxifloof Guilsborough
+     * 156 [1338]Napoleon Bonaparte Society Exeter Mathematics School
+     * 157 [1339]Jamjar Guilsborough
+     * 158 [1340]5littlePIGS St Peter's C of E
+     * 159 [1341]Fry Braeside School
+     * 160 [1342]TSA St Bernard's Catholic High School
+     * 161 [1343]TripleE Guilsborough Road
+     * 162 [1344]The Code Smashers 2017 surrey
+     * 163 [1345]player111 heles school
+     * 164 [1346]Niche Blakehan Guilsborough
+     * 165 [1347]CIPHERTEXT prendergast ladywell school
+     * 166 [1348]BronteHouse2 Braeside
+     * 167 [1349]The Park Lane Legion
+     * 168 [1350]69
+     * 169 [1351]Flex 🍉 Guilsborough Acadamy
+     * 170 [1352]thecodesnappers Wallington County Grammar School
+     * 171 [1353]Mason House Braeside School
+     * 172 [1354]Regent Scholar’s Regent High School
+     * 173 [1355]Maximum Mathematical Masterminds Melbourn Village College
+     * 174 [1356]Fluffy Pink Unicorns St Cuthbert's Catholic High School
+     * 175 [1357]Cipherinos
+     * 176 [1358]10,000 Cheadle Hulme
+     * 177 [1359]Cipher Wizards Hby
+     * 178 [1360]Vaza Downe House
+     * 179 [1361]Bright Sparks Jordanhill School
+     * 180 [1362]Goge
+     * 181 [1363]hellopeoples
+     * 182 [1364]test team 4
+     * 183 [1365]bigg
+     * 184 [1366]scsdynamic8 Salisbury Cathedral School
+     * 185 [1367]catpeopleforlife
+     * 186 [1368]MysticMice Writhlington School, Radstock, United Kingdom
