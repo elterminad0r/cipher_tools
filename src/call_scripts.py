@@ -75,6 +75,8 @@ def call_script(state, script, *args, interpreter=None):
     alternative installations like the PyPy JIT.
     """
     interpreter = read_type(interpreter, "interpreter", str, "python")
+    if not shutil.which(interpreter):
+        raise UIError("Cannot find interpreter {}".format(interpreter))
     write_output = False
     if script == "store":
         write_output = True
