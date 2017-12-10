@@ -37,7 +37,8 @@ scripts = {"chunk": "scripts/chunk_text.py",
            "autoattack": "scripts/autoattack.py",
            "autocipher": "scripts/autoencipher.py",
            "bigrams": "scripts/bigram_analysis.py",
-           "hillattack": "scripts/hill_brute.py"}
+           "hillattack": "scripts/hill_brute.py",
+           "advent": "scripts/advent.py"}
 
 com_names = ["store", "list", *scripts]
 
