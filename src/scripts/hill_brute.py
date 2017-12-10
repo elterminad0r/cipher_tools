@@ -37,7 +37,7 @@ def make_formstring(text):
 def hill_encrypt(text, size, mat):
     out = []
     agg = []
-    for agg in chunk(text_as_ints(text), size, "z"):
+    for agg in chunk(text_as_ints(text), size, 25):
         out.extend(string.ascii_uppercase[vctmul(row, agg) % 26] for row in mat)
     return make_formstring(text).format(*out)
 

@@ -74,7 +74,7 @@ def _bar_chart(source, width, start, interval, pat, subs):
                                 il=longest_i, sl=longest_sub, l=longest))
     # calculate total length of observed source
     total = sum(cnt.values())
-    return "IOC: {:.5f}\n{}".format(IOC(cnt, total),
+    return "IOC: {:.5f}\n({} distinct)\n{}".format(IOC(cnt, total), len(cnt),
                 "\n".join(
             # various references to padding information
             "{!r:{l}} (-> {!r:{sl}}) appears {:{il}} times ({:6.2%}) {}"
