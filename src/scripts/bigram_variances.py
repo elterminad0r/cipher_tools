@@ -24,7 +24,7 @@ def showvars(text, maxrange):
     text = "".join(filter(str.isalpha, text))
     for offs in range(1, maxrange):
         var = variance(Counter((text[i], text[i + offs]) for i in range(len(text) - offs)).values())
-        out.append("{:2} ({:6.3f}): {}".format(offs - 1, var, "\u2796" * int(5 * var)))
+        out.append("{:2} ({:6.3f}): {}".format(offs, var, "\u2796" * int(5 * var)))
     return "\n".join(out)
 
 if __name__ == "__main__":
