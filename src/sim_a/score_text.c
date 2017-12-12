@@ -23,10 +23,10 @@ int ipow(int base, int exp) {
 }
 
 // assumes that text consists only of uppercase letters(no punctuation or spaces)
-double txt_fitness(char *text,int len){
+double txt_fitness(char *text,int len) {
     char a, b, c, d;
     double score = 0;
-    for (int i = 0; i < len - 3; i++){
+    for (int i = 0; i < len - 3; i++) {
         a = text[i] - 'A';
         b = text[i + 1] - 'A';
         c = text[i + 2] - 'A';

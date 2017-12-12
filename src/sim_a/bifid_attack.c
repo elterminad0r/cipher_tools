@@ -3,14 +3,19 @@
 #include <strings.h>
 #include "simulated_annealing.h"
 
-#define PERIOD 4
+int period;
 
 // Bifid interface to SA lib
 
 char *bif_decipher(char *key, char *text, char *result, int len);
 
-int main() {
-    printf("BIFID attack using period %d\n", PERIOD);
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        printf("expecting one parameter, got %d\n", argc);
+        exit(EXIT_FAILURE);
+    }
+    sscanf(argv[1], "%d", &period);
+    printf("BIFID attack using period %d\n", period);
     return sim_annealing(bif_decipher);
 }
 
@@ -23,14 +28,14 @@ char *bif_decipher(char *key, char *text, char *result, int len) {
         ar,br, // row
         ac,bc; // column
 
-    for (i = 0; i < len; i += PERIOD){
-        int next = PERIOD;
-        if (i + PERIOD >= len) {
+    for (i = 0; i < len; i += period) {
+        int next = period;
+        if (i + period >= len) {
             next = len - i;
         }
-        for (j = 0; j < next; j ++){
+        for (j = 0; j < next; j ++) {
             a = text[i + (j / 2)];
-            b = text[i + ((PERIOD + j) / 2)];
+            b = text[i + ((period + j) / 2)];
 
             ai = (int)(index(key, a) - key);
             bi = (int)(index(key, b) - key);

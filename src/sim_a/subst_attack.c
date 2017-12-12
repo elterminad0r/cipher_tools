@@ -3,7 +3,7 @@
 
 // Substitution cipher interface to SA lib
 
-char *subst_decipher(char *key, char *in,char *out, int len);
+char *subst_decipher(char *key, char *text, char *result, int len);
 
 int main() {
     printf("SUBST attack");
@@ -12,7 +12,7 @@ int main() {
 
 // Substitution decryption
 
-char *subst_decipher(char *key, char *text, char *result, int len){
+char *subst_decipher(char *key, char *text, char *result, int len) {
     int i;
     for (i = 0; i < len; i++) {
         int idx;

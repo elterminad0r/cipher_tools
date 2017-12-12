@@ -51,7 +51,7 @@ int sim_annealing(decipherer_type deciph) {
     printf("ciphertext read: '%s'\n", cipher);
 
     int len = strlen(cipher);
-    char *out = malloc(sizeof(char)*(len + 1));
+    char *out = malloc(sizeof(char) * (len + 1));
 
     srand((unsigned)time(NULL));
 
@@ -59,23 +59,25 @@ int sim_annealing(decipherer_type deciph) {
     double score;
     double maxscore = -99e99;
 
+    long start = time(NULL);
+
     // runs until terminated
-    for (int i = 1;; i++){
+    for (int i = 1;; i++) {
         score = annealing_run(deciph, cipher, len, key);
-        if(score > maxscore){
+        if(score > maxscore) {
             maxscore = score;
-            printf("improvement: %.3f on it #%d\n", score, i);
+            printf("%lds: improvement: %.3f on it #%d\n", time(NULL) - start, score, i);
             printf("key: '%s'\n", key);
             deciph(key, cipher, out, len);
             printf("plaintext: '%s'\n", out);
         } else {
-            printf("no improvement on it #%d\n", i);
+            printf("%lds: no improvement on it #%d\n", time(NULL) - start, i);
         }
     }
     return 0;
 }
 
-void swap_letters(char *key){
+void swap_letters(char *key) {
     int a = rand() % 25;
     int b = rand() % 25;
     char tmp = key[a];
@@ -83,7 +85,7 @@ void swap_letters(char *key){
     key[b] = tmp;
 }
 
-void swap_rows(char *key){
+void swap_rows(char *key) {
     int a = rand() % 5;
     int b = rand() % 5;
     char tmp;
@@ -94,20 +96,20 @@ void swap_rows(char *key){
     }
 }
 
-void swap_cols(char *key){
+void swap_cols(char *key) {
     int a = rand() % 5;
     int b = rand() % 5;
     char tmp;
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 5; i++) {
         tmp = key[i * 5 + a];
         key[i * 5 + a] = key[i * 5 + b];
         key[i * 5 + b] = tmp;
     }
 }
 
-void shuffle(char *key){
+void shuffle(char *key) {
     char tmp;
-    for (int i = 24; i >= 1; i--){
+    for (int i = 24; i >= 1; i--) {
         int j = rand() % (i + 1);
         tmp = key[j];
         key[j] = key[i];
@@ -115,10 +117,10 @@ void shuffle(char *key){
     }
 } 
 
-void mutate_key(char *new_k, char *old_k){
+void mutate_key(char *new_k, char *old_k) {
     int j, k;
     int i = rand() % 50;
-    switch(i){
+    switch(i) {
         case 0: strcpy(new_k, old_k); swap_rows(new_k); break;
         case 1: strcpy(new_k, old_k); swap_cols(new_k); break;       
         // reverse the whole square
@@ -147,7 +149,7 @@ void mutate_key(char *new_k, char *old_k){
 
 // Run an "annealing", slowly decreasing temperature.
 
-float annealing_run(decipherer_type deciph, char *text, int len, char* best_key){
+float annealing_run(decipherer_type deciph, char *text, int len, char* best_key) {
     int count;
     float T;
     char *deciphered = malloc(sizeof(char) * (len + 1));
@@ -157,10 +159,10 @@ float annealing_run(decipherer_type deciph, char *text, int len, char* best_key)
     deciph(mx_key, text, deciphered, len);
     maxscore = txt_fitness(deciphered, len);
     bestscore = maxscore;
-    for(T = TEMP; T >= 0; T -= STEP){
+    for (T = TEMP; T >= 0; T -= STEP) {
         printf("\rtemperature: %.3f ", T);
         fflush(stdout);
-        for(count = 0; count < COUNT; count++){ 
+        for (count = 0; count < COUNT; count++) {
             mutate_key(conj_key, mx_key);    
             deciph(conj_key, text, deciphered, len);
             score = txt_fitness(deciphered, len);
@@ -174,7 +176,7 @@ float annealing_run(decipherer_type deciph, char *text, int len, char* best_key)
                     strcpy(mx_key, conj_key);                
                 }
             }
-            if(maxscore > bestscore){
+            if (maxscore > bestscore) {
                 bestscore = maxscore;
                 strcpy(best_key, mx_key);
             } 

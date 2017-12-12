@@ -34,6 +34,7 @@ def accumulate_chars(plain, chunk_length):
             if len(combs) > len(acc_codex):
                 raise IndexError("Ran out of symbols")
         sys.stdout.write(acc_codex[combs[a]])
+    print()
 
 if __name__ == "__main__":
     args = get_args()
