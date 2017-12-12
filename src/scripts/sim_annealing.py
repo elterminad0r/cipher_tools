@@ -52,11 +52,6 @@ def rev_cols(key):
 
 mutations = [swap_rows, swap_cols, list.reverse, rev_rows, rev_cols, random.shuffle]
 
-for mut in mutations:
-    k = list(range(25))
-    mut(k)
-    print(k)
-
 def mutate_key(_key, MUTATE):
     key = _key.copy()
     try:

@@ -11,6 +11,9 @@
 #define COUNT 10000
 #define MAX_STDIN 100000
 
+// twenty-five factorial, the space of keys
+float tf_factorial = 15511210043330985984000000.0f;
+
 // Generic "library" to optimise a decryptor-type function with simulated
 // annealing. It uses a 25-size alphabet with no letter J.
 
@@ -64,15 +67,18 @@ int sim_annealing(decipherer_type deciph) {
     // runs until terminated
     for (int i = 1;; i++) {
         score = annealing_run(deciph, cipher, len, key);
+        long dur = time(NULL) - start;
         if(score > maxscore) {
             maxscore = score;
-            printf("%lds: improvement: %.3f on it #%d\n", time(NULL) - start, score, i);
+            printf("%lds: improvement: %.3f on it #%d\n", dur, score, i);
             printf("key: '%s'\n", key);
             deciph(key, cipher, out, len);
             printf("plaintext: '%s'\n", out);
         } else {
-            printf("%lds: no improvement on it #%d\n", time(NULL) - start, i);
+            printf("%lds: no improvement on it #%d\n", dur, i);
         }
+        int iterations = i * COUNT * (int)(TEMP / STEP);
+        printf("completed %d iterations (~%.6g%% of the keyspace, ~%.0f decryptions/s)\n", iterations, 100.0 * iterations / tf_factorial, (double)iterations / dur);
     }
     return 0;
 }
