@@ -11,7 +11,7 @@ char *bif_decipher(char *key, char *text, char *result, int len);
 
 int main(int argc, char **argv) {
     if (argc != 2) {
-        printf("expecting one parameter, got %d\n", argc);
+        printf("expecting one parameter, got %d\n", argc - 1);
         exit(EXIT_FAILURE);
     }
     sscanf(argv[1], "%d", &period);

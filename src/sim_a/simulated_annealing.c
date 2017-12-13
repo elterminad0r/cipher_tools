@@ -78,7 +78,10 @@ int sim_annealing(decipherer_type deciph) {
             printf("%lds: no improvement on it #%d\n", dur, i);
         }
         int iterations = i * COUNT * (int)(TEMP / STEP);
-        printf("completed %d iterations (~%.6g%% of the keyspace, ~%.0f decryptions/s)\n", iterations, 100.0 * iterations / tf_factorial, (double)iterations / dur);
+        printf("completed %d iterations (~%.6g%% of the keyspace, ~%.2g decryptions/s)\n",
+                          iterations,
+                                         100.0 * iterations / tf_factorial,
+                                                                   (double)iterations / dur);
     }
     return 0;
 }
