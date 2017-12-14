@@ -34,7 +34,7 @@ def perm_transp(plain, perm):
 
 if __name__ == "__main__":
     args = parse_args()
-    strpd = clean(args.read())
+    strpd = clean(args.input.read())
     perm = build_perm(args.permutation)
     print("using permutation {}".format(perm))
     print(perm_transp(strpd, perm))
