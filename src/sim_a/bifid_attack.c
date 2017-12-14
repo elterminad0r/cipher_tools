@@ -22,7 +22,8 @@ int main(int argc, char **argv) {
 // Deciphering bifid with key
 
 char *bif_decipher(char *key, char *text, char *result, int len) {
-    int i, j;
+    int i;
+    int j = 0;
     char a, b;
     int ai,bi, // index
         ar,br, // row
@@ -30,12 +31,12 @@ char *bif_decipher(char *key, char *text, char *result, int len) {
 
     for (i = 0; i < len; i += period) {
         int next = period;
-        if (i + period >= len) {
+        if (i + period > len) {
             next = len - i;
         }
         for (j = 0; j < next; j ++) {
             a = text[i + (j / 2)];
-            b = text[i + ((period + j) / 2)];
+            b = text[i + ((next + j) / 2)];
 
             ai = (int)(index(key, a) - key);
             bi = (int)(index(key, b) - key);
@@ -50,6 +51,6 @@ char *bif_decipher(char *key, char *text, char *result, int len) {
             }
         }
     }
-    result[i] = '\0';
+    result[i - period + j] = '\0';
     return result;
 }

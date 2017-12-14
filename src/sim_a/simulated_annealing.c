@@ -193,6 +193,6 @@ float annealing_run(decipherer_type deciph, char *text, int len, char* best_key)
     }
     printf("\n");
     // TODO figure out what's going on here and why this causes crashes.
-    //free(deciphered);
+    free(deciphered);
     return bestscore;
 }
