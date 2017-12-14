@@ -22,6 +22,7 @@ def get_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", type=argparse.FileType("r"), help="input file")
     parser.add_argument("interval", type=int, help="keyword length to attack")
+    parser.add_argument("--vigenere", action="store_true", help="search only vg")
     return parser.parse_args()
 
 def lookat_interval(plain, start, step):
@@ -37,9 +38,9 @@ def rate_similarity(hist_1, hist_2, keys=string.ascii_uppercase):
 def af_shift(plain, a, b):
     return [chr((a * (ord(c) - 65) + b) % 26 + 65) for c in plain]
 
-def attack_interval(plain, start, step):
+def attack_interval(plain, start, step, vigenere):
     plain_aoi = lookat_interval(plain, start, step)
-    rearrs = [(af_shift(plain_aoi, a, b), a, b) for a in range(26) for b in range(26)]
+    rearrs = [(af_shift(plain_aoi, a, b), a, b) for a in range(1, 27 if not vigenere else 2) for b in range(26)]
     rearrs = [(rate_similarity(hist_to_dist(Counter(i[0])), standard_dist), i) for i in rearrs]
     return min(rearrs)[1][1:]
 
@@ -80,8 +81,8 @@ def cased_shift(ch, a, b):
         return chr((a * (ord(ch) - ord('A')) + b) % 26 + ord('A'))
     return chr((a * (ord(ch) - ord('a')) + b) % 26 + ord('a'))
 
-def attack_text(plain, interval):
-    guessed_keys = [attack_interval(plain, i, interval) for i in range(interval)]
+def attack_text(plain, interval, vigenere):
+    guessed_keys = [attack_interval(plain, i, interval, vigenere) for i in range(interval)]
     vals = itertools.cycle(guessed_keys)
     out = []
     for ch in plain:
@@ -94,6 +95,6 @@ def attack_text(plain, interval):
 if __name__ == "__main__":
     args = get_args()
     plain = args.input.read()
-    out, err = attack_text(plain, args.interval)
+    out, err = attack_text(plain, args.interval, args.vigenere)
     print(out)
     sys.stderr.write(err)

@@ -25,6 +25,7 @@ def parse_args():
                                     help="vigenere key")
     keytypes.add_argument("-c", "--caesar", type=string_length(2), nargs="+",
                                     help="Caesar pairing")
+    parser.add_argument("-s", "--show", action="store_true")
     return parser.parse_args()
 
 alpha_set = set(string.ascii_letters)
@@ -37,12 +38,16 @@ def shiftch(char, shift):
 def match_case(new, old):
     return new.upper() if old.isupper() else new.lower()
 
-def shift(plain, passphrase):
+def shift(plain, passphrase, showsubs):
     out = []
     shifts = itertools.cycle(passphrase)
     for ch in plain:
         if ch in alpha_set:
-            out.append(shiftch(ch, ord('A') - ord(next(shifts).upper())))
+            sft = next(shifts)
+            if showsubs:
+                out.append("{1}-{0} ".format(sft, shiftch(ch, ord('A') - ord(sft.upper()))))
+            else:
+                out.append(shiftch(ch, ord('A') - ord(sft.upper())))
         else:
             out.append(ch)
     return "".join(out)
@@ -50,7 +55,7 @@ def shift(plain, passphrase):
 if __name__ == "__main__":
     args = parse_args()
     if args.vigenere:
-        sys.stdout.write(shift(args.input.read(), args.vigenere))
+        sys.stdout.write(shift(args.input.read(), args.vigenere, args.show))
     else:
         shift_chars = "".join(string.ascii_uppercase[ord(pair[0]) - ord(pair[1])] for pair in map(str.upper, args.caesar))
         print("key was {}".format(shift_chars))
