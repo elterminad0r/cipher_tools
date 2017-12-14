@@ -27,22 +27,24 @@ char *read_ciphertext() {
     int i = 0;
     // allocate one extra to allow for null byte
     char *out = malloc(sizeof(char) * (MAX_STDIN + 1));
+    printf("Js converted to Is: ");
     for (char c = getchar(); c != EOF; c = getchar()) {
         if (isalpha(c)) {
             if (i > MAX_STDIN) {
                 // TODO: reallocation
-                printf("STDIN too big and I've not implemented dynamic allocation");
+                printf("\nSTDIN too big and I've not implemented dynamic allocation");
                 exit(EXIT_FAILURE);
             }
 
             // coerce to alphabet in use
             if (toupper(c) == 'J') {
                 c = 'I';
-                printf("warning: converted J to I\n");
+                printf(".");
             }
             out[i++] = toupper(c);
         }
     }
+    printf("\n");
     out[i] = '\0';
     return out;
 }

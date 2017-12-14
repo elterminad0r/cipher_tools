@@ -6,7 +6,7 @@
 char *subst_decipher(char *key, char *text, char *result, int len);
 
 int main() {
-    printf("SUBST attack");
+    printf("SUBST attack\n");
     return sim_annealing(subst_decipher);
 }
 
