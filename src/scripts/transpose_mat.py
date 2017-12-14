@@ -13,7 +13,13 @@ import itertools
 from strip_stdin import strip
 
 def chunk(it, n):
-    return itertools.zip_longest(*[iter(it)] * n, fillvalue=" ")
+    plen = len(it) // n
+    extra = len(it) % n
+    it = iter(it)
+    for i in range(extra):
+        yield list(itertools.islice(it, plen + 1))
+    for i in range(extra, n):
+        yield list(itertools.islice(it, plen))
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)

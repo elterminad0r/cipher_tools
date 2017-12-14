@@ -19,7 +19,7 @@ def visualise(key):
     print()
     print(i_rep)
     print()
-    print([i_rep[i] - i_rep[i + 1] for i in range(len(i_rep) - 1)])
+    print([(-i_rep[i] + i_rep[i + 1]) % 26 for i in range(len(i_rep) - 1)])
 
 if __name__ == "__main__":
     args = get_args()
