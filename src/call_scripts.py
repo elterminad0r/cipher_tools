@@ -37,6 +37,7 @@ scripts = {"chunk": "scripts/chunk_text.py",
            "autoattack": "scripts/autoattack.py",
            "autocipher": "scripts/autoencipher.py",
            "bigrams": "scripts/bigram_analysis.py",
+           "bivars": "scripts/bigram_variances.py",
            "hillattack": "scripts/hill_brute.py",
            "advent": "scripts/advent.py",
            "analyse": "scripts/sb_analyse_key.py"}
