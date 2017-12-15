@@ -33,7 +33,7 @@ def hist_to_dist(hist):
     return Counter({a: b / tt for a, b in hist.items()})
 
 def rate_similarity(hist_1, hist_2, keys=string.ascii_uppercase):
-    return sum(abs(hist_1[k] - hist_2[k]) for k in keys)
+    return sum((hist_1[k] - hist_2[k]) ** 2 for k in keys)
 
 def af_shift(plain, a, b):
     return [chr((a * (ord(c) - 65) + b) % 26 + 65) for c in plain]
