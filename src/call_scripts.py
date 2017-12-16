@@ -5,10 +5,11 @@ Call primarily command-line scripts from scripts directory
 """
 
 import subprocess
-import os
-import re
 import shutil
 import time
+import sys
+import os
+import re
 
 from textwrap import TextWrapper
 
@@ -77,7 +78,7 @@ def call_script(state, script, *args, interpreter=None):
     scripts. Accepts an interpreter argument - this is only for use if you have
     alternative installations like the PyPy JIT.
     """
-    interpreter = read_type(interpreter, "interpreter", str, "python")
+    interpreter = read_type(interpreter, "interpreter", str, sys.executable)
     if not shutil.which(interpreter):
         raise UIError("Cannot find interpreter {}".format(interpreter))
     write_output = False
