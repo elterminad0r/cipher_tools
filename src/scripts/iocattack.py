@@ -23,7 +23,7 @@ def ioc(cnt):
 
 def find_interval(plain, highest):
     candidates = (sum(ioc(Counter(lookat_interval(plain, i, interval))) for i in range(interval)) / interval for interval in range(1, highest + 1))
-    for interv in ("{:2} ({:.4f}): {}".format(ind, i, "\u2796" * int(i * 800)) for ind, i in enumerate(candidates, 1)):
+    for interv in ("{:2} ({:.4f}): {}".format(ind, i, "\u2500" * int(i * 800)) for ind, i in enumerate(candidates, 1)):
         print(interv)
 
 if __name__ == "__main__":

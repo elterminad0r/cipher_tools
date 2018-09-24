@@ -14,7 +14,7 @@ def get_args():
 def visualise(key):
     print(key)
     print()
-    print("\n".join("{}: {}".format(ch, "\u2796" * (ord(ch.upper()) - 65) * 2) for ch in key))
+    print("\n".join("{}: {}".format(ch, "\u2500" * (ord(ch.upper()) - 65) * 2) for ch in key))
     i_rep = text_as_ints(key)
     print()
     print(i_rep)

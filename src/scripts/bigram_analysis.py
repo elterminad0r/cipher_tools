@@ -25,7 +25,7 @@ def bigrams(text, n, total):
     if n == 2 and not any(a == b for a, b in bgs.keys()):
         out.append("**NO IDENTICAL DOUBLES ({} distinct)".format(len(set(re.findall("[A-Za-z]", text)))))
     (_, most), = bgs.most_common(1)
-    out.append("\n".join("{} ({:{m}} - {:.2%}): {}".format(item, count, count / tnum, "\u2796" * int(count * 80 / most), m=len(str(most)))
+    out.append("\n".join("{} ({:{m}} - {:.2%}): {}".format(item, count, count / tnum, "\u2500" * int(count * 80 / most), m=len(str(most)))
                                     for item, count in bgs.most_common(total)))
     return "\n".join(out)
 
