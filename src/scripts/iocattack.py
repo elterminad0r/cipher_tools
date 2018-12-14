@@ -16,9 +16,9 @@ def get_args():
 def lookat_interval(plain, start, step):
     return re.findall("[A-Z]", plain.upper())[start::step]
 
-def ioc(cnt):
-    total = sum(cnt.values())
-    return (sum(freq ** 2 - freq for freq in cnt.values())
+def ioc(count):
+    total = sum(count.values())
+    return (sum(freq ** 2 - freq for freq in count.values())
          / (total ** 2 - total))
 
 def find_interval(plain, highest):

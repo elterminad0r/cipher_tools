@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{ioc}\PYG{p}{(}\PYG{n}{count}\PYG{p}{:} \PYG{n}{collections}\PYG{o}{.}\PYG{n}{Counter}\PYG{p}{):}
+    \PYG{n}{total} \PYG{o}{=} \PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{count}\PYG{o}{.}\PYG{n}{values}\PYG{p}{())}
+    \PYG{k}{return} \PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{freq} \PYG{o}{**} \PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{n}{freq} \PYG{k}{for} \PYG{n}{freq} \PYG{o+ow}{in} \PYG{n}{count}\PYG{o}{.}\PYG{n}{values}\PYG{p}{())}
+         \PYG{o}{/} \PYG{p}{(}\PYG{n}{total} \PYG{o}{**} \PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{n}{total}\PYG{p}{))}
+\end{Verbatim}

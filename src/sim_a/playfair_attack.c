@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "simulated_annealing.h"
+
+bool double_found = false;
 
 // Playfair interface to SA lib
 
@@ -20,10 +23,17 @@ char *pf_decipher(char *key, char *text, char *result, int len) {
     int a_ind, b_ind;
     int a_row, b_row;
     int a_col, b_col;
-    
+
     for (i = 0; i < len; i += 2) {
         a = text[i];
         b = text[i + 1];
+        if (a == b) {
+            b = 'X';
+            if (!double_found) {
+                printf("double!!! %c\n", a);
+                double_found = true;
+            }
+        }
         a_ind = (int)(strchr(key,a) - key);
         b_ind = (int)(strchr(key,b) - key);
         a_row = a_ind / 5;
@@ -57,6 +67,6 @@ char *pf_decipher(char *key, char *text, char *result, int len) {
             result[i + 1] = key[5 * b_row + a_col];
         }
     }
-    result[i] = '\0';
+    result[len] = '\0';
     return result;
 }

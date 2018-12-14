@@ -56,6 +56,7 @@ int sim_annealing(decipherer_type deciph) {
     printf("ciphertext read: '%s'\n", cipher);
 
     int len = strlen(cipher);
+    printf("len found as %d\n", len);
     char *out = malloc(sizeof(char) * (len + 1));
 
     srand((unsigned)time(NULL));
@@ -126,31 +127,37 @@ void shuffle(char *key) {
         key[j] = key[i];
         key[i] = tmp;
     }
-} 
+}
 
 void mutate_key(char *new_k, char *old_k) {
     int j, k;
     int i = rand() % 50;
     switch(i) {
         case 0: strcpy(new_k, old_k); swap_rows(new_k); break;
-        case 1: strcpy(new_k, old_k); swap_cols(new_k); break;       
+        case 1: strcpy(new_k, old_k); swap_cols(new_k); break;
         // reverse the whole square
         case 2:
-            for(k = 0; k <25; k++)
-                new_k[k] = old_k[24 - k]; new_k[25] = '\0';
+            for (k = 0; k < 25; k++) {
+                new_k[k] = old_k[24 - k];
+            }
+            new_k[25] = '\0';
             break;
         // reverse rows
         case 3:
-            for(k = 0; k < 5; k++)
-                for(j = 0; j < 5; j++)
+            for (k = 0; k < 5; k++) {
+                for(j = 0; j < 5; j++) {
                     new_k[k * 5 + j] = old_k[(4 - k) * 5 + j];
+                }
+            }
             new_k[25] = '\0';
             break;
         // reverse columns
         case 4:
-            for(k = 0; k < 5; k++)
-                for(j = 0; j < 5; j++)
+            for (k = 0; k < 5; k++) {
+                for (j = 0; j < 5; j++) {
                     new_k[j * 5 + k] = old_k[(4 - j) * 5 + k];
+                }
+            }
             new_k[25] = '\0';
             break;
         case 5: strcpy(new_k, old_k); shuffle(new_k); break;

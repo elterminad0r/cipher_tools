@@ -30,7 +30,7 @@ def hill_encipher(text, mat):
     for pair in chunk((ord(ch.upper()) - 65 for ch in text), 2, 0):
         out.extend(string.ascii_uppercase[i % 26] for i in mat * sympy.Matrix(pair))
     return "".join(out)
-    
+
 if __name__ == "__main__":
     args = get_args()
     print(hill_encipher(letters(args.input.read()), sympy.Matrix(list(chunk(args.mat, args.size)))))

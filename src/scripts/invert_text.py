@@ -28,4 +28,4 @@ if __name__ == "__main__":
     args = get_args()
     plain = args.input.read()
     sys.stdout.write(shift(plain.translate(translate_dict),
-                string.ascii_lowercase[-args.offset]))
+                string.ascii_lowercase[-args.offset], False))

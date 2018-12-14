@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Statistics}{3}{0}{1}
+\beamer@sectionintoc {2}{Monoalphabetic substitution ciphers}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{The Caesar cipher}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{The affine shift cipher}{12}{0}{2}
+\beamer@sectionintoc {3}{Polygraph substitution ciphers}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{Vigen\`ere cipher}{16}{0}{3}
+\beamer@subsectionintoc {3}{2}{Other polygraph ciphers}{20}{0}{3}
+\beamer@sectionintoc {4}{Stateful ciphers}{22}{0}{4}
