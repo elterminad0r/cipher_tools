@@ -48,8 +48,7 @@ def display_subs(subs):
         print("{}!m {}".format(i,
                 " ".join("{}{}".format(a, b) for a, b in subs[i].items())))
 
-def process_com(txt, pos_mut, subs, pos_offs):
-    cmd = input("> ").strip()
+def process_com(cmd, txt, pos_mut, subs, pos_offs):
     pos, = pos_mut
     if cmd == "h":
         while pos > 0:
@@ -88,6 +87,13 @@ def process_com(txt, pos_mut, subs, pos_offs):
                 pos_offs = (pos_offs + 1) % 7
             if txt[pos].isalpha() and txt[pos] not in subs[pos_offs]:
                 break
+    elif cmd == "'":
+        while pos > 0:
+            pos -= 1
+            if txt[pos].isalpha():
+                pos_offs = (pos_offs - 1) % 7
+            if txt[pos].isalpha() and txt[pos] not in subs[pos_offs]:
+                break
     elif "!" in cmd:
         try:
             interval, rem = cmd.split("!")
@@ -103,6 +109,8 @@ def process_com(txt, pos_mut, subs, pos_offs):
         try:
             _, lt = cmd
             subs[pos_offs][txt[pos]] = lt
+            process_com("#", txt, pos_mut, subs, pos_offs)
+            pos, = pos_mut
         except (ValueError, IndexError, AssertionError) as e:
             print(e)
     pos_mut[0] = pos
@@ -113,7 +121,8 @@ def main(txt):
     while True:
         display_subs(subs)
         offs = display_text(txt, subs, pos[0])
-        process_com(txt, pos, subs, offs)
+        cmd = input("> ").strip()
+        process_com(cmd, txt, pos, subs, offs)
 
 if __name__ == "__main__":
     args = get_args()
