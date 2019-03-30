@@ -50,15 +50,15 @@ If you're a command line user, you can safely ignore and just clone and pull,
 and run `text_interface` from the CLI.
 
 For more on how `text_interface.py` works, see
-[this](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md)
+[this](https://github.com/goedel-gang/cipher_tools/blob/master/text_interface_doc.md)
 MD file.
 
 For documentation on each function, see
-[this](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md)
+[this](https://github.com/goedel-gang/cipher_tools/blob/master/action_doc.md)
 MD file.
 
 For fledgling documentation on `splitting_words`, see
-[this](https://github.com/elterminad0r/cipher_tools/blob/master/splitting_doc.md)
+[this](https://github.com/goedel-gang/cipher_tools/blob/master/splitting_doc.md)
 MD file. This is probably not useful to anyone because (1) it's illegible (2)
 it only works from a terminal prompt.
 
