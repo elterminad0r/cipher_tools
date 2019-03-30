@@ -1,11 +1,11 @@
 # Specific action documentation
 
 See also [the documentation for general
-syntax](https://github.com/elterminad0r/cipher_tools/blob/master/text_interface_doc.md)
+syntax](https://github.com/goedel-gang/cipher_tools/blob/master/text_interface_doc.md)
 
 All examples in this page use my custom encrypted source text
 [`zop13.txt`](#source).
-([alternatively, source file](https://github.com/elterminad0r/cipher_tools/blob/master/src/data/zop13.txt)).
+([alternatively, source file](https://github.com/goedel-gang/cipher_tools/blob/master/src/data/zop13.txt)).
 This is not a part of any challenge. Try cracking it (the clue's in the name)!
 
 ## [Table of contents](#table-of-contents)
@@ -703,7 +703,7 @@ table. This command works in polyalphabetic mode.
 
 This command is itself not too complicated, but the amount of functionality is
 so large that it warrants its own documentation. This can be found
-[here](https://github.com/elterminad0r/cipher_tools/blob/master/call_doc.md).
+[here](https://github.com/goedel-gang/cipher_tools/blob/master/call_doc.md).
 
 ### [update](#table-of-contents)
 
