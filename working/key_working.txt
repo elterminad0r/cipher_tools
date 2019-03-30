@@ -1,0 +1,72 @@
+k = """A: D T W G I Y C
+B: C Y F L M A I
+C: E Z G M N D J
+D: O U B I J Z E
+E: F S I N P O K
+F: G H J P Q W L
+G: I A K Q R B M
+H: A R O F G X B
+I: J D L R T C N
+J: _ _ M _ U E _
+K: L W N U V F Q
+L: M B P V X G R
+M: N C Q X Y I T
+N: P E R Y Z J U
+O: W V C J K S F
+P: Q F T Z S K V
+Q: _ G _ S _ L _
+R: T I V H A M Y
+S: H Q D E F V W
+T: U J X A D N Z
+U: V K Y D O P S
+V: X L Z O W Q H
+W: B X E K L H G
+X: Y M S W B R A
+Y: Z N H B C T D
+Z: _ _ _ _ _ _ _"""
+klines = [line.split() for line in k.split("\n")]
+for i in range(8):
+    print()
+    print("\n".join(map(" ".join, sorted(klines, key=lambda l: l[i]))))
+
+
+
+
+k = """
+S: H Q D E F V W
+H: A R O F G X B
+A: D T W G I Y C
+D: O U B I J Z E
+O: W V C J K S F
+W: B X E K L H G
+B: C Y F L M A I
+C: E Z G M N D J
+E: F S I N P O K
+F: G H J P Q W L
+G: I A K Q R B M
+I: J D L R T C N
+J: _ _ M _ U E _
+K: L W N U V F Q
+L: M B P V X G R
+M: N C Q X Y I T
+N: P E R Y Z J U
+P: Q F T Z S K V
+Q: _ G _ S _ L _
+R: T I V H A M Y
+T: U J X A D N Z
+U: V K Y D O P S
+V: X L Z O W Q H
+X: Y M S W B R A
+Y: Z N H B C T D
+Z: _ _ _ _ _ _ _"""
+klines = [line.split() for line in k.strip().split("\n")]
+def get_offsets(klines):
+    offsets = []
+    for i in range(1, 8):
+        for offset, line in enumerate(klines):
+            if line[i] in "SHADOW":
+                offsets.append(offset - "SHADOW".index(line[i]))
+                break
+    return offsets
+get_offsets(klines)
+[ascii_uppercase[-i - 1] for i in get_offsets(klines)]

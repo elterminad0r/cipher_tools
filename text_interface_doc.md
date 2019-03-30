@@ -1,7 +1,7 @@
 # documentation for `text_interface.py`.
 
-See also [the documentation for each function](https://github.com/elterminad0r/cipher_tools/blob/master/action_doc.md)
-and [the documentation for `!call`](https://github.com/elterminad0r/cipher_tools/blob/master/call_doc.md)
+See also [the documentation for each function](https://github.com/goedel-gang/cipher_tools/blob/master/action_doc.md)
+and [the documentation for `!call`](https://github.com/goedel-gang/cipher_tools/blob/master/call_doc.md)
 
 The first thing you are likely to encounter is the file input. If you're not a
 command line user, this will work by pasting it in, entering another newline

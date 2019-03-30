@@ -1,0 +1,321 @@
+successfully initialised
+running 3.7.1 (default, Oct 22 2018, 10:41:28) 
+[GCC 8.2.1 20180831]
+Anything prefixed with a ! will be considered a command. Anything else will be interpreted as a series of substitutions to make. The available commands are as follows:
+!frequency|freq|f       - Display frequencies - (pos=[1], pkw=['width', 'interv', 'pat', 'info'])
+!doubles|pairs|d        - Show repeating adjacent identical pairs - (pos=[1], pkw=[])
+!word|w                 - Find words matching a prototype - (pos=[2], pkw=[])
+!runs|r                 - Display frequently repeating runs - (pos=[1], pkw=['length', 'width', 'maxdisplay'])
+!delete|remove|x        - Remove letters from the subtable - (pos=[any], pkw=['interv'])
+!print|p                - Show the subbed source - possible displayhooks 0-_make_subs 1-_alt_subs 2-_under_subs - (pos=[1], pkw=['alt', 'interv'])
+!original|orig|source|o - Show the source - (pos=[1], pkw=[])
+!table|t                - Show the subtable - (pos=[1], pkw=['interv'])
+!missing                - Check for unused letters - (pos=[1], pkw=['interv', 'check'])
+!info|stats|i           - Display common frequency statistics - (pos=[1], pkw=[])
+!clear|reset|c          - Reset (clear) the subtable - (pos=[1], pkw=['interv'])
+!make|sub|m             - Update subtable with given arguments - (pos=[any], pkw=['interv'])
+!caesar|z               - Generate suggestions for a caesar cipher based on a substitution - (pos=[2], pkw=[])
+!help|h                 - Show help message - (pos=[1], pkw=[])
+!undo|u                 - Undo the last substitution - (pos=[1], pkw=['interv'])
+!skip|interval|interv|s - Set the current interval - (pos=[2], pkw=[])
+!history|hist|stack     - Show current command history - (pos=[1], pkw=['interv'])
+!quit|exit|q            - Exit the program - (pos=[1], pkw=[])
+!call|script            - Call a script from scripts/ directory. Use `!call <com> -h` to get the specific help menu for a command. Use `!call list` for an extended list of scripts. Accepts an
+                          interpreter argument - this is only for use if you have alternative installations like the PyPy JIT. - (pos=[2 <= x], pkw=['interpreter'])
+!update|new             - Change source text (by pasting) - (pos=[1], pkw=[])
+!tabrecta               - Generate tabula recta from current substitutions - (pos=[1], pkw=['use_tabs'])
+!state|paste            - Get pasteable series of commands for easy communication/"saving" - (pos=[1], pkw=[])
+!search|regex           - Search for a regex in text. Can both highlight in place and produce a long-form list. Word of warning: the regex is wrapped in parens. - (pos=[2], pkw=['long',
+                          'sub'])
+A command can be given arguments, as space-separated words after the command.
+cipher_tools 1$ !call ioc
+targeting group 
+stdout:
+ 1 (0.0411): ────────────────────────────────
+ 2 (0.0411): ────────────────────────────────
+ 3 (0.0411): ────────────────────────────────
+ 4 (0.0412): ────────────────────────────────
+ 5 (0.0411): ────────────────────────────────
+ 6 (0.0411): ────────────────────────────────
+ 7 (0.0677): ──────────────────────────────────────────────────────
+ 8 (0.0412): ────────────────────────────────
+ 9 (0.0409): ────────────────────────────────
+10 (0.0412): ────────────────────────────────
+11 (0.0408): ────────────────────────────────
+12 (0.0412): ────────────────────────────────
+13 (0.0410): ────────────────────────────────
+14 (0.0677): ──────────────────────────────────────────────────────
+15 (0.0411): ────────────────────────────────
+16 (0.0412): ────────────────────────────────
+17 (0.0411): ────────────────────────────────
+18 (0.0409): ────────────────────────────────
+19 (0.0410): ────────────────────────────────
+20 (0.0411): ────────────────────────────────
+
+took 0.252s
+cipher_tools 1$ !s 7
+targeting group 
+successfully set interval to 7,
+and reset subtables and history
+cipher_tools 7$ a!f
+targeting group a
+Executing for interv=0
+Here are the frequencies:
+Interval [0::7]:
+IOC: 0.07045
+(23 distinct)
+'F' (-> '') appears 119 times (13.46%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'U' (-> '') appears  97 times (10.97%) ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'D' (-> '') appears  80 times ( 9.05%) ──────────────────────────────────────────────────────────────────────────────────────────────────────
+'J' (-> '') appears  65 times ( 7.35%) ───────────────────────────────────────────────────────────────────────────────────
+'P' (-> '') appears  64 times ( 7.24%) ─────────────────────────────────────────────────────────────────────────────────
+'H' (-> '') appears  63 times ( 7.13%) ────────────────────────────────────────────────────────────────────────────────
+'W' (-> '') appears  58 times ( 6.56%) ──────────────────────────────────────────────────────────────────────────
+'T' (-> '') appears  57 times ( 6.45%) ────────────────────────────────────────────────────────────────────────
+'A' (-> '') appears  40 times ( 4.52%) ───────────────────────────────────────────────────
+'E' (-> '') appears  39 times ( 4.41%) ─────────────────────────────────────────────────
+'M' (-> '') appears  31 times ( 3.51%) ───────────────────────────────────────
+'O' (-> '') appears  27 times ( 3.05%) ──────────────────────────────────
+'V' (-> '') appears  20 times ( 2.26%) ─────────────────────────
+'N' (-> '') appears  19 times ( 2.15%) ────────────────────────
+'X' (-> '') appears  17 times ( 1.92%) ─────────────────────
+'G' (-> '') appears  16 times ( 1.81%) ────────────────────
+'Z' (-> '') appears  16 times ( 1.81%) ────────────────────
+'Q' (-> '') appears  14 times ( 1.58%) ─────────────────
+'I' (-> '') appears  14 times ( 1.58%) ─────────────────
+'B' (-> '') appears  12 times ( 1.36%) ───────────────
+'C' (-> '') appears   7 times ( 0.79%) ────────
+'L' (-> '') appears   5 times ( 0.57%) ──────
+'Y' (-> '') appears   4 times ( 0.45%) ─────
+
+Executing for interv=1
+Here are the frequencies:
+Interval [1::7]:
+IOC: 0.06479
+(24 distinct)
+'S' (-> '') appears 115 times (13.01%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'J' (-> '') appears  81 times ( 9.16%) ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+'D' (-> '') appears  74 times ( 8.37%) ─────────────────────────────────────────────────────────────────────────────────────────────────
+'I' (-> '') appears  64 times ( 7.24%) ────────────────────────────────────────────────────────────────────────────────────
+'T' (-> '') appears  64 times ( 7.24%) ────────────────────────────────────────────────────────────────────────────────────
+'V' (-> '') appears  57 times ( 6.45%) ───────────────────────────────────────────────────────────────────────────
+'Q' (-> '') appears  56 times ( 6.33%) ──────────────────────────────────────────────────────────────────────────
+'E' (-> '') appears  54 times ( 6.11%) ───────────────────────────────────────────────────────────────────────
+'R' (-> '') appears  46 times ( 5.20%) ────────────────────────────────────────────────────────────
+'U' (-> '') appears  37 times ( 4.19%) ────────────────────────────────────────────────
+'Z' (-> '') appears  35 times ( 3.96%) ──────────────────────────────────────────────
+'B' (-> '') appears  34 times ( 3.85%) ────────────────────────────────────────────
+'K' (-> '') appears  22 times ( 2.49%) ─────────────────────────────
+'F' (-> '') appears  20 times ( 2.26%) ──────────────────────────
+'L' (-> '') appears  19 times ( 2.15%) ─────────────────────────
+'C' (-> '') appears  19 times ( 2.15%) ─────────────────────────
+'A' (-> '') appears  18 times ( 2.04%) ───────────────────────
+'Y' (-> '') appears  17 times ( 1.92%) ──────────────────────
+'X' (-> '') appears  15 times ( 1.70%) ───────────────────
+'H' (-> '') appears  13 times ( 1.47%) ─────────────────
+'W' (-> '') appears  11 times ( 1.24%) ──────────────
+'N' (-> '') appears  10 times ( 1.13%) ─────────────
+'G' (-> '') appears   2 times ( 0.23%) ──
+'M' (-> '') appears   1 times ( 0.11%) ─
+
+Executing for interv=2
+Here are the frequencies:
+Interval [2::7]:
+IOC: 0.06842
+(24 distinct)
+'I' (-> '') appears 118 times (13.35%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'X' (-> '') appears  85 times ( 9.62%) ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'L' (-> '') appears  74 times ( 8.37%) ───────────────────────────────────────────────────────────────────────────────────────────────
+'C' (-> '') appears  69 times ( 7.81%) ────────────────────────────────────────────────────────────────────────────────────────
+'W' (-> '') appears  68 times ( 7.69%) ───────────────────────────────────────────────────────────────────────────────────────
+'R' (-> '') appears  66 times ( 7.47%) ─────────────────────────────────────────────────────────────────────────────────────
+'D' (-> '') appears  64 times ( 7.24%) ──────────────────────────────────────────────────────────────────────────────────
+'O' (-> '') appears  49 times ( 5.54%) ───────────────────────────────────────────────────────────────
+'P' (-> '') appears  38 times ( 4.30%) ────────────────────────────────────────────────
+'V' (-> '') appears  36 times ( 4.07%) ──────────────────────────────────────────────
+'G' (-> '') appears  33 times ( 3.73%) ──────────────────────────────────────────
+'Q' (-> '') appears  28 times ( 3.17%) ────────────────────────────────────
+'B' (-> '') appears  27 times ( 3.05%) ──────────────────────────────────
+'Y' (-> '') appears  22 times ( 2.49%) ────────────────────────────
+'H' (-> '') appears  19 times ( 2.15%) ────────────────────────
+'K' (-> '') appears  19 times ( 2.15%) ────────────────────────
+'E' (-> '') appears  16 times ( 1.81%) ────────────────────
+'J' (-> '') appears  16 times ( 1.81%) ────────────────────
+'F' (-> '') appears  14 times ( 1.58%) ──────────────────
+'T' (-> '') appears   9 times ( 1.02%) ───────────
+'Z' (-> '') appears   9 times ( 1.02%) ───────────
+'S' (-> '') appears   2 times ( 0.23%) ──
+'N' (-> '') appears   2 times ( 0.23%) ──
+'M' (-> '') appears   1 times ( 0.11%) ─
+
+Executing for interv=3
+Here are the frequencies:
+Interval [3::7]:
+IOC: 0.06906
+(24 distinct)
+'N' (-> '') appears 117 times (13.25%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'A' (-> '') appears  77 times ( 8.72%) ────────────────────────────────────────────────────────────────────────────────────────────────────
+'E' (-> '') appears  77 times ( 8.72%) ────────────────────────────────────────────────────────────────────────────────────────────────────
+'G' (-> '') appears  75 times ( 8.49%) ─────────────────────────────────────────────────────────────────────────────────────────────────
+'Y' (-> '') appears  73 times ( 8.27%) ──────────────────────────────────────────────────────────────────────────────────────────────
+'J' (-> '') appears  66 times ( 7.47%) ─────────────────────────────────────────────────────────────────────────────────────
+'R' (-> '') appears  62 times ( 7.02%) ────────────────────────────────────────────────────────────────────────────────
+'F' (-> '') appears  48 times ( 5.44%) ──────────────────────────────────────────────────────────────
+'H' (-> '') appears  47 times ( 5.32%) ─────────────────────────────────────────────────────────────
+'I' (-> '') appears  36 times ( 4.08%) ──────────────────────────────────────────────
+'V' (-> '') appears  32 times ( 3.62%) ─────────────────────────────────────────
+'X' (-> '') appears  28 times ( 3.17%) ────────────────────────────────────
+'M' (-> '') appears  25 times ( 2.83%) ────────────────────────────────
+'D' (-> '') appears  22 times ( 2.49%) ────────────────────────────
+'Z' (-> '') appears  16 times ( 1.81%) ────────────────────
+'Q' (-> '') appears  15 times ( 1.70%) ───────────────────
+'B' (-> '') appears  14 times ( 1.59%) ──────────────────
+'P' (-> '') appears  14 times ( 1.59%) ──────────────────
+'O' (-> '') appears  12 times ( 1.36%) ───────────────
+'K' (-> '') appears  11 times ( 1.25%) ──────────────
+'L' (-> '') appears   9 times ( 1.02%) ───────────
+'U' (-> '') appears   4 times ( 0.45%) ─────
+'W' (-> '') appears   2 times ( 0.23%) ──
+'S' (-> '') appears   1 times ( 0.11%) ─
+
+Executing for interv=4
+Here are the frequencies:
+Interval [4::7]:
+IOC: 0.06985
+(24 distinct)
+'P' (-> '') appears 127 times (14.38%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'D' (-> '') appears  94 times (10.65%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'F' (-> '') appears  69 times ( 7.81%) ──────────────────────────────────────────────────────────────────────────────────
+'Z' (-> '') appears  68 times ( 7.70%) ─────────────────────────────────────────────────────────────────────────────────
+'T' (-> '') appears  62 times ( 7.02%) ──────────────────────────────────────────────────────────────────────────
+'A' (-> '') appears  59 times ( 6.68%) ──────────────────────────────────────────────────────────────────────
+'K' (-> '') appears  59 times ( 6.68%) ──────────────────────────────────────────────────────────────────────
+'I' (-> '') appears  59 times ( 6.68%) ──────────────────────────────────────────────────────────────────────
+'J' (-> '') appears  34 times ( 3.85%) ────────────────────────────────────────
+'G' (-> '') appears  33 times ( 3.74%) ───────────────────────────────────────
+'N' (-> '') appears  29 times ( 3.28%) ──────────────────────────────────
+'O' (-> '') appears  26 times ( 2.94%) ───────────────────────────────
+'Q' (-> '') appears  24 times ( 2.72%) ────────────────────────────
+'X' (-> '') appears  23 times ( 2.60%) ───────────────────────────
+'C' (-> '') appears  19 times ( 2.15%) ──────────────────────
+'S' (-> '') appears  17 times ( 1.93%) ────────────────────
+'M' (-> '') appears  17 times ( 1.93%) ────────────────────
+'Y' (-> '') appears  15 times ( 1.70%) ─────────────────
+'W' (-> '') appears  15 times ( 1.70%) ─────────────────
+'L' (-> '') appears  15 times ( 1.70%) ─────────────────
+'R' (-> '') appears  12 times ( 1.36%) ──────────────
+'V' (-> '') appears   4 times ( 0.45%) ────
+'U' (-> '') appears   2 times ( 0.23%) ──
+'B' (-> '') appears   1 times ( 0.11%) ─
+
+Executing for interv=5
+Here are the frequencies:
+Interval [5::7]:
+IOC: 0.06464
+(25 distinct)
+'O' (-> '') appears 109 times (12.34%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'N' (-> '') appears  77 times ( 8.72%) ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+'J' (-> '') appears  70 times ( 7.93%) ─────────────────────────────────────────────────────────────────────────────────────────────────
+'S' (-> '') appears  69 times ( 7.81%) ────────────────────────────────────────────────────────────────────────────────────────────────
+'C' (-> '') appears  69 times ( 7.81%) ────────────────────────────────────────────────────────────────────────────────────────────────
+'Y' (-> '') appears  67 times ( 7.59%) ─────────────────────────────────────────────────────────────────────────────────────────────
+'M' (-> '') appears  51 times ( 5.78%) ───────────────────────────────────────────────────────────────────────
+'X' (-> '') appears  46 times ( 5.21%) ────────────────────────────────────────────────────────────────
+'V' (-> '') appears  44 times ( 4.98%) ─────────────────────────────────────────────────────────────
+'G' (-> '') appears  42 times ( 4.76%) ──────────────────────────────────────────────────────────
+'D' (-> '') appears  41 times ( 4.64%) ─────────────────────────────────────────────────────────
+'Z' (-> '') appears  41 times ( 4.64%) ─────────────────────────────────────────────────────────
+'I' (-> '') appears  29 times ( 3.28%) ────────────────────────────────────────
+'P' (-> '') appears  23 times ( 2.60%) ────────────────────────────────
+'W' (-> '') appears  17 times ( 1.93%) ───────────────────────
+'H' (-> '') appears  15 times ( 1.70%) ────────────────────
+'K' (-> '') appears  15 times ( 1.70%) ────────────────────
+'Q' (-> '') appears  14 times ( 1.59%) ───────────────────
+'A' (-> '') appears  13 times ( 1.47%) ──────────────────
+'T' (-> '') appears  11 times ( 1.25%) ───────────────
+'B' (-> '') appears  10 times ( 1.13%) ─────────────
+'F' (-> '') appears   4 times ( 0.45%) ─────
+'E' (-> '') appears   3 times ( 0.34%) ────
+'L' (-> '') appears   2 times ( 0.23%) ──
+'R' (-> '') appears   1 times ( 0.11%) ─
+
+Executing for interv=6
+Here are the frequencies:
+Interval [6::7]:
+IOC: 0.06636
+(23 distinct)
+'K' (-> '') appears 122 times (13.82%) ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+'Z' (-> '') appears  80 times ( 9.06%) ───────────────────────────────────────────────────────────────────────────────────────────────────
+'C' (-> '') appears  69 times ( 7.81%) ─────────────────────────────────────────────────────────────────────────────────────
+'F' (-> '') appears  66 times ( 7.47%) ──────────────────────────────────────────────────────────────────────────────────
+'Y' (-> '') appears  64 times ( 7.25%) ───────────────────────────────────────────────────────────────────────────────
+'N' (-> '') appears  58 times ( 6.57%) ────────────────────────────────────────────────────────────────────────
+'W' (-> '') appears  53 times ( 6.00%) ──────────────────────────────────────────────────────────────────
+'U' (-> '') appears  52 times ( 5.89%) ────────────────────────────────────────────────────────────────
+'B' (-> '') appears  50 times ( 5.66%) ──────────────────────────────────────────────────────────────
+'R' (-> '') appears  41 times ( 4.64%) ───────────────────────────────────────────────────
+'J' (-> '') appears  34 times ( 3.85%) ──────────────────────────────────────────
+'E' (-> '') appears  29 times ( 3.28%) ────────────────────────────────────
+'S' (-> '') appears  25 times ( 2.83%) ───────────────────────────────
+'L' (-> '') appears  22 times ( 2.49%) ───────────────────────────
+'M' (-> '') appears  21 times ( 2.38%) ──────────────────────────
+'T' (-> '') appears  18 times ( 2.04%) ──────────────────────
+'G' (-> '') appears  18 times ( 2.04%) ──────────────────────
+'H' (-> '') appears  17 times ( 1.93%) ─────────────────────
+'I' (-> '') appears  16 times ( 1.81%) ───────────────────
+'V' (-> '') appears  14 times ( 1.59%) ─────────────────
+'D' (-> '') appears   6 times ( 0.68%) ───────
+'Q' (-> '') appears   6 times ( 0.68%) ───────
+'A' (-> '') appears   2 times ( 0.23%) ──
+
+cipher_tools 7$ 0!m Fe
+targeting group 0
+made substitutions Fe
+cipher_tools 7$ 1!m Se
+targeting group 1
+made substitutions Se
+cipher_tools 7$ !p
+targeting group 
+Here is the substituted source:
+TeTJAN FP JON PVZDYPRFXTeEX, NQWKEJLOPJKHQ WYJ VZDEBRZB FG JON FXCOVE GADBJLI; KTNB TeGJYIKPUWATSUH. HCH CSST eHNF SUMN.
+XFTV YeFCHD HCH ZCXYCWHDCYPZ IZ JON QSYeDKY FOJTeXGAT ZW IIZKMZ WE XFP VZTKGAOMKH TRI IDZJLLATOW WH XFP LSDQL-RZZKQeRIPJZ JEXNXGNIeRMP YMeEGB, DXK HRWIKH CTZORWO, BeIIGQNKT IIPPMYeU XJ IV ZAe WHNXNXe. XFP MKQVVA NSUUTLYF MKEVQXPJEDJLJZV LWI WMDCFPQ GJZDKTELYR NBe TVMGCHe, TD KPGR DQ W EOITDIH JQ GKHQCYF GKDIRNJ WYWC WYIGDHDD JQ CZH TGATQNUDIE. TN CMQC MKJZDDRE I AYJeJ EOITDIH JQ NBe ZYHAOUU TDEPNW WH XFP YYERLOP YUO IIMKITeEBGDCFPQ WE DS ZAe YEP SY ODDZKVCM VJ AGSWe TDEPNW.
+URI EGYEWX WHNXNXe LE IJ NPUIZPJEeEX RZNKMBLQPJJe TKNZDD HeX DS AD URI ZACHDJI EPDYeJWHC NF AeV XIEKHJH SOOKP LLMDSYJT LY DXK MTXN PCMAJINZNB EeRAOMD. JJ EGF OWUTFVTVBeU XJ NSUOKGA FPYXeLVXYUEe WYJ NF ETVHC SSU ZCOPMZ ODTVKICUDG GNNNWED IPVNIEII DS LVIXFPM ZAe LYDOYeQXE KW BeI QGUOWUN’D QKQKTEQNZN, GADPN SMFXDBRZB CP ePNYOUU VJ ZXYSHDFVP ZKPDWLTGNUN LY DXK eLIYD NBDJ LAF YJUDZRDCKH XIHP ZNHZCOPMKO. QGGZN EWZYXPJZDJLJZ VZJBP NBCWUQ JHKI ZADD EDYMe VJ AGO KHJWLXCWACIYD SL URI GADBJLI, AGSSIR KRWOU URI IPGNETXN ZYZVII JQ CZH VTNAYZJVRE, TN TDN FN DXCU LIHC WKB QYMG ZFEKQNZNW BeVN PQKT XVRDNKP. JON QOG URWA JS YeCWRZ YYe YH YINSTe THTQCUe GJYISPDGGDCFPQ WYJ KKTQCYIG YeZCHJV.
+NP FWHDCJVBWH DXKTe WZSOCTQ XJ GYHe YINZ Y JWIVNFKFPUIYNO IeJENPJ BeI QGUOWUN WYJ DBDIPNF BYeN GJZDKTELYR NBe EINJ WFT QYMG YU WIKGZCWDJLJZ, NBWKKF KJRZ T JNL SL URCEP GKUJIHF YYe VR PTGK JE XFP KYJLWAP MFZTP MKGReZXRKJ. NU DD EOMTJQII DXCU VXFPM ReJXNAV JWEGNAJNPA XFP MKEIYRDIKPJ CP MGCEW WE DXK GDVED XKDU CP DXK DIGFTQK NKDA GYHe eSRFNKO, YYA IJ KPJLHP AFY VJ IKDSNeRAF WYWC XFIN VeILJJ CW NDDETJM BDXF ZS NPUIW QCRe JC APGR VQ EFIN NU ZCYDYNPeB. JOM NPLIEDCMDJLJZV NPJC LXYJL QOJL NBDJ ON LYW TePGDOE UV KHPT, CPU XFIN Be IIAOMUeU JHKI IWQXJZ ICHQWMGPWeJXE DS ZDWI DS MKHDBNZDK JE PJZZFP. RLE TITeULGDO LDCLVC HKTe RJD HKDBXFC, NBWKKF GO BDU FNPJ C TePGDCHeBH EODJeQDPOG JTDQRZYR JE XFP PUJJII FNCUeD, GZZ JWEXNYKFTTVB AOJWIBE FPMIeDA DXCU RI FIZ KHJWLXCWAeB RZZKQeRIPJZ NeWYF. JF TeGJAZ FG RLE PIVMVHXPJZ ETR LP WFVEB, FKHKXeV EPQKTTP JQ NBe eSAIJZ OVGDYOUUQ JHKI MTeH’E SOYHVRGX DFMBIMDCFP RLYD NBDJ FVIDQ BTD HPDYVDXNJ YW AeV XIEKHJH’E QCYHJ DNNMKU QIMAOZDIH, EK NBe TFEPJJe VJ GZT EWZYXPJZDJLJZ CW VEDDAKYJQLYR. ARDZN UPKZ D FIHFSUDB MJOMUDB EFTDB EVRAICUeU DJYO NPJIHPVZJEK IPNCJBD, QTQNPA YE FSTe DRETBBU DRAK XNH FIHFSUDBLAC, YUO DX RF DReTV AGYZ Ae XFACHeU CY IZHeEXDAO. SPHCHDPUDJIVC, NBe LCVOIKH IIVINNPA XJ GCW QeVRKZ NP BCYJSU DII GXVF NDDETJM, HV EN NYUPVX HPGD WE XFPI ZW HLVX CU URI XTVWJEK IPNCJBD JQ XNH IIMAPNUCIYD NF URI GADBJLI. YKJKURIVPVW D EYXMOY WH YYKWLJZLGX MKEVVIF ICJEXGTJKO YH XPIIeID JQ NBe HCHPCMP QIMAOZDIH’E JOVDIXXPJZ HKKQPVZ URWA DXK eMLEDOUEe CP DXK DIGFTQK, BRLVP SLGDGRIGRZ UIYTOE, BTD UZSGP JC G FICMB RDYAKT VJ XPIIeID JQ NBe DRAPGRJAIYNO JWCQDZCZZ DR VKJEWE. LY SYYUDGDXYY URI NFNCCBLEGIKPJ CP GOCOGYGANKTQ LY FDFUBWYJ TCTU EGF Y YeBWATQKMN CZPJ WeZVND, KYeQYXIARZ YIMIPWe JON SSRJZI AGOTHePOPV GeII GLYYe JOGD VFNeXFTJM VEYEOYR BTD QKCUI VR, AGSSIR XFP JCNe WYJ YJUDZRDCKH VJ AGO FTAWYTVCUDCY LOYe T GVKVKMN KDIMEeU DNNMKU. JON ZYTe QOGJSG DIGFTQK OVIE ZSZ DFTNIM FP TRB KWLJZLGX ZFEKQNZNW GICX DXK QeVRKZ. CH JON FDCMe CP MGCEW’D JSOYDJLJZV MTeE RZ NBe CLI PCMAJINZ VKXeRATOW, TKQJOMW WH LAF YJUDZRDCKH TPEK BYeX WYJ CZ HeIXF NF ATZN MOKP JORF, YW NKGF IV ZAe RNPZ ZW eDAIARJQO G FOJVII VKDCUDCY QSY ADD QASGJEK MKGReZXRKJ FG DRAPGRJAIYNO VDFIHF, NBDJ DNPIW UV OGWO ReU FVIDQ UV XFP ZKXePJSIKPJ CP DXK VEBNABYWKRI XYIZILYDX IeEIGDX ZAe HGAZ. ZAe IWDMCWIBRZYYZ ZCED SL URLE NSSMU RJD AK QICZPMRZ ZCYNOCMeB GZZ ZADD VPZ ZW GYNFNNWED RZ NBe RCDFO GADGF TJ ZVIR, RQ TFV XLVX OAEKDN DXK QKR, IASHe JON IMJADZN QPYURIH OJEeIKHKPUO. JOJFO MWLIHZIKPJ QRZCWUILNF HBJZO FIZ BJJONANF CeIY MOUeHLMTYYJeD JQ NBe DRAPGRJAIYNO EDJW GZZ CPTPBFCW QICIODKO YH LXYJL’Q CZPMCUDZNF JFB ZCXSGKUePB JCWUTRMPZ ZAeQEPGHeQ, WYJ XK HeIXF NF ATZN MOJWCI GZ YRNVDA PJZJIIVC WYee WQPJZ, HeXATJM ADD JLJ VWBLATDCM TRI JCVMVQGDCJ IVWVF HNUR XFP NCEDX EOKVWIX JQ NBe FWVIDK. OKVRZB ZADD ZPMNWU, FVIDQ BTD PKDSHQII XYYIePB KJ EeQXGMCRJQLYR MSHQLGZ, BKTCWY IJE DKDAACCP DQZPMNDBLED OAQTRETSU JE XFP ACMWWYF MKIDCY, IJE WE XFP JKeU XJ SMFUeGA DXK NeBRDOYTTRNIJ ZTTBN ASSUeD. FP VKeCD AK XCXe BNWORWFII IJ KYJIYFCHe EIALSYL VJ GROUUQ LY DXK TeKRKJ, IVJ QJAO NNFCHDYUUBH AK XCXe BNWORWFII ZOG NeXFKZW WH EJAFNPA. EFTGK EBWEFCJDB BRSGFNTGB GYE DBEGCV YeBLNJ SU eQTRKJCIe, FVIDQ eQXGMGNHRII ZOG EVZNAN TeJOJJV ZW ULEAPVU JON JCVMVQGDCJ DZXRWCZJeD JQ KFUeRATYR WFTJFCZJVR, LC KRDZLYR YMeEXE LCZADR AGONT YYHPYSEIWMTOW. EVRAASRMDRQ DXK DAIYJY FG DQZKMZDEX RZNKTEWATSUDB QNPNNPAD, FP HCH TFVP, YZ MeWED CU QTVA, DS JWEXHKG ZAe CDDDFNe CP ZOMWJLGDCFPQ, WYJ NF CeRNQCZ GICX TJWJUI UZSGMeBQP SL URCEP ZKMDFNAYZJVRE. GO BDU TGANNEKPGA VSEZIEF ZSTDRQ DXK QeVRKZ FG JON MPRITVRIJ CPU FGXFCPQ GHTVKH ULEAPVUDRQ DXK DBPRIJJe YYRXZNPA FNDHKeE XFP NBTeI NYKKTVVE. TW Be RWI AOWUILMDOE ADQEPGL UV IYRYMJEK KTNB URI XIEFT FCKPMW JE XFTV GDN ORF MKEVVI LSSMU OGWO IeeR HPBCTUII IV C HDKYTWNETRA FPJEeDE IJE URI EOAZMeXB KW BJQ QNDXFOQ QGC HKMB OGWO GWE ORY WYJeRIF CU ADKF RSHeIRXPJZ. URI EVCRGKP KIT NP XORNX Be CWYTKSMTXNJ CUUeVYINNWEWV NSUXeRATSUH JC JOM IeEIPTN CU LIHC GNUJPN NSWU DR VTQKH FVJYCWeU XJ PVZDYPRFX C PeE KIT FG XCHVCUI YH EOAZeIJDRO NPQXNIZ FG XWH. OJLWIXDZYZeBH FTV HJZXJACKH eRMKPYDAII I IFTe VNNFReQD GSKYWTGF IJE Ae DNPIW UV OGWO KYFPJAOE NVVN PRZTeQN WOYHDCYF SL EVZNAN EJFPJYYJZ. RIHP MKEVVIF YZ URI GADBJLI APGR D CCHP DFNFPNDO WUVVB, DXFVAO PKM YeTDJZV ZATX KTGR CeGJYO JMeWH TJ C NVQNZN, Ge RWOP DBWQIY DS YeCCOP YUO ZPGFVNGN, CH TJ WWCI MIVKH UIEDMFZ, JOJFO EWZYXPJZH XORNX UDIVGDO NU. JONAO NH ZPNIM KXDBNZDK URWA MGCEW DND PV VELAF HNURLY DXK DIGFTQK UV YYJOYUTNN LXCU RWOP AKEVQN VJFBE WE MGCEW CZPMCUDCYF. (YW DE WETZK, URI NDTTWBCQC SL URWA ZYTe XWE ZSZ EBIGA PUUDP AGO CTZORWO GDQ YYNSHeIII.) DXKHe DZPDNDBLEPZ NP YPGNFTDDP, LACIeIH GZZ VWBLATDCM TKRDYZJVR. KGCRe JONAO CTe RJ AOJWIBE KW BJAONA DYJCIE MONPA WDDXFTDDNJ AD URI GADBJLI, AGO CEJLOTVZH JONC HFTWII LCZA XIHP JFU TFJWO TVIBNA, YUO DX RF LSJJI ZASIDYPN DXCU JORF XCO YIMKIK DECAGOY UVCV KW ZAe RNDHFTW. XFP GFETP QASSQQ DDSKFTJII MT ZAe WHNXNXe ENAO VDIXRNPRDIPB IDZJLI RZ NBe YWVVYU HJWAPV CU JON PJE WH XFP JNPeXNPJZA ZIYDPYZ, TRI MGCEW JJNPWHeB JZ NYZDRQ DS EJQVDSN YVQDRIJ KYFWYFCFP YH EKHNPA BRFDFTU WXKJM CTPUIJ UDJLJZYRJQXE. MGCEW DNPIW UV OGWO YeJLHPZ LTVQ AGO CTZORWO CTVYYJ NBe JLXP SL XDGAKMND’Q BNINB, AVENWOY ADD EODJeQDJAV JWEXRZPKO RLE LSYL TRI LO BDLI DZDFXeVNJ OHJUIYNO FG T ORRXRZ TGATQK IICDS HFTWLYR PUOeV MKZK PTQN IMJATRQPG NP JON AOMJVR GASSPU RRZOZeeR ALORXe. YYQSYUKRGDORZ, DX EPOTH JOGD NBe QOGJSG DIGFTQK PeXKKMQ BTD LC NBJQ DAIBK HKTZKMZJEK GAIKO DREOMYeZXRKJ NP JON AOMJVR, GZZ Ge YIVTOHe JOGD CZH TGATSUH CWB GYHe ZCYDMNCKXNJ, YZ MeWED CUODVNNNRZ, JC AGO KXeRAF GKDULYR NF URI PTMWU XCHXZ GDI.
+XFTV LDZX GXSUe ZCDXZ JDKDN NSUHDBNAYIMe IXMYYTTDEYOUU JC AGO SL ACOPMUNeRA IJE Be JNPG Ge RWOP JF WFXRKJ IVJ XJ AOJWCQNZZ ZATX AGO WATBJL YYERLOP YUO TPV TNW PeXKKMQH QOJOGE Ce EJOJE VF, LAF ZFEKQNZNW DEWVCVKO, ZPGFVNGDII, IJE, JH RNNOWHTVB, JOWUICBPZ, CPU LAF YWHeXE JCWQVDNJ SL. URLE AOVWIX EGSSMU WVFS YeCWRZ DRDQDRQCKO HCH I KKTDCI KW CU BIGFN WeLIYDT-LJLI BPYYH. XI KKPRO IIMKITeEB G SPIMDGGDCFP UWAP SL UXC AGSSHTRI IJE UXIYDT-LJLI GD OCTBLNFN. NP JON YOCPJLXP, CZ HRCDXZ Ie FVNFOYXeB DFCUI JON GCMAeDA FOJVILAC YHDDPGMGK; JJ EJOGE GVVX DXK NVDA NSTQICXTVNPA QGDOYJTP RQ CZ HRCDXZ LDBP RZNF eEIXC XCPUD.
+
+
+cipher_tools 7$ 2!m Ie
+targeting group 2
+made substitutions Ie
+cipher_tools 7$ 3!m Ne
+targeting group 3
+made substitutions Ne
+cipher_tools 7$ 4!m Pe
+targeting group 4
+made substitutions Pe
+cipher_tools 7$ 5!m Oe
+targeting group 5
+made substitutions Oe
+cipher_tools 7$ 6!m Ke
+targeting group 6
+made substitutions Ke
+cipher_tools 7$ !p
+targeting group 
+Here is the substituted source:
+TeTJAN FP JOe eVZDYPRFXTeEX, eQWeEJLOeJeHQ WYJ VZDEBRZB FG JOe FXCOVE GADBJLe; KTNB TeGJYIePUWATSUH. HCH CSST eHeF SUMN.
+XFTV YeFCHD HCH ZCXYCWHDCYeZ IZ JOe QSYeDKY FeJTeXGAT ZW IeZKMZ WE XFe VZTKGAOMeH TRI IDZJLLATeW WH XFe LSDQL-RZZeQeRIeJZ JEXeXGNIeRMe YMeEGB, DXe HRWIKH CTZORWe, BeIeGQNeT IePeMYeU XJ IV ZAe WHNXNXe. XFe MeQVVA NSUUTLYF MeEVQXeJEDJLJZV LWI WMDCFPQ GJZDeTELYR NBe TVMGCHe, TD KeGR DQ W EOITDIH JQ GeHQCYF GeDIReJ WYWC WYIGDHDD JQ CZH TGATQNUDeE. TN CMQC MKJZDDRE I AYJeJ EOITDIH JQ NBe ZYHAeUU TDEeNW WH XFe YYERLOe YUO IeMKITeEBGDCFPQ WE DS ZAe YEe SY ODDZKVCM VJ AGSWe TDEeNW.
+URe EGYEWX WHNXNXe LE IJ NPUeZeJEeEX RZNeMBLQeJJe TKeZDD HeX DS AD URe ZACHDJe EeDYeJWHC NF AeV XIEeHJH SOeeP LLMDSYJT LY DXe MTXe eCMAJeeZNB EeRAOMD. JJ EGF eWUTFVTVBeU XJ NSUOKGA FPYXeLVXYUEe WYJ NF ETVHC SSU ZCOeMZ ODTVKICUDG GNNNWED IeVNIEeI DS LVIXFeM ZAe LYDeYeQXE KW BeI QGUeWUN’D QKQeTEQeZN, GADPe SMFXDBRZB CP ePeYeUU VJ ZXYSHDFVe ZePDWLTGNUN LY DXe eLeYD NBDJ LAF YJUDZRDCeH XeHe ZNHZCOeMeO. QGGZN EWZYXeJZDJLJZ VZJBP eBCWUQ JHKI ZADD EDYMe VJ AGe eHJWLXCWACeYD SL URe GADBJLe, AGSSIR KRWeU URe IeGNETXe ZYZVIe JQ CZH VTeAYZJVRE, TN TDN Fe DXCU LeHC WeB QYMG ZFEKQeZNW BeVe eQeT XVRDNeP. JOe QeG URWA JS YeCWRZ YYe YH YINSTe THTQCUe GJYISPDGGDCFPQ WYJ KeTQCYIG YeZCHJV.
+NP FWHDCJVBWH DXeTe WZSeCTQ XJ GYHe YeeZ Y JWIVeFKFPUeYNe IeJEeeJ BeI QGUeWUN WYJ DBDIPeF BYeN GJZDeTELYR NBe EeeJ WFT QYMG YU WIKGZCWDJLJZ, NBWKKF KJRZ T JeL SL URCEe GeUJeHF YYe VR PTGe JE XFe KYJLWAe MFZTP MKGReZXRKJ. NU DD EOMTJQeI DXCU VXFeM ReJXeAV JWEGeAJNPA XFe MeEIYRDIePJ CP MGCEW WE DXe GDVED XeDU CP DXe DIGFTQe NKDA GYHe eSRFNeO, YYA IJ ePJLHe AFY VJ IKDSNeRAF WYWC XFIN VeILJJ CW NDDETJM BDXF ZS NPUeW QCRe JC AeGR VQ EFIN NU ZCYDYNPeB. JOM NPLeEDCMDJLJZV NPJC LXYJL QOJL NBDJ Oe LYW TePGDeE UV KHeT, CPU XFIN Be IeAOMUeU JHKI IWQXJZ ICHQWMGPWeJXE DS ZDWe DS MeHDBeZDe JE PJZZFP. RLE TITeULGDe LDCLVC HeTe RJD HeDBXFC, NBWKKF Ge BDU FeeJ C TePGDCHeBH EODJeQDPOG JTDQRZYR JE XFe PUJJeI FNCUeD, GZZ JWEXeYKFTTVB AeJWIBE FPMIeDA DXCU Re FIZ eHJWLXCWAeB RZZeQeRIeJZ NeWYF. JF TeGJAZ FG RLE eIVMVHXeJZ ETR Le WFVEB, FKHeXeV EeQeTTP JQ NBe eSAIJZ OVGDYeUUQ JHKI MTeH’E SeYHVRGX DFMBeMDCFP RLYD NBDJ FVIDQ BTD HeDYVDXeJ YW AeV XIEeHJH’E QCYHJ DeNMeU QeMAeZDIH, EK NBe TFEeJJe VJ GZT EWZYXeJZDJLJZ CW VEDDAKYJQLYR. ARDZN UeKZ D FeHFSUDB MJOMUDB EFTDB EVRAICUeU DJYe NPJeHeVZJEK IeNCJBD, QTQNPA YE FSTe DRETBBU DRAK XNH FeHFSUDBLAC, YUO DX RF DReTV AGYZ Ae XFACHeU CY IZHeEXDAe. SPHCHDPUDJeVC, NBe LCVOIeH IeVINNPA XJ GCW QeVRKZ NP BCYJSU DIe GXVF NDDETJM, HV Ee NYUPVX HeGD WE XFeI ZW HLVX CU URe XTVWJEK IeNCJBD JQ XNH IeMAPNUCeYD NF URe GADBJLe. YKJeUReVeVW D EYXMeY WH YYKWLJZLGX MeEVVIF ICJEXGTJeO YH XeIIeID JQ NBe HCHeCMP QeMAeZDIH’E JeVDIXXeJZ HKKQeVZ URWA DXe eMLEDeUEe CP DXe DIGFTQe, BRLVe SLGDGRIGRZ UeYTeE, BTD UZSGP JC G FICMB RDYAeT VJ XeIIeID JQ NBe DRAeGRJAeYNe JWCQDZCZZ DR VKJEWE. LY SYYUDGDXYY URe eFNCCBLEGIePJ CP GeCOGYGANeTQ LY FDFUBWYJ TCTU EGF Y YeBWATQeMN CZeJ WeZVeD, KYeQYXIARZ YeMIPWe JOe SSRJZe AGeTHePOeV GeIe GLYYe JOGD VFNeXFTJM VEYEOYR BTD QKCUI VR, AGSSIR XFe JCNe WYJ YJUDZRDCeH VJ AGe FTAWYTVCUDCY LeYe T GVKVeMN KDIMEeU DeNMeU. JOe ZYTe QOGJSG DIGFTQe OVeE ZSZ DFTeIM FP TRB KWLJZLGX ZFEKQeZNW GICX DXe QeVRKZ. CH JOe FDCMe CP MGCEW’D JSeYDJLJZV MTeE RZ NBe CLI eCMAJeeZ VeXeRATeW, TKQJOMW WH LAF YJUDZRDCeH TPEK BYeX WYJ CZ HeeXF NF ATZe MeeP JORF, YW NKGF IV ZAe ReeZ ZW eDAIARJQO G FeJVIe VKDCUDCY QSY ADD QASGJEK MKGReZXRKJ FG DRAeGRJAeYNe VDFeHF, NBDJ DeeIW UV OGWe ReU FVIDQ UV XFe ZeXePJSIePJ CP DXe VEBeABYWKRI XYIZILYDX IeEeGDX ZAe HGAZ. ZAe eWDMCWIBRZYYZ ZCED SL URLE NSSMU RJD Ae QICZeMRZ ZCYNeCMeB GZZ ZADD VeZ ZW GYeFNNWED RZ NBe RCDFe GADGF TJ ZVIR, RQ TFV XLVX eAEKDe DXe QKR, IASHe JOe IMJADZe QPYUReH OJEeIKHKPUO. JOJFe MWLeHZIePJ QRZCWUILeF HBJZO FIZ BJJOeANF CeeY MeUeHLMTYYJeD JQ NBe DRAeGRJAeYNe EDJW GZZ CPTPBFCW QICIODeO YH LXYJL’Q CZeMCUDZeF JFB ZCXSGeUePB JCWUTRMeZ ZAeQEeGHeQ, WYJ Xe HeeXF NF ATZe MeJWCe GZ YRNVDA eJZJIeVC WYee WQeJZ, HeXATJM ADD JLJ VWBLATDCM TRI JCVMVQGDCJ IVWVF HNUR XFe NCEDX EOKVWIX JQ NBe FWVIDe. OKVRZB ZADD ZeMNWU, FVIDQ BTD PKDSHQeI XYYIePB KJ EeQXGMCRJQLYR MSHQLGZ, BeTCWY IJE DKDAACCP DQZeMNDBLED eAQTRETSU JE XFe ACMWWYF MeIDCY, IJE WE XFe JeeU XJ SMFUeGA DXe NeBRDeYTTReIJ ZTTBe ASSUeD. Fe VeeCD AK XCXe BeWeRWFeI IJ eYJeYFCHe EeALSYL VJ GReUUQ LY DXe TeKRKJ, IVJ QJAe NNFCHDYUUBH AK XCXe BeWeRWFeI ZeG NeXFKZW WH EJAFNPA. EFTGe EBWEFCJDB BRSGFNTGB GYE DBEGCV YeBLeJ SU eQTRKJCIe, FVIDQ eQXGMGNHReI ZeG EVZeAN TeJOJJV ZW ULEAPVU JOe JCVMVQGDCJ DZXRWCZJeD JQ KFUeRATYR WFTJFCZJVR, LC KRDZLYR YMeEXE LCZADR AGeNT YYHeYSEIWMTeW. EVRAASRMDRQ DXe DAeYJY FG DQZKMZDEX RZNeTEWATSUDB QeeNNPAD, Fe HCH TFVe, YZ MeWED CU QTVA, DS JWEXHKG ZAe CDDDFNe CP ZeMWJLGDCFPQ, WYJ NF CeReQCZ GICX TJWJUe UZSGMeBQe SL URCEe ZeMDFeAYZJVRE. Ge BDU TGANNEKPGA VSEZeEF ZSTDRQ DXe QeVRKZ FG JOe MPRITVRIJ CPU FGXFCPQ GHTVeH ULEAPVUDRQ DXe DBPRIJJe YYRXZNPA FeDHeeE XFe NBTee eYKeTVVE. TW Be RWI AeWUILMDeE ADQEeGL UV eYRYMJEK KTNB URe XIEFT FCKeMW JE XFTV GDN ORF MeEVVI LSSMU OGWe IeeR HeBCTUeI IV C HDKYTWNETRA FPJEeDE IJE URe EOAZMeXB KW BJQ QeDXFOQ QGC HeMB OGWe GWE ORY WYJeRIF CU ADKF RSHeIRXeJZ. URe EVCRGKP KIT NP XORNX Be CWYTKSMTXeJ CUUeVYINNWEWV NSUXeRATSUH JC JOM IeEePTN CU LeHC GNUJPe NSWU DR VTQeH FVJYCWeU XJ eVZDYPRFX C PeE KIT FG XCHVCUI YH EOAZeIJDRe NPQXeIZ FG XWH. OJLWIXDZYZeBH FTV HJZXJACeH eRMKPYDAeI I IFTe VeNFReQD GSKYWTGF IJE Ae DeeIW UV OGWe eYFPJAeE NVVe eRZTeQe WeYHDCYF SL EVZeAN EJFPJYYJZ. ReHe MeEVVIF YZ URe GADBJLe AeGR D CCHe DFNFPeDe WUVVB, DXFVAO PKM YeTDJZV ZATX KTGR CeGJYe JMeWH TJ C NVQeZN, Ge RWOe DBWQeY DS YeCCOe YUO ZPGFVNGN, CH TJ WWCe MIVeH UeEDMFZ, JOJFe EWZYXeJZH XORNX UDIVGDe NU. JOeAe NH ZPeIM eXDBeZDe URWA MGCEW DeD PV VELAF HNURLY DXe DIGFTQe UV YYJeYUTNe LXCU RWOe AeEVQe VJFBE WE MGCEW CZeMCUDCYF. (YW DE WETZe, URe eDTTWBCQC SL URWA ZYTe XWE ZSZ EBeGA PUUDP AGe CTZORWe GDQ YYNSHeIeI.) DXeHe DZeDNDBLEeZ NP YPGNFTDDP, LACIeIH GZZ VWBLATDCM TKRDYZJVR. KGCRe JOeAe CTe RJ AeJWIBE KW BJAOeA DYJCeE MeNPA WDDXFTDDeJ AD URe GADBJLe, AGe CEJLOTVZH JOeC HFTWeI LCZA XeHe JFU TFJWe TVIBeA, YUO DX RF LSJJe ZASIDYPe DXCU JORF XCO YeMKIe DECAGeY UVCV KW ZAe ReDHFTW. XFe GFETP QASSQQ DDSKFTJeI MT ZAe WHNXNXe EeAe VDIXRNPRDIPB IDZJLe RZ NBe YWVVYU HJWAeV CU JOe eJE WH XFe JNPeXeeJZA ZeYDPYZ, TRI MGCEW JJNPWHeB JZ NYZDRQ DS EJQVDSN YVQDRIJ eYFWYFCFP YH EKHNPA BRFDFTU WXKJM CTPUIJ UDJLJZYRJQXE. MGCEW DeeIW UV OGWe YeJLHeZ LTVQ AGe CTZORWe CTVYYJ NBe JLXe SL XDGAKMND’Q BeINB, AVEeWeY ADD EODJeQDJAV JWEXRZPeO RLE LSYL TRI Le BDLe DZDFXeVeJ eHJUeYNe FG T ORRXRZ TGATQe IICDS HFTWLYR PUOeV MKZe PTQe IMJATRQeG NP JOe AeMJVR GASSPU RRZeZeeR ALeRXe. YYQSYUKRGDeRZ, DX EeeTH JOGD NBe QOGJSG DIGFTQe PeXKKMQ BTD LC NBJQ DAIBe HKTZKMZJEK GAIeO DREOMYeZXRKJ NP JOe AeMJVR, GZZ Ge YeVTeHe JOGD CZH TGATSUH CWB GYHe ZCYDMNCKXeJ, YZ MeWED CUODVeNNRZ, JC AGe eXeRAF GeDULYR NF URe PTMWU XCHXZ GDI.
+XFTV LDZX GXSUe ZCDXZ JDKDe NSUHDBeAYIMe eXMYYTTDEYeUU JC AGe SL ACOeMUNeRA IJE Be JeeG Ge RWOe JF WFXRKJ IVJ XJ AeJWCQeZZ ZATX AGe WATBJL YYERLOe YUO TPV TNW PeXKKMQH QOJOGE Ce EJOJE VF, LAF ZFEKQeZNW DEWVCVeO, ZPGFVNGDeI, IJE, JH ReNeWHTVB, JeWUICBeZ, CPU LAF YWHeXE JCWQVDeJ SL. URLE AeVWIX EGSSMU WVFS YeCWRZ DRDQDRQCeO HCH I KeTDCI KW CU BeGFN WeLeYDT-LJLe BeYYH. Xe KKPRO IeMKITeEB G SPIMDGGDCFP UWAe SL UXC AGSSHTRI IJE UXeYDT-LJLe GD eCTBLeFN. NP JOe YeCPJLXe, CZ HRCDXZ Ie FVeFeYXeB DFCUI JOe GCMAeDA FeJVILAC YHDDPGMGe; JJ EJOGE GVVX DXe NVDA NSTQICXTVNPA QGDeYJTP RQ CZ HRCDXZ LDBP RZNF eEeXC XCPUD.
+
+
+cipher_tools 7$ !call markcols 7 7
+targeting group 
+stdout:
+^TSTJAN F^P JON PVZ^DYPRFXT^FEX, NQWK^EJLOPJK^HQ WYJ VZ^DEBRZB F^G JON FXC^OVE GADB^JLI; KTNB ^TSGJYIK^PUWATSU^H. HCH CSS^T SHNF SU^MN.
+XFTV Y^FFCHD HC^H ZCXYCW^HDCYPZ I^Z JON QSY^FDKY FOJ^TSXGAT Z^W IIZKMZ ^WE XFP VZ^TKGAOMK^H TRI IDZ^JLLATOW ^WH XFP LS^DQL-RZZK^QSRIPJZ ^JEXNXGN^ISRMP YM^FEGB, DXK ^HRWIKH C^TZORWO, B^FIIGQNK^T IIPPMY^FU XJ IV Z^AS WHNXN^XS. XFP MK^QVVA NSU^UTLYF MK^EVQXPJE^DJLJZV L^WI WMDCF^PQ GJZDK^TELYR NB^F TVMGCH^F, TD KPGR ^DQ W EOIT^DIH JQ GK^HQCYF GK^DIRNJ WY^WC WYIGD^HDD JQ CZ^H TGATQN^UDIE. TN C^MQC MKJZ^DDRE I AY^JSJ EOIT^DIH JQ NB^F ZYHAOU^U TDEPNW ^WH XFP YY^ERLOP YU^O IIMKIT^FEBGDCF^PQ WE DS Z^AS YEP SY ^ODDZKVC^M VJ AGSW^F TDEPNW.
+^URI EGYE^WX WHNXN^XS LE IJ N^PUIZPJE^FEX RZNK^MBLQPJJ^F TKNZDD ^HSX DS AD ^URI ZACH^DJI EPDY^FJWHC NF ^ASV XIEK^HJH SOOK^P LLMDSY^JT LY DXK ^MTXN PCM^AJINZNB ^ESRAOMD. ^JJ EGF OW^UTFVTVB^FU XJ NSU^OKGA FPY^XSLVXYU^ES WYJ NF ^ETVHC SS^U ZCOPMZ ^ODTVKIC^UDG GNNN^WED IPVN^IEII DS L^VIXFPM Z^AS LYDOY^FQXE KW B^FI QGUOW^UN’D QKQK^TEQNZN, G^ADPN SMF^XDBRZB C^P SPNYOU^U VJ ZXYS^HDFVP ZK^PDWLTGN^UN LY DXK ^FLIYD NB^DJ LAF YJ^UDZRDCK^H XIHP ZN^HZCOPMK^O. QGGZN E^WZYXPJZ^DJLJZ VZ^JBP NBCW^UQ JHKI Z^ADD EDYM^F VJ AGO K^HJWLXCW^ACIYD SL ^URI GADB^JLI, AGSS^IR KRWOU ^URI IPGN^ETXN ZYZ^VII JQ CZ^H VTNAYZ^JVRE, TN T^DN FN DXC^U LIHC WK^B QYMG ZF^EKQNZNW ^BSVN PQK^T XVRDNK^P. JON QOG ^URWA JS Y^FCWRZ YY^F YH YINS^TS THTQC^US GJYIS^PDGGDCF^PQ WYJ KK^TQCYIG Y^FZCHJV.
+N^P FWHDCJ^VBWH DXK^TS WZSOC^TQ XJ GYH^F YINZ Y J^WIVNFKF^PUIYNO I^FJENPJ B^FI QGUOW^UN WYJ DB^DIPNF BY^FN GJZDK^TELYR NB^F EINJ WF^T QYMG YU ^WIKGZCW^DJLJZ, NB^WKKF KJR^Z T JNL SL ^URCEP GK^UJIHF YY^F VR PTGK ^JE XFP KY^JLWAP MF^ZTP MKGR^FZXRKJ. N^U DD EOMT^JQII DXC^U VXFPM R^FJXNAV J^WEGNAJN^PA XFP MK^EIYRDIK^PJ CP MGC^EW WE DXK ^GDVED XK^DU CP DXK ^DIGFTQK ^NKDA GYH^F SSRFNK^O, YYA IJ K^PJLHP AF^Y VJ IKDS^NSRAF WY^WC XFIN V^FILJJ CW ^NDDETJM ^BDXF ZS N^PUIW QCR^F JC APGR ^VQ EFIN N^U ZCYDYN^PSB. JOM N^PLIEDCM^DJLJZV N^PJC LXYJ^L QOJL NB^DJ ON LYW ^TSPGDOE ^UV KHPT, C^PU XFIN B^F IIAOMU^FU JHKI I^WQXJZ IC^HQWMGPW^FJXE DS Z^DWI DS MK^HDBNZDK ^JE PJZZF^P. RLE TIT^FULGDO L^DCLVC HK^TS RJD HK^DBXFC, NB^WKKF GO B^DU FNPJ C ^TSPGDCH^FBH EODJ^FQDPOG J^TDQRZYR ^JE XFP PU^JJII FNC^USD, GZZ J^WEXNYKF^TTVB AOJ^WIBE FPM^ISDA DXC^U RI FIZ K^HJWLXCW^ASB RZZK^QSRIPJZ ^NSWYF. JF ^TSGJAZ F^G RLE PIV^MVHXPJZ ^ETR LP WF^VEB, FKHK^XSV EPQK^TTP JQ NB^F SSAIJZ ^OVGDYOU^UQ JHKI M^TSH’E SOY^HVRGX DF^MBIMDCF^P RLYD NB^DJ FVIDQ ^BTD HPDY^VDXNJ YW ^ASV XIEK^HJH’E QCY^HJ DNNMK^U QIMAOZ^DIH, EK NB^F TFEPJJ^F VJ GZT E^WZYXPJZ^DJLJZ CW ^VEDDAKY^JQLYR. AR^DZN UPKZ ^D FIHFSU^DB MJOMU^DB EFTDB ^EVRAICU^FU DJYO N^PJIHPVZ^JEK IPNC^JBD, QTQN^PA YE FST^F DRETBB^U DRAK XN^H FIHFSU^DBLAC, YU^O DX RF DR^FTV AGYZ ^AS XFACH^FU CY IZH^FEXDAO. S^PHCHDPU^DJIVC, NB^F LCVOIK^H IIVINN^PA XJ GCW ^QSVRKZ N^P BCYJSU ^DII GXVF ^NDDETJM, ^HV EN NYU^PVX HPGD ^WE XFPI Z^W HLVX CU ^URI XTVW^JEK IPNC^JBD JQ XN^H IIMAPN^UCIYD NF ^URI GADB^JLI. YKJK^URIVPVW ^D EYXMOY ^WH YYKWL^JZLGX MK^EVVIF IC^JEXGTJK^O YH XPII^FID JQ NB^F HCHPCM^P QIMAOZ^DIH’E JOV^DIXXPJZ ^HKKQPVZ ^URWA DXK ^FMLEDOU^ES CP DXK ^DIGFTQK, ^BRLVP SL^GDGRIGR^Z UIYTOE, ^BTD UZSG^P JC G FIC^MB RDYAK^T VJ XPII^FID JQ NB^F DRAPGR^JAIYNO J^WCQDZCZ^Z DR VKJE^WE. LY SYY^UDGDXYY ^URI NFNC^CBLEGIK^PJ CP GOC^OGYGANK^TQ LY FDF^UBWYJ TC^TU EGF Y Y^FBWATQK^MN CZPJ W^FZVND, KY^FQYXIAR^Z YIMIPW^F JON SSR^JZI AGOT^HSPOPV G^FII GLYY^F JOGD VF^NSXFTJM ^VEYEOYR ^BTD QKCU^I VR, AGSS^IR XFP JC^NS WYJ YJ^UDZRDCK^H VJ AGO F^TAWYTVC^UDCY LOY^F T GVKVK^MN KDIME^FU DNNMK^U. JON ZYT^F QOGJSG ^DIGFTQK ^OVIE ZSZ ^DFTNIM F^P TRB KWL^JZLGX ZF^EKQNZNW ^GICX DXK ^QSVRKZ. C^H JON FDC^MS CP MGC^EW’D JSOY^DJLJZV M^TSE RZ NB^F CLI PCM^AJINZ VK^XSRATOW, ^TKQJOMW ^WH LAF YJ^UDZRDCK^H TPEK BY^FX WYJ CZ ^HSIXF NF ^ATZN MOK^P JORF, YW ^NKGF IV Z^AS RNPZ Z^W SDAIAR^JQO G FOJ^VII VKDC^UDCY QSY ^ADD QASG^JEK MKGR^FZXRKJ F^G DRAPGR^JAIYNO V^DFIHF, NB^DJ DNPIW ^UV OGWO R^FU FVIDQ ^UV XFP ZK^XSPJSIK^PJ CP DXK ^VEBNABY^WKRI XYI^ZILYDX I^FEIGDX Z^AS HGAZ. Z^AS IWDMC^WIBRZYY^Z ZCED SL ^URLE NSS^MU RJD AK ^QICZPMR^Z ZCYNOC^MSB GZZ Z^ADD VPZ Z^W GYNFNN^WED RZ NB^F RCDFO G^ADGF TJ Z^VIR, RQ TF^V XLVX OA^EKDN DXK ^QKR, IASH^F JON IMJ^ADZN QPY^URIH OJE^FIKHKPU^O. JOJFO M^WLIHZIK^PJ QRZCW^UILNF HB^JZO FIZ B^JJONANF ^CSIY MOU^FHLMTYY^JSD JQ NB^F DRAPGR^JAIYNO E^DJW GZZ C^PTPBFCW ^QICIODK^O YH LXYJ^L’Q CZPMC^UDZNF JF^B ZCXSGK^USPB JCW^UTRMPZ Z^ASQEPGH^FQ, WYJ XK ^HSIXF NF ^ATZN MOJ^WCI GZ YR^NVDA PJZ^JIIVC WY^FS WQPJZ, ^HSXATJM ^ADD JLJ V^WBLATDC^M TRI JCV^MVQGDCJ ^IVWVF HN^UR XFP NC^EDX EOKV^WIX JQ NB^F FWVIDK. ^OKVRZB Z^ADD ZPMN^WU, FVIDQ ^BTD PKDS^HQII XYY^ISPB KJ E^FQXGMCR^JQLYR MS^HQLGZ, BK^TCWY IJE ^DKDAACC^P DQZPMN^DBLED OA^QTRETSU ^JE XFP AC^MWWYF MK^IDCY, IJE ^WE XFP JK^FU XJ SMF^USGA DXK ^NSBRDOY^TTRNIJ Z^TTBN ASS^USD. FP VK^FCD AK XC^XS BNWOR^WFII IJ K^YJIYFCH^F EIALSY^L VJ GROU^UQ LY DXK ^TSKRKJ, I^VJ QJAO N^NFCHDYU^UBH AK XC^XS BNWOR^WFII ZOG ^NSXFKZW ^WH EJAFN^PA. EFTGK ^EBWEFCJ^DB BRSGF^NTGB GYE ^DBEGCV Y^FBLNJ SU ^FQTRKJC^IS, FVIDQ ^FQXGMGN^HRII ZOG ^EVZNAN T^FJOJJV Z^W ULEAPV^U JON JCV^MVQGDCJ ^DZXRWCZ^JSD JQ KF^USRATYR ^WFTJFCZ^JVR, LC KR^DZLYR YM^FEXE LCZ^ADR AGON^T YYHPYS^EIWMTOW. ^EVRAASR^MDRQ DXK ^DAIYJY F^G DQZKMZ^DEX RZNK^TEWATSU^DB QNPNN^PAD, FP HC^H TFVP, YZ ^MSWED CU ^QTVA, DS J^WEXHKG Z^AS CDDDF^NS CP ZOM^WJLGDCF^PQ, WYJ NF ^CSRNQCZ ^GICX TJW^JUI UZSG^MSBQP SL ^URCEP ZK^MDFNAYZ^JVRE. GO B^DU TGANN^EKPGA VS^EZIEF ZS^TDRQ DXK ^QSVRKZ F^G JON MPR^ITVRIJ C^PU FGXFC^PQ GHTVK^H ULEAPV^UDRQ DXK ^DBPRIJJ^F YYRXZN^PA FNDHK^FE XFP NB^TSI NYKK^TVVE. TW B^F RWI AOW^UILMDOE ^ADQEPGL ^UV IYRYM^JEK KTNB ^URI XIEF^T FCKPMW ^JE XFTV G^DN ORF MK^EVVI LSS^MU OGWO I^FSR HPBC^TUII IV C ^HDKYTWN^ETRA FPJ^ESDE IJE ^URI EOAZ^MSXB KW B^JQ QNDXF^OQ QGC HK^MB OGWO G^WE ORY WY^JSRIF CU ^ADKF RSH^FIRXPJZ. ^URI EVCR^GKP KIT N^P XORNX B^F CWYTKS^MTXNJ CU^USVYINN^WEWV NSU^XSRATSU^H JC JOM I^FEIPTN C^U LIHC GN^UJPN NSW^U DR VTQK^H FVJYCW^FU XJ PVZ^DYPRFX C ^PSE KIT F^G XCHVCU^I YH EOAZ^FIJDRO N^PQXNIZ F^G XWH. OJL^WIXDZYZ^FBH FTV H^JZXJACK^H SRMKPY^DAII I IF^TS VNNFR^FQD GSKY^WTGF IJE ^AS DNPIW ^UV OGWO K^YFPJAOE ^NVVN PRZ^TSQN WOY^HDCYF SL ^EVZNAN E^JFPJYYJ^Z. RIHP MK^EVVIF YZ ^URI GADB^JLI APGR ^D CCHP DF^NFPNDO W^UVVB, DXF^VAO PKM Y^FTDJZV Z^ATX KTGR ^CSGJYO J^MSWH TJ C ^NVQNZN, G^F RWOP DB^WQIY DS Y^FCCOP YU^O ZPGFVN^GN, CH TJ W^WCI MIVK^H UIEDMF^Z, JOJFO E^WZYXPJZ^H XORNX U^DIVGDO N^U. JONAO N^H ZPNIM K^XDBNZDK ^URWA MGC^EW DND PV ^VELAF HN^URLY DXK ^DIGFTQK ^UV YYJOY^UTNN LXC^U RWOP AK^EVQN VJF^BE WE MGC^EW CZPMC^UDCYF. (YW ^DE WETZK, ^URI NDTT^WBCQC SL ^URWA ZYT^F XWE ZSZ ^EBIGA PU^UDP AGO C^TZORWO G^DQ YYNSH^FIII.) DXK^HS DZPDN^DBLEPZ N^P YPGNFT^DDP, LACI^FIH GZZ V^WBLATDC^M TKRDYZ^JVR. KGCR^F JONAO C^TS RJ AOJ^WIBE KW B^JAONA DY^JCIE MON^PA WDDXF^TDDNJ AD ^URI GADB^JLI, AGO C^EJLOTVZ^H JONC HF^TWII LCZ^A XIHP JF^U TFJWO T^VIBNA, YU^O DX RF LS^JJI ZASI^DYPN DXC^U JORF XC^O YIMKIK ^DECAGOY ^UVCV KW Z^AS RNDHF^TW. XFP GF^ETP QASS^QQ DDSKF^TJII MT Z^AS WHNXN^XS ENAO V^DIXRNPR^DIPB IDZ^JLI RZ NB^F YWVVYU ^HJWAPV C^U JON PJE ^WH XFP JN^PSXNPJZ^A ZIYDPY^Z, TRI MGC^EW JJNPW^HSB JZ NY^ZDRQ DS E^JQVDSN Y^VQDRIJ K^YFWYFCF^P YH EKHN^PA BRFDF^TU WXKJM ^CTPUIJ U^DJLJZYR^JQXE. MGC^EW DNPIW ^UV OGWO Y^FJLHPZ L^TVQ AGO C^TZORWO C^TVYYJ NB^F JLXP SL ^XDGAKMN^D’Q BNINB, ^AVENWOY ^ADD EODJ^FQDJAV J^WEXRZPK^O RLE LSY^L TRI LO B^DLI DZDF^XSVNJ OH^JUIYNO F^G T ORRXR^Z TGATQK ^IICDS HF^TWLYR PU^OSV MKZK ^PTQN IMJ^ATRQPG N^P JON AOM^JVR GASS^PU RRZOZ^FSR ALOR^XS. YYQSY^UKRGDOR^Z, DX EPOT^H JOGD NB^F QOGJSG ^DIGFTQK ^PSXKKMQ ^BTD LC NB^JQ DAIBK ^HKTZKMZ^JEK GAIK^O DREOMY^FZXRKJ N^P JON AOM^JVR, GZZ G^F YIVTOH^F JOGD CZ^H TGATSU^H CWB GYH^F ZCYDMN^CKXNJ, YZ ^MSWED CU^ODVNNNR^Z, JC AGO K^XSRAF GK^DULYR NF ^URI PTMW^U XCHXZ G^DI.
+XFTV L^DZX GXSU^F ZCDXZ J^DKDN NSU^HDBNAYI^MS IXMYY^TTDEYOU^U JC AGO S^L ACOPMU^NSRA IJE ^BS JNPG G^F RWOP JF ^WFXRKJ I^VJ XJ AOJ^WCQNZZ Z^ATX AGO W^ATBJL YY^ERLOP YU^O TPV TNW ^PSXKKMQ^H QOJOGE ^CS EJOJE ^VF, LAF ZF^EKQNZNW ^DEWVCVK^O, ZPGFVN^GDII, IJE, ^JH RNNOW^HTVB, JOW^UICBPZ, C^PU LAF YW^HSXE JCW^QVDNJ SL. ^URLE AOV^WIX EGSS^MU WVFS Y^FCWRZ DR^DQDRQCK^O HCH I KK^TDCI KW C^U BIGFN W^FLIYDT-L^JLI BPYY^H. XI KKPR^O IIMKIT^FEB G SPI^MDGGDCF^P UWAP SL ^UXC AGSS^HTRI IJE ^UXIYDT-L^JLI GD OC^TBLNFN. N^P JON YOC^PJLXP, CZ ^HRCDXZ I^F FVNFOY^XSB DFCU^I JON GCM^ASDA FOJ^VILAC YH^DDPGMGK; ^JJ EJOGE ^GVVX DXK ^NVDA NST^QICXTVN^PA QGDOY^JTP RQ CZ ^HRCDXZ L^DBP RZNF ^FEIXC XC^PUD.
+
+

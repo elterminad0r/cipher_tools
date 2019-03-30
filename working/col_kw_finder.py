@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.7
+
 """
 Finding words that match a columnar transposition key in a set of candidates.
 """
@@ -31,24 +33,26 @@ def rolling_chunk(ls, n):
     return [ls[i:i + n] for i in range(len(ls) - n + 1)]
 
 def remove_repeated(w):
-    # only guaranteed to work in Python 3.7 as dicts preserve insertion order
+    # only guaranteed to work in Python 3.7 as dicts preserve insertion order in
+    # the language spec. Should also work in CPython 3.6 but implementation
+    # detail
     return "".join(dict.fromkeys(w))
 
 def get_words(plaintext, keyword, disregard_spaces, discriminate):
     if not disregard_spaces:
         if discriminate:
-            yield from {w.upper() for w in
-                            "".join(
-                             filter(lambda s: s.isalpha() or s.isspace(),
-                                    plaintext)).split()
-                        if len(i) == len(keyword)}
+            yield from set(i for i in map(str.upper,
+                               "".join(
+                                filter(lambda s: s.isalpha() or s.isspace(),
+                                       plaintext)).split())
+                           if len(i) == len(keyword))
         else:
-            yield from {w.upper() for w in
-                            "".join(
-                             filter(lambda s: s.isalpha() or s.isspace(),
-                                    plaintext)).split()}
+            yield from set(i for i in map(str.upper,
+                               "".join(
+                                filter(lambda s: s.isalpha() or s.isspace(),
+                                       plaintext)).split()))
     else:
-        yield from ("".join(w).upper() for w in
+        yield from map("".join,
                        rolling_chunk(list(filter(str.isalpha, plaintext)),
                                      len(keyword)))
 
